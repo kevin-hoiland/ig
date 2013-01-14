@@ -1,0 +1,82 @@
+<% title "All Gums List" %>
+<% description "List of all gums with votes and ranking info for each." %>
+<%= currently_at 'Gums' %>
+
+<% content_for :sub_nav do %>
+	<% if user_signed_in? %>
+		<li><%= link_to("List All Ratings", ratings_path, :class => 'link_button') %></li>
+	<% end %>
+<% end %>
+
+<% content_for :search do %>
+  <h4>Search Gums</H4>
+  <%= search_form_for @search_gums do |f| %>
+<!-- ransack: search_form_for @search_gums do |f| -->
+<!-- metasearch: form_for @search_gums do |f| -->
+<ul id = "gum">
+    <li><%= f.label :brand_cont, "Brand" %></li>
+    <li><%= f.text_field :brand_cont, :maxlength => 50 %></li>
+    <li><%= f.label :flavor_cont, "Flavor" %></li>
+    <li><%= f.text_field :flavor_cont, :maxlength => 50 %></li>
+    <li><%= f.label :description_cont, "Description" %></li>
+    <li><%= f.text_field :description_cont, :maxlength => 50 %></li>
+    <li><%= f.label :note, "Notes" %></li>
+    <li><%= f.text_field :note_cont, :maxlength => 50 %></li>
+    <li><%= f.label :upc_cont, "UPC" %></li>
+    <li><%= f.text_field :upc_cont, :maxlength => 50 %></li>
+    <!-- etc... -->
+</ul>
+    <%= f.submit :class => 'search_button'%>
+  <% end %>
+<% end %>
+
+<h1>Gum List</h1>
+<div id = 'sort'>
+	Sort By:
+	<li><%= sort_link @search_gums, :gum_rating_relationships_updated_at, "Last Rated", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :flavor %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_bubbability, "Score", :default_order => :desc %></li>
+<!--	<li>< % = sort_link @search_gums, :votes_up, "Votes UP" %></li> -->
+</div>
+
+<% @gums_list.each do |g| %>
+<ul class="list_container">
+<li>
+	<ul class="list_links">
+		<li><%= link_to "Gum Details", gum_path(g.permalink), :class => 'list_row_link' %></li>
+		<li><%= link_to("Rate Gum", new_rating_path(g.permalink), :class => 'list_row_link') %></li>
+		<li><%= link_to("All Ratings", gum_ratings_path(g.permalink), :class => 'list_row_link') %></li>
+	</ul>
+</li>
+<li>
+	<ul class="gum_list">
+		<li class="rating">
+			<p>Rating</p>
+			<%= g.total_average_rating(g.id).floor%>
+		</li>
+			<li class="votes down">
+				<%= image_tag("bust.png", :title => "Bust") %>
+				<p><%= g.votes_against %></p>
+			</li>
+			<li class="votes up">
+				<%= image_tag("bubble.png", :title => "Bubble") %>
+				<p><%= g.votes_for %></p>
+			</li>
+		<li class="content">
+			<!--
+			< %= image_tag("gums/#{g.upc}.jpg", :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
+			-->
+			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>			
+			<p><%= g.brand %></p>
+			<p><%= g.flavor %></p>
+		</li>
+		<li class="clear_list">
+			<img><src="/assets/list_clear.gif"/></img>
+		</li>
+	</ul>
+</li>
+</ul><!-- end gum_container-->
+<% end %>
+<%= paginate @gums_list %>
+<p iD = "page_info"><%= (page_entries_info @gums_list, :entry_name => 'Gums').html_safe %></p>
+

@@ -1,0 +1,150 @@
+class RatingsController < ApplicationController
+
+  before_filter :authenticate_user!, :only => [:edit, :new, :create, :update]
+  
+  def index
+    list
+    render('list')
+  end
+  
+  def list
+    # HEY BRO, CAN COMBINE BOTH BELOW...
+    @search_ratings = GumRatingRelationship.ransack(params[:q]) # was .search(params[q:])
+    @ratings_list = @search_ratings.result(:distinct => true).order("updated_at DESC").page(params[:page])
+  #  @ratings_list = GumRatingRelationship.order("updated_at DESC").page(params[:page]).per(5)
+    #@ratings_list = GumRatingRelationship.all
+  end
+  
+  def show
+    @rating = GumRatingRelationship.find(params[:id])
+  end
+  
+  def per_gum
+    #@gum = Gum.find(params[:gum_id])
+    @gum = Gum.find_by_permalink(params[:gum_permalink])
+    @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
+  end
+  
+  def per_member
+    @profile = Profile.find(params[:id])
+    @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_profile_id(@profile.id, :order => 'created_at DESC')).page(params[:page])
+  end
+  
+  def edit
+    @changed_rating = GumRatingRelationship.find(params[:id])
+    @gum = Gum.find(@changed_rating.gum_id)
+    unless current_user.id == @changed_rating.profile_id
+      flash[:alert] = "Come on dude, you can't edit someone else's rating, seriously, this isn't amateur hour..."
+      redirect_to(ratings_url)
+    end
+    #@gum = Gum.find(params[:gum_id])
+    #@gum = Gum.find_by_id(@rating.gum_id)
+    #@gum = Gum.find(3)
+  end
+  
+  def new
+    #@gum = Gum.find(params[:gum_id])
+    @gum = Gum.find_by_permalink(params[:gum_permalink])
+    @profile = Profile.find_by_user_id(current_user.id)
+    @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
+    if GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
+      @rated = GumRatingRelationship.find(GumRatingRelationship.already_rated(@profile.id, @gum.id).first)
+      redirect_to(edit_rating_url(@rated))
+    end
+    @new_rating = GumRatingRelationship.new
+    
+    #@gum = Gum.find(params[:gum_id])
+    #@test = params[:user_id]
+    #@profile = Profile.find_by_user_id(current_user.id)
+    #profile_id where user_id == current_user.id
+    #if GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
+    #if GumRatingRelationship.already_rated(current_user.id, @gum.id).exists?
+    #  @rated = GumRatingRelationship.find(GumRatingRelationship.already_rated(@profile.id, @gum.id).first)
+    #        @my_string = "UMMMM..."
+    #  redirect_to(edit_rating_url(@rated))
+    #else
+    #  @my_string = "not yet rated..."
+    #end
+  end
+  
+  def create
+    @new_rating = GumRatingRelationship.new
+    #@new_rating.profile_id = Profile.find_by_user_id(current_user.id)
+    @new_rating.profile_id = current_user.id
+    #@new_rating.gum_id = params[:gum_id]
+    @new_rating.gum_id = get_gum_id(params[:gum_permalink])
+    @new_rating.gumtation = params[:gum_rating_relationship][:gumtation]
+    @new_rating.initial_gumalicious = params[:gum_rating_relationship][:initial_gumalicious]
+    @new_rating.overall_gumalicious = params[:gum_rating_relationship][:overall_gumalicious]
+    @new_rating.gumalicious_gumgevity = params[:gum_rating_relationship][:gumalicious_gumgevity]
+    @new_rating.flavoracity = params[:gum_rating_relationship][:flavoracity] 
+    @new_rating.initial_chewlasticity = params[:gum_rating_relationship][:initial_chewlasticity]
+    @new_rating.overall_chewlasticity = params[:gum_rating_relationship][:overall_chewlasticity]
+    @new_rating.chewlasticity_gumgevity = params[:gum_rating_relationship][:chewlasticity_gumgevity]
+    @new_rating.bubbability = params[:gum_rating_relationship][:bubbability]
+    @new_rating.breathalation = params[:gum_rating_relationship][:breathalation]
+    @new_rating.comment = params[:gum_rating_relationship][:comment]
+    values = [@new_rating.gumtation.to_i,@new_rating.initial_gumalicious.to_i,@new_rating.overall_gumalicious.to_i,
+              @new_rating.gumalicious_gumgevity.to_i,@new_rating.flavoracity.to_i,@new_rating.initial_chewlasticity.to_i,
+              @new_rating.overall_chewlasticity.to_i,@new_rating.chewlasticity_gumgevity.to_i,@new_rating.bubbability.to_i,@new_rating.breathalation.to_i]
+    @new_rating.total = values.sum
+    @new_rating.average = @new_rating.total / values.size.to_f.round(2)
+    if @new_rating.save
+      flash[:notice] = "New Rating created"
+      #redirect_to(gum_url(@new_rating.gum_id))
+      redirect_to(gum_url(get_permalink(@new_rating.gum_id)))
+    else
+      flash[:alert] = "New Rating Save failed :("
+      @gum = Gum.find_by_permalink(params[:gum_permalink])
+      @profile = Profile.find_by_user_id(current_user.id)
+      render('new')
+    end
+  end
+  
+  def update
+    @changed_rating = GumRatingRelationship.find(params[:id])
+#    @changed_rating.user_id = current_user.id
+#    @changed_rating.gum_id = params[:gum_id]
+    @changed_rating.gumtation = params[:gum_rating_relationship][:gumtation]
+    @changed_rating.initial_gumalicious = params[:gum_rating_relationship][:initial_gumalicious]
+    @changed_rating.overall_gumalicious = params[:gum_rating_relationship][:overall_gumalicious]
+    @changed_rating.gumalicious_gumgevity = params[:gum_rating_relationship][:gumalicious_gumgevity]
+    @changed_rating.flavoracity = params[:gum_rating_relationship][:flavoracity] 
+    @changed_rating.initial_chewlasticity = params[:gum_rating_relationship][:initial_chewlasticity]
+    @changed_rating.overall_chewlasticity = params[:gum_rating_relationship][:overall_chewlasticity]
+    @changed_rating.chewlasticity_gumgevity = params[:gum_rating_relationship][:chewlasticity_gumgevity]
+    @changed_rating.bubbability = params[:gum_rating_relationship][:bubbability]
+    @changed_rating.breathalation = params[:gum_rating_relationship][:breathalation]
+    @changed_rating.comment = params[:gum_rating_relationship][:comment]
+    #values = [@changed_rating.stat_1.to_i,@changed_rating.stat_2.to_i,@changed_rating.stat_3.to_i,@changed_rating.chewlasticity.to_i,@changed_rating.gumaliciousness.to_i,@changed_rating.gumgevity.to_i,@changed_rating.bubbability.to_i]
+    values = [@changed_rating.gumtation.to_i,@changed_rating.initial_gumalicious.to_i,@changed_rating.overall_gumalicious.to_i,
+              @changed_rating.gumalicious_gumgevity.to_i,@changed_rating.flavoracity.to_i,@changed_rating.initial_chewlasticity.to_i,
+              @changed_rating.overall_chewlasticity.to_i,@changed_rating.chewlasticity_gumgevity.to_i,@changed_rating.bubbability.to_i,@changed_rating.breathalation.to_i]    
+    @changed_rating.total = values.sum
+    @changed_rating.average = (@changed_rating.total / values.size.to_i)
+    if @changed_rating.save
+    #if @rating.update_attributes(params[:rating])
+      flash[:notice] = "Rating Updated"
+      #redirect_to(gum_url(@changed_rating.gum_id))
+      redirect_to(gum_url(get_permalink(@changed_rating.gum_id)))
+    else
+      flash[:alert] = "Can't save your rating the way it is..."
+      #@gum = Gum.find(params[:gum_rating_relationship][:gum_id])   #  LOL... WOW, 2+ HOURS WASTED...  DON'T FORGET:  RENDER DOESN'T EXECUTE METHOD FIRST, JUST DISPLAYS PAGE AGAIN, VARIABLES LOST...
+      @gum = Gum.find(@changed_rating.gum_id)
+      render('edit')
+    end
+  end
+
+  private
+  
+  def get_permalink (gum_id)
+    g = Gum.find(gum_id)
+    return g.permalink    
+  end
+  
+  def get_gum_id (permalink)
+    g = Gum.find_by_permalink(permalink)
+    return g.id
+  end
+  
+end

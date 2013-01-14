@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Intl Gum - <%= yield :title %></title>
+	<meta name="description" content="<%= yield :description %>"/>
+	<meta name="keywords" content="gum, intl gum, international gum" />
+	<meta name="author" content="International Gum Inc." />
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+<div id="wrapper">
+	<%= render 'layouts/header' %>
+	<!-- < % = image_tag("tagline.png", :alt=>"Intl Gum Tag Line Here", :id=>"tagline") % > -->
+	<!-- ><div id="tagline">Intl Gum Tag Line Here</div> -->
+    <% if notice %><p class="notification notice"><%= notice %></p><% end %>
+    <% if alert %><p class="notification alert"><%= alert %></p><% end %>
+	<div id="container">
+      <section id="content">
+        <%= yield %>
+      </section>
+      <!-- end content -->
+  	  <section id="sidebar">
+		<nav id="sub_nav">
+			<H3>Other Options</h3>
+			<ul>
+	    	<% unless user_signed_in? %>
+				<li><%= link_to "Create Account", new_user_registration_path, :class => 'link_button' %></li>
+				<li><%= link_to "Sign In", new_user_session_path, :class => 'link_button' %></li>
+			<% else %>
+				<li><%= link_to("Your Account", profile_path(view_self), :class => 'link_button') %></li>
+			<% end %>
+			<%= yield :sub_nav %>
+			</ul>
+		</nav>
+		<!-- end sub_nav -->
+		<section id="search">
+			<%= yield :search %>
+		</section>
+	    <!-- end search -->  	
+	  </section>
+      <!-- end sidebar -->
+	</div>
+  	<!-- end container -->
+<div id="sticky_footer_push"></div>
+</div>
+<!-- end wrapper -->
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

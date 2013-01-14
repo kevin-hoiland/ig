@@ -1,0 +1,63 @@
+<% title "Gum List" %>
+<%= currently_at 'Gums' %>
+<h1>Gum List</h1>
+<div id = 'sort'>
+	Sort By:
+	<li><%= sort_link @search_gums, :gum_rating_relationships_updated_at, "Last Rated", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :flavor %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_bubbability, "Score", :default_order => :desc %></li>
+<!--	<li>< % = sort_link @search_gums, :votes_up, "Votes UP" %></li> -->
+</div>
+
+<% @gums_list.each do |g| %>
+	<ul class="gum_list">
+		<li class="rating">
+			<%= link_to "Rating", gum_path(g) %>
+			<!--< %= link_to g.score(g.id), gum_path(g) %> -->
+			<%= link_to g.total_average_rating(g.id).floor, gum_path(g) %>
+		</li>
+			<li class="votes down">
+				<%= link_to image_tag("bust.png", :title => "Bust"), gum_path(g) %>
+				<%= link_to g.votes_against, gum_path(g)  %>
+			</li>
+			<li class="votes up">
+				<%= link_to image_tag("bubble.png", :title => "Bubble"), gum_path(g) %>
+				<%= link_to g.votes_for, gum_path(g) %>
+			</li>
+		<li>
+			<%= link_to image_tag("gums/#{g.upc}.jpg"), gum_path(g) %>
+			<%= link_to "_", gum_path(g) %>  <!-- replace with image of blank space hehehe -->
+			<%= link_to "#{g.brand} #{g.flavor}", gum_path(g) %>
+			<%= link_to "_", gum_path(g) %>  <!-- replace with image of blank space hehehe -->
+		</li>
+	</ul>
+<% end %>
+<%= paginate @gums_list %>
+<p iD = "page_info"><%= (page_entries_info @gums_list, :entry_name => 'Gums').html_safe %></p>
+
+<% content_for :sub_nav do %>
+	<% if user_signed_in? %>
+		<li><%= link_to("List All Your Ratings", ratings_path, :class => 'link_button') %></li>
+	<% end %>
+<% end %>
+
+<% content_for :search do %>
+  <h4>Search Gums</H4>					<!-- MAKE THIS A LIST BRO -->
+  <%= search_form_for @search_gums do |f| %>
+<ul id = "gum">
+    <li><%= f.label :brand_cont, "Brand" %></li>
+    <li><%= f.text_field :brand_cont, :maxlength => 50 %></li>
+    <li><%= f.label :flavor_cont, "Flavor" %></li>
+    <li><%= f.text_field :flavor_cont, :maxlength => 50 %></li>
+    <li><%= f.label :description_cont, "Description" %></li>
+    <li><%= f.text_field :description_cont, :maxlength => 50 %></li>
+    <li><%= f.label :note, "Notes" %></li>
+    <li><%= f.text_field :note_cont, :maxlength => 50 %></li>
+    <li><%= f.label :upc_cont, "UPC" %></li>
+    <li><%= f.text_field :upc_cont, :maxlength => 50 %></li>
+    <!-- etc... -->
+</ul>
+    <%= f.submit :class => 'search_button'%>
+  <% end %>
+<% end %>
+

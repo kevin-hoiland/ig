@@ -1,0 +1,215 @@
+// *********************** GLOBAL LIST LAYOUT SETTINGS ***********************
+ul.list_container {
+	clear: both;
+	width: 100%;
+	margin: 0px;
+  padding: 5px 5px 5px 5px;  
+  list-style-type: none;
+	min-height: 100px;
+	&:hover { background-color: $list_hover; }
+	border-bottom-color: darken($sidebar_background, 10%);
+  border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+.row_settings {
+	width: 84%;
+	margin: 5px 0px 5px 0px;
+  padding: 0px;
+	font-size: 14px;
+  list-style-type: none;
+	min-height: 75px;
+}
+.stat_box {
+	width: 100px;
+	@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
+	//@include border-radius(10px);
+	border-radius: 10px;
+	text-align: center;
+	padding: 5px;
+	//margin: auto;
+	margin: 0px 5px 5px 5px;
+	//vertical-align: middle;
+	//vertical-align: text-bottom;
+	.header {
+	//	vertical-align: text-top;
+		font-size: 12px;
+	}
+}
+.comment_area {
+	text-align: left;
+	font-size: 12px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: darken($sidebar_background, 5%);
+	//@include border-radius(10px);
+	border-radius: 10px;
+	min-height: 16px;
+	padding: 5px;
+}
+ul.list_links {
+	width: 15%;
+	float: right;
+	font-size: 12px;
+	list-style-type: none;
+	padding: 0;
+	margin: 0px;
+	.list_row_link {
+		@include button(simple, darken($button_color, 5%));
+		margin: 10px 0 10px 0;
+		padding: 2px 0px 2px 0px;
+		display: block;
+		text-align: center;
+		a, a:link, a:visited, a:hover, a:active {
+			color: white;
+	    text-decoration: none;
+			outline: 0;
+	  }
+	}
+}
+
+// ******************************** GUM LIST ******************************** 
+ul.gum_list {
+	@extend .row_settings;
+	//&:hover { background-color: $list_hover; }
+	min-height: 74px;
+	a, a:link, a:visited, a:hover, a:active {
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: $font_color;
+    text-decoration: none;
+  }
+	img.gum_logo {
+		float: left;
+//		width: 75px;
+//	  height: 50px;
+	  padding: 12px 25px 12px 10px;
+	}
+	li {
+		padding: 0px;
+		margin: 0px;
+	}
+//	.clear_list {
+//		clear: both;
+//	}
+	.rating {
+		float: right;
+		font-size: 24px;
+		margin: 5px;
+		text-align: center;
+		&p {
+			margin: 0;
+			padding: 0;
+		//	color: $sidebar_header_background;
+		}
+	}
+	.votes {
+		float: right;
+		font-size: 24px;
+		margin: 5px;
+		text-align: center;
+		text-decoration: none;
+		&p {
+			margin: 0px;
+			padding: 0px;
+		}
+		img {
+			float: left;
+			width: 32px;
+		  height: 32px;
+		  padding: 0px;
+			opacity:0.8;
+			filter:alpha(opacity=80); /* For IE8 and earlier */
+		}
+		&.up {
+			//a, a:link, a:visited, a:hover, a:active {
+				color: $button_color;
+			//}
+		}
+		&.down {
+			//a, a:link, a:visited, a:hover, a:active {
+				color: $nav_background;
+			//}
+		}
+	}// end .votes
+	.content {
+		p {
+			padding: 5px;
+			margin: 0;
+		}
+	}
+}// end ul.gum_list
+
+// ****************************** RATING LIST ******************************
+ul.rating_list {
+	@extend .row_settings;
+	font-size: 24px;
+	.score {
+		@extend .stat_box;
+		//margin: auto;
+		//vertical-align: middle;
+		float: left;
+		height: 60px;
+	}
+ 	.comment {
+		@extend .comment_area;
+		clear: left;
+	}
+}
+// ****************************** MEMBER LIST ******************************
+ul.member_list {
+	@extend .row_settings;
+	.score {
+		@extend .stat_box;
+		height: 40px;
+		float: right;
+	}
+ 	.comment {
+		@extend .comment_area;
+		clear: right;
+	}
+}
+// ********************* NEWS LIST (bottom border only) ********************
+.news {
+	border-bottom-color: darken($sidebar_background, 10%);
+  border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+/*
+ul.member_container {
+	clear: both;
+	width: 100%;
+	margin: 0px;
+  padding: 5px 5px 5px 5px;  
+  list-style-type: none;
+	min-height: 100px;
+	&:hover { background-color: #F8FCCF; }
+	border-bottom-color: darken($sidebar_background, 10%);
+  border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+*/
+
+/*
+ul.member_list_links {
+	width: 15%;
+	float: right;
+	font-size: 12px;
+	list-style-type: none;
+	padding: 0;
+	margin: 0px;
+	.rating_button{
+		@include button(simple, darken($button_color, 5%));
+		margin: 10px 0 10px 0;
+		padding: 2px 0px 2px 0px;
+		display: block;
+		text-align: center;
+		a, a:link, a:visited, a:hover, a:active {
+			color: white;
+	    text-decoration: none;
+			outline: 0;
+	  }
+	}
+}
+*/

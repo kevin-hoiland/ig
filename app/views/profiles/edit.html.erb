@@ -1,0 +1,24 @@
+<% title "Edit Your Public Details" %>
+<% description "Member's page for editing public information and details." %>
+<%= currently_at 'Members' %>
+
+<% content_for :sub_nav do %>
+ 	<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
+<% end %>
+
+<h1>Edit Your Public Info and Details</h1>
+<%= render(:partial => 'shared/error_messages', :locals => {:object => @self_profile}) %>
+
+<%= semantic_form_for @self_profile do |f| %>
+    <%= f.inputs do %>
+		<%= f.input :name, :label => "What name do yo want to use?", :placeholder => "Whatever you want! This is what everyone else will see...", :hint => "Can change whenever, but must be different than everyone else", :input_html => { :autofocus => true} %>
+		<%= f.input :location, :label =>"What's your location?", :placeholder => "Where are you from, or where do you live, generally speaking :-)", :hint => "Don't use an actual full address, this is visible to everyone!"%>
+		<%= f.input :born, :label =>"When were you born?", :start_year => Time.now.year-100, :end_year => Time.now.year, :discard_month => true, :discard_day => true %>
+		<%= f.input :sex, :label =>"What's your gender?", :as => :select, :collection => ["Male", "Female", "Other"]%>
+		<%= f.input :story, :size => 100, :label => "Your Gum thoughts, comments, story, whatever", :placeholder => "anything you want here, blah blah", :input_html => { :class => 'TBD', :rows => 10, :cols => 20, :maxlength => 500  } %>
+	<% end %>
+    <%= f.action :submit, :label => "Update Your Public Info", :as => :button %>
+	<%= f.action :cancel, :label => "Cancel", :as => :link %>
+<% end %>
+<!-- NOTE "TBD" html classes used above dude... -->

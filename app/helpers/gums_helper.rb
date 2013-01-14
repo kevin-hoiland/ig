@@ -1,0 +1,3 @@
+module GumsHelper
+
+end

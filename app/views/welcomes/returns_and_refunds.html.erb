@@ -1,0 +1,12 @@
+<% title "Returns & Refunds" %>
+<% description "Information about Intl Gum Returns and Refunds policies." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+<% end %>
+
+<h1>Returns and Refunds</h1>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>

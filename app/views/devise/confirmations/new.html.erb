@@ -1,0 +1,15 @@
+<% title "Resend Confirmation" %>
+<% description "Member's page for resending confirmation instructions." %>
+<%= currently_at 'Members' %>
+<h1>Resend confirmation instructions</h1>
+
+<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.submit "Resend confirmation instructions", :class => 'content_button' %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

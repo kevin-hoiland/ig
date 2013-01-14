@@ -1,0 +1,89 @@
+<% title "Chew It Over" %>
+<% description "Summary of all rating results and member comments for all gums." %>
+<%= currently_at 'Chew It Over' %>
+
+<% content_for :sub_nav do %>
+	<% if user_signed_in? %>
+		<li>hmm, wtf goes here?</br>(below won't work yet)</li>
+		<li><%= link_to("List All Your Ratings", ratings_path, :class => 'link_button') %></li>
+	<% end %>
+<% end %>
+
+<% content_for :search do %>
+  <h4>Search Ratings</H4>
+  <%= search_form_for @search_ratings, :url => { :action => "index" } do |f| %>
+<ul id="rating"> 
+    <p>Gumtation</p>
+	<li><%= f.label :gumtation_gteq, "Low " %><%= f.text_field :gumtation_gteq, :maxlength => 2 %></li>
+    <li><%= f.label :gumtation_lteq, "High " %><%= f.text_field :gumtation_lteq, :maxlength => 2 %></li>
+	<p>Initial Gumalicious</p>
+	<li><%= f.label :initial_gumalicious_gteq, "Low " %><%= f.text_field :initial_gumalicious_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :initial_gumalicious_lteq, "High " %><%= f.text_field :initial_gumalicious_lteq, :maxlength => 2 %></li>
+	<p>Overall Gumalicious</p>
+	<li><%= f.label :overall_gumalicious_gteq, "Low " %><%= f.text_field :overall_gumalicious_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :overall_gumalicious_lteq, "High " %><%= f.text_field :overall_gumalicious_lteq, :maxlength => 2 %></li>
+	<p>Gumalicious Gumgevity</p>
+	<li><%= f.label :gumalicious_gumgevity_gteq, "Low " %><%= f.text_field :gumalicious_gumgevity_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :gumalicious_gumgevity_lteq, "High " %><%= f.text_field :gumalicious_gumgevity_lteq, :maxlength => 2 %></li>
+	<p>Flavoracity</p>
+	<li><%= f.label :flavoracity_gteq, "Low " %><%= f.text_field :flavoracity_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :flavoracity_lteq, "High " %><%= f.text_field :flavoracity_lteq, :maxlength => 2 %></li>
+	<p>Initial Chewlasticity</p>
+	<li><%= f.label :initial_chewlasticity_gteq, "Low " %><%= f.text_field :initial_chewlasticity_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :initial_chewlasticity_lteq, "High " %><%= f.text_field :initial_chewlasticity_lteq, :maxlength => 2 %></li>
+	<p>Overall Chewlasticity</p>
+	<li><%= f.label :overall_chewlasticity_gteq, "Low " %><%= f.text_field :overall_chewlasticity_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :overall_chewlasticity_lteq, "High " %><%= f.text_field :overall_chewlasticity_lteq, :maxlength => 2 %></li>
+	<p>Chewlasticity Gumgevity</p>
+	<li><%= f.label :chewlasticity_gumgevity_gteq, "Low " %><%= f.text_field :chewlasticity_gumgevity_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :chewlasticity_gumgevity_lteq, "High " %><%= f.text_field :chewlasticity_gumgevity_lteq, :maxlength => 2 %></li>
+	<p>Bubbabilitiy</p>
+	<li><%= f.label :bubbability_gteq, "Low " %><%= f.text_field :bubbability_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :bubbability_lteq, "High " %><%= f.text_field :bubbability_lteq, :maxlength => 2 %></li>
+	<p>Breathalation</p>
+	<li><%= f.label :breathalation_gteq, "Low " %><%= f.text_field :breathalation_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :breathalation_lteq, "High " %><%= f.text_field :breathalation_lteq, :maxlength => 2 %></li>
+    <p>Comment</p>
+	<li id="comment"><%= f.text_field :comment_cont, :maxlength => 50 %></li>
+</ul>
+    <%= f.submit :class => 'search_button'%>
+  <% end %>
+<% end %>
+
+<h1>All Gum Ratings</h1>
+<div id = 'sort'>
+	Sort By:
+	<li><%= sort_link @search_ratings, :gumtation, "Gumtation", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :initial_gumalicious, "Initial Gumalicious", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :overall_gumalicious, "Overall Gumalicious", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :gumalicious_gumgevity, "Gumalicious Gumgevity", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :flavoracity, "Flavoracity", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :initial_chewlasticity, "Initial Chewlasticity", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :overall_chewlasticity, "Overall Chewlasticity", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :chewlasticity_gumgevity, "Chewlasticity Gumgevity", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :bubbability, "Bubbability", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :breathalation, "Breathalation", :default_order => :desc %></li>
+</div>
+
+<% @ratings_list.each do |r| %>
+<ul class="list_container">	
+	<li>
+	<ul class="list_links">
+		<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
+		<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+		<li><%= link_to "Member Details", profile_path(r.profile_id), :class => 'list_row_link' %></li>
+	</ul>
+	</li>
+	<li>
+
+			<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+
+	</li>
+
+</ul>
+		
+<% end %>	
+
+<%= paginate @ratings_list %>
+<p iD = "page_info"><%= (page_entries_info @ratings_list, :entry_name => 'Ratings').html_safe %></p>
+

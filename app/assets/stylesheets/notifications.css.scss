@@ -1,0 +1,83 @@
+.notification {
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin: 0 auto 20px;
+  padding: 0.75em 0.75em 0.75em 45px;
+}
+
+/* END:base */
+
+.notification {
+  background:{
+    position: 10px 9px;
+    repeat: no-repeat;
+  }
+  color: #fff;
+  font: {
+    size: 14px;
+    weight: bold;
+  }
+  line-height: 1.6em;
+  margin: 0 auto 20px;
+  padding: 0.75em 0.75em 0.75em 45px;
+
+  /* START:imagepath */
+  &.notice { 
+		background: {
+      color: darken($button_color, 10%);
+			//color: #006302;
+      /* START_HIGHLIGHT */
+      image: url(image-path("notification_check.png"));
+      /* END_HIGHLIGHT */
+    }
+  }
+  /* END:imagepath */
+
+  /* START:assetpath */
+  &.alert {
+    background: {
+      color: darken($sidebar_header_background, 10%);
+			//color: #920202;
+      /* START_HIGHLIGHT */
+      image: url(asset-path("notification_x.png", image));
+      /* END_HIGHLIGHT */
+    }
+  }
+  /* END:assetpath */
+}
+/*#error_explanation {*/
+#error {
+	background-color: darken($sidebar_header_background, 10%);
+	border: green;
+	color: white;
+	padding: 10px;
+	margin-bottom: 15px;
+	@include border-radius(5px);
+	h2 {
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		margin: 0;
+		padding: 0 0 0 10%;
+	}
+}
+#error_explanation{
+	background-color: darken($sidebar_header_background, 10%);
+	border: green;
+	color: white;
+	padding: 10px;
+	@include border-radius(5px);
+	h2 {
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		margin: 0;
+		padding: 0 0 0 10%;
+	}
+}

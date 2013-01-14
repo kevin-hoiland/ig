@@ -1,0 +1,12 @@
+<% title "Shipping Policy" %>
+<% description "Information about Intl Gum Subscription policy." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+<% end %>
+
+<h1>Shipping Policy</h1>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>

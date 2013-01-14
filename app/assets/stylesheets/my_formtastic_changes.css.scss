@@ -1,0 +1,132 @@
+//form.formtastic {
+//	font-family: $font;
+//}
+
+//form.formtastic fieldset ol li p.inline-hints {
+//	font-style: italic;
+//	font-size: 11px;
+//}
+
+.formtastic .inline-errors {
+  color: darken($sidebar_header_background, 20%);
+	//color: rgb(204, 0, 0);
+}
+
+form.formtastic #rating_form {
+	.input .label {
+		color: $nav_background;
+		font-weight: bold;
+		abbr {
+			color: white;
+		}
+	}
+  li {
+		border-bottom-color: darken($sidebar_background, 10%);
+	  border-bottom-width: 1px;
+		border-bottom-style: solid;
+	}
+}
+
+
+
+/*
+
+form.formtastic fieldset > ol > li.radio fieldset ol li { // radio buttons
+		margin: 2px;
+    display: inline-block;
+}
+
+form.formtastic .fragments .label label, form.formtastic .choices .label label {  // ratings main labels
+		position: absolute;
+		left: 60px;
+		top: -20px;
+		color: $nav_background;
+		font-weight: bold;
+		abbr {
+			color: white;
+		}
+}
+
+form.formtastic fieldset ol li.rating_list { // each row (10 total)
+//	margin-top: 15px;
+	padding: 20px 0 5px 0;
+	width: 80%;
+	border-bottom-color: darken($sidebar_background, 10%);
+  border-bottom-width: 1px;
+	border-bottom-style: solid;
+	.choices-group {
+		padding: 0 0 0 10%;
+	}
+ 	.radio.input.required.choices.inline-hints {
+		padding: 0 0 0 10%;
+	}
+}
+form.formtastic .input.rating_list .inline-hints {
+	margin: 5px 0 0 11%;
+	color: $font_color;;
+}
+form.formtastic fieldset ol li.rating_list textarea { // comment box
+    width: 80%;
+		margin-left: 80px;
+		height: 100px;
+}
+*/
+/*
+form.formtastic fieldset ol li.rating_list p.inline-hints {
+			color: red;
+			padding: 0 0 0 10%;
+}*/
+
+/*--------------------------------------------------------------------------------------------------*/
+form.formtastic textarea {
+	padding: 2px;
+}
+form.formtastic {
+	list-style-type: none;
+//	list-style: none outside none;
+}
+.formtastic legend {
+	//color: #444343;
+	color: $font_color;
+}
+form.formtastic input {
+	font-family: $font;
+}
+
+form.formtastic button {
+	@include button(simple, $button_color);
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	margin: 10px 0 0 0px;
+//	padding:30px;
+	width: 100%;
+	font-family: $font;
+	vertical-align: center;
+//	height: 30px;
+}
+form.formtastic .button_action button {
+		padding: 2px 5px 2px 5px;
+}
+form.formtastic a {
+	@include button(simple, $button_color);
+	display: block;
+	text-align: center;
+	width: 100%;
+	font-size: 14px;
+	margin: 10px 10% 10px 10%;
+}
+
+form.formtastic .link_action a {
+	padding: 2px 5px 2px 5px;
+}
+
+form.formtastic .boolean input {
+	position: relative;
+	top: 5px;
+	width: 20px;
+	height: 20px;
+}
+form.formtastic p {
+	margin: 10px 0px 10px 0px;
+}

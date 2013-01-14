@@ -1,0 +1,18 @@
+<% title "Welcome - About" %>
+<% description "Information about Intl Gum Membership and Subscriptions." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("Contact", welcomes_contact_info_path, :class => 'link_button') %></li>
+	<li><%= link_to("FAQs", welcomes_faq_path, :class => 'link_button') %></li>
+	<li><%= link_to("News", welcomes_news_path, :class => 'link_button') %></li>
+	<li><%= link_to("Past Shipments", subscriptions_path, :class => 'link_button') %></li>
+<% end %>
+
+<h1>About Intl Gum</h1>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
+
+

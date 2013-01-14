@@ -1,0 +1,20 @@
+<% title "Members Details" %>
+<% description "Detailed info and stats for an Intl Gum Member." %>
+<%= currently_at 'Members' %>
+
+<% content_for :sub_nav do %>
+  <% if user_signed_in? and viewing_self?(@profile) %>
+	<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+	<li><%= link_to("Edit Public Info", edit_profile_path, :class => 'link_button') %></li>
+  <% end %>
+	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
+	<li><%= link_to("View All Ratings", member_ratings_path(@profile), :class => 'link_button') %></li>
+<% end %>
+
+<h1>Member Details</h1>
+----------------------------------------<br \>
+<p>Votes Up: <%= @profile.user.vote_count(:up) %></p>
+<p>Votes Down: <%= @profile.user.vote_count(:down) %></p>
+
+
+

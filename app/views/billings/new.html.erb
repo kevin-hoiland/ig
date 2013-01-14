@@ -1,0 +1,28 @@
+<% title "Create New Subscription" %>
+<% description "Member's page for creating a New Subscription." %>
+<%= currently_at 'Members' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("Your Subscriptions", list_billings_path, :class => 'link_button') %></li>
+	<li><%= link_to("Edit Public Info", edit_profile_path, :class => 'link_button') %></li>
+	<li><%= link_to("Past Shipments", subscriptions_path, :class => 'link_button') %></li>
+	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
+<% end %>
+
+<% @content_top.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
+
+<div id="subscription_status"><%= subscriber? ? "Your currently active Subscriptions total is  #{subscription_count}" : "You do not yet have any active subscriptions" %></div>
+
+<h1>Your Private New Subscription Info</h1>
+<%= render(:partial => 'shared/error_messages', :locals => {:object => @billing}) %>
+
+<%= semantic_form_for @billing, :url => new_billing_path, :html => {:method => :post} do |f| %>
+  	<%= f.inputs do %>
+		<%= render(:partial => "shared/billings_form", :locals => {:f => f}) %>  
+	<% end %>
+    <%= f.action :submit, :label => "Create Subscription", :as => :button %>
+	<%= f.action :cancel, :label => "Cancel", :as => :link %>
+<% end %>
+

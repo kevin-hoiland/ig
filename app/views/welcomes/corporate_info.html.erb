@@ -1,0 +1,13 @@
+<% title "Corporate Info" %>
+<% description "International Gum corporate information and details." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+<% end %>
+
+<h1>Corporate Info</h1>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
+

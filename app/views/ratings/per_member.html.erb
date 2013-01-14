@@ -1,0 +1,28 @@
+<% title "All Ratings for a Member" %> <!-- placeholder dude -->
+<% description "Summary of all gum ratings and comments for one member." %>
+<%= currently_at 'Members' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("Member Details", profile_path(@profile), :class => 'link_button') %></li>
+	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
+<% end %>
+
+<h1>All Ratings by <%= @profile.name.blank? ? "[no alias yet]" : @profile.name %></h1> <!-- placeholder dude -->
+
+<% @ratings.each do |r| %>
+<ul class="list_container">	
+	<li>
+	<ul class="list_links">
+		<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
+		<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+	</ul>
+	</li>
+	<li>
+		<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+	</li>
+</ul>
+		
+<% end %>	
+
+<%= paginate @ratings %>
+<p id = "page_info"><%= (page_entries_info @ratings, :entry_name => 'Ratings').html_safe %></p>

@@ -1,0 +1,380 @@
+/**************************/
+/* custom global settings */
+/**************************/
+html, body, button, input, select, textarea, label {
+	font-family: $font;
+	color: $font_color;
+	height: 100%;
+	a, a:link, a:visited, a:hover, a:active {
+		outline: 0;
+	}
+}
+
+div#wrapper {
+	background-color: #ffffff;
+	min-height: 100%;
+	height: auto !important; /* min-height hack for older IE */
+	height: 100%; /* min-height hack for older IE */
+	margin: 0 auto -52px; /* setting to allow sticky footer :-) */
+	/****************************/
+	/****** button formats ******/
+	/****************************/
+	.basic_button {
+		@include button(simple, $button_color);
+		display: block;
+		text-align: center;
+		font-size: 12px;
+		margin: 10px 10% 10px 10%;
+		padding: 2px 5px 2px 5px;
+	}
+	.link_button {
+		@extend .basic_button;
+	}
+	.search_button {
+		@extend .basic_button;
+		width: 80%;
+	}
+	.content_link_button {
+		@extend .basic_button;
+		font-size: 14px;
+		margin: 10px 0 0 0;
+		padding: 5px 0px 5px 0px;
+		width: 200px;
+	}
+	.content_button {
+		@extend .basic_button;
+		font-size: 14px;
+		margin: 20px 0 0 0;
+		padding: 5px 0px 5px 0px;
+		width: 200px;
+	}
+}
+
+/******************************************************************************/
+/*********************************** HEADER ***********************************/
+/******************************************************************************/
+
+header#page_header {
+	line-height: 21px; /* fixes difference for Nav between firefox default at 21px vs other browsers at "normal" */
+	background: url('/assets/filler_v7.jpg') top left; // repeat-x;
+	color: white; // #fff or #ffffff
+	height: 100px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	padding: 0px 10px 0px 10px;
+	a, a:link, a:hover, a:active, a:visited{
+		color: white; 
+		text-decoration: none;
+	}
+	p#trademark {
+		position: absolute;
+		color: #A9E7FB;//darken($sidebar_background, 0%); //#A9E7FB
+		font-size: 10px;
+		top: 15px;
+		left: 195px;
+	}
+	nav#utility {
+		float: right;
+		padding-top: 10px;
+		font-size: 13px;
+		.header_button {
+			  @include button(simple, darken($button_color, 5%));
+				padding: 2px 5px 2px 5px;
+			}
+	}
+	nav#main_nav {
+		position: absolute;
+			right: 10px;
+	  	top: 54px;
+		font-size: 14px;
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			height: 25px;
+		  li {
+			  list-style-type: none;	
+	      background: $nav_background;
+		    //@include border-top-radius(5px);
+			  border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				display: inline-block;
+	      margin: 0 3px;
+	      padding: 2px 10px;
+	      &.active {
+	        background: white;
+	        margin-bottom: -1px;
+	        a, a:link, a:visited {
+	          color: $nav_background;
+	          font-weight: bold;
+						text-decoration: none;
+	        }
+	      }
+	    }// end li
+	  }// end ul
+	}// end nav#main_nav
+}// header#page_header
+
+/******************************************************************************/
+/************************************ BODY ************************************/
+/******************************************************************************/
+
+div#container {
+	overflow: hidden;
+	padding: 0 20px;
+	margin: 0 0 20px 0;
+	font-size: 14px;
+}
+
+section#content {
+	h1 {
+		//text-shadow: -3px 1.5px 1px lighten($font_color, 40%);
+		color: $nav_background;
+		font-size: 28px;
+		clear: both;
+		&#no_clear {
+			clear: none;
+		}
+	}
+	#welcome {
+		padding: 0;
+		display: block;
+		margin: 50px auto 0 auto;
+	}
+	position: relative;
+	float: left;
+	width: 100% - $container_gap - $sidebar_percent_of_container;
+	@each $size in 10,11,12,13,14,15,16,17,18,19,20 {
+		p.size_#{$size} {
+			font-size: #{$size}px;
+		}
+	}
+	#phone_pre {
+		margin: 0;
+		font-size: 20px;
+		display: inline;
+	}
+	#phone {
+		display: inline;
+		font-size: 20px;
+		margin: 0;
+		color: $button_color;
+		
+	}
+	#phone_post {
+			font-size: 14px;
+			margin: 0 0 40px 183px;
+		}
+	#email {
+		display: inline;
+		//color: $button_color;
+		a, a:link, a:hover, a:active, a:visited {
+			text-decoration: none;
+			color: $button_color;
+		}
+	}
+	#sort {
+		float:right;
+		margin: 0 0 10px 0;
+		a, a:link, a:hover, a:active, a:visited{
+			color: darken($button_color, 10%);
+			text-decoration: none;
+			padding: 5px
+		}
+		li {
+			margin: 0px;
+			display: inline;
+			border-right: 2px solid $sidebar_background;
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}// end #sort
+
+	#subscription_status {
+		font-size: 11px;
+		margin: 0px 0px 10px 0px;
+		float: right;
+		font-style:italic;
+		color: $sidebar_header_background;
+	}
+
+	#gum_image { // full size
+		margin-bottom: 20px;
+	}
+	
+	input[type="checkbox"] {
+	  width: 25px;
+	  height: 25px;
+		margin: 5px 0 0 0;
+//	  padding: 0 5px 0 0;
+//	  background: url(checkbox.png) no-repeat;
+//	  display: block;
+//	  clear: left;
+//	  float: left;
+	}
+	
+}// end section#content
+
+section#sidebar {
+	float: right;
+	margin-bottom: 20px;
+	margin-right: -20px;
+	width: $sidebar_percent_of_container;
+	//@include border-left-radius(5px);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: $sidebar_background;
+	.basic_header {
+		font-size: 14px;
+		background-color: $sidebar_header_background;
+		border-bottom: 5px solid darken($sidebar_background, 30%);
+		margin: 10px 0px;
+		padding: 5px 10px 0 10px;
+		color: white;
+	}
+	.basic_ul {
+		list-style-type: none;
+		padding: 0px;
+	}
+	#sub_nav {
+		h3{
+			@extend .basic_header;
+		}
+		ul {
+			@extend .basic_ul;
+			margin: 0;
+		}
+	}// end #sub_nav
+	#search {
+		h4{
+			@extend .basic_header;
+		}
+		ul#gum {
+			@extend .basic_ul;
+			margin: 5px 15px 5px 10px;
+			input {
+				width: 100%;
+			}
+			li {
+				padding: 2px 0px;
+			}
+		}
+		ul#member {
+			@extend .basic_ul;
+			margin: 5px 15px 5px 10px;
+			input {
+				width: 100%;
+			}
+			li {
+				padding: 0px;
+				margin: 10px 0 10px 0;
+				list-style-type: none;
+			}
+/*			ul.sex {
+				padding: 0px;
+				margin: 0px;
+				color: red;
+				display: inline;
+				li {
+					padding: 0px;
+					margin: 0px 0px 0px 20px;
+					display: inline;
+				}
+*/		ul#sex {
+				padding-left: 25%;
+				margin: 0;
+			}
+			li.sex_label {
+				//display: block;
+				padding: 0;
+			//	padding-left: 15px;
+			//	text-indent: -15px;
+				margin: 0;
+			}
+			li.sex_input {
+						width: 100%;
+				    height: 100%;
+				    padding: 0;
+				    margin: 0;
+				    //vertical-align: bottom;
+				    position: relative;
+				    top: -20px;
+						left: -65%;
+				    //*overflow: hidden;
+			}
+		}// end ul#member
+		
+		ul#rating {
+			@extend .basic_ul;
+			margin: 0px 0px 0px 15px;
+			li {
+				font-size: 11px;
+				position: relative;
+				padding: 0px 0px;
+				margin: 0px 10px 15px 10px;
+				input {
+					width: 30%;
+					position: absolute;
+					left: 40px;
+					top: -4px;
+				}
+				&#comment input {
+					position: static;
+					width: 100%;
+				}
+			}
+			p {
+				font-size: 13px;
+				font-weight: bold;
+				margin: 0px 0px 10px 0px;
+				//padding: 0px 10px;
+				//margin: 5px 0px 10px 0px;
+			}
+		}// end ul#rating
+	}// end #search
+}// end section#sidebar
+
+/******************************************************************************/
+/*********************************** FOOTER ***********************************/
+/******************************************************************************/
+
+div#sticky_footer_push{
+	height: 52px;
+}
+
+footer#page_footer {
+	position: relative;
+	@include linear-gradient(lighten($sidebar_background, 4%), darken($sidebar_background, 15%));
+	font-size: 12px;
+	height: 32px;
+	padding: 5px 10px 15px 10px;
+	margin: 0 auto;
+	ul {
+		margin-left: -10px;
+		padding: 0;
+		li {
+			float: right;
+			border-left: 1px solid $font_color;
+			display: inline;
+			margin: 0;	
+			&:last-child {
+				border-left: none;
+			}
+			a {
+				padding: 5px 10px;
+				&:link,
+//				&:hover,
+				&:visited,
+				&.active {
+					color: $font_color;
+					text-decoration: none;
+				&:hover {
+					color: $nav_background;
+					text-decoration: none;
+				};
+				}
+			}// end a
+		}// end li
+	}// end ul
+}// end footer#page_footer

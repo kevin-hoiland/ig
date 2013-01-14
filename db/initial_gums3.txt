@@ -1,0 +1,133 @@
+layers_cool_mint_melon_fresco|012546600187|1|Kraft Foods Cadburry|Trident Layers|Cool Mint + Melon Fresco|||United States|0
+layers_wild_strawberry_tangy_citrus|012546600026|1|Kraft Foods Cadburry|Trident Layers|Wild Strawberry+ Tangy Citrus|||United States|0
+placeholder_1|260640224|1|Kraft Foods Cadburry|Trident Layers|Green Apple + Golden Pineapple|||United States|0
+placeholder_2|908004332|1|Kraft Foods Cadburry|Trident Vitality|Vigorate|||United States|0
+placeholder_3|313549983|1|Kraft Foods Cadburry|Trident Vitality|Reguve|||United States|0
+placeholder_4|267384418|1|Kraft Foods Cadburry|Trident Vitality|Awaken|||United States|0
+placeholder_5|249572740|1|Kraft Foods Cadburry|Trident Extra Care|Spearmint|||United States|0
+placeholder_6|721042180|1|Kraft Foods Cadburry|Trident Extra Care|Peppermint|||United States|0
+placeholder_7|207663972|1|Kraft Foods Cadburry|Trident Extra Care|Cool Mint|||United States|0
+placeholder_8|647770830|1|Kraft Foods Cadburry|Trident Extra Care|Cool Citrus|||United States|0
+placeholder_9|736672540|1|Kraft Foods Cadburry|Trident Splash|Orange Swirl|||United States|0
+placeholder_10|52082363|1|Kraft Foods Cadburry|Trident Splash|Pucker Me Berry|||United States|0
+placeholder_11|434420254|1|Kraft Foods Cadburry|Trident Splash|Peppermint Swirl|||United States|0
+placeholder_12|53506788|1|Kraft Foods Cadburry|Trident Splash|Strawberry with Lime|||United States|0
+placeholder_13|697179299|1|Kraft Foods Cadburry|Trident Splash|Apple with Rasberry|||United States|0
+placeholder_14|440027916|1|Kraft Foods Cadburry|Trident Splash|Citrus with Blackberry|||United States|0
+placeholder_15|782367998|1|Kraft Foods Cadburry|Trident|Wintergreen|||United States|0
+placeholder_16|523064597|1|Kraft Foods Cadburry|Trident|Strawberry Twist|||United States|0
+placeholder_17|73055176|1|Kraft Foods Cadburry|Trident|Cinnamon|||United States|0
+placeholder_18|470983865|1|Kraft Foods Cadburry|Trident|Bubblegum|||United States|0
+placeholder_19|665138980|1|Kraft Foods Cadburry|Trident|Minty Sweet Twist|||United States|0
+placeholder_20|396835633|1|Kraft Foods Cadburry|Trident|Original Flavor|||United States|0
+placeholder_21|575293188|1|Kraft Foods Cadburry|Trident|Passionberry Twist|||United States|0
+placeholder_22|802086260|1|Kraft Foods Cadburry|Trident|Spearmint|||United States|0
+placeholder_23|566894780|1|Kraft Foods Cadburry|Trident|Tropical Twist|||United States|0
+placeholder_24|228798636|1|Kraft Foods Cadburry|Trident|Watermelon Twist|||United States|0
+placeholder_25|123842865|1|Kraft Foods Cadburry|Trident|Wild Blueberry Twist|||United States|0
+placeholder_26|987425194|1|Kraft Foods Cadburry|Trident White|Cool Mangoberry|||United States|0
+placeholder_27|126075351|1|Kraft Foods Cadburry|Trident White|Peppermint|||United States|0
+placeholder_28|940118195|1|Kraft Foods Cadburry|Trident White|Spearmint|||United States|0
+placeholder_29|129357900|1|Kraft Foods Cadburry|Trident White|Cool Colada|||United States|0
+placeholder_30|876886531|1|Kraft Foods Cadburry|Trident White|Wintergreen|||United States|0
+placeholder_31|706682419|1|Kraft Foods Cadburry|Trident White|Cool Rush|||United States|0
+placeholder_32|590039925|1|Kraft Foods Cadburry|Trident White|Cinnamon Tingle|||United States|0
+placeholder_33|536975007|1|Kraft Foods Cadburry|Trident White|Cool Bubble|||United States|0
+placeholder_34|370803806|1|Kraft Foods Cadburry|Dentyne Ice|Peppermint|||United States|0
+placeholder_35|186201857|1|Kraft Foods Cadburry|Dentyne Ice|Spearmint|||United States|0
+placeholder_36|309800288|1|Kraft Foods Cadburry|Dentyne Ice|Arctic Chill|||United States|0
+placeholder_37|531574031|1|Kraft Foods Cadburry|Dentyne Ice|Mint Frost|||United States|0
+placeholder_38|9071004|1|Kraft Foods Cadburry|Dentyne Fire|Spicy Cinnamon|||United States|0
+placeholder_39|481892804|1|Kraft Foods Cadburry|Dentyne Pure|Mint with Melon|||United States|0
+placeholder_40|487965270|1|Kraft Foods Cadburry|Dentyne Pure|Mint with Herbal|||United States|0
+placeholder_41|665791047|1|Kraft Foods Cadburry|Dentyne Pure|Mint with Citrus|||United States|0
+placeholder_42|830453047|1|Kraft Foods Cadburry|Stride|Whitemint|||United States|0
+placeholder_43|713534636|1|Kraft Foods Cadburry|Stride Spark|Kinetic Fruit|||United States|0
+placeholder_44|719653015|1|Kraft Foods Cadburry|Stride Spark|Kinetic Mint|||United States|0
+placeholder_45|318149497|1|Kraft Foods Cadburry|Stride Shift|Berry to Mint|||United States|0
+placeholder_46|949239076|1|Kraft Foods Cadburry|Stride Shift|Citrus to Mint|||United States|0
+placeholder_47|72356977|1|Kraft Foods Cadburry|Stride 2.0|Winterblue|||United States|0
+placeholder_48|695641063|1|Kraft Foods Cadburry|Stride 2.0|Uber Bubble|||United States|0
+placeholder_49|679987520|1|Kraft Foods Cadburry|Stride 2.0|Sweet Peppermint|||United States|0
+placeholder_50|691006619|1|Kraft Foods Cadburry|Stride 2.0|Sweet Cinnamon|||United States|0
+placeholder_51|819759746|1|Kraft Foods Cadburry|Stride 2.0|Sweet Berry|||United States|0
+placeholder_52|255051496|1|Kraft Foods Cadburry|Stride 2.0|Spearmint|||United States|0
+placeholder_53|642756030|1|Kraft Foods Cadburry|Stride 2.0|Nonstop Mint|||United States|0
+placeholder_54|10060029|1|Kraft Foods Cadburry|Stride 2.0|Forever Fruit|||United States|0
+placeholder_55|427699365|1|Kraft Foods Cadburry|Stride|Mega Mystery|||United States|0
+placeholder_56|180544940|1|Kraft Foods Cadburry|Adam's Chiclets|fruit|||United States|0
+placeholder_57|617808242|1|Kraft Foods Cadburry|Adam's Chiclets|fruit (tiny size)|||United States|0
+placeholder_58|433211398|1|Kraft Foods Cadburry|Adam's Chiclets|peppermint|||United States|0
+placeholder_59|187261175|1|Kraft Foods Cadburry|Adam's Chiclets|spearmint|||United States|0
+placeholder_60|256799996|1|Mars Inc Wrigley|Extra Dessert Delights|Apple Pie|||United States|0
+placeholder_61|916305888|1|Mars Inc Wrigley|Extra Dessert Delights|Orange Creme Pop|||United States|0
+placeholder_62|33877170|1|Mars Inc Wrigley|Extra Dessert Delights|Mint Chocolate Chip|||United States|0
+placeholder_63|181746216|1|Mars Inc Wrigley|Extra Dessert Delights|Strawberry Shortcake|||United States|0
+placeholder_64|924193457|1|Mars Inc Wrigley|Extra Dessert Delights|Key Lime Pie|||United States|0
+placeholder_65|780204065|1|Mars Inc Wrigley|Extra Fruit Sensations|Sweet Watermelon|||United States|0
+placeholder_66|793852083|1|Mars Inc Wrigley|Extra Fruit Sensations|Sweet Tropical|||United States|0
+placeholder_67|673105203|1|Mars Inc Wrigley|Extra|Spearmint|||United States|0
+placeholder_68|31415983|1|Mars Inc Wrigley|Extra|Peppermint|||United States|0
+placeholder_69|241976731|1|Mars Inc Wrigley|Extra|Polar Ice|||United States|0
+placeholder_70|789493457|1|Mars Inc Wrigley|Extra|Smooth Mint|||United States|0
+placeholder_71|821917343|1|Mars Inc Wrigley|Extra|Winterfresh|||United States|0
+placeholder_72|236283771|1|Mars Inc Wrigley|Extra|Classic Bubble|||United States|0
+placeholder_73|862450807|1|Mars Inc Wrigley|5 Gum|Rain|||United States|0
+placeholder_74|981374557|1|Mars Inc Wrigley|5 Gum|Cobalt|||United States|0
+placeholder_75|286196869|1|Mars Inc Wrigley|5 Gum|Flare|||United States|0
+placeholder_76|148095194|1|Mars Inc Wrigley|5 Gum|Elixir|||United States|0
+placeholder_77|707345745|1|Mars Inc Wrigley|5 Gum|Solstice|||United States|0
+placeholder_78|832281670|1|Mars Inc Wrigley|5 Gum|React Fruit|||United States|0
+placeholder_79|401573794|1|Mars Inc Wrigley|5 Gum|React Mint|||United States|0
+placeholder_80|855524410|1|Mars Inc Wrigley|5 Gum|Prism|||United States|0
+placeholder_81|481390443|1|Mars Inc Wrigley|5 Gum|Vortex|||United States|0
+placeholder_82|365140377|1|Mars Inc Wrigley|5 Gum|Swerve|||United States|0
+placeholder_83|257980488|1|Mars Inc Wrigley|5 Gum|RPM Fruit|||United States|0
+placeholder_84|546317172|1|Mars Inc Wrigley|5 Gum|RPM Mint|||United States|0
+placeholder_85|766501548|1|Mars Inc Wrigley|Wrigley's Big Red|Cinnamon|||United States|0
+placeholder_86|827664031|1|Mars Inc Wrigley|Wrigley's Doublemint|Mint|||United States|0
+placeholder_87|405161690|1|Mars Inc Wrigley|Eclipse|Spearmint|||United States|0
+placeholder_88|818669679|1|Mars Inc Wrigley|Eclipse|Polar Ice|||United States|0
+placeholder_89|620837297|1|Mars Inc Wrigley|Eclipse|Peppermint|||United States|0
+placeholder_90|572955734|1|Mars Inc Wrigley|Eclipse|Winterfrost|||United States|0
+placeholder_91|863055355|1|Mars Inc Wrigley|Freedent|Peppermint|||United States|0
+placeholder_92|127930392|1|Mars Inc Wrigley|Freedent|Spearmint|||United States|0
+placeholder_93|245907784|1|Mars Inc Wrigley|Freedent|Winterfresh|||United States|0
+placeholder_94|950167897|1|Mars Inc Wrigley|Hubba Bubba Max|Outrageous Original|||United States|0
+placeholder_95|828972359|1|Mars Inc Wrigley|Hubba Bubba Max|Strawberry Watermelon|||United States|0
+placeholder_96|960164292|1|Mars Inc Wrigley|Hubba Bubba Max|Sweet & Sassy Cherry|||United States|0
+placeholder_97|633010194|1|Mars Inc Wrigley|Hubba Bubba Max|Mystery Flavor|||United States|0
+placeholder_98|44331252|1|Mars Inc Wrigley|Hubba Bubba Squeeze Pop|Assorted Sour Flavors|||United States|0
+placeholder_99|124272209|1|Mars Inc Wrigley|Hubba Bubba Bubble Tape|Awesome Original|||United States|0
+placeholder_100|658027326|1|Mars Inc Wrigley|Hubba Bubba Bubble Tape|Snappy Strawberry|||United States|0
+placeholder_101|495298543|1|Mars Inc Wrigley|Hubba Bubba Bubble Tape|Sour Apple|||United States|0
+placeholder_102|298151496|1|Mars Inc Wrigley|Hubba Bubba Bubble Tape|Triple Treat|||United States|0
+placeholder_103|769583191|1|Mars Inc Wrigley|Hubba Bubba Bubble Tape|Tangy Tropical|||United States|0
+placeholder_104|440212999|1|Mars Inc Wrigley|Hubba Bubba Bubble Tape|Mystery Flavor|||United States|0
+placeholder_105|399704543|1|Mars Inc Wrigley|Hubba Bubba OUCH!|Bubble Gum|||United States|0
+placeholder_106|615282530|1|Mars Inc Wrigley|Wrigley's Juicy Fruit|Juicy Secret|||United States|0
+placeholder_107|853577828|1|Mars Inc Wrigley|Wrigley's Juicy Fruit|Original|||United States|0
+placeholder_108|484371|1|Mars Inc Wrigley|Wrigley's Juicy Fruit|Sweet Fruit|||United States|0
+placeholder_109|3638893|1|Mars Inc Wrigley|Wrigley's Juicy Fruit|Sweet Berry|||United States|0
+placeholder_110|61060985|1|Mars Inc Wrigley|Wrigley's Juicy Fruit|Groovy Fruity|||United States|0
+placeholder_111|220486665|1|Mars Inc Wrigley|Orbit|Peppermint|||United States|0
+placeholder_112|114342281|1|Mars Inc Wrigley|Orbit|Spearmint|||United States|0
+placeholder_113|571094498|1|Mars Inc Wrigley|Orbit|Bubblemint|||United States|0
+placeholder_114|309311259|1|Mars Inc Wrigley|Orbit|Wintermint|||United States|0
+placeholder_115|996589723|1|Mars Inc Wrigley|Orbit|Cinnamint|||United States|0
+placeholder_116|85852127|1|Mars Inc Wrigley|Orbit|Sweetmint|||United States|0
+placeholder_117|503837348|1|Mars Inc Wrigley|Orbit|Maui Melon Mint|||United States|0
+placeholder_118|588626773|1|Mars Inc Wrigley|Orbit|Wildberry Remix|||United States|0
+placeholder_119|295807916|1|Mars Inc Wrigley|Orbit|Melon Remix|||United States|0
+placeholder_120|473216370|1|Mars Inc Wrigley|Orbit|Tropical Remix|||United States|0
+placeholder_121|992330260|1|Mars Inc Wrigley|Orbit|Strawberry Remix|||United States|0
+placeholder_122|260231725|1|Mars Inc Wrigley|Orbit Mist|Raspberry Lemon Dew|||United States|0
+placeholder_123|994567772|1|Mars Inc Wrigley|Orbit Mist|Peppermint Spray|||United States|0
+placeholder_124|581604369|1|Mars Inc Wrigley|Orbit Mist|Spearmint Spritzer|||United States|0
+placeholder_125|580961575|1|Mars Inc Wrigley|Orbit Mist|Watermelon Spring|||United States|0
+placeholder_126|56647454|1|Mars Inc Wrigley|Orbit Mist|Crisp Mint Waterfall|||United States|0
+placeholder_127|15350079|1|Mars Inc Wrigley|Orbit White|Bubblemint|||United States|0
+placeholder_128|692649166|1|Mars Inc Wrigley|Orbit White|Peppermint|||United States|0
+placeholder_129|276206620|1|Mars Inc Wrigley|Orbit White|Spearmint|||United States|0
+placeholder_130|280695476|1|Mars Inc Wrigley|Wrigley's Winterfresh|Winterfresh|||United States|0
+placeholder_131|573409953|1|Mars Inc Wrigley|Wrigley's Spearmint|Spearmint|||United States|0

@@ -1,0 +1,22 @@
+<% title "Welcome - Contact Info" %>
+<% description "Intl Gum toll free contact phone number and email address." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("About", welcomes_about_path, :class => 'link_button') %></li>
+	<li><%= link_to("FAQs", welcomes_faq_path, :class => 'link_button') %></li>
+	<li><%= link_to("News", welcomes_news_path, :class => 'link_button') %></li>
+<% end %>
+
+<h1>Contact Info</h1>	
+
+<div id="phone_pre">Toll Free #</div>
+<div id="phone">(855) GUM-4YOU</div>
+<div id="phone_post">4 8 6 - 4 9 6 8</div>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
+
+email: <div id="email"><a href="mailto:support@intlgum.com?Subject=Hello%20Intl%20Gum">support@intlgum.com</a></div>
+

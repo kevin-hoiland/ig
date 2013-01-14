@@ -1,0 +1,20 @@
+<header id="page_header" role="banner">
+  <nav id="utility">
+	<% if user_signed_in? %>
+	  Signed in as <strong><%= current_user.email %></strong>
+	  <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete', :class => 'header_button' %>
+	<% else %>
+	  Viewing as a <strong>Guest</strong>
+	  <%= link_to "Create Account", new_user_registration_path, :class => 'header_button' %> or <%= link_to "Sign In", new_user_session_path, :class => 'header_button' %>
+	<% end %>
+	<% if admin_user_signed_in? %>
+	  ADMIN = <strong><%= current_admin_user.email %></strong>
+	  <%= link_to "Sign Out", destroy_admin_user_session_path, :method => 'delete', :class => 'header_button' %>
+	<% end %>
+  </nav>
+<!--  < % = link_to "Intl Gum", root_path, :id => 'title' %> -->
+	<p id="trademark">TM</p>  <!-- &trade; -->
+  <%= link_to image_tag("intl_header_v11.jpg", :title => "International Gum"), root_path %>
+
+  	<%= yield :main_nav %>
+</header>

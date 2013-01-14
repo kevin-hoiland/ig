@@ -1,0 +1,17 @@
+<% title "Welcome - FAQs" %>
+<% description "Intl Gum frequently asked questions and answers." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("About", welcomes_about_path, :class => 'link_button') %></li>
+	<li><%= link_to("Contact", welcomes_contact_info_path, :class => 'link_button') %></li>
+	<li><%= link_to("News", welcomes_news_path, :class => 'link_button') %></li>
+<% end %>
+
+<h1>Frequently Asked Questions</h1>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
+
+

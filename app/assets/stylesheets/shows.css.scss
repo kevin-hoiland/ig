@@ -1,0 +1,92 @@
+img#gum_image {
+	//width: 75px;
+	//height: 75px;
+}
+#vote_results_bubble {
+	font-size: 20px;
+	margin: 0;
+  padding: 0;
+	color: $button_color;
+}
+#vote_results_bust {
+	font-size: 20px;
+	margin: 0;
+  padding: 0;
+	color: $nav_background;
+}
+#vote_text {
+	float: right;
+	margin: 0 0 5px 0;
+	//color: $nav_background;
+}
+#vote_container {
+	clear: both;
+}
+.vote_bubble {	 
+	float: right;  
+	font-size: 20px;
+	margin: 0;
+  padding: 0 10px 0 0;
+  background: url("/assets/bubble3.png") no-repeat;
+	background-repeat: no-repeat;
+	background-size: 48px 48px;
+	color: $button_color;
+	a, a:link, a:visited {
+		display: block;
+	  width: 48px;
+	  height: 48px;
+	}
+	a:hover img {
+		visibility: hidden;
+	}
+	a:hover {
+		visibility: visible;
+	}
+}
+
+.vote_bust {
+	float: right;  
+	font-size: 20px;
+  margin:0;
+  padding: 0 10px 0 0;
+  background:url("/assets/bust3.png") no-repeat;
+  background-repeat: no-repeat;
+	background-size:48px 48px;
+	color: $nav_background;
+	a, a:link, a:visited {
+		display: block;
+	  width: 48px;
+	  height: 48px;
+	}
+	a:hover img {
+		visibility: hidden;
+	}
+	a:hover {
+		visibility: visible;
+	}
+}
+
+#average_ratings{
+	margin: 5px 0px 5px 0px;
+  padding: 0px;
+	font-size: 24px;  
+	list-style-type: none;
+		li {
+			width: 100px;
+			@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
+			@include border-radius(10px);
+			float: left;
+			text-align: center;
+			padding: 5px;
+			margin: 0px 5px 5px 5px;
+			.header {
+				font-size: 12px;
+			}
+		}
+}
+
+#ratings_count {
+	clear: both;
+	font-size: 12px;
+	color: rgb(0, 114, 188);
+}

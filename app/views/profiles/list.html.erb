@@ -1,0 +1,65 @@
+<% title "Members List" %>
+<% description "List of all Intl Gum Members along with their gum rating and voting stats." %>
+<%= currently_at 'Members' %>
+
+<% content_for :sub_nav do %>
+<% end %>
+
+<% content_for :search do %>
+  <h4>Search Members</H4>
+  <%= search_form_for @search_profiles do |f| %>
+<ul id="member">
+    <li><%= f.label :name, "Name" %></li>
+    <li><%= f.text_field :name_cont %></li>
+    <li><%= f.label :location, "Location" %></li>
+    <li><%= f.text_field :location_cont %></li>
+    <li><%= f.label :born, "Born" %></li>
+    <li><%= f.date_select :born_eq, :start_year => 1900, :end_year => Time.now.year, :discard_month => true, :discard_day => true, :include_blank => true %></li>
+    <li><%= f.label :sex, "Sex" %></li>
+    <li><% f.checks :sex_in, [['Male', "Male"], ["Female", "Female"] , ['Other', "Other"]] do |check| %>
+		<ul id="sex">
+			<li class="sex_label"><%= check.label %></li>
+			<li class="sex_input"><%= check.box %></li>
+		</ul>
+	<% end %></li>
+    <li><%= f.label :story, "Story" %></li>
+    <li><%= f.text_field :story_cont %></li>
+</ul>
+    <!-- add "when do and when don't (chew gum, duh)"-->
+    <%= f.submit :class => 'search_button' %>
+  <% end %>
+<% end %>
+
+<h1>Member List</h1>
+<!--
+< % @profiles_list.each do |p| %>
+	<ul id="member_list">
+		<li>Alias: < %= p.name %></li>
+		<li># votes UP, # votes DOWN, # Gums Rated</li>
+		<li>< %= link_to "View Details", profile_path(p) %>
+	</ul>
+< % end %>
+-->
+<% @profiles_list.each do |p| %>
+	<ul class="list_container">	
+		<li>
+			<ul class="list_links">
+				<li><%= link_to "Member Details", profile_path(p), :class => 'list_row_link' %></li>
+			</ul>
+		</li>
+		<li>
+			<ul class="member_list">
+				<li class = "score"><div class = "header">Votes UP</div><%= p.user.vote_count(:up) %></li>
+				<li class = "score"><div class = "header">Votes DOWN</div><%= p.user.vote_count(:down) %></li>
+				<li class = "score"><div class = "header">Gums Rated</div><%= p.gums.count %></li>
+				<li><%= p.name %></li>
+				<li class = "comment"><%= p.story %></li>
+			</ul>
+		</li>
+	</ul>
+<% end %>
+
+<%= paginate @profiles_list %>
+<p iD = "page_info"><%= (page_entries_info @profiles_list, :entry_name => 'Members').html_safe %></p>
+<%= paginate @profiles_list %>
+

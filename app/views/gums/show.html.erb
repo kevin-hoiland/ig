@@ -1,0 +1,102 @@
+<% title "#{permalink_humanize(@gum.permalink)}" %>
+<% description "Detailed information about #{permalink_humanize(@gum.permalink)}, along with average ratings and vote results." %>
+<%= currently_at 'Gums' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
+	<li><%= link_to("View All Ratings", gum_ratings_path(@gum.permalink), :class => 'link_button') %></li>
+	<% if user_signed_in? %>
+		<li><%= link_to("Rate This Gum", new_rating_path(@gum.permalink), :class => 'link_button') %></li>
+	<% end %>
+<% end %>
+
+<% if user_signed_in? %>
+	<div id="vote_text">Vote Bubble or Bust</div>
+	<div id="vote_container">
+	<% if current_user.voted_for?(@gum) %>
+		<div class = "vote_bust">
+			<%= link_to image_tag("bust_grey3.png", :title => "Bust", :size => "48x48"), vote_gum_down_path(@gum.permalink), :method => :post %>
+		</div>
+		<div class = "vote_bubble">
+			<a href="#"><%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %></a>
+		</div>
+	<% elsif current_user.voted_against?(@gum) %>
+		<div class = "vote_bust">
+			<a href='#'><%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %></a>
+		</div>
+		<div class = "vote_bubble">
+			<%= link_to image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48"), vote_gum_up_path(@gum.permalink), :method => :post %>
+		</div>
+	<% else %>
+		<div class = "vote_bust">
+			<%= link_to image_tag("bust_grey3.png", :title => "Bust", :size => "48x48"), vote_gum_down_path(@gum.permalink), :method => :post %>
+		</div>
+		<div class = "vote_bubble">
+			<%= link_to image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48"), vote_gum_up_path(@gum.permalink), :method => :post %>
+		</div>
+	<% end %>
+	</div>
+<% end %>
+<h1 id="no_clear"><Gum Details><%= permalink_humanize(@gum.permalink) %></h1>
+
+<!-- prior way, before using carrierwave and fog 
+< %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image') %>
+-->
+<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
+
+<h2>Average Gum Ratings</h2>
+<div id = "vote_results_bubble">
+	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<%= @votes_up_total %>
+</div>
+<div id = "vote_results_bust">
+	<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<%= @votes_down_total %>
+</div>
+
+<ul id="average_ratings">
+	<li>
+		<div class = "header">Gumtation</div>
+		<%= @rating_averages[0].blank? ? "n/a" : @rating_averages[0].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Initial Gumalicious</div>
+		<%= @rating_averages[1].blank? ? "n/a" : @rating_averages[1].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Overall Gumalicious</div>
+		<%= @rating_averages[2].blank? ? "n/a" : @rating_averages[2].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Gumalicious Gumgevity</div>
+		<%= @rating_averages[3].blank? ? "n/a" : @rating_averages[3].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Flavoracity</div>
+		<%= @rating_averages[4].blank? ? "n/a" : @rating_averages[4].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Initial Chewlasticity</div>
+		<%= @rating_averages[5].blank? ? "n/a" : @rating_averages[5].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Overall Chewlasticity</div>
+		<%= @rating_averages[6].blank? ? "n/a" : @rating_averages[6].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Chewlasticity Gumgevity</div>
+		<%= @rating_averages[7].blank? ? "n/a" : @rating_averages[7].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Bubbability</div>
+		<%= @rating_averages[8].blank? ? "n/a" : @rating_averages[8].round(2) %>
+	</li>
+	<li>
+		<div class = "header">Breathalation</div>
+		<%= @rating_averages[9].blank? ? "n/a" : @rating_averages[9].round(2) %>
+	</li>
+</ul>
+<p id="ratings_count"><%= @rating_count %> Total Ratings</p>
+
+
+

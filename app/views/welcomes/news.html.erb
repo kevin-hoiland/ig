@@ -1,0 +1,17 @@
+<% title "Welcome - News" %>
+<% description "Intl Gum in the news, summary info and links." %>
+<%= currently_at 'Home' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to("About", welcomes_about_path, :class => 'link_button') %></li>
+	<li><%= link_to("Contact", welcomes_contact_info_path, :class => 'link_button') %></li>
+	<li><%= link_to("FAQs", welcomes_faq_path, :class => 'link_button') %></li>
+<% end %>
+
+<h1>In The News</h1>
+
+<% @content.each do |c| %>
+	<%= c.sequence % 2 == 1 ? ("<div class='news'>").html_safe : "" %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+	<%= c.sequence % 2 == 1 ? ("</div>").html_safe : "" %>
+<% end %>

@@ -1,0 +1,26 @@
+<% title "Subscriptions List" %>
+<% description "List of Gums for every monthly Subscription shipment." %>
+<%= currently_at 'Subscriptions' %>
+
+<% content_for :sub_nav do %>
+	<% if signed_in? %>
+		<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : 			link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+	<% end %>
+<% end %>
+
+<h1>Prior Monthly Subscription Contents</h1>
+
+<% @content.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
+
+<hr />
+
+<% if @subscriptions.empty? %>
+	No prior monthly subscription info yet. Past subscription details are coming soon!
+<% else %>
+	<% @subscriptions.each do |s| %>
+		Subscription # <%="#{s.id}" %> <br \>
+	<% end %>
+<% end %>
+

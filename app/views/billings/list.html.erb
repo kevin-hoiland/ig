@@ -1,0 +1,31 @@
+<% title "Your Private Active Subscriptions" %>
+<% description "Member's page for viewing all their Active Subscriptions." %>
+<%= currently_at 'Members' %>
+
+<% content_for :sub_nav do %>
+	<li><%= link_to "Create New Subscription", new_billing_path, :class => 'link_button' %></li>
+<% end %>
+
+<h1>Your Private Active Subscriptions List</h1>
+<% @subscription_list.each do |s| %>
+	<ul class="list_container">	
+		<li>
+			<ul class="list_links">
+				<li><%= link_to "View/Edit", edit_billing_path(s.subscription_number), :class => 'list_row_link' %></li>
+				<li><%= link_to "Cancel/Delete", delete_billing_path(s.subscription_number), :class => 'list_row_link' %></li>
+			</ul>
+		</li>
+		<li>
+			<ul class="member_list">
+				<li>ID #<%= s.subscription_number %>: <%= s.subscription_name %></li>
+				<li>Card #: x<%= s.last_four %></li>
+				<li>Subscription Created: <%= s.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
+				<li>Last Updated: <%= s.updated_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
+			</ul>
+		</li>
+	</ul>
+<% end %>
+
+<p iD = "page_info"><%= (page_entries_info @subscription_list, :entry_name => 'Subscription').html_safe %></p>
+<%= paginate @subscription_list %>
+

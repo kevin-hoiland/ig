@@ -1,0 +1,30 @@
+<% title "Edit Prior Rating for #{permalink_humanize(@gum.permalink)}" %>
+<% description "Member's page for editing already created gum rating ##{@changed_rating.id}." %>
+<%= currently_at 'Gums' %>
+
+<% content_for :sub_nav do %>
+	<% if user_signed_in? %>
+		<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
+		<li><%= link_to "Gum Details", gum_path(@gum.permalink), :class => 'link_button' %></li>
+		<li><%= link_to("View All Ratings", gum_ratings_path(@gum.permalink), :class => 'link_button') %></li>
+	<% end %>
+<% end %>
+
+<h1>Edit Previous Rating:</br><%=permalink_humanize(@gum.permalink) %></h1>
+<%= render(:partial => 'shared/error_messages', :locals => {:object => @changed_rating}) %>
+
+<%= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}",:id => 'gum_image') %>
+
+<%= semantic_form_for @changed_rating do |r| %>
+	<%= r.inputs do %>
+		<%= render(:partial => "shared/ratings_form", :locals => {:r => r}) %>
+	<% end %>
+	<%= r.actions do %>
+		<%= r.action :submit, :label => "Update Rating", :as => :button %>
+		<%= r.action :cancel, :label => "Cancel", :as => :link %>
+	<% end %>
+ <% end %>
+
+<!--
+stat_1, stat_2, stat_3, comment
+-->
