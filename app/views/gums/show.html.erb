@@ -44,6 +44,8 @@
 -->
 <%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
 
+<%= debug @gum %>
+
 <h2>Average Gum Ratings</h2>
 <div id = "vote_results_bubble">
 	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>

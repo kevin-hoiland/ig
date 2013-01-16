@@ -15,6 +15,6 @@ class CreateGums < ActiveRecord::Migration
       t.string "image"
       t.timestamps
     end
-    add_index :gums, ['upc']
+    add_index :gums, ['permalink']
   end
 end

@@ -20,8 +20,8 @@
     <li><%= f.text_field :flavor_cont, :maxlength => 50 %></li>
     <li><%= f.label :description_cont, "Description" %></li>
     <li><%= f.text_field :description_cont, :maxlength => 50 %></li>
-    <li><%= f.label :note, "Notes" %></li>
-    <li><%= f.text_field :note_cont, :maxlength => 50 %></li>
+    <li><%= f.label :country, "Country" %></li>
+    <li><%= f.select :country_eq, ["","United States","Canada","United Kingdom"]  %></li>
     <li><%= f.label :upc_cont, "UPC" %></li>
     <li><%= f.text_field :upc_cont, :maxlength => 50 %></li>
     <!-- etc... -->

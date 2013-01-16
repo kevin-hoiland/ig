@@ -10,7 +10,7 @@ class Gum < ActiveRecord::Base
 
   #from : http://erniemiller.org/2012/05/11/why-your-ruby-class-macros-might-suck-mine-did/
   def self.ransackable_attributes(auth_object = nil)
-    super & ['upc', 'active', 'brand', 'flavor', 'note', 'description']
+    super & ['upc', 'active', 'brand', 'flavor', 'country', 'description']
   end
   
     has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"
@@ -19,8 +19,9 @@ class Gum < ActiveRecord::Base
     has_many :votes
   #  accepts_nested_attributes_for :gum_rating_relationships #allow_destroy => true
 
-    validates :upc, :length => { :within => 6..255 }, :uniqueness => true, :presence => true
-
+  #  validates :upc, :length => { :within => 6..255 }, :uniqueness => true, :presence => true
+    validates :permalink, :uniqueness => true, :presence => true
+    
     acts_as_voteable
     
     scope :search_upc, lambda {|upc| where(["upc LIKE ?", "%#{upc}%"])}
