@@ -140,4 +140,25 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+  
+  
+  # please work!! lol
+  # Active Admin makes educated guesses when displaying objects, this is
+  # the list of methods it tries calling in order
+  module ActiveAdmin
+    class Application
+      include Settings
+        setting :display_name_methods, [ :permalink,
+                                          :date,
+                                          :display_name,
+                                          :full_name,
+                                          :name,
+                                          :username,
+                                          :login,
+                                          :title,
+                                          :email,
+                                          :to_s ]
+    end
+  end
+    
 end

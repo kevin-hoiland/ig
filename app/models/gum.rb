@@ -14,8 +14,9 @@ class Gum < ActiveRecord::Base
   end
   
     has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"
+    has_many :gum_shipment_relationships
     has_many :profiles, :through => :gum_rating_relationsihps
-    has_and_belongs_to_many :shipments
+    has_and_belongs_to_many :shipments, :join_table => :gum_shipments
     has_many :votes
   #  accepts_nested_attributes_for :gum_rating_relationships #allow_destroy => true
 

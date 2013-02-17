@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
   end
   
   def list
-    @subscriptions = Shipment.all
+    @shipments = Shipment.page(params[:page]).order("date DESC")
     @content = DynamicText.content("subscription")
   end
   

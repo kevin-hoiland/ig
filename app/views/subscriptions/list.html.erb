@@ -4,23 +4,43 @@
 
 <% content_for :sub_nav do %>
 	<% if signed_in? %>
-		<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : 			link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+		<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+	<% else %>
+		<li><%= link_to "Create Subscription", new_billing_path, :class => 'link_button' %></li>
 	<% end %>
 <% end %>
 
-<h1>Prior Monthly Subscription Contents</h1>
+<h1>Monthly Subscription Contents</h1>
 
 <% @content.each do |c| %>
 	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
 <% end %>
 
-<hr />
-
-<% if @subscriptions.empty? %>
+<% if @shipments.empty? %>
 	No prior monthly subscription info yet. Past subscription details are coming soon!
 <% else %>
-	<% @subscriptions.each do |s| %>
-		Subscription # <%="#{s.id}" %> <br \>
+	<% @shipments.each do |s| %>
+		<ul class="list_container">
+		<li>
+			<ul class="shipment_list">
+				<li class="count">
+					Total Gum Pieces: <%= s.get_monthly_pieces(s.id) %>
+				</li>
+				<li class="shipment_header">
+					<%= s.month_formatted(s.date) %>
+				</li>
+				<li class="shipment_gums">
+					<% s.get_monthly_gums(s.id).each do |g| %>
+					  <%= link_to image_tag(g.gum.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.gum.permalink)}"), gum_path(g.gum.permalink), :class => 'sub_gum_logos' %>
+					<!-- this one works
+						< %= image_tag(g.gum.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.gum.permalink)}", :class => 'sub_gum_logos') %>
+					-->
+					<% end %>
+				</li>
+			</ul><!-- end shipments_list-->
+		</li>
+		</ul><!-- end list_container-->
 	<% end %>
 <% end %>
-
+<%= paginate @shipments %>
+<p id = "page_info"><%= (page_entries_info @shipments, :entry_name => 'Shipments').html_safe %></p>

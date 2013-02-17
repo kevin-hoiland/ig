@@ -6,6 +6,8 @@ ActiveAdmin.register Gum do
   menu :label => "Gums"
   menu :parent => "Product Info"
 
+#  config.per_page = 50
+  
 #  filter :gums_id, :as => :select, :collection => proc { Gums.all }
 
 begin

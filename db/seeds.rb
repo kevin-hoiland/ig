@@ -18,7 +18,7 @@ File.open("db/initial_text.txt", "r") do |defaults|
 end
 
 # Create default set of gums
-File.open("db/initial_gums4.txt", "r") do |gums|
+File.open("db/initial_gums4_mini.txt", "r") do |gums|
   gums.read.each_line do |gum|
     permalink, upc, active, company, brand, flavor, description, note, country, new_release, image = gum.chomp.split("|")
     # Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release)

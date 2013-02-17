@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728171504) do
+ActiveRecord::Schema.define(:version => 20130216181413) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -121,6 +121,16 @@ ActiveRecord::Schema.define(:version => 20120728171504) do
 
   add_index "gum_rating_relationships", ["profile_id", "gum_id"], :name => "index_gum_rating_relationships_on_profile_id_and_gum_id"
 
+  create_table "gum_shipment_relationships", :force => true do |t|
+    t.integer  "gum_id"
+    t.integer  "shipment_id"
+    t.integer  "pieces"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "gum_shipment_relationships", ["gum_id", "shipment_id"], :name => "index_gum_shipment_relationships_on_gum_id_and_shipment_id"
+
   create_table "gums", :force => true do |t|
     t.string   "permalink",                       :null => false
     t.string   "upc",                             :null => false
@@ -138,7 +148,7 @@ ActiveRecord::Schema.define(:version => 20120728171504) do
     t.datetime "updated_at",                      :null => false
   end
 
-  add_index "gums", ["upc"], :name => "index_gums_on_upc"
+  add_index "gums", ["permalink"], :name => "index_gums_on_permalink"
 
   create_table "gums_shipments", :id => false, :force => true do |t|
     t.integer "gum_id"
@@ -164,14 +174,14 @@ ActiveRecord::Schema.define(:version => 20120728171504) do
 
   create_table "shipments", :force => true do |t|
     t.date     "date"
-    t.decimal  "product_cost",   :precision => 10, :scale => 0
-    t.decimal  "shipping_cost",  :precision => 10, :scale => 0
-    t.decimal  "labor_cost",     :precision => 10, :scale => 0
-    t.decimal  "sales_tax_cost", :precision => 10, :scale => 0
-    t.decimal  "donations_cost", :precision => 10, :scale => 0
-    t.decimal  "other_costs",    :precision => 10, :scale => 0
-    t.decimal  "income",         :precision => 10, :scale => 0
-    t.decimal  "profit",         :precision => 10, :scale => 0
+    t.decimal  "product_cost",   :precision => 10, :scale => 2
+    t.decimal  "shipping_cost",  :precision => 10, :scale => 2
+    t.decimal  "labor_cost",     :precision => 10, :scale => 2
+    t.decimal  "sales_tax_cost", :precision => 10, :scale => 2
+    t.decimal  "donations_cost", :precision => 10, :scale => 2
+    t.decimal  "other_costs",    :precision => 10, :scale => 2
+    t.decimal  "income",         :precision => 10, :scale => 2
+    t.decimal  "profit",         :precision => 10, :scale => 2
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
   end
