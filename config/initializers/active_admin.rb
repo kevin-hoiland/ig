@@ -14,6 +14,10 @@ ActiveAdmin.setup do |config|
     end
   end
   
+  # change the footer...    <---  Should probably do this, need new active admin gem tho
+  # http://reverbhq.com/blog/2012/08/building-web-apps-with-activeadmin/
+  # http://reverbhq.com/blog/2012/08/activeadmin-0-5-0-is-released/
+  
   # == Site Title
   #
   # Set the title that is displayed on the main layout

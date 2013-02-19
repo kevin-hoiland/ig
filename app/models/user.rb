@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :timeoutable,
+  devise :database_authenticatable, :registerable, :timeoutable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
@@ -22,7 +22,11 @@ class User < ActiveRecord::Base
   # You can track any voteable model.
   # has_karma(:questions, :as => :submitter, :weight => 0.5)
   
-  after_create :add_profile
+  def confirm!
+    add_profile
+    super
+  end
+  #after_create :add_profile
 
   
   #after_commit :add_other_info
@@ -35,7 +39,10 @@ class User < ActiveRecord::Base
     def add_profile
       profile = Profile.new
       profile.user_id = self.id
-      profile.save
+      profile.save  # potential failure here... hmmmmmmmm :(
+      # Tell the UserMailer to send a welcome Email after save
+      # UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(self).deliver
     end
     
     

@@ -14,10 +14,11 @@ IntlGum2::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true ###  made this 'true' so i could see errors lol
   # default url options (suggest from 'rails generate devise_install')
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
+#  config.action_mailer.default_url_options = { :host => 'smtp.gmail.com' }
+  
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 

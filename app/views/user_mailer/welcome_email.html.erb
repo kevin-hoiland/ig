@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Intl Gum!</h1>
+    <p>
+      You have successfully signed up to intlgum.com,
+      your login account is: <%= @user.email %>.<br/>
+    </p>	
+    <p>
+      To login to the site, just follow this link: <%= @login_url %>.
+    </p>
+    <p>
+      You can view your public member info here: <%= @view_self_url %>.<br/>
+    </p>
+    <p>
+      You can edit your public member info here: <%= @edit_self_url %>.<br/>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

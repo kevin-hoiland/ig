@@ -18,7 +18,8 @@ ActiveAdmin.register User do
     end
     f.buttons
   end
-  
+
+=begin 
   show do
           panel "User Details" do
                   attributes_table_for user, 
@@ -35,5 +36,6 @@ ActiveAdmin.register User do
                           :updated_at
           end
   end
+=end
   
 end
