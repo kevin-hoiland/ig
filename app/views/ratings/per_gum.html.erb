@@ -26,3 +26,7 @@
 
 <%= paginate @ratings %>
 <p id = "page_info"><%= (page_entries_info @ratings, :entry_name => 'Ratings').html_safe %></p>
+
+<% @content_legal.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>

@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cycle.all.js
 //= require_tree .

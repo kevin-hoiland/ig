@@ -1,41 +1,37 @@
 class Profile < ActiveRecord::Base
-
+  
+  ############  attributes  ############
+  
   attr_accessible :name, :sex, :location, :born, :story
   attr_accessible :user_id, :name, :location, :born, :sex, :story, as: :admin
   
+  def self.ransackable_attributes(auth_object = nil)
+    super & ['name', 'location', 'brand', 'born', 'note', 'sex', 'story']
+  end    
+  
   attr_accessor :reason
+  
+  ############  validations  ############
   
   validates :name, :length => { :within => 0..100 }
   validates_uniqueness_of :name, :allow_nil => true, :allow_blank => true
+#  validates :location, :length => { :maximum => 255 }
+#  validates_inclusion_of :sex, :in => ["", "Male", "Female", "Other"]
+#  validates :story, :length => { :maximum => 500 } # also enforced in View form
   
-  def self.ransackable_attributes(auth_object = nil)
-    super & ['name', 'location', 'brand', 'born', 'note', 'sex', 'story']
-  end
-  
-#  validates :location, :length => { :within => 0..100 }
-#  validates :story, :length => { :within => 0..2000 }
+  ############  associations  ############
   
   belongs_to :user
-  #has_one :billing
   has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"
   has_many :gums, :through => :gum_rating_relationships
   
+  ############  scopes  ############
+  
   scope :active_subscriber, where("(subscriptions_created - subscriptions_deleted) > 0")
   scope :not_subscribed, where("(subscriptions_created - subscriptions_deleted) = 0")
-  #after_create :add_billing
-  
-  #private
-  
-  #def add_billing
-  #  billing = Billing.new
-  #  billing.user_id = self.user_id
-  #  billing.save
-  #end
-  
-  
-#  scope :location, lambda {|location| where(["location LIKE ?", "%#{location}%"])}
-#  scope :name, lambda {|name| where(["alias LIKE ?", "%#{name}%"])}
-#  scope :search_email, lambda {|email| where(["email LIKE ?", "%#{email}%"])}
-#  scope :subscriber, where(:subscriber => true) 
-  
+  # scope :subscriber, where(:subscriber => true)   
+  # scope :location, lambda {|location| where(["location LIKE ?", "%#{location}%"])}
+  # scope :name, lambda {|name| where(["alias LIKE ?", "%#{name}%"])}
+  # scope :search_email, lambda {|email| where(["email LIKE ?", "%#{email}%"])}
+
 end

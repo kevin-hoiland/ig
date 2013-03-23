@@ -21,6 +21,7 @@ class RatingsController < ApplicationController
   
   def per_gum
     #@gum = Gum.find(params[:gum_id])
+    @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     @gum = Gum.find_by_permalink(params[:gum_permalink])
     @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
   end
@@ -31,9 +32,13 @@ class RatingsController < ApplicationController
   end
   
   def edit
+    @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     @changed_rating = GumRatingRelationship.find(params[:id])
     @gum = Gum.find(@changed_rating.gum_id)
-    unless current_user.id == @changed_rating.profile_id
+    
+    # trying to fix feb 22nd 2013
+    # unless current_user.id == @changed_rating.profile_id  ########################### THIS IS NOT GUARENTEED, WTF, SHOULD BE USER_ID EVERYWHERE...
+    unless User.find(current_user.id).profile.id == @changed_rating.profile_id
       flash[:alert] = "Come on dude, you can't edit someone else's rating, seriously, this isn't amateur hour..."
       redirect_to(ratings_url)
     end
@@ -43,10 +48,11 @@ class RatingsController < ApplicationController
   end
   
   def new
+    @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     #@gum = Gum.find(params[:gum_id])
     @gum = Gum.find_by_permalink(params[:gum_permalink])
     @profile = Profile.find_by_user_id(current_user.id)
-    @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
+    @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists? ### probably don't need this long term, maybe was just for debuggin?
     if GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
       @rated = GumRatingRelationship.find(GumRatingRelationship.already_rated(@profile.id, @gum.id).first)
       redirect_to(edit_rating_url(@rated))
@@ -70,7 +76,11 @@ class RatingsController < ApplicationController
   def create
     @new_rating = GumRatingRelationship.new
     #@new_rating.profile_id = Profile.find_by_user_id(current_user.id)
-    @new_rating.profile_id = current_user.id
+    
+    #trying to fix this (feb 22nd 2013)
+    #@new_rating.profile_id = current_user.id   #### THIS IS WHY IT IS FUCKED UP, SAVING CURRENT_USER.ID AS PROFILE.ID, NOT ALWAYS THE SAME THING...
+    @new_rating.profile_id = Profile.find_by_user_id(current_user.id).id
+    
     #@new_rating.gum_id = params[:gum_id]
     @new_rating.gum_id = get_gum_id(params[:gum_permalink])
     @new_rating.gumtation = params[:gum_rating_relationship][:gumtation]
@@ -95,6 +105,7 @@ class RatingsController < ApplicationController
       redirect_to(gum_url(get_permalink(@new_rating.gum_id)))
     else
       flash[:alert] = "New Rating Save failed :("
+      @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
       @gum = Gum.find_by_permalink(params[:gum_permalink])
       @profile = Profile.find_by_user_id(current_user.id)
       render('new')
@@ -129,8 +140,10 @@ class RatingsController < ApplicationController
       redirect_to(gum_url(get_permalink(@changed_rating.gum_id)))
     else
       flash[:alert] = "Can't save your rating the way it is..."
+      @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
       #@gum = Gum.find(params[:gum_rating_relationship][:gum_id])   #  LOL... WOW, 2+ HOURS WASTED...  DON'T FORGET:  RENDER DOESN'T EXECUTE METHOD FIRST, JUST DISPLAYS PAGE AGAIN, VARIABLES LOST...
       @gum = Gum.find(@changed_rating.gum_id)
+      # why not setting @profile here ?!?!
       render('edit')
     end
   end

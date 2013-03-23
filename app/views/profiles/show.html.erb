@@ -12,6 +12,7 @@
 <% end %>
 
 <h1>Member Details</h1>
+<%= debug @profile %>
 ----------------------------------------<br \>
 <p>Votes Up: <%= @profile.user.vote_count(:up) %></p>
 <p>Votes Down: <%= @profile.user.vote_count(:down) %></p>

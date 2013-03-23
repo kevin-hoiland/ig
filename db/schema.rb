@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216181413) do
+ActiveRecord::Schema.define(:version => 20130221150851) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -156,6 +156,22 @@ ActiveRecord::Schema.define(:version => 20130216181413) do
   end
 
   add_index "gums_shipments", ["gum_id", "shipment_id"], :name => "index_gums_shipments_on_gum_id_and_shipment_id"
+
+  create_table "payments", :force => true do |t|
+    t.integer  "user_id"
+    t.date     "bill_date"
+    t.string   "bill_card"
+    t.decimal  "bill_amount",         :precision => 5, :scale => 2
+    t.string   "ship_first_name"
+    t.string   "ship_last_name"
+    t.string   "ship_street"
+    t.string   "ship_city"
+    t.string   "ship_state_province"
+    t.string   "ship_postal_code"
+    t.string   "ship_country"
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+  end
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"

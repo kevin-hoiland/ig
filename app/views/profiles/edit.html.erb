@@ -16,7 +16,7 @@
 		<%= f.input :location, :label =>"What's your location?", :placeholder => "Where are you from, or where do you live, generally speaking :-)", :hint => "Don't use an actual full address, this is visible to everyone!"%>
 		<%= f.input :born, :label =>"When were you born?", :start_year => Time.now.year-100, :end_year => Time.now.year, :discard_month => true, :discard_day => true %>
 		<%= f.input :sex, :label =>"What's your gender?", :as => :select, :collection => ["Male", "Female", "Other"]%>
-		<%= f.input :story, :size => 100, :label => "Your Gum thoughts, comments, story, whatever", :placeholder => "anything you want here, blah blah", :input_html => { :class => 'TBD', :rows => 10, :cols => 20, :maxlength => 500  } %>
+		<%= f.input :story, :size => 100, :label => "Your Gum thoughts, comments, story, whatever", :placeholder => "anything you want here, blah blah", :input_html => { :class => 'TBD', :rows => 10, :cols => 20, :maxlength => 500 } %>
 	<% end %>
     <%= f.action :submit, :label => "Update Your Public Info", :as => :button %>
 	<%= f.action :cancel, :label => "Cancel", :as => :link %>

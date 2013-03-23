@@ -25,6 +25,7 @@ File.open("db/initial_gums4_mini.txt", "r") do |gums|
     # Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => (File.open(File.join(Rails.root, image))))
      #Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => image )
 
+
 # works but is super slow
 #     Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/'+image)))
 

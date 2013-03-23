@@ -15,7 +15,7 @@ class Gum < ActiveRecord::Base
   
     has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"
     has_many :gum_shipment_relationships
-    has_many :profiles, :through => :gum_rating_relationsihps
+    has_many :profiles, :through => :gum_rating_relationsihps ################################### should be "has_many :users, :through..."
     has_and_belongs_to_many :shipments, :join_table => :gum_shipments
     has_many :votes
   #  accepts_nested_attributes_for :gum_rating_relationships #allow_destroy => true

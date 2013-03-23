@@ -144,7 +144,7 @@ section#content {
 	position: relative;
 	float: left;
 	width: 100% - $container_gap - $sidebar_percent_of_container;
-	@each $size in 10,11,12,13,14,15,16,17,18,19,20 {
+	@each $size in 6,8,10,11,12,13,14,15,16,17,18,19,20 {
 		p.size_#{$size} {
 			font-size: #{$size}px;
 		}
@@ -213,7 +213,22 @@ section#content {
 //	  clear: left;
 //	  float: left;
 	}
-	
+	.slideshow {  
+	    height:  400px;  
+	    width:   400px;  
+	    padding: 0;  
+	    margin:  100px auto;
+//			border: dotted red 1px;  
+	} 
+	.slideshow img {  
+//	    padding: 15px;  
+//	    border:  1px solid #ccc;  
+//	    background-color: #eee;  
+	    width:  400px; 
+	    height: 400px;
+	    top:  0; 
+	    left: 0;
+	}
 }// end section#content
 
 section#sidebar {

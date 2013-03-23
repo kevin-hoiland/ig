@@ -18,7 +18,6 @@ class GumRatingRelationship < ActiveRecord::Base
   belongs_to :user
   belongs_to :gum
 
-  # validates_uniqueness_of :profile_id, :scope => :gum_id, :message => "already rated this gum! Please edit your prior ranking, ok ;-)" # :on => :create, 
   validates_uniqueness_of :profile_id, :scope => :gum_id, :message => "already rated this gum! Please edit your prior ranking, ok ;-)"
   #validates :chewlasticity, :gumaliciousness, :gumgevity, :bubbability, :stat_1, :stat_2, :stat_3, :inclusion => 0..10
   validates :gumtation, :initial_gumalicious, :overall_gumalicious, :gumalicious_gumgevity, :flavoracity, 

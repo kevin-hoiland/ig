@@ -8,6 +8,7 @@ class GumsController < ApplicationController
   end
   
   def list
+    @content_legal = DynamicText.content("gum_general").order("sequence ASC")
      #META SEARCH:
      #@search_gums = Gum.search(params[:search])
     #
@@ -29,6 +30,7 @@ class GumsController < ApplicationController
   end
   
   def show
+    @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     #@gum = Gum.find(params[:id])
     @gum = Gum.find_by_permalink(params[:id])
     @votes_up_total = @gum.votes_for

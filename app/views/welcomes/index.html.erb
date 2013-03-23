@@ -15,8 +15,14 @@
 	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
 <% end %>
 
-<%= image_tag("welcome.png", :title => "Welcome", :id => "welcome") %>
-
+<div class="slideshow">
+	<%= image_tag("welcome.png", :title => "Welcome to Intl Gum", :size => "394x388") %>
+	<img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="200" height="200" />
+	<img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="200" height="200" />
+</div>
+<!-- old way, static image without cycle
+< %= image_tag("welcome.png", :title => "Welcome", :id => "welcome") %>
+-->
 <% @content_bottom.each do |c| %>
 	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
 <% end %>

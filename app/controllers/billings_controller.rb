@@ -60,11 +60,17 @@ class BillingsController < ApplicationController
         options = {:ip => @ip, :description => 'New monthly recurring Subscription for $8 per month.',
                     :interval => { :unit => :months, :length => 1 }, :duration => { :start_date => get_start_date, :occurrences => 9999},
                     :customer => @customer, :shipping_address => @shipping_address, :billing_address => @billing_address}
-        #response = gateway.authorize(800, creditcard, options)
-        response = gateway.recurring(800, creditcard, options)
+        response = gateway.authorize(800, creditcard, options) # this is the temporary one charge type for testing
+        # this is the recurring one below (can't use it in test mode)
+        #response = gateway.recurring(800, creditcard, options)
+        
         if response.success?
           #gateway.capture(800, response.authorization)
-          @billing.pan_token = response.params["subscription_id"]
+          
+          # Below is used when processing recuring (gateway returns a token for representing recurring value)
+          #@billing.pan_token = response.params["subscription_id"]
+          @billing.gateway_subscriber_id = response.params["subscription_id"]
+          
           #@billing.cvc = 123 # hack to save billing
           #IF BILLING SAVE....    ############################### (add code here)
           @billing.save
@@ -149,7 +155,7 @@ class BillingsController < ApplicationController
       log.subscription_id = billing.id
       log.last_four = billing.last_four
       log.bill_last_name = billing.bill_last_name
-      log.ship_name = billing.ship_name
+      log.ship_name = billing.ship_first_name+" "+billing.ship_last_name
       log.original_creation_dt = billing.created_at
       log.save
       redirect_to(list_billings_url)
@@ -187,7 +193,9 @@ private
     end
     @ip = User.find(@billing.user_id).current_sign_in_ip
     #@customer = {:id => @billing.user_id.to_i, :email => User.find(@billing.user_id).email}
-    @customer = {:id => b.user_id.to_s+":"+b.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
+    #@customer = {:id => b.user_id.to_s+":"+b.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
+    @customer = {:id => @billing.user_id.to_s+":"+@billing.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
+
     #@email = User.find(@billing.user_id).email
     @billing_address = { :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name,
         :address1 => @billing.bill_street, :city => @billing.bill_city, :state => @billing.bill_state_province,

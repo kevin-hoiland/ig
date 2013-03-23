@@ -100,5 +100,6 @@
 </ul>
 <p id="ratings_count"><%= @rating_count %> Total Ratings</p>
 
-
-
+<% @content_legal.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>

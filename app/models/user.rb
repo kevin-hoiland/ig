@@ -1,19 +1,29 @@
 class User < ActiveRecord::Base
+
+  ############  modules  ############
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :timeoutable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
+  ############  attributes  ############
+
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :email, as: :admin
-  # attr_accessible :title, :body
   
+  ############  validations  ############
+
   validates :email, :length => { :maximum => 255 }
-  
+
+  ############  associations  ############
+    
   has_one :profile
   has_many :billing
+  has_many :payment
+  
+  ########################################
   
   acts_as_voter
   # The following line is optional, and tracks karma (up votes) for questions this user has submitted.
@@ -23,16 +33,14 @@ class User < ActiveRecord::Base
   # has_karma(:questions, :as => :submitter, :weight => 0.5)
   
   def confirm!
-    add_profile
+    # add if else here in case user already existed and is updating/changing data (email etc),
+    # shouldn't add_profile again if profile already exists.  can determine with a user db 'nil' value...
+    unless self.profile
+      add_profile
+    end
     super
   end
   #after_create :add_profile
-
-  
-  #after_commit :add_other_info
-  #after_save :add 
-  #after_create :add_other_info
-  #before_save :add_other_info
   
   private
   
@@ -43,16 +51,6 @@ class User < ActiveRecord::Base
       # Tell the UserMailer to send a welcome Email after save
       # UserMailer.welcome_email(@user).deliver
       UserMailer.welcome_email(self).deliver
-    end
-    
-    
-    def add_other_info
-      profile = Profile.new
-      profile.user_id = self.id
-      profile.save
-      billing = Billing.new
-      billing.user_id = self.id
-      billing.save
     end
     
 end

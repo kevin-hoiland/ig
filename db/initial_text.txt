@@ -40,3 +40,4 @@ news|3|10|1|http://www.cnn.com
 news|4|14|1|[End of 2012] Intl Gum launches, amazing!!!
 news|5|10|1|http://somewhere.com
 news|6|14|1|[End of 2012] Another great article summary here, blah blah
+gum_specific|1|8|1|Note: Intl Gum holds no liability for the accuracy of the above information, description, ingredients, etc. Always consult information on the product packaging before consumption. All product names and images are property of  gum_general|1|8|1|All product names and images are property of the respective gum owners and not Intl Gum.

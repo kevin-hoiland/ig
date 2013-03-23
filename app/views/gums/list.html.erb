@@ -79,4 +79,6 @@
 <% end %>
 <%= paginate @gums_list %>
 <p iD = "page_info"><%= (page_entries_info @gums_list, :entry_name => 'Gums').html_safe %></p>
-
+<% @content_legal.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>
