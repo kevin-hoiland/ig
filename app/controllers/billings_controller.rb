@@ -115,6 +115,7 @@ class BillingsController < ApplicationController
     #@billing.subscription_number = profile.subscription_count + 1
     if @billing.save
       #profile.subscription_count += 1
+      ### UMMM, IF SOMEONE UPDATES THERE BILLING INFO, THE RECURRING DATA ON GATEWAY SIDE NEEDS TO BE UPDATED TOO!
       if profile.save
         flash[:notice] = "Your Subscription was updated successfully!"
       else    #  DUDE, THIS SHOULD NEVER HAPPEN, DOUBLE CHECK AND WRITE APPROPRIATE HANDLING ETC
@@ -141,6 +142,7 @@ class BillingsController < ApplicationController
     profile = Profile.find_by_user_id(current_user.id)
     if billing.destroy
       profile.subscriptions_deleted += 1
+      ###  NEED TO DELETE RECURING BILLING HERE........... MUST DO LOL
       if profile.save
         flash[:notice] = "Your Subscription was deleted successfully!"
       else
@@ -194,7 +196,11 @@ private
     @ip = User.find(@billing.user_id).current_sign_in_ip
     #@customer = {:id => @billing.user_id.to_i, :email => User.find(@billing.user_id).email}
     #@customer = {:id => b.user_id.to_s+":"+b.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
-    @customer = {:id => @billing.user_id.to_s+":"+@billing.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
+    
+    #@customer = {:id => @billing.user_id.to_s+":"+@billing.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
+    #@customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created-Profile.find_by_user_id(@billing.user_id).subscriptions_deleted+1).to_s
+    @customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s
+
 
     #@email = User.find(@billing.user_id).email
     @billing_address = { :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name,

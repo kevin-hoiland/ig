@@ -6,7 +6,7 @@ class Billing < ActiveRecord::Base
                   :ship_state_province, :ship_postal_code, :ship_country, :subscription_number, as: :admin
   
   # attr_accessible :title, :body
-  attr_accessor :cvc, :pan, :terms, :reason
+  attr_accessor :cvc, :pan, :terms, :reason, :copy
 
   validates :subscription_name, :length => { :maximum => 255 }
   validates :bill_first_name, :presence => true, :length => { :maximum => 50 }

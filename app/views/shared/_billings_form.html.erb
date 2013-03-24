@@ -8,6 +8,7 @@
 <%= f.input :ship_postal_code, :label => "Postal Code", :placeholder => "", :hint => "", :input_html => { :size => 15, :maxlength => 10 } %>
 <%= f.input :ship_country, :label => "Country", :placeholder => "", :hint => "We currently only deliver within the United States", :as => :select, :collection => ["United States"], :include_blank => false %>
 <h2>Billing Details</h2>
+<%= f.input :copy, :label => "Same as Shipping", :size => 10, :as => :check_boxes, :collection => [""], :input_html => {:onclick => "SetBilling(this.checked);"} %>
 <%= f.input :bill_first_name, :label => "First Name", :placeholder => "", :hint => "As displayed on your card" %>
 <%= f.input :bill_last_name, :label => "Last Name", :placeholder => "", :hint => "As displayed on your card" %>
 <%= f.input :bill_street, :label => "Street Address", :placeholder => "", :hint => "As associated with your card" %>
@@ -29,3 +30,25 @@
 <% end %>
 
 <%= f.input :terms, :label => "Terms and Conditions Confirmation", :size => 10, :as => :boolean %>
+
+<script type="text/javascript">
+
+function SetBilling(checked) {
+          if (checked) {
+                    document.getElementById('billing_bill_first_name').value = document.getElementById('billing_ship_first_name').value; 
+                    document.getElementById('billing_bill_last_name').value = document.getElementById('billing_ship_last_name').value;
+                    document.getElementById('billing_bill_street').value = document.getElementById('billing_ship_street').value; 
+                    document.getElementById('billing_bill_city').value = document.getElementById('billing_ship_city').value;
+                    document.getElementById('billing_bill_state_province').value = document.getElementById('billing_ship_state_province').value; 
+                    document.getElementById('billing_bill_postal_code').value = document.getElementById('billing_ship_postal_code').value;
+          } else {
+                    document.getElementById('billing_bill_first_name').value = ''; 
+                    document.getElementById('billing_bill_last_name').value = '';
+                    document.getElementById('billing_bill_street').value = ''; 
+                    document.getElementById('billing_bill_city').value = '';
+                    document.getElementById('billing_bill_state_province').value = ''; 
+                    document.getElementById('billing_bill_postal_code').value = '';
+          }
+}
+
+</script>

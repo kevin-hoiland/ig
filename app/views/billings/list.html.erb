@@ -17,7 +17,8 @@
 		</li>
 		<li>
 			<ul class="member_list">
-				<li>ID #<%= s.subscription_number %>: <%= s.subscription_name %></li>
+				<!-- removed sub #... ID #< %= s.subscription_number %>:  -->
+				<li><%= s.subscription_name %></li>
 				<li>Card #: x<%= s.last_four %></li>
 				<li>Subscription Created: <%= s.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
 				<li>Last Updated: <%= s.updated_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>

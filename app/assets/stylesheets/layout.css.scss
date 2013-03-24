@@ -56,26 +56,30 @@ div#wrapper {
 
 header#page_header {
 	line-height: 21px; /* fixes difference for Nav between firefox default at 21px vs other browsers at "normal" */
-	background: url('/assets/filler_v7.jpg') top left; // repeat-x;
+	background: url('/assets/filler_v12.jpg') top left; // repeat-x;
+//	background: black;
 	color: white; // #fff or #ffffff
-	height: 100px;
+	height: 115px; //originally 100px
 	margin-bottom: 10px;
 	overflow: hidden;
-	padding: 0px 10px 0px 10px;
+	padding: 10px 10px 0px 10px; // top used to be 0px
 	a, a:link, a:hover, a:active, a:visited{
 		color: white; 
 		text-decoration: none;
 	}
 	p#trademark {
 		position: absolute;
-		color: #A9E7FB;//darken($sidebar_background, 0%); //#A9E7FB
-		font-size: 10px;
-		top: 15px;
-		left: 195px;
+		//color: darken($nav_background, 10%);//#A9E7FB;//darken($sidebar_background, 0%); //#A9E7FB
+		//color: #3399CC;
+		color: $nav_background;
+		font-size: 8px;
+		top: 88px;
+		left: 190px;
 	}
 	nav#utility {
 		float: right;
-		padding-top: 10px;
+//		padding-top: 10px;
+		padding: 10px 0px 0px 0px;
 		font-size: 13px;
 		.header_button {
 			  @include button(simple, darken($button_color, 5%));
@@ -85,7 +89,8 @@ header#page_header {
 	nav#main_nav {
 		position: absolute;
 			right: 10px;
-	  	top: 54px;
+	  	//top: 69px; // added 15px in height to header from base 100, so added original 54px here to make 69px
+			top: 85px;
 		font-size: 14px;
 		ul {
 			list-style-type: none;
@@ -213,14 +218,14 @@ section#content {
 //	  clear: left;
 //	  float: left;
 	}
-	.slideshow {  
+	#slideshow {  
 	    height:  400px;  
 	    width:   400px;  
 	    padding: 0;  
 	    margin:  100px auto;
 //			border: dotted red 1px;  
 	} 
-	.slideshow img {  
+	#slideshow img {  
 //	    padding: 15px;  
 //	    border:  1px solid #ccc;  
 //	    background-color: #eee;  

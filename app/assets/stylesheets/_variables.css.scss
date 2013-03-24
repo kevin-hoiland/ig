@@ -1,10 +1,13 @@
 // Color Variables
 //$nav_background: #0099cc;
-$nav_background: darken(#0099cc, 5%);
+//$nav_background: darken(#0099cc, 5%);
+$nav_background: #006699;
 $sidebar_background: #eaebeb;
-$sidebar_header_background: lighten(#ff6ea0, 1%);
+//$sidebar_header_background: lighten(#ff6ea0, 1%);
+$sidebar_header_background: #FF3366;
 //$button_color: #76c159;
-$button_color: darken(#76c159, 5%);
+//$button_color: darken(#76c159, 5%);
+$button_color: #339933;
 $list_hover: lighten(#ff6ea0, 27%); //#F8FCCF;
 // Width Variables
 $container_gap: 2%;
@@ -13,3 +16,6 @@ $sidebar_percent_of_container: 20%;
 $font: $verdana;
 $font_color: lighten(#444343, 0%);
 
+//Blue: 006699
+//Pink: FF3366
+//Green: 339933

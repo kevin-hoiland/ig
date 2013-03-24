@@ -3,6 +3,7 @@ class WelcomesController < ApplicationController
   def index
     @content_top = DynamicText.content("home_top").order("sequence ASC")
     @content_bottom = DynamicText.content("home_bottom").order("sequence ASC")
+    @content_slide = DynamicText.content("home_slide").order("sequence ASC")
   end
 
   def faq
