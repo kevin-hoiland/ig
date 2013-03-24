@@ -12,9 +12,7 @@
 	  <%= link_to "Sign Out", destroy_admin_user_session_path, :method => 'delete', :class => 'header_button' %>
 	<% end %>
   </nav>
-<!--  < % = link_to "Intl Gum", root_path, :id => 'title' %> -->
-	<p id="trademark">TM</p>  <!-- &trade; -->
+	<p id="trademark">TM</p><!-- &trade; -->
   <%= link_to image_tag("logo_small4.png", :title => "International Gum"), root_path %>
-	<!-- prior real header from old image version = "intl_header_v11.jpg" , :size => "147x86" -->
   	<%= yield :main_nav %>
 </header>

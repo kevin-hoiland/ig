@@ -19,7 +19,7 @@
 	margin-left:10px;
 	text-decoration:none;
 	background-color:#F5F5F5;
-	color:#0072bc;
+	color:#006699;
 	width:22px;
 	font-weight:normal;
 }
@@ -27,7 +27,7 @@
 .pagination a:hover {
 	background-color:#DDEEFF;
 	border:1px solid #BBDDFF;
-	color: #0072BC;	
+	color: #006699;	
 }
 
 .pagination .current {
@@ -38,7 +38,7 @@
 	margin-left:10px;
 	text-decoration:none;
 	background-color: #DDEEFF;
-	color: #0072BC;
+	color: #006699;
 	cursor:default;
 	text-align: center;
 }
@@ -56,5 +56,5 @@
 }
 #page_info {
 	font-size: 12px;
-	color: #0072bc;
+	color: #006699;
 }

@@ -3,16 +3,11 @@ class CreateGumRatingRelationships < ActiveRecord::Migration
     create_table :gum_rating_relationships do |t|
       t.references :profile
       t.references :gum
-      t.integer "gumtation"
-      t.integer "initial_gumalicious"
-      t.integer "overall_gumalicious"
-      t.integer "gumalicious_gumgevity"
-      t.integer "flavoracity"
-      t.integer "initial_chewlasticity"
-      t.integer "overall_chewlasticity"
-      t.integer "chewlasticity_gumgevity"
-      t.integer "bubbability"
-      t.integer "breathalation"
+      t.integer "rank_1"
+      t.integer "rank_2"
+      t.integer "rank_3"
+      t.integer "rank_4"
+      t.integer "rank_5"
       t.text "comment"
       t.float "average" #was integer
       t.integer "total"

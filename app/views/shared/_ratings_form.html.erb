@@ -1,44 +1,24 @@
 Rate each characteristic for this gum with 0 as lowest and 10 as highest!
 <div id="rating_form">
-<%= r.input :gumtation, :label => "Gumtation",
+<%= r.input :rank_1, :label => "Gumtation",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How good is the presentation, name, and packaging?" %>
+	:hint => "How good is the presentation, name, packaging, advertising, etc?" %>
 	
-<%= r.input :initial_gumalicious, :label => "Initial Gumalicious",
+<%= r.input :rank_2, :label => "Chewlasticity",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How delicious is the flavor at first?" %>
+	:hint => "How long does a piece last, both flavor and texture?" %>
 
-<%= r.input :overall_gumalicious, :label => "Overall Gumalicious",
+<%= r.input :rank_3, :label => "Flavoracity",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How delicious is the flavor overall?"  %>
+	:hint => "How accurate is the flavor?"  %>
 
-<%= r.input :gumalicious_gumgevity, :label => "Gumalicious Gumgevity",
+<%= r.input :rank_4, :label => "Bubbability",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How long does the flavor last?" %>
+	:hint => "How's the bubble blowing ability?" %>
 	
-<%= r.input :flavoracity, :label => "Flavoracity",
+<%= r.input :rank_5, :label => "Gumaliciousness",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How accurate is the flavor?" %>
-				
-<%= r.input :initial_chewlasticity, :label => "Initial Chewlasticity",
-	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How good is the initial texture and size?" %>
-		
-<%= r.input :overall_chewlasticity, :label => "Overall Chewlasticity",
-	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How good is the overall texture and size?" %>
-
-<%= r.input :chewlasticity_gumgevity, :label => "Chewlasticity Gumgevity", 
-	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How long does the texture and size last?" %>
-
-<%= r.input :bubbability, :label => "Bubbability",
-	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "Bubble Blowing Ability?" %>
-
-<%= r.input :breathalation, :label => "Breathalation",
-	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-	:hint => "How much does it help your breath?"  %>	
+	:hint => "How much do you enjoy the flavor and benefits?" %>
 
 <%= r.input :comment, :label => false, :hint => "If desired, please also add comments about this gum above!" %>
 </div>

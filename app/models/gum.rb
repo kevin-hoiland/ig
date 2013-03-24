@@ -52,9 +52,7 @@ class Gum < ActiveRecord::Base
     
     def get_rating_averages
       set = GumRatingRelationship.where(:gum_id => self.id)
-      return([set.average(:gumtation), set.average(:initial_gumalicious), set.average(:overall_gumalicious), set.average(:gumalicious_gumgevity), 
-        set.average(:flavoracity), set.average(:initial_chewlasticity), set.average(:overall_chewlasticity), set.average(:chewlasticity_gumgevity), 
-        set.average(:bubbability), set.average(:breathalation)])
+      return([set.average(:rank_1), set.average(:rank_2), set.average(:rank_3), set.average(:rank_4), set.average(:rank_5) ])
     end
     
 #    def votes_up

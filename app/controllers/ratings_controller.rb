@@ -83,20 +83,13 @@ class RatingsController < ApplicationController
     
     #@new_rating.gum_id = params[:gum_id]
     @new_rating.gum_id = get_gum_id(params[:gum_permalink])
-    @new_rating.gumtation = params[:gum_rating_relationship][:gumtation]
-    @new_rating.initial_gumalicious = params[:gum_rating_relationship][:initial_gumalicious]
-    @new_rating.overall_gumalicious = params[:gum_rating_relationship][:overall_gumalicious]
-    @new_rating.gumalicious_gumgevity = params[:gum_rating_relationship][:gumalicious_gumgevity]
-    @new_rating.flavoracity = params[:gum_rating_relationship][:flavoracity] 
-    @new_rating.initial_chewlasticity = params[:gum_rating_relationship][:initial_chewlasticity]
-    @new_rating.overall_chewlasticity = params[:gum_rating_relationship][:overall_chewlasticity]
-    @new_rating.chewlasticity_gumgevity = params[:gum_rating_relationship][:chewlasticity_gumgevity]
-    @new_rating.bubbability = params[:gum_rating_relationship][:bubbability]
-    @new_rating.breathalation = params[:gum_rating_relationship][:breathalation]
+    @new_rating.rank_1 = params[:gum_rating_relationship][:rank_1]
+    @new_rating.rank_2 = params[:gum_rating_relationship][:rank_2]
+    @new_rating.rank_3 = params[:gum_rating_relationship][:rank_3]
+    @new_rating.rank_4 = params[:gum_rating_relationship][:rank_4]
+    @new_rating.rank_5 = params[:gum_rating_relationship][:rank_5]
     @new_rating.comment = params[:gum_rating_relationship][:comment]
-    values = [@new_rating.gumtation.to_i,@new_rating.initial_gumalicious.to_i,@new_rating.overall_gumalicious.to_i,
-              @new_rating.gumalicious_gumgevity.to_i,@new_rating.flavoracity.to_i,@new_rating.initial_chewlasticity.to_i,
-              @new_rating.overall_chewlasticity.to_i,@new_rating.chewlasticity_gumgevity.to_i,@new_rating.bubbability.to_i,@new_rating.breathalation.to_i]
+    values = [@new_rating.rank_1.to_i,@new_rating.rank_2.to_i,@new_rating.rank_3.to_i,@new_rating.rank_4.to_i,@new_rating.rank_5.to_i]
     @new_rating.total = values.sum
     @new_rating.average = @new_rating.total / values.size.to_f.round(2)
     if @new_rating.save
@@ -116,6 +109,12 @@ class RatingsController < ApplicationController
     @changed_rating = GumRatingRelationship.find(params[:id])
 #    @changed_rating.user_id = current_user.id
 #    @changed_rating.gum_id = params[:gum_id]
+    @changed_rating.rank_1 = params[:gum_rating_relationship][:rank_1]
+    @changed_rating.rank_2 = params[:gum_rating_relationship][:rank_2]
+    @changed_rating.rank_3 = params[:gum_rating_relationship][:rank_3]
+    @changed_rating.rank_4 = params[:gum_rating_relationship][:rank_4]
+    @changed_rating.rank_5 = params[:gum_rating_relationship][:rank_5]
+=begin
     @changed_rating.gumtation = params[:gum_rating_relationship][:gumtation]
     @changed_rating.initial_gumalicious = params[:gum_rating_relationship][:initial_gumalicious]
     @changed_rating.overall_gumalicious = params[:gum_rating_relationship][:overall_gumalicious]
@@ -126,11 +125,10 @@ class RatingsController < ApplicationController
     @changed_rating.chewlasticity_gumgevity = params[:gum_rating_relationship][:chewlasticity_gumgevity]
     @changed_rating.bubbability = params[:gum_rating_relationship][:bubbability]
     @changed_rating.breathalation = params[:gum_rating_relationship][:breathalation]
+=end
     @changed_rating.comment = params[:gum_rating_relationship][:comment]
     #values = [@changed_rating.stat_1.to_i,@changed_rating.stat_2.to_i,@changed_rating.stat_3.to_i,@changed_rating.chewlasticity.to_i,@changed_rating.gumaliciousness.to_i,@changed_rating.gumgevity.to_i,@changed_rating.bubbability.to_i]
-    values = [@changed_rating.gumtation.to_i,@changed_rating.initial_gumalicious.to_i,@changed_rating.overall_gumalicious.to_i,
-              @changed_rating.gumalicious_gumgevity.to_i,@changed_rating.flavoracity.to_i,@changed_rating.initial_chewlasticity.to_i,
-              @changed_rating.overall_chewlasticity.to_i,@changed_rating.chewlasticity_gumgevity.to_i,@changed_rating.bubbability.to_i,@changed_rating.breathalation.to_i]    
+    values = [@changed_rating.rank_1.to_i,@changed_rating.rank_2.to_i,@changed_rating.rank_3.to_i,@changed_rating.rank_4.to_i,@changed_rating.rank_5.to_i]    
     @changed_rating.total = values.sum
     @changed_rating.average = (@changed_rating.total / values.size.to_i)
     if @changed_rating.save

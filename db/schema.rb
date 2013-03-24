@@ -102,21 +102,16 @@ ActiveRecord::Schema.define(:version => 20130221150851) do
   create_table "gum_rating_relationships", :force => true do |t|
     t.integer  "profile_id"
     t.integer  "gum_id"
-    t.integer  "gumtation"
-    t.integer  "initial_gumalicious"
-    t.integer  "overall_gumalicious"
-    t.integer  "gumalicious_gumgevity"
-    t.integer  "flavoracity"
-    t.integer  "initial_chewlasticity"
-    t.integer  "overall_chewlasticity"
-    t.integer  "chewlasticity_gumgevity"
-    t.integer  "bubbability"
-    t.integer  "breathalation"
+    t.integer  "rank_1"
+    t.integer  "rank_2"
+    t.integer  "rank_3"
+    t.integer  "rank_4"
+    t.integer  "rank_5"
     t.text     "comment"
     t.float    "average"
     t.integer  "total"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "gum_rating_relationships", ["profile_id", "gum_id"], :name => "index_gum_rating_relationships_on_profile_id_and_gum_id"

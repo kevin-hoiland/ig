@@ -3,24 +3,70 @@
 <head>
   <title>The change you wanted was rejected (422)</title>
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    body { 
+		font-family: Verdana, Geneva, sans-serif;
+		background-color: #ffffff;
+		color: rgb(107, 105, 105);
+		text-align: center;
+		margin: 0px;
+		padding: 0px;
+		background-image:url('/assets/filler_v12.jpg');
+		background-repeat:repeat-x;
+		background-position:right top;
+	}
+	img#logo{
+		position: absolute;
+		top: 0;
+		left: 10px;
+		top: 10px;
+	}
+	img#intl_404 {
+		position: absolute;
+		top: 200px;
+		left: 80px;
+	}
+	p#trademark {
+		position: absolute;
+		color: $nav_background;
+		font-size: 8px;
+		top: 93px;
+		left: 190px;
+	}
+	div#comment {
+		position: absolute;
+		top: 270px;
+		left: 230px;
+		width: 380px;
+		text-align: left;
+	}
+	div#comment h2 {
+		font-size: 18px;
+	}
+	p#comment {
+		font-size: 18px;
+	}
+    h1 {
+		position: absolute;
+		top: 100px;
+		left: 20px;
+		margin-top: 30px;
+		font-size: 100%;
+		color: #006699;
+		font-size: 28px;
+	}
+
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
+	<a href="/"><img id="logo" alt="Intl Gum Logo" src="/assets/logo_small4.png" title="International Gum" /></a>
+	<p id="trademark">TM</p>
+	
+  <!-- This file lives in public/404.html -->
     <h1>The change you wanted was rejected.</h1>
-    <p>Maybe you tried to change something you didn't have access to.</p>
+  <div id="comment">  
+	<h2>Maybe you tried to change something you didn't have access to.</h2>
   </div>
+	<a href="/"><img id="intl_404" alt="Intl Lost (404 Error)" src="/assets/intl_404.png" title="International Gum" /></a>
 </body>
 </html>
