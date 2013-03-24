@@ -149,7 +149,7 @@ section#content {
 	position: relative;
 	float: left;
 	width: 100% - $container_gap - $sidebar_percent_of_container;
-	@each $size in 6,8,10,11,12,13,14,15,16,17,18,19,20 {
+	@each $size in 6,8,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,30 {
 		p.size_#{$size} {
 			font-size: #{$size}px;
 		}

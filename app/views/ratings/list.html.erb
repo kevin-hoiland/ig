@@ -23,8 +23,8 @@
 	<li><%= f.label :rank_3_gteq, "Low " %><%= f.text_field :rank_3_gteq, :maxlength => 2 %></li>
 	<li><%= f.label :rank_3_lteq, "High " %><%= f.text_field :rank_3_lteq, :maxlength => 2 %></li>
 	<p>Bubbability</p>
-	<li><%= f.label :rank_4_gumgevity_gteq, "Low " %><%= f.text_field :rank_4_gteq, :maxlength => 2 %></li>
-	<li><%= f.label :rank_4_gumgevity_lteq, "High " %><%= f.text_field :rank_4_lteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_4_gteq, "Low " %><%= f.text_field :rank_4_gteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_4_lteq, "High " %><%= f.text_field :rank_4_lteq, :maxlength => 2 %></li>
 	<p>Gumaliciousness</p>
 	<li><%= f.label :rank_5_gteq, "Low " %><%= f.text_field :rank_5_gteq, :maxlength => 2 %></li>
 	<li><%= f.label :rank_5_lteq, "High " %><%= f.text_field :rank_5_lteq, :maxlength => 2 %></li>
@@ -42,7 +42,7 @@
 	<li><%= sort_link @search_ratings, :rank_2, "Chewlasticity", :default_order => :desc %></li>
 	<li><%= sort_link @search_ratings, :rank_3, "Flavoracity", :default_order => :desc %></li>
 	<li><%= sort_link @search_ratings, :rank_4, "Bubbability", :default_order => :desc %></li>
-	<li><%= sort_link @search_ratings, :rank_5, "Gumaliciousness", :default_order => :desc %></li>
+	<li><%= sort_link @search_ratings, :rank_5, "Gumalicious", :default_order => :desc %></li>
 </div>
 
 <% @ratings_list.each do |r| %>
