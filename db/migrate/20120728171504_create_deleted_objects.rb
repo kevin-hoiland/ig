@@ -3,14 +3,20 @@ class CreateDeletedObjects < ActiveRecord::Migration
     create_table :deleted_objects do |t|
       t.string "deleted_type"
       t.integer "user_id"
-      t.string "email"
+      t.string "user_email"
       t.integer "profile_id"
-      t.integer "subscription_id"
-      t.integer "last_four"
-      t.string "bill_last_name"
-      t.string "ship_name"
+      t.integer "billing_subscription_id"
+      t.integer "billing_last_four"
+      t.string "billing_last_name"
+      t.string "billing_shipping_name"
+      t.integer "billing_gateway_subscriber_id"
+      t.string "profile_sex"
+      t.string "profile_location"
+      t.string "profile_age"
+      t.string "votes_count"
+      t.string "rating_count"
       t.text "reason"
-      t.datetime "original_creation_dt"
+      t.datetime "deleted_object_creation_dt"
       t.timestamps
     end
   end

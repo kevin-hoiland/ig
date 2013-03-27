@@ -1,4 +1,5 @@
 ActiveAdmin.register Profile do
+  actions :index, :show, :new, :create, :update, :edit #everything but :delete
   menu :label => "Profiles"
   menu :parent => "Member Info"
   scope :active_subscriber
@@ -15,4 +16,5 @@ ActiveAdmin.register Profile do
     column "Subs Cancelled", :subscriptions_deleted
     default_actions
   end
+  
 end

@@ -7,13 +7,13 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 # Create a default admin user
-  AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+  AdminUser.create!([:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'], :without_protection => true)
 
 # Create default set of dynamic text
 File.open("db/initial_text.txt", "r") do |defaults|
   defaults.read.each_line do |text|
     location, sequence, size, visible, content = text.chomp.split("|")
-    DynamicText.create!(:location => location, :sequence => sequence, :size => size, :visible => visible, :content => content)
+    DynamicText.create!([:location => location, :sequence => sequence, :size => size, :visible => visible, :content => content], :without_protection => true)
   end
 end
 
@@ -29,7 +29,7 @@ File.open("db/initial_gums4_mini.txt", "r") do |gums|
 # works but is super slow
 #     Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/'+image)))
 
-     Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/images/gums/'+image)))
+     Gum.create!([:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/images/gums/'+image))], :without_protection => true)
 
 #    g = Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release)
 #        g.image.store!(File.open(File.join(Rails.root+"/lib/assets", image)))

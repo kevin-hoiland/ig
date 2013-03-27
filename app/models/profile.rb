@@ -3,7 +3,7 @@ class Profile < ActiveRecord::Base
   ############  attributes  ############
   
   attr_accessible :name, :sex, :location, :born, :story
-  attr_accessible :user_id, :name, :location, :born, :sex, :story, as: :admin
+  attr_accessible :user_id, :name, :location, :born, :sex, :story, :subscriptions_created, :subscriptions_deleted, as: :admin
   
   def self.ransackable_attributes(auth_object = nil)
     super & ['name', 'location', 'brand', 'born', 'note', 'sex', 'story']
@@ -22,7 +22,7 @@ class Profile < ActiveRecord::Base
   ############  associations  ############
   
   belongs_to :user
-  has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"
+  has_many :gum_rating_relationships, :dependent => :destroy # looks like i also probably want ", :dependent => true"
   has_many :gums, :through => :gum_rating_relationships
   
   ############  scopes  ############

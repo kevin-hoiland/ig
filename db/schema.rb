@@ -77,16 +77,22 @@ ActiveRecord::Schema.define(:version => 20130221150851) do
   create_table "deleted_objects", :force => true do |t|
     t.string   "deleted_type"
     t.integer  "user_id"
-    t.string   "email"
+    t.string   "user_email"
     t.integer  "profile_id"
-    t.integer  "subscription_id"
-    t.integer  "last_four"
-    t.string   "bill_last_name"
-    t.string   "ship_name"
+    t.integer  "billing_subscription_id"
+    t.integer  "billing_last_four"
+    t.string   "billing_last_name"
+    t.string   "billing_shipping_name"
+    t.integer  "billing_gateway_subscriber_id"
+    t.string   "profile_sex"
+    t.string   "profile_location"
+    t.string   "profile_age"
+    t.string   "votes_count"
+    t.string   "rating_count"
     t.text     "reason"
-    t.datetime "original_creation_dt"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "deleted_object_creation_dt"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "dynamic_texts", :force => true do |t|

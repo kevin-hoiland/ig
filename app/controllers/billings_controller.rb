@@ -149,15 +149,16 @@ class BillingsController < ApplicationController
         flash[:alert] = "Error, you Profile was not updated with deleted subscription count" # <----  WHAT THE HECK IS THIS SCENARIO???!!!????
       end
       log = DeletedObject.new
-      log.deleted_type = "Subscription"
+      log.deleted_type = "Billing Subscription"
       log.reason = params[:billing][:reason]
       log.user_id = current_user.id
-      log.email = current_user.email
+      log.user_email = current_user.email
+#      log.billing_subscription_id = billing.billing_subscription_id  # ADD THIS IN WHEN RECURRING TURNED ON ;-)
       log.profile_id = profile.id
-      log.subscription_id = billing.id
-      log.last_four = billing.last_four
-      log.bill_last_name = billing.bill_last_name
-      log.ship_name = billing.ship_first_name+" "+billing.ship_last_name
+      log.billing_subscription_id = billing.id
+      log.billing_last_four = billing.last_four
+      log.billing_last_name = billing.bill_last_name
+      log.billing_shipping_name = billing.ship_first_name+" "+billing.ship_last_name
       log.original_creation_dt = billing.created_at
       log.save
       redirect_to(list_billings_url)

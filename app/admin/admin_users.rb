@@ -1,4 +1,6 @@
 ActiveAdmin.register AdminUser do
+  actions :index, :show, :new, :create, :update, :edit #everything but :delete
+  
   menu :label => "Admin Users"
   menu :parent => "Application"
 

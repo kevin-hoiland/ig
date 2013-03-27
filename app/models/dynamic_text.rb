@@ -1,7 +1,7 @@
 class DynamicText < ActiveRecord::Base
   # attr_accessible :title, :body
 
-  attr_accessible :location, :sequence, :size, :visible, :content # for DB Seed only...
+#  attr_accessible :location, :sequence, :size, :visible, :content # for DB Seed only...
   attr_accessible :location, :sequence, :size, :visible, :content, as: :admin
   validates_uniqueness_of :sequence, :scope => :location
   

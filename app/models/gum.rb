@@ -1,6 +1,6 @@
 class Gum < ActiveRecord::Base
   # attr_accessible :title, :body
-  attr_accessible :permalink, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image # for seeding DB only
+#  attr_accessible :permalink, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image # for seeding DB only
   attr_accessible :permalink, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image, as: :admin
 
   mount_uploader :image, ImageUploader

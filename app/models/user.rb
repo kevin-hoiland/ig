@@ -19,9 +19,9 @@ class User < ActiveRecord::Base
 
   ############  associations  ############
     
-  has_one :profile
-  has_many :billing
-  has_many :payment
+  has_one :profile, :dependent => :destroy  ## might remove this, not sure...
+  has_many :billing, :dependent => :destroy
+  has_many :payment # not used yet...
   
   ########################################
   

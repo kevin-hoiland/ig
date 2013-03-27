@@ -41,8 +41,31 @@ class ProfilesController < ApplicationController
       render('edit')
     end
   end
-  
+
+=begin
+private
+  def update_logs
+    profile = self.id
+    user = User.find_by_id(profile.user_id)
+    log = DeletedObject.new
+    log.deleted_type = "Profile"
+    log.reason = "User/Profile Deleted by Intl Gum Admin"
+    log.user_id = user.id
+    log.user_email = user.email
+    log.profile_id = profile.id
+    log.profile_sex = profile.sex
+    log.profile_location = profile.location
+    log.profile_age = profile.age
+    log.original_creation_dt = profile.created_at
+    log.save
+    #@_current_user = session[:current_user_id] = nil
+    #   redirect_to root_url
+  end
+=end
+
 end
+
+
 
 =begin MIGHT DEPRICATE DELETE FEATURE... 
 
