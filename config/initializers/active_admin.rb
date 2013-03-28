@@ -18,6 +18,7 @@ ActiveAdmin.setup do |config|
   # http://reverbhq.com/blog/2012/08/building-web-apps-with-activeadmin/
   # http://reverbhq.com/blog/2012/08/activeadmin-0-5-0-is-released/
   # config.view_factory.footer = MyFooter
+  config.view_factory.footer = MyFooter
   
   # == Site Title
   #

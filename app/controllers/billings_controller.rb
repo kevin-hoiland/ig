@@ -11,10 +11,9 @@ class BillingsController < ApplicationController
   
   LOGIN_ID = '5Eh4LJew5B'
   #TRANSACTION_KEY = '6SyY69r5Gs4X2Aas'
-  TRANSACTION_KEY = '8yJd9v477GfKaR73'
-
-
-
+  #TRANSACTION_KEY = '8yJd9v477GfKaR73'
+  #TRANSACTION_KEY = '7VW87P87mKP3u8mD'
+  TRANSACTION_KEY = '54tdwP67b7GLps6L'
 #######################################################################  
 
   def index
@@ -53,7 +52,7 @@ class BillingsController < ApplicationController
         #profile.subscriptions_created += 1
         #profile.save
         creditcard = ActiveMerchant::Billing::CreditCard.new(@payment_info)
-        gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY, :test => true)
+        gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY) # started working when i removed "", :test => true" LOL
 #        options = {:interval => { :unit => :months, :length => 1 }, :duration => { :start_date => get_start_date, :occurrences => 9999},
 #                  :ip => @ip, :customer => @customer, :email => @email, :description => 'New monthly recurring Subscription for $8 per month.',
 #                  :shipping_address => @shipping_address, :billing_address => @billing_address}

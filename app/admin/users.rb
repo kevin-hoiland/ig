@@ -1,7 +1,10 @@
 ActiveAdmin.register User do
+  
+  before_filter :set_deleted_object_data, :only => [:destroy]
+  
   menu :label => "Users"
   menu :parent => "Member Info"
-
+  
   index do
     column :id
     column "Email/Login", :email
@@ -38,5 +41,27 @@ ActiveAdmin.register User do
   end
 =end
   
+  controller do
+    def set_deleted_object_data
+      user = User.find(params[:id])
+      profile = Profile.find_by_user_id(user.id)
+      log = DeletedObject.new
+      log.deleted_type = "User/Profile"
+      log.reason = "User & Profile Deleted by Intl Gum Admin"
+      log.user_id = user.id
+      log.user_email = user.email
+      log.profile_id = profile.id
+      log.profile_sex = profile.sex
+      log.profile_location = profile.location
+      log.profile_age = profile.born
+      log.deleted_object_creation_dt = user.created_at
+      log.save
+
+#      @log = Datacenter.find(params[:id])
+#      @datacenter.destroy
+#      redirect_to edit_admin_retailer_path(@datacenter.infrastructure)
+    end
+  end
+    
   
 end

@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 
 gem 'json'
@@ -26,10 +23,8 @@ gem 'custom_error_message'
 
 gem 'activemerchant', :require => 'active_merchant'
 
-#gem 'rmagick', '2.12.1'
-#gem 'rmagick'
-
 gem 'mini_magick'
+#gem 'rmagick'
 
 gem 'carrierwave'
 gem 'fog'
