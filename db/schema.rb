@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(:version => 20130221150851) do
     t.integer  "subscriptions_deleted", :default => 0, :null => false
     t.string   "name"
     t.string   "location"
-    t.date     "born"
+    t.string   "age"
     t.string   "sex"
     t.text     "story"
     t.datetime "created_at",                           :null => false
@@ -190,7 +190,7 @@ ActiveRecord::Schema.define(:version => 20130221150851) do
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
   create_table "shipments", :force => true do |t|
-    t.date     "date"
+    t.date     "ship_date"
     t.decimal  "product_cost",   :precision => 10, :scale => 2
     t.decimal  "shipping_cost",  :precision => 10, :scale => 2
     t.decimal  "labor_cost",     :precision => 10, :scale => 2
@@ -202,8 +202,6 @@ ActiveRecord::Schema.define(:version => 20130221150851) do
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
   end
-
-  add_index "shipments", ["date"], :name => "index_shipments_on_date"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -230,9 +228,9 @@ ActiveRecord::Schema.define(:version => 20130221150851) do
   create_table "versions", :force => true do |t|
     t.datetime "released_at"
     t.text     "notes"
-    t.decimal  "number",      :precision => 4, :scale => 2
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.string   "number"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "votes", :force => true do |t|

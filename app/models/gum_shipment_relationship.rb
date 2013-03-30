@@ -8,4 +8,8 @@ class GumShipmentRelationship < ActiveRecord::Base
   belongs_to :shipment
   belongs_to :gum
   
+  
+  validates :shipment, :presence => true
+  validates :gum, :presence => true
+  
 end

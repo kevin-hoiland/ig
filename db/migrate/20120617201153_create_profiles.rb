@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer "subscriptions_deleted", :default => 0, :null => false
       t.string "name"
       t.string "location"
-      t.date "born"
+      t.string "age"
       t.string "sex"
       t.text "story"
       t.timestamps

@@ -56,7 +56,8 @@
 	color: white;
 	padding: 10px;
 	margin-bottom: 15px;
-	@include border-radius(5px);
+	//@include border-radius(5px);
+	border-radius: 5px;
 	h2 {
 		margin: 0;
 		padding: 0;
@@ -71,7 +72,8 @@
 	border: green;
 	color: white;
 	padding: 10px;
-	@include border-radius(5px);
+	//@include border-radius(5px);
+	border-radius: 5px;
 	h2 {
 		margin: 0;
 		padding: 0;

@@ -53,7 +53,7 @@ ActiveAdmin.register User do
       log.profile_id = profile.id
       log.profile_sex = profile.sex
       log.profile_location = profile.location
-      log.profile_age = profile.born
+      log.profile_age = profile.age
       log.deleted_object_creation_dt = user.created_at
       log.save
 

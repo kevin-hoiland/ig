@@ -10,7 +10,12 @@
 	<% end %>
 <% end %>
 
-<h1>Create New Rating:</br><%=permalink_humanize(@gum.permalink) %></h1>
+<%= render(:partial => "shared/votes") %>
+
+<h1 id="no_clear">Create New Rating:</br><%=permalink_humanize(@gum.permalink) %></h1>
+<!--	
+<h1>Create New Rating:</br>< %=permalink_humanize(@gum.permalink) %></h1>
+-->
 <%= render(:partial => 'shared/error_messages', :locals => {:object => @new_rating}) %>
 <!--
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}",:id => 'gum_image') %>

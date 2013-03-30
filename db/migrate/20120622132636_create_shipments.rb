@@ -1,7 +1,7 @@
 class CreateShipments < ActiveRecord::Migration
   def change
     create_table :shipments do |t|
-      t.date "date"
+      t.date "ship_date"
       t.decimal "product_cost", :precision => 10, :scale => 2
       t.decimal "shipping_cost", :precision => 10, :scale => 2
       t.decimal "labor_cost", :precision => 10, :scale => 2
@@ -12,6 +12,5 @@ class CreateShipments < ActiveRecord::Migration
       t.decimal "profit", :precision => 10, :scale => 2
       t.timestamps
     end
-    add_index :shipments, ['date']
   end
 end

@@ -1,9 +1,54 @@
-// Active Admin CSS Styles
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+//
+// Colors
+$primary-color: #339933 !default;
+$secondary-color: #FF3366 !default;
+$section-header-text-color: #006699 !default;
+$hover-menu-item-background: lighten(#5E6469, 12%) !default;
+$error-color: #FF3366 !default;
+
+// Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+// Overriding any non-variable SASS must be done after the fact.
+//
+body.active_admin {
+	#header {
+		color: #006699;
+		background: url('/assets/filler_v12.jpg') top left;
+	}
+}
+body.active_admin {
+  #title_bar {
+		//background: lighten($secondary-color, 25%);
+		h2 {
+			color: #FF3366;
+		}
+	}	
+}
+//
+// Notice that Active Admin CSS rules are nested within a
+// 'body.active_admin' selector to prevent conflicts with
+// other pages in the app. It is best to wrap your changes in a 
+// namespace so they are properly recognized. You have options
+// if you e.g. want different styles for different namespaces:
+//
+// .active_admin       applies to any Active Admin namespace
+// .admin_namespace    applies to the admin namespace (eg: /admin)
+// .other_namespace    applies to a custom namespace named other (eg: /other)
+
 // To customize the Active Admin interfaces, add your
 // styles here:
-.price {
+.price_list {
   text-align :right;
+}
+.price_show {
+  text-align :right;
+	position: relative;
+	right: 90%;
 }

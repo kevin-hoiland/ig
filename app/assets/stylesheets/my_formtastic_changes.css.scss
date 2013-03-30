@@ -89,7 +89,17 @@ form.formtastic {
 	//color: #444343;
 	color: $font_color;
 }
+// these are the pulldowns, would be nice to limit expanded select height for born pulldown, but no option, controlled by browser :(
+.formtastic select {
+	font-family: $font;
+//	border: solid red;
+//	size: 10;  // only works with listbox that includes scroll bar etc
+}
 form.formtastic input {
+	font-family: $font;
+}
+
+form.formtastic textarea {
 	font-family: $font;
 }
 

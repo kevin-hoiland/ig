@@ -139,6 +139,8 @@ section#content {
 		clear: both;
 		&#no_clear {
 			clear: none;
+			padding: 0px;
+			margin: 0px;
 		}
 	}
 	#welcome {
@@ -304,6 +306,7 @@ section#sidebar {
 */		ul#sex {
 				padding-left: 25%;
 				margin: 0;
+				border: solid red;
 			}
 			li.sex_label {
 				//display: block;
@@ -318,10 +321,14 @@ section#sidebar {
 				    padding: 0;
 				    margin: 0;
 				    //vertical-align: bottom;
-				    position: relative;
-				    top: -20px;
-						left: -65%;
+
+//				    position: relative;
+//				    top: -20px;
+//						left: -20px;
+//						left: -65%;
+
 				    //*overflow: hidden;
+				border: solid green;
 			}
 		}// end ul#member
 		

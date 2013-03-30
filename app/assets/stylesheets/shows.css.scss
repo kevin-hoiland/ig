@@ -74,7 +74,8 @@ img#gum_image {
 		li {
 			width: 100px;
 			@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
-			@include border-radius(10px);
+			//@include border-radius(10px);
+			border-radius: 10px;
 			float: left;
 			text-align: center;
 			padding: 5px;

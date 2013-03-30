@@ -10,33 +10,8 @@
 	<% end %>
 <% end %>
 
-<% if user_signed_in? %>
-	<div id="vote_text">Vote Bubble or Bust</div>
-	<div id="vote_container">
-	<% if current_user.voted_for?(@gum) %>
-		<div class = "vote_bust">
-			<%= link_to image_tag("bust_grey3.png", :title => "Bust", :size => "48x48"), vote_gum_down_path(@gum.permalink), :method => :post %>
-		</div>
-		<div class = "vote_bubble">
-			<a href="#"><%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %></a>
-		</div>
-	<% elsif current_user.voted_against?(@gum) %>
-		<div class = "vote_bust">
-			<a href='#'><%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %></a>
-		</div>
-		<div class = "vote_bubble">
-			<%= link_to image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48"), vote_gum_up_path(@gum.permalink), :method => :post %>
-		</div>
-	<% else %>
-		<div class = "vote_bust">
-			<%= link_to image_tag("bust_grey3.png", :title => "Bust", :size => "48x48"), vote_gum_down_path(@gum.permalink), :method => :post %>
-		</div>
-		<div class = "vote_bubble">
-			<%= link_to image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48"), vote_gum_up_path(@gum.permalink), :method => :post %>
-		</div>
-	<% end %>
-	</div>
-<% end %>
+<%= render(:partial => "shared/votes") %>
+
 <h1 id="no_clear"><Gum Details><%= permalink_humanize(@gum.permalink) %></h1>
 
 <!-- prior way, before using carrierwave and fog 

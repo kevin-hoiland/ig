@@ -13,18 +13,27 @@
     <li><%= f.text_field :name_cont %></li>
     <li><%= f.label :location, "Location" %></li>
     <li><%= f.text_field :location_cont %></li>
-    <li><%= f.label :born, "Born" %></li>
-    <li><%= f.date_select :born_eq, :start_year => 1900, :end_year => Time.now.year, :discard_month => true, :discard_day => true, :include_blank => true %></li>
+    <li><%= f.label :age, "Age" %></li>
+    <li><%= f.text_field :age_cont %></li>
     <li><%= f.label :sex, "Sex" %></li>
-    <li><% f.checks :sex_in, [['Male', "Male"], ["Female", "Female"] , ['Other', "Other"]] do |check| %>
+	<li><%= f.collection_select :sex_eq, Profile.all, :id, :sex %></li>
+<!--
+< %= f.select :sex_eq, options_from_collection_for_select(Profile.all, "sex", @search_profiles.sex_eq) %>
+
+	<li>< %= f.select :sex_eq %></li>
+	
+	
+    <li>< % f.checks :sex_in, [['Male', "Male"], ["Female", "Female"] , ['Other', "Other"]] do |check| %>
 		<ul id="sex">
-			<li class="sex_label"><%= check.label %></li>
-			<li class="sex_input"><%= check.box %></li>
+			<li class="sex_label">< %= check.label %></li>
+			<li class="sex_input">< %= check.box %></li>
 		</ul>
-	<% end %></li>
+	< % end %></li>
+-->
     <li><%= f.label :story, "Story" %></li>
     <li><%= f.text_field :story_cont %></li>
 </ul>
+
     <!-- add "when do and when don't (chew gum, duh)"-->
     <%= f.submit :class => 'search_button' %>
   <% end %>
