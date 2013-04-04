@@ -1,0 +1,45 @@
+home_top|1|12|0|Welcome to your gum headquarters!
+home_bottom|1|12|0|Membership is free and always will be :-)
+home_slide|1|30|1|</br></br>Membership is free and always will be, signup now to rate and vote on gum, along with access to other exclusive offers!
+home_slide|2|30|1|</br></br>Members may optionally subscribe to a variety of gum delivered to your door for only $8 per month.
+contact|1|14|0|4262 Kendall Street, San Diego CA 92109
+contact|2|14|1|Please contact Intl Gum at any time!  The phone number is toll free and thus no cost to you.
+contact|3|14|1|We are also available via email if desired.
+contact|4|14|0|email:  support@intlgum.com
+faq|1|20|1|Question #1 here
+faq|2|14|1|Blah blah blah
+faq|3|20|1|Question #2 here
+faq|4|14|1|weeeeeeee, ok, bye now
+faq|5|20|1|What type of payment cards do you accept?
+faq|6|14|1|Intl Gum accepts the following: Visa, MasterCard, American Express, and Discover
+about|1|16|1|Intl Gum Membership is always free, which allows you to vote, rank, and comment on gum, along with other special privileges.
+about|2|16|1|Intl Gum Members also have the option of paying for a monthly subscription, which delivers a variety of gum directly to your door every month via mail.  On average you will receive a half dozen different packs of gum, about 100 pieces of gum total.
+about|3|16|1|Monthly subscriptions are always only $8 per month, automatically billed on the 8th day of every month.  You may cancel your recurring subscription at any time via your account info page (same place you sign up) or by contacting Intl Gum customer support directly.
+corporate|1|14|1|International Gum was incorporated on August 16th 2010 in the Sate of California and does business under the name "Intl Gum".
+corporate|2|14|1|The company invested three years in research, design, and development prior to launching live in April 2013.
+corporate|3|14|1|The company headquarters are in San Diego, CA.
+shipping|1|14|1|Intl Gum shipments are sent the same week as monthly billing. Shipping is always free to you because Intl Gum pays for all shipping and handling costs.  Your specially selected gums are packaged appropriately and shipped via USPS.  Intl Gum ships to all 50 States and Washington D.C., but we do not yet ship outside of the United States (international shipping coming soon).
+shipping|2|14|1|Intl Gum is responsible for any loss or damage that occurs during shipping.  You should notify Intl Gum within 30 days of delivery if you believe any part of your shipment is missing, incorrect or damaged, Intl Gum will happily process a new replacement shipment at no additional cost to you.
+returns|1|14|1|All gums purchased from Intl Gum may be returned to Intl Gum for a full refund or replacement within 30 days of delivery provided that all gums are returned in their original condition and in their original packaging.  No gums will be accepted for replacement or refund after this 30 day period and all sales will be considered final.
+returns|2|14|1|You may cancel your ongoing subscription membership at any time on your Membership Account Info page or by contacting Intl Gum customer support. All cancellation requests must be received before the billing cycle of the next upcoming month (always the 8th calendar day of each month). Cancellation requests received after the eight day of a month shall apply to the following month.
+subscriptions|1|14|1|Blah blah blah, subscription info here from the DB
+privacy|1|12|1|Your privacy and security are very important to Intl Gum.  No information gathered through sales, interactions, and promotions from our website are shared, sold, or traded with any other company.
+privacy|2|12|1|All content from your optional Private information section (clearly displayed area within Your Account page) is always kept in absolute private and never displayed publicly.  This information includes mailing address, billing name, and billing info.  Your payment information is never stored in our system (if entered for the optional monthly Subscription plan).  We ask for your name, address and contact information so we can send you your monthly gum. We ask for credit card information so we can fulfill your subscription, and so we can provide this information to the company or companies who process your credit card payment. We do not share any other information with third parties.
+privacy|3|12|1|Neither your name nor anything about you is shared with or sold, given or traded to any outside company or agency.  Your Public information that you may choose to enter (clearly displayed section of Your Account), however, is available to other viewers on the Intl Gum website.  This type of optional public information includes your desired alias, gender, favorite gums, etc.
+privacy|4|12|1|We do not share or sell email addresses.  We ask for your email address so we may provide you with information about sales, events and other pertinent information.  You may opt out of receiving these mails at any time via a link provided in the email.  Generally, this information is delivered only about once per month, around the time of monthly Subscription deliveries.  We do use email as a means of receiving feedback from our customers, and we encourage you to email us with your questions and/or comments.  Intl Gum always reads every email we receive.
+privacy|5|12|1|This website uses cookie sessions to remember the currently logged in Member and provide various increased user experiences throughout the website.  No personal information is ever stored in the cookie.  If desired, you may always set your browser to deny cookies.  We also use cookies for increased security, such as automatically expiring your session after a set amount of time (in case you forget to logout).
+privacy|6|12|1|Intl Gum takes security very seriously.  All billing related activities occur in a secure area of the website.  In addition, we take extra cautions in regards to ensuring your login and account information are private and safe.
+privacy|7|12|1|If you have any questions or concerns about privacy and/or security, please do not hesitate to contact Intl Gum directly via email (support@intlgum.com) or via our toll free phone number (855-486-4968).
+billing_top|1|11|1|Intl Gum Membership is free, which allows you to vote, rank, and comment on Gums. The Intl Gum Subscription offer, however, is an optional service that costs $8 per month, automatically charging your credit card on the 8th day of every month. There is no long term commitment and you may choose to subscribe or unsubscribe at any time. An Intl Gum Subscription provides you with a variety of Gum delivered directly to your door every month.
+billing_bottom|1|14|1|Checking the below box indicates you agree and reaffirm that Intl Gum is authorized to charge your above credit card $8 (U.S. dollars) per month for every month that you are subscribed. At any point in time, you may Unsubscribe via your online Membership Account page or by contacting Intl Gum directly. When you provide credit card information to Intl Gum, you represent to Intl Gum that you are the authorized user of the credit card.
+billing_bottom|2|14|1|Yes, I understand and agree, please just send me some gum already!
+billing_delete|1|16|1|Are you sure you want to cancel and delete your monthly subscription listed below?
+billing_delete|2|14|1|If so, the billing information associated with this subscription will no longer be charged $8 per month and the shipping address will no longer receive monthly Intl Gum deliveries in the mail.
+news|1|10|1|http://www.google.com
+news|2|14|1|[16-AUG-2012] Intl Gum Celebrates 2 year anniversary since incorporation
+news|3|10|1|http://www.cnn.com
+news|4|14|1|[End of 2012] Intl Gum launches, amazing!!!
+news|5|10|1|http://somewhere.com
+news|6|14|1|[End of 2012] Another great article summary here, blah blah
+gum_specific|1|8|1|Note: Intl Gum holds no liability for the accuracy of the above information, description, ingredients, etc. Always consult information on the product packaging before consumption. All gum names, images, designs, brands, and Trademarks are property of the product owner (not Intl Gum). No image may not be used without the express permission of the company and product owner.  
+gum_general|1|8|1|All gum names, images, designs, brands, and Trademarks are property of the product owners (not Intl Gum). No images may be used without the express permission of each respective company and product owner.

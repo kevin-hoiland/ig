@@ -32,7 +32,7 @@ class GumsController < ApplicationController
   def show
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     #@gum = Gum.find(params[:id])
-    @gum = Gum.find_by_permalink(params[:id])
+    @gum = Gum.find_by_permalink(params[:id]) || not_found
     @votes_up_total = @gum.votes_for
     @votes_down_total = @gum.votes_against
     @rating_averages = @gum.get_rating_averages
@@ -47,7 +47,7 @@ class GumsController < ApplicationController
   end
   
   def vote_up
-    gum = Gum.find_by_permalink(params[:permalink])
+    gum = Gum.find_by_permalink(params[:permalink]) || not_found
     if current_user.voted_for?(gum)
       flash[:alert] = "You had already voted this gum Bubble, can't vote the same way twice"
       redirect_to(gum_url(gum.permalink))
@@ -62,6 +62,7 @@ class GumsController < ApplicationController
       current_user.vote_exclusively_for(gum)
       redirect_to(gum_url(gum.permalink))
     end
+
 #   begin
 #     current_user.vote_for(@post = Post.find(params[:id]))
 #     render :nothing => true, :status => 200
@@ -71,7 +72,7 @@ class GumsController < ApplicationController
   end
 
   def vote_down
-    gum = Gum.find_by_permalink(params[:permalink])
+    gum = Gum.find_by_permalink(params[:permalink]) || not_found
     if current_user.voted_against?(gum)
       flash[:alert] = "You had already voted this gum Bust, can't vote the same way twice"
       redirect_to(gum_url(gum.permalink))
@@ -93,4 +94,5 @@ class GumsController < ApplicationController
     #render('show')
   end
   
+
 end

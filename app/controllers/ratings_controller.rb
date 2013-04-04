@@ -22,7 +22,7 @@ class RatingsController < ApplicationController
   def per_gum
     #@gum = Gum.find(params[:gum_id])
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-    @gum = Gum.find_by_permalink(params[:gum_permalink])
+    @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found
     @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
   end
   
@@ -50,7 +50,7 @@ class RatingsController < ApplicationController
   def new
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     #@gum = Gum.find(params[:gum_id])
-    @gum = Gum.find_by_permalink(params[:gum_permalink])
+    @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found
     @profile = Profile.find_by_user_id(current_user.id)
     @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists? ### probably don't need this long term, maybe was just for debuggin?
     if GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
@@ -99,7 +99,7 @@ class RatingsController < ApplicationController
     else
       flash[:alert] = "New Rating Save failed :("
       @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-      @gum = Gum.find_by_permalink(params[:gum_permalink])
+      @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found
       @profile = Profile.find_by_user_id(current_user.id)
       render('new')
     end
@@ -154,7 +154,7 @@ class RatingsController < ApplicationController
   end
   
   def get_gum_id (permalink)
-    g = Gum.find_by_permalink(permalink)
+    g = Gum.find_by_permalink(permalink) || not_found
     return g.id
   end
   

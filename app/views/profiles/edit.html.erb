@@ -20,7 +20,7 @@
 -->
 		<%= f.input :age, :label =>"What's your age?", :placeholder => "Old, young? Gum doesn't care!", :hint => "How old would you be if you didn't know how old you are?"%>
 		<%= f.input :sex, :label =>"What's your gender?", :as => :select, :collection => ["Male", "Female", "Other"]%>
-		<%= f.input :story, :size => 100, :label => "Anything else to share?", :placeholder => "Whatever you want here", :hint => "Your Gum thoughts, comments, stories, whatever :-)", :input_html => { :class => '', :rows => 5, :cols => 50, :maxlength => 500 } %>
+		<%= f.input :story, :size => 100, :label => "Anything else to share?", :placeholder => "Whatever you want here", :hint => "Your Gum thoughts, comments, stories, whatever :-)", :input_html => { :class => '', :rows => 5, :cols => 50, :maxlength => 1000 } %>
 	<% end %>
     <%= f.action :submit, :label => "Update Your Public Info", :as => :button %>
 	<%= f.action :cancel, :label => "Cancel", :as => :link %>

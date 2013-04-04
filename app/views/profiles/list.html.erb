@@ -16,20 +16,15 @@
     <li><%= f.label :age, "Age" %></li>
     <li><%= f.text_field :age_cont %></li>
     <li><%= f.label :sex, "Sex" %></li>
-	<li><%= f.collection_select :sex_eq, Profile.all, :id, :sex %></li>
-<!--
-< %= f.select :sex_eq, options_from_collection_for_select(Profile.all, "sex", @search_profiles.sex_eq) %>
-
-	<li>< %= f.select :sex_eq %></li>
-	
-	
-    <li>< % f.checks :sex_in, [['Male', "Male"], ["Female", "Female"] , ['Other', "Other"]] do |check| %>
-		<ul id="sex">
-			<li class="sex_label">< %= check.label %></li>
-			<li class="sex_input">< %= check.box %></li>
-		</ul>
-	< % end %></li>
--->
+    <li><%= f.select :sex_eq, ["","Male","Female","Other"]  %></li>
+	<!-- dynamic... <li>< %= f.collection_select :sex_eq, Profile.all, :id, :sex %></li>
+		 checkboxes... <li>< % f.checks :sex_in, [['Male', "Male"], ["Female", "Female"] , ['Other', "Other"]] do |check| %>
+				<ul id="sex">
+					<li class="sex_label">< %= check.label %></li>
+					<li class="sex_input">< %= check.box %></li>
+				</ul>
+			< % end %></li>
+	-->
     <li><%= f.label :story, "Story" %></li>
     <li><%= f.text_field :story_cont %></li>
 </ul>

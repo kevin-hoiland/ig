@@ -1,7 +1,7 @@
 class Gum < ActiveRecord::Base
   # attr_accessible :title, :body
 #  attr_accessible :permalink, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image # for seeding DB only
-  attr_accessible :permalink, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image, as: :admin
+  attr_accessible :permalink, :title, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image, as: :admin
 
   mount_uploader :image, ImageUploader
   
@@ -10,7 +10,7 @@ class Gum < ActiveRecord::Base
 
   #from : http://erniemiller.org/2012/05/11/why-your-ruby-class-macros-might-suck-mine-did/
   def self.ransackable_attributes(auth_object = nil)
-    super & ['upc', 'active', 'brand', 'flavor', 'country', 'description']
+    super & ['upc', 'title', 'company', 'active', 'brand', 'flavor', 'country', 'description']
   end
   
     has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"

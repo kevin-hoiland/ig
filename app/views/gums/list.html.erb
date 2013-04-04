@@ -14,8 +14,10 @@
 <!-- ransack: search_form_for @search_gums do |f| -->
 <!-- metasearch: form_for @search_gums do |f| -->
 <ul id = "gum">
-    <li><%= f.label :brand_cont, "Brand" %></li>
-    <li><%= f.text_field :brand_cont, :maxlength => 50 %></li>
+	<li><%= f.label :title_cont, "Name" %></li>
+    <li><%= f.text_field :title_cont, :maxlength => 100 %></li>
+    <li><%= f.label :brand_or_company_cont, "Company/Brand" %></li>
+    <li><%= f.text_field :brand_or_company_cont, :maxlength => 50 %></li>
     <li><%= f.label :flavor_cont, "Flavor" %></li>
     <li><%= f.text_field :flavor_cont, :maxlength => 50 %></li>
     <li><%= f.label :description_cont, "Description" %></li>
@@ -67,8 +69,12 @@
 			< %= image_tag("gums/#{g.upc}.jpg", :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
 			-->
 			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>			
-			<p><%= g.brand %></p>
-			<p><%= g.flavor %></p>
+			<!--
+			<p>< %= legalize(g.title) %></p>
+			-->
+			<p><%= legalize(g.brand) %></p>
+			<p><%= legalize(g.flavor) %></p>
+			
 		</li>
 		<li class="clear_list">
 			<img><src="/assets/list_clear.gif"/></img>

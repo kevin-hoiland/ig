@@ -10,7 +10,12 @@ module ApplicationHelper
   
   def permalink_humanize(permalink)
     permalink.gsub("_", " ").titleize
-    #permalink.gsub("_", " ").camelize
-    #permalink.humanize
   end
+  
+  def legalize(text)
+    map = {'(TM)' => '&#8482;', '(R)' => '&#174;', '(C)' => '&#169;'}
+    re = Regexp.new(map.keys.map { |x| Regexp.escape(x) }.join('|'))
+    text.gsub(re, map).html_safe
+  end
+      
 end

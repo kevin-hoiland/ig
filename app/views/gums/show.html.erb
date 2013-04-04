@@ -1,5 +1,5 @@
-<% title "#{permalink_humanize(@gum.permalink)}" %>
-<% description "Detailed information about #{permalink_humanize(@gum.permalink)}, along with average ratings and vote results." %>
+<% title "#{@gum.title}" %>
+<% description "Detailed information about #{@gum.title}, along with average ratings and vote results." %>
 <%= currently_at 'Gums' %>
 
 <% content_for :sub_nav do %>
@@ -12,14 +12,16 @@
 
 <%= render(:partial => "shared/votes") %>
 
-<h1 id="no_clear"><Gum Details><%= permalink_humanize(@gum.permalink) %></h1>
+<h1 id="no_clear"><Gum Details><%= legalize(@gum.brand)+" "+legalize(@gum.flavor) %></h1> <!-- was previously using title db value, as in legalize(@gum.title) -->
 
-<!-- prior way, before using carrierwave and fog 
+<!-- prior way, before using carrierwave and fog 		UMMM	permalink_humanize(@gum.permalink)
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image') %>
 -->
 <%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
 
 <%= debug @gum %>
+
+Description: <%= legalize(@gum.description) %>
 
 <h2>Average Gum Ratings</h2>
 <div id = "vote_results_bubble">
