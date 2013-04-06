@@ -1,5 +1,5 @@
-<% title "All Ratings for #{permalink_humanize(@gum.permalink)}" %> <!-- placeholder dude -->
-<% description "Summary of all gum ratings and member comments for #{permalink_humanize(@gum.permalink)}" %>
+<% title "All Ratings for #{@gum.title}" %>
+<% description "All gum ratings and member comments for #{@gum.title}" %>
 <%= currently_at 'Gums' %>
 
 <% content_for :sub_nav do %>
@@ -7,7 +7,7 @@
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>
 
-<h1>All Ratings for <%= permalink_humanize(@gum.permalink) %></h1> <!-- placeholder dude -->
+<h1>All Ratings for <%= legalize(@gum.title) %></h1>
 
 <% @ratings.each do |r| %>
 <ul class="list_container">	

@@ -14,22 +14,22 @@
   <%= search_form_for @search_ratings, :url => { :action => "index" } do |f| %>
 <ul id="rating"> 
     <p>Gumtation</p>
-	<li><%= f.label :rank_1_gteq, "Low " %><%= f.text_field :rank_1_gteq, :maxlength => 2 %></li>
-    <li><%= f.label :grank_1_lteq, "High " %><%= f.text_field :rank_1_lteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_1_gteq, "Low " %><%= f.text_field :rank_1_gteq, :maxlength => 2, :default => @search_ratings.rank_1 %></li>
+    <li><%= f.label :grank_1_lteq, "High " %><%= f.text_field :rank_1_lteq, :maxlength => 2, :default => @search_ratings.rank_1 %></li>
 	<p>Chewlasticity</p>
-	<li><%= f.label :rank_2_gteq, "Low " %><%= f.text_field :rank_2_gteq, :maxlength => 2 %></li>
-	<li><%= f.label :rank_2_lteq, "High " %><%= f.text_field :rank_2_lteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_2_gteq, "Low " %><%= f.text_field :rank_2_gteq, :maxlength => 2, :default => @search_ratings.rank_2 %></li>
+	<li><%= f.label :rank_2_lteq, "High " %><%= f.text_field :rank_2_lteq, :maxlength => 2, :default => @search_ratings.rank_2 %></li>
 	<p>Flavoracity</p>
-	<li><%= f.label :rank_3_gteq, "Low " %><%= f.text_field :rank_3_gteq, :maxlength => 2 %></li>
-	<li><%= f.label :rank_3_lteq, "High " %><%= f.text_field :rank_3_lteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_3_gteq, "Low " %><%= f.text_field :rank_3_gteq, :maxlength => 2, :default => @search_ratings.rank_3 %></li>
+	<li><%= f.label :rank_3_lteq, "High " %><%= f.text_field :rank_3_lteq, :maxlength => 2, :default => @search_ratings.rank_3 %></li>
 	<p>Bubbability</p>
-	<li><%= f.label :rank_4_gteq, "Low " %><%= f.text_field :rank_4_gteq, :maxlength => 2 %></li>
-	<li><%= f.label :rank_4_lteq, "High " %><%= f.text_field :rank_4_lteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_4_gteq, "Low " %><%= f.text_field :rank_4_gteq, :maxlength => 2, :default => @search_ratings.rank_4 %></li>
+	<li><%= f.label :rank_4_lteq, "High " %><%= f.text_field :rank_4_lteq, :maxlength => 2, :default => @search_ratings.rank_4 %></li>
 	<p>Gumaliciousness</p>
-	<li><%= f.label :rank_5_gteq, "Low " %><%= f.text_field :rank_5_gteq, :maxlength => 2 %></li>
-	<li><%= f.label :rank_5_lteq, "High " %><%= f.text_field :rank_5_lteq, :maxlength => 2 %></li>
+	<li><%= f.label :rank_5_gteq, "Low " %><%= f.text_field :rank_5_gteq, :maxlength => 2, :default => @search_ratings.rank_5 %></li>
+	<li><%= f.label :rank_5_lteq, "High " %><%= f.text_field :rank_5_lteq, :maxlength => 2, :default => @search_ratings.rank_5 %></li>
     <p>Comment</p>
-	<li id="comment"><%= f.text_field :comment_cont, :maxlength => 50 %></li>
+	<li id="comment"><%= f.text_field :comment_cont, :maxlength => 50, :default => @search_ratings.comment %></li>
 </ul>
     <%= f.submit :class => 'search_button'%>
   <% end %>

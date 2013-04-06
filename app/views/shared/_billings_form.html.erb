@@ -2,6 +2,7 @@
 <h2>Shipping Details</h2>
 <%= f.input :ship_first_name, :label => "First Name", :placeholder => "", :hint => "First name of recipient" %>
 <%= f.input :ship_last_name, :label => "Last Name", :placeholder => "", :hint => "Last name of recipient" %>
+<%= f.input :ship_company, :label => "Company Name", :placeholder => "", :hint => "Company name, if applicable" %>
 <%= f.input :ship_street, :label => "Street Address", :placeholder => "", :hint => "Include app # or suite #" %>
 <%= f.input :ship_city, :label => "City", :placeholder => "", :hint => "" %>
 <%= f.input :ship_state_province, :label => "State", :placeholder => "", :hint => "" %>
@@ -11,6 +12,7 @@
 <%= f.input :copy, :label => "Same as Shipping", :size => 10, :as => :check_boxes, :collection => [""], :input_html => {:onclick => "SetBilling(this.checked);"} %>
 <%= f.input :bill_first_name, :label => "First Name", :placeholder => "", :hint => "As displayed on your card" %>
 <%= f.input :bill_last_name, :label => "Last Name", :placeholder => "", :hint => "As displayed on your card" %>
+<%= f.input :bill_company, :label => "Company Name", :placeholder => "", :hint => "If using a corporate card" %>
 <%= f.input :bill_street, :label => "Street Address", :placeholder => "", :hint => "As associated with your card" %>
 <%= f.input :bill_city, :label => "City", :placeholder => "", :hint => "As associated with your card" %>
 <%= f.input :bill_state_province, :label => "State", :placeholder => "", :hint => "As associated with your card" %>
@@ -37,6 +39,7 @@ function SetBilling(checked) {
           if (checked) {
                     document.getElementById('billing_bill_first_name').value = document.getElementById('billing_ship_first_name').value; 
                     document.getElementById('billing_bill_last_name').value = document.getElementById('billing_ship_last_name').value;
+					document.getElementById('billing_bill_company').value = document.getElementById('billing_ship_company').value; 
                     document.getElementById('billing_bill_street').value = document.getElementById('billing_ship_street').value; 
                     document.getElementById('billing_bill_city').value = document.getElementById('billing_ship_city').value;
                     document.getElementById('billing_bill_state_province').value = document.getElementById('billing_ship_state_province').value; 
@@ -44,6 +47,7 @@ function SetBilling(checked) {
           } else {
                     document.getElementById('billing_bill_first_name').value = ''; 
                     document.getElementById('billing_bill_last_name').value = '';
+                    document.getElementById('billing_bill_company').value = ''; 
                     document.getElementById('billing_bill_street').value = ''; 
                     document.getElementById('billing_bill_city').value = '';
                     document.getElementById('billing_bill_state_province').value = ''; 

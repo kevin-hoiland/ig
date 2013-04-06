@@ -10,7 +10,7 @@ class Gum < ActiveRecord::Base
 
   #from : http://erniemiller.org/2012/05/11/why-your-ruby-class-macros-might-suck-mine-did/
   def self.ransackable_attributes(auth_object = nil)
-    super & ['upc', 'title', 'company', 'active', 'brand', 'flavor', 'country', 'description']
+    super & ['upc', 'title', 'company', 'active', 'brand', 'flavor', 'country', 'description', 'new_release']
   end
   
     has_many :gum_rating_relationships # looks like i also probably want ", :dependent => true"
@@ -24,6 +24,8 @@ class Gum < ActiveRecord::Base
     validates :permalink, :uniqueness => true, :presence => true
     
     acts_as_voteable
+    
+    scope :empty_upc, :conditions => { :upc => "0"}
     
     scope :search_upc, lambda {|upc| where(["upc LIKE ?", "%#{upc}%"])}
     scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}

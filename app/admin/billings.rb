@@ -9,8 +9,8 @@ ActiveAdmin.register Billing do
     column "Sub #", :subscription_number
     column "Gateway ID", :gateway_subscriber_id
     column "Sub Name", :subscription_name
-    column "Bill First Name", :bill_first_name
-    column "Ship First Name", :ship_first_name
+    column "Ship Last Name", :ship_last_name
+    column "Ship Company", :ship_company
     column "Ship Street", :ship_street
     column "Ship City", :ship_city
     column "Created", :created_at

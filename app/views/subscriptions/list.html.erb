@@ -27,7 +27,7 @@
 					Total Gum Pieces: <%= s.get_monthly_pieces(s.id) %>
 				</li>
 				<li class="shipment_header">
-					<%= s.month_formatted(s.date) %>
+					<%= s.month_formatted(s.ship_date) %>
 				</li>
 				<li class="shipment_gums">
 					<% s.get_monthly_gums(s.id).each do |g| %>

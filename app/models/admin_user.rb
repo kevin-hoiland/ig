@@ -12,4 +12,7 @@ class AdminUser < ActiveRecord::Base
 
   # attr_accessible :title, :body
   
+  scope :news, :conditions => { :location => "news"}
+  scope :faqs, :conditions => { :location => "faq"}
+  
 end

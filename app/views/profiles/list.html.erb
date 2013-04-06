@@ -9,14 +9,15 @@
   <h4>Search Members</H4>
   <%= search_form_for @search_profiles do |f| %>
 <ul id="member">
+	<!-- NEED TO ADD IN MAX LENGTH FOR THESE HTML INPUT VALUES... -->
     <li><%= f.label :name, "Name" %></li>
-    <li><%= f.text_field :name_cont %></li>
+    <li><%= f.text_field :name_cont, :default => @search_profiles.name %></li>
     <li><%= f.label :location, "Location" %></li>
-    <li><%= f.text_field :location_cont %></li>
+    <li><%= f.text_field :location_cont, :default => @search_profiles.location %></li>
     <li><%= f.label :age, "Age" %></li>
-    <li><%= f.text_field :age_cont %></li>
+    <li><%= f.text_field :age_cont, :default => @search_profiles.age %></li>
     <li><%= f.label :sex, "Sex" %></li>
-    <li><%= f.select :sex_eq, ["","Male","Female","Other"]  %></li>
+    <li><%= f.select :sex_eq, ["","Male","Female","Other"], :default => @search_profiles.sex %></li>
 	<!-- dynamic... <li>< %= f.collection_select :sex_eq, Profile.all, :id, :sex %></li>
 		 checkboxes... <li>< % f.checks :sex_in, [['Male', "Male"], ["Female", "Female"] , ['Other', "Other"]] do |check| %>
 				<ul id="sex">
@@ -26,7 +27,7 @@
 			< % end %></li>
 	-->
     <li><%= f.label :story, "Story" %></li>
-    <li><%= f.text_field :story_cont %></li>
+    <li><%= f.text_field :story_cont, :default =>@search_profiles.story %></li>
 </ul>
 
     <!-- add "when do and when don't (chew gum, duh)"-->

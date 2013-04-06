@@ -1,5 +1,5 @@
-<% title "Create New Rating for #{permalink_humanize(@gum.permalink)}" %>
-<% description "Member's page for creating a new gum rating." %>
+<% title "Create New Rating for #{@gum.title}" %>
+<% description "Member page to create a new gum rating for #{@gum.title}." %>
 <%= currently_at 'Gums' %>
 
 <% content_for :sub_nav do %>
@@ -12,10 +12,8 @@
 
 <%= render(:partial => "shared/votes") %>
 
-<h1 id="no_clear">Create New Rating:</br><%=permalink_humanize(@gum.permalink) %></h1>
-<!--	
-<h1>Create New Rating:</br>< %=permalink_humanize(@gum.permalink) %></h1>
--->
+<h1 id="no_clear">Create New Rating:</br><%=legalize(@gum.title) %></h1>
+
 <%= render(:partial => 'shared/error_messages', :locals => {:object => @new_rating}) %>
 <!--
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}",:id => 'gum_image') %>

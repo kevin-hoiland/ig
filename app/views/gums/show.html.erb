@@ -12,7 +12,7 @@
 
 <%= render(:partial => "shared/votes") %>
 
-<h1 id="no_clear"><Gum Details><%= legalize(@gum.brand)+" "+legalize(@gum.flavor) %></h1> <!-- was previously using title db value, as in legalize(@gum.title) -->
+<h1 id="no_clear"><Gum Details><%= legalize(@gum.title) %></h1>
 
 <!-- prior way, before using carrierwave and fog 		UMMM	permalink_humanize(@gum.permalink)
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image') %>
