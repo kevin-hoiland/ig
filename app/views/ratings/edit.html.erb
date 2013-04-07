@@ -10,6 +10,8 @@
 	<% end %>
 <% end %>
 
+<%= render(:partial => "shared/votes") %>
+
 <h1>Edit Previous Rating:</br><%=legalize(@gum.title) %></h1>
 <%= render(:partial => 'shared/error_messages', :locals => {:object => @changed_rating}) %>
 
@@ -17,6 +19,12 @@
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}",:id => 'gum_image') %>
 -->
 <%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
+
+<div id="gum_text">
+	<p><%= legalize(@gum.description) %></p>
+	<p><%= legalize(@gum.note)%></p>
+</div>
+
 
 <%= semantic_form_for @changed_rating do |r| %>
 	<%= r.inputs do %>
@@ -26,7 +34,8 @@
 		<%= r.action :submit, :label => "Update Rating", :as => :button %>
 		<%= r.action :cancel, :label => "Cancel", :as => :link %>
 	<% end %>
- <% end %>
+<% end %>
+
 
 <!--
 stat_1, stat_2, stat_3, comment

@@ -66,7 +66,7 @@ class BillingsController < ApplicationController
 #                    :customer => @customer, :shipping_address => @shipping_address, :billing_address => @billing_address}
        options = {:interval => { :unit => :months, :length => '1' }, :duration => { :start_date => get_start_date, :occurrences => 9999},
                   :shipping_address => @shipping_address, :billing_address => @billing_address, :customer => @customer,
-                  :ip => @ip, :description => 'New monthly recurring Subscription for $8 per month.'}
+                  :ip => @ip}
 
         #response = gateway.authorize(800, creditcard, options) # this is the temporary one charge type for testing
         # this is the recurring one below (can't use it in test mode)
@@ -186,8 +186,8 @@ class BillingsController < ApplicationController
         log.profile_id = profile.id
         log.billing_subscription_id = billing.id
         log.billing_last_four = billing.last_four
-        log.billing_last_name = billing.bill_last_name+" (company:"+billing.bill_company+")"
-        log.billing_shipping_name = billing.ship_first_name+" "+billing.ship_last_name+" (company:"+billing.ship_company+")"
+        log.billing_bill_name = billing.bill_first_name+" "+billing.bill_last_name+" (company: "+billing.bill_company+")"
+        log.billing_ship_name = billing.ship_first_name+" "+billing.ship_last_name+" (company: "+billing.ship_company+")"
 ### COMPANY NAME NOT BEING LOGGED...
         log.deleted_object_creation_dt = billing.created_at
         log.save
@@ -227,7 +227,7 @@ private
     @billing.cvc = billing_info[:cvc]
     @billing.terms = billing_info[:terms]
 #    if @billing.pan > ""  # Only update the last_four DB value from pan attribute accessor if something exists for pan
-    unless @billing.pan.blank?
+    unless billing_info[:pan].blank?
       @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
     end
@@ -239,7 +239,8 @@ private
     #@customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created-Profile.find_by_user_id(@billing.user_id).subscriptions_deleted+1).to_s
     
     #@customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s
-    @customer = {:id => @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
+    @customer = {:id => @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email,
+                :description => 'Monthly recurring Subscription for $8 per month.'}      
 
     #@email = User.find(@billing.user_id).email
     @billing_address = { :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name, :company => @billing.bill_company,

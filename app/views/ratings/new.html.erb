@@ -20,6 +20,11 @@
 -->
 <%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
 
+<div id="gum_text">
+	<p><%= legalize(@gum.description) %></p>
+	<p><%= legalize(@gum.note)%></p>
+</div>
+
 <%= semantic_form_for @new_rating do |r| %>
 	<%= r.inputs do %>
 		<%= render(:partial => "shared/ratings_form", :locals => {:r => r}) %>

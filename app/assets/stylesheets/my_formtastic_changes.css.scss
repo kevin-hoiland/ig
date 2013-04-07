@@ -148,3 +148,7 @@ form.formtastic .check_boxes input {
 	position: relative;
 	bottom: 5px;
 }
+form.formtastic fieldset.inputs {
+// used to put ranking input options down below image and text of gum
+	clear: both;
+}

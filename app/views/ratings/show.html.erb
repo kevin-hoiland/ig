@@ -5,6 +5,9 @@
 <% content_for :sub_nav do %>
 	<li><%= link_to "View Gum Details", gum_path(get_permalink(@rating.gum_id)), :class => 'link_button' %></li>
 	<li><%= link_to("View Member Details", profile_path(@rating.profile_id), :class => 'link_button') %></li>
+	<% if user_signed_in? %>
+		<li><%= link_to("Rate This Gum", new_rating_path(get_permalink(@rating.gum_id)), :class => 'link_button') %></li>
+	<% end %>
 <% end %>
 
 

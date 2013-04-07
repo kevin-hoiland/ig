@@ -10,18 +10,28 @@
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>
 
-<h1>All Ratings for <%= legalize(@gum.title) %></h1>
+<% content_for :search do %>
+	<h4>Search Ratings</H4>
+	<%= search_form_for @search_ratings, :url => { :action => "per_gum" } do |f| %>
+		<%= render(:partial => "shared/ratings_search", :locals => {:f => f}) %>
+	    <%= f.submit :class => 'search_button' %>
+	<% end %>
+<% end %>
 
+<h1>All Ratings for <%= legalize(@gum.title) %></h1>
+<%= render(:partial => "shared/ratings_sort") %>
 <% @ratings.each do |r| %>
 <ul class="list_container">	
 	<li>
-	<ul class="list_links">
-		<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
-		<li><%= link_to "Member Details", profile_path(r.profile_id), :class => 'list_row_link' %></li>
-	</ul>
+		<ul class="list_links">
+			<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
+			<li><%= link_to "Member Details", profile_path(r.profile_id), :class => 'list_row_link' %></li>
+		</ul>
 	</li>
 	<li>
-		<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+		<ul class="rating_list">
+			<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+		</ul>
 	</li>
 </ul>
 		

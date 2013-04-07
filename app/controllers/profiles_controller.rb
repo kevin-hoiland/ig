@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
 
   def list
     @search_profiles = Profile.ransack(params[:q]) # was Profile.search(params[q:])
-    @profiles_list = @search_profiles.result.order("updated_at DESC").page(params[:page]) #.per(5)
+    @profiles_list = @search_profiles.result(:distinct => true).order("updated_at DESC").page(params[:page]) #.per(5)
   end
   
   def show

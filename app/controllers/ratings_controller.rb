@@ -8,11 +8,9 @@ class RatingsController < ApplicationController
   end
   
   def list
-    # HEY BRO, CAN COMBINE BOTH BELOW...
-    @search_ratings = GumRatingRelationship.ransack(params[:q]) # was .search(params[q:])
+    @search_ratings = GumRatingRelationship.ransack(params[:q])
     @ratings_list = @search_ratings.result(:distinct => true).order("updated_at DESC").page(params[:page])
-  #  @ratings_list = GumRatingRelationship.order("updated_at DESC").page(params[:page]).per(5)
-    #@ratings_list = GumRatingRelationship.all
+    # @ratings_list = GumRatingRelationship.order("updated_at DESC").page(params[:page]).per(5)
   end
   
   def show
@@ -21,14 +19,20 @@ class RatingsController < ApplicationController
   
   def per_gum
     #@gum = Gum.find(params[:gum_id])
+    @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found 
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-    @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found
-    @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
+    @search_ratings = GumRatingRelationship.ransack(params[:q])
+    @ratings = @search_ratings.result(:distinct => true).where(:gum_id => @gum.id).order("updated_at DESC").page(params[:page])    
+    # @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
   end
   
   def per_member
     @profile = Profile.find(params[:id])
-    @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_profile_id(@profile.id, :order => 'created_at DESC')).page(params[:page])
+    @content_legal = DynamicText.content("gum_general").order("sequence ASC")
+    @search_ratings = GumRatingRelationship.ransack(params[:q])
+    @ratings = @search_ratings.result(:distinct => true).where(:profile_id => @profile.id).order("updated_at DESC").page(params[:page])
+    # @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_profile_id(@profile.id, :order => 'created_at DESC')).page(params[:page])
+
   end
   
   def edit

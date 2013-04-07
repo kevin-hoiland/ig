@@ -33,6 +33,7 @@ ActiveAdmin.register Billing do
 
   controller do
     def cancel_with_gateway_and_save_deleted_info #almost done :-)
+=begin
       user = User.find(params[:id])
       profile = Profile.find_by_user_id(user.id)
       log = DeletedObject.new
@@ -50,6 +51,7 @@ ActiveAdmin.register Billing do
 #      @log = Datacenter.find(params[:id])
 #      @datacenter.destroy
 #      redirect_to edit_admin_retailer_path(@datacenter.infrastructure)
+=end
     end
   end
   

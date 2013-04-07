@@ -1,26 +1,10 @@
-img#gum_image {
-	//width: 75px;
-	//height: 75px;
-}
-#vote_results_bubble {
-	font-size: 20px;
-	margin: 0;
-  padding: 0;
-	color: $button_color;
-}
-#vote_results_bust {
-	font-size: 20px;
-	margin: 0;
-  padding: 0;
-	color: $nav_background;
+#vote_container {
+	clear: both;
 }
 #vote_text {
 	float: right;
 	margin: 0 0 5px 0;
 	//color: $nav_background;
-}
-#vote_container {
-	clear: both;
 }
 .vote_bubble {	 
 	float: right;  
@@ -86,7 +70,48 @@ img#gum_image {
 		}
 }
 
-#ratings_count {
+
+/******************************************************************************/
+/********************************** GUM SHOW **********************************/
+/******************************************************************************/
+div#gum_info {
+	margin: 0px;
+	padding: 0px;
+	#gum_image {
+		margin: 0px 20px 10px 0px;
+		float: left;
+	}
+	#gum_text {
+		margin-left: 420px;
+		margin: 0px 0px 0px 0px;
+		padding: 0px;
+		p {
+			padding: 0px;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+}
+
+h2 {
+	clear: both;
+}
+#vote_results_bubble {
+	float: right;
+	font-size: 20px;
+	margin: 0;
+  padding: 0;
+//$font_color
+//	color: $button_color;
+//	border: solid yellow;
+}
+#vote_results_bust {
+	float: right;
+	font-size: 20px;
+	margin: 0;
+  padding: 0;
+//	color: $nav_background;
+}
+#ratings_count { // bottom of page, shows total ratings for indivudal gum
 	clear: both;
 	font-size: 12px;
 	color: rgb(0, 114, 188);

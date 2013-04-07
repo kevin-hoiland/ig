@@ -10,28 +10,20 @@
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>
 
-<%= render(:partial => "shared/votes") %>
-
-<h1 id="no_clear"><Gum Details><%= legalize(@gum.title) %></h1>
+<h1><%= legalize(@gum.title) %></h1>
 
 <!-- prior way, before using carrierwave and fog 		UMMM	permalink_humanize(@gum.permalink)
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image') %>
 -->
-<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
-
-<%= debug @gum %>
-
-Description: <%= legalize(@gum.description) %>
+<div id="gum_info">
+		<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
+	<div id="gum_text">
+		<p><%= legalize(@gum.description) %></p>
+		<p><%= legalize(@gum.note)%></p>
+	</div>
+</div>
 
 <h2>Average Gum Ratings</h2>
-<div id = "vote_results_bubble">
-	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
-	<%= @votes_up_total %>
-</div>
-<div id = "vote_results_bust">
-	<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
-	<%= @votes_down_total %>
-</div>
 
 <ul id="average_ratings">
 	<li>
@@ -55,6 +47,14 @@ Description: <%= legalize(@gum.description) %>
 		<%= @rating_averages[4].blank? ? "n/a" : @rating_averages[4].round(2) %>
 	</li>
 </ul>
+<div id = "vote_results_bust">
+	<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<%= @votes_down_total %>
+</div>
+<div id = "vote_results_bubble">
+	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<%= @votes_up_total %>
+</div>
 <p id="ratings_count"><%= @rating_count %> Total Ratings</p>
 
 <% @content_legal.each do |c| %>

@@ -10,7 +10,7 @@
   AdminUser.create!([:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'], :without_protection => true)
 
 # Create default set of dynamic text
-File.open("db/initial_text2.txt", "r") do |defaults|
+File.open("db/initial_text3.txt", "r") do |defaults|
   defaults.read.each_line do |text|
     location, sequence, size, visible, content = text.chomp.split("|")
     DynamicText.create!([:location => location, :sequence => sequence, :size => size, :visible => visible, :content => content], :without_protection => true)

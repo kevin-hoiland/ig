@@ -3,22 +3,36 @@
 <%= currently_at 'Members' %>
 
 <% content_for :sub_nav do %>
-	<li><%= link_to("View Member's Details", profile_path(@profile), :class => 'link_button') %></li>
+	<% unless user_signed_in? and viewing_self?(@profile) %>
+		<li><%= link_to("View Member's Details", profile_path(@profile), :class => 'link_button') %></li>
+	<% end %>
 	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
 <% end %>
 
+<% content_for :search do %>
+	<h4>Search Ratings</H4>
+	<%= search_form_for @search_ratings, :url => { :action => "per_member" } do |f| %>
+		<%= render(:partial => "shared/ratings_search", :locals => {:f => f}) %>
+	    <%= f.submit :class => 'search_button' %>
+	<% end %>
+<% end %>
+
 <h1>All Ratings by <%= @profile.name.blank? ? "[no alias yet]" : @profile.name %></h1> <!-- placeholder dude -->
+<%= render(:partial => "shared/ratings_sort") %>
 
 <% @ratings.each do |r| %>
 <ul class="list_container">	
 	<li>
-	<ul class="list_links">
-		<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
-		<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
-	</ul>
+		<ul class="list_links">
+			<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
+			<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+		</ul>
 	</li>
 	<li>
-		<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+		<ul class="rating_list">
+			<%= image_tag(get_gum(r.gum_id).image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(get_gum(r.gum_id).permalink)}", :class => 'ratings_gum_logo') %>
+			<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+		</ul>
 	</li>
 </ul>
 		
@@ -26,3 +40,7 @@
 
 <%= paginate @ratings %>
 <p id = "page_info"><%= (page_entries_info @ratings, :entry_name => 'Ratings').html_safe %></p>
+
+<% @content_legal.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>

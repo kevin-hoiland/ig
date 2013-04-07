@@ -6,7 +6,7 @@ class Profile < ActiveRecord::Base
   attr_accessible :user_id, :name, :location, :age, :sex, :story, :subscriptions_created, :subscriptions_deleted, as: :admin
   
   def self.ransackable_attributes(auth_object = nil)
-    super & ['name', 'location', 'brand', 'age', 'note', 'sex', 'story']
+    super & ['name', 'location', 'brand', 'age', 'note', 'sex', 'story', 'updated_at', 'created_at']
   end    
   
   attr_accessor :reason
