@@ -186,8 +186,8 @@ class BillingsController < ApplicationController
         log.profile_id = profile.id
         log.billing_subscription_id = billing.id
         log.billing_last_four = billing.last_four
-        log.billing_last_name = billing.bill_last_name
-        log.billing_shipping_name = billing.ship_first_name+" "+billing.ship_last_name
+        log.billing_last_name = billing.bill_last_name+" (company:"+billing.bill_company+")"
+        log.billing_shipping_name = billing.ship_first_name+" "+billing.ship_last_name+" (company:"+billing.ship_company+")"
 ### COMPANY NAME NOT BEING LOGGED...
         log.deleted_object_creation_dt = billing.created_at
         log.save
@@ -225,9 +225,10 @@ private
     @billing.expiry_month = billing_info[:expiry_month]
     @billing.expiry_year = billing_info[:expiry_year]
     @billing.cvc = billing_info[:cvc]
-    @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
     @billing.terms = billing_info[:terms]
-    if @billing.pan > ""  # Only update the last_four DB value from pan attribute accessor if something exists for pan
+#    if @billing.pan > ""  # Only update the last_four DB value from pan attribute accessor if something exists for pan
+    unless @billing.pan.blank?
+      @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
     end
     @ip = User.find(@billing.user_id).current_sign_in_ip
@@ -245,7 +246,7 @@ private
         :address1 => @billing.bill_street, :city => @billing.bill_city, :state => @billing.bill_state_province,
         :country => @billing.bill_country, :zip => @billing.bill_postal_code }
     @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
-         :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_street, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
+         :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
   end
 
   def get_start_date      

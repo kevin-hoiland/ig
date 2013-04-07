@@ -20,7 +20,20 @@
 
 <%= semantic_form_for @billing, :url => edit_billing_path, :html => {:method => :put} do |f| %>
     <%= f.inputs do %>
-		<%= render(:partial => "shared/billings_form", :locals => {:f => f}) %> 
+		<%= render(:partial => "shared/billings_form", :locals => {:f => f}) %>
+		<div id="billing_edit_border">
+		<p class="bill_edit_comment">Sorry, we are unable to edit your recurring subscriptions card info :(</p>
+		<p class="bill_edit_comment">If you need to make a change, please delete this subscription and create a new one.</p>
+		<%= f.input :pan, :label => "Credit Card Number", :placeholder => "We only save your last 4 digits: *#{@billing.last_four}",
+					:input_html => { :size => 40, :maxlength => 19, :disabled => true } %>
+		<%= f.input :expiry_month, :as => 'select', :label => "Expiration Month", :collection => ["01 - January", "02 - February", "03 - March", "04 - April", "05 - May", "06 - June", "07 - July", "08 - August", "09 - September", "10 - October", "11 - November", "12 - December"],
+		 			:input_html => { :disabled => true } %>
+		<%= f.input :expiry_year, :as => 'select', :label => "Expiration Year", :collection => year_range, :input_html => { :disabled => true } %>
+		</div>
+		<% @content_bottom.each do |c| %>
+			<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+		<% end %>
+		<%= f.input :terms, :label => "Terms and Conditions Confirmation", :size => 10, :as => :boolean %>
 	<% end %>
  	<%= f.action :submit, :label => "Update Subscription", :as => :button %>
 	<%= f.action :cancel, :label => "Cancel" %>

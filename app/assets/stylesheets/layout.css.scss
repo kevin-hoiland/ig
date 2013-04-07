@@ -236,6 +236,16 @@ section#content {
 	    top:  0; 
 	    left: 0;
 	}
+	// area not editable when updating a subscription
+	#billing_edit_border {
+		input, select, textarea, label {
+		 	color: lighten($font_color, 50%);
+			p.bill_edit_comment {
+				font-weight: normal;
+				color: $font_color;
+			}
+		}
+	}
 }// end section#content
 
 section#sidebar {

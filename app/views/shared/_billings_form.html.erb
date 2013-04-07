@@ -18,20 +18,7 @@
 <%= f.input :bill_state_province, :label => "State", :placeholder => "", :hint => "As associated with your card" %>
 <%= f.input :bill_postal_code, :label => "Postal Code", :placeholder => "", :hint => "As associated with your card", :input_html => { :size => 15, :maxlength => 10 } %>
 <%= f.input :bill_country, :label => "Country", :placeholder => "", :hint => "As associated with your card" %>
-<% if @billing.last_four %>
-	<%= f.input :pan, :label => "Credit Card Number", :placeholder => "No spaces, just #s", :hint => "We only save your last 4 digits, currently we have *#{@billing.last_four}", :input_html => { :size => 25, :maxlength => 19 } %>
-<% else %>
-	<%= f.input :pan, :label => "Credit Card Number", :placeholder => "", :hint => "We only save your last 4 digits", :input_html => { :size => 19, :maxlength => 19 } %>
-<% end %>
-<%= f.input :expiry_month, :as => 'select', :label => "Expiration Month", :collection => ["01 - January", "02 - February", "03 - March", "04 - April", "05 - May", "06 - June", "07 - July", "08 - August", "09 - September", "10 - October", "11 - November", "12 - December"] %>
-<%= f.input :expiry_year, :as => 'select', :label => "Expiration Year", :collection => year_range %>
-<%= f.input :cvc, :label =>"CVC", :placeholder => "", :hint => "3 digits displayed on back of your card, we never save this info", :input_html => { :size => 3, :maxlength => 3 } %>	
 
-<% @content_bottom.each do |c| %>
-	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
-<% end %>
-
-<%= f.input :terms, :label => "Terms and Conditions Confirmation", :size => 10, :as => :boolean %>
 
 <script type="text/javascript">
 
