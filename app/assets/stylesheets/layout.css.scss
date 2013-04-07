@@ -237,7 +237,7 @@ section#content {
 	    left: 0;
 	}
 	// area not editable when updating a subscription
-	#billing_edit_border {
+	#billing_edit_disabled {
 		input, select, textarea, label {
 		 	color: lighten($font_color, 50%);
 			p.bill_edit_comment {
