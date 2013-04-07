@@ -3,7 +3,7 @@
 <%= currently_at 'Members' %>
 
 <% content_for :sub_nav do %>
-	<li><%= link_to("Member Details", profile_path(@profile), :class => 'link_button') %></li>
+	<li><%= link_to("View Member's Details", profile_path(@profile), :class => 'link_button') %></li>
 	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
 <% end %>
 

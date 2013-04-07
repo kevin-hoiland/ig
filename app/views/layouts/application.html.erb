@@ -41,7 +41,7 @@
 				<li><%= link_to "Create Account", new_user_registration_path, :class => 'link_button' %></li>
 				<li><%= link_to "Sign In", new_user_session_path, :class => 'link_button' %></li>
 			<% else %>
-				<li><%= link_to("Your Account", profile_path(view_self), :class => 'link_button') %></li>
+				<li><%= link_to("View Your Account", profile_path(view_self), :class => 'link_button') %></li>
 			<% end %>
 			<%= yield :sub_nav %>
 			</ul>

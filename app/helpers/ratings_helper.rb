@@ -5,4 +5,8 @@ module RatingsHelper
     return g.permalink    
   end
   
+  def view_self
+    Profile.find_by_user_id(current_user.id)
+  end
+  
 end

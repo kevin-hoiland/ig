@@ -3,6 +3,10 @@
 <%= currently_at 'Home' %>
 
 <% content_for :sub_nav do %>
+	<li><%= link_to("About", welcomes_about_path, :class => 'link_button') %></li>
+	<li><%= link_to("Contact", welcomes_contact_info_path, :class => 'link_button') %></li>
+	<li><%= link_to("FAQs", welcomes_faq_path, :class => 'link_button') %></li>
+	<li><%= link_to("News", welcomes_news_path, :class => 'link_button') %></li>
 <% end %>
 
 <h1>Shipping Policy</h1>

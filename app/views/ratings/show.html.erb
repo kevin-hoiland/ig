@@ -3,8 +3,8 @@
 <%= currently_at 'Chew It Over' %>
 
 <% content_for :sub_nav do %>
-	<li><%= link_to "Gum Details", gum_path(get_permalink(@rating.gum_id)), :class => 'link_button' %></li>
-	<li><%= link_to("Member Details", profile_path(@rating.profile_id), :class => 'link_button') %></li>
+	<li><%= link_to "View Gum Details", gum_path(get_permalink(@rating.gum_id)), :class => 'link_button' %></li>
+	<li><%= link_to("View Member Details", profile_path(@rating.profile_id), :class => 'link_button') %></li>
 <% end %>
 
 

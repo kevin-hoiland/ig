@@ -4,8 +4,7 @@
 
 <% content_for :sub_nav do %>
 	<% if user_signed_in? %>
-		<li>hmm, wtf goes here?</br>(below won't work yet)</li>
-		<li><%= link_to("List All Your Ratings", ratings_path, :class => 'link_button') %></li>
+		<li><%= link_to("List Your Ratings", member_ratings_path(view_self), :class => 'link_button') %></li>
 	<% end %>
 <% end %>
 

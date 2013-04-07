@@ -3,9 +3,6 @@
 <%= currently_at 'Gums' %>
 
 <% content_for :sub_nav do %>
-	<% if user_signed_in? %>
-		<li><%= link_to("List All Ratings", ratings_path, :class => 'link_button') %></li>
-	<% end %>
 <% end %>
 
 <% content_for :search do %>
@@ -48,7 +45,7 @@
 	<ul class="list_links">
 		<li><%= link_to "Gum Details", gum_path(g.permalink), :class => 'list_row_link' %></li>
 		<li><%= link_to("Rate Gum", new_rating_path(g.permalink), :class => 'list_row_link') %></li>
-		<li><%= link_to("All Ratings", gum_ratings_path(g.permalink), :class => 'list_row_link') %></li>
+		<li><%= link_to("Ratings List", gum_ratings_path(g.permalink), :class => 'list_row_link') %></li>
 	</ul>
 </li>
 <li>

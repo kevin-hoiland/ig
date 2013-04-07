@@ -5,10 +5,12 @@
 <% content_for :sub_nav do %>
   <% if user_signed_in? and viewing_self?(@profile) %>
 	<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
-	<li><%= link_to("Edit Public Info", edit_profile_path, :class => 'link_button') %></li>
-  <% end %>
+	<li><%= link_to("Edit Your Public Info", edit_profile_path, :class => 'link_button') %></li>
+  	<li><%= link_to("List Your Ratings", member_ratings_path(@profile), :class => 'link_button') %></li>
+  <% else %>
+	<li><%= link_to("List All Member's Ratings", member_ratings_path(@profile), :class => 'link_button') %></li>
+<% end %>
 	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
-	<li><%= link_to("View All Ratings", member_ratings_path(@profile), :class => 'link_button') %></li>
 <% end %>
 
 <h1>Member Details</h1>
