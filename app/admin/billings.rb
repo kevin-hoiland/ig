@@ -32,7 +32,7 @@ ActiveAdmin.register Billing do
 =end
 
   controller do
-    def cancel_with_gateway_and_save_deleted_info
+    def cancel_with_gateway_and_save_deleted_info #almost done :-)
       user = User.find(params[:id])
       profile = Profile.find_by_user_id(user.id)
       log = DeletedObject.new

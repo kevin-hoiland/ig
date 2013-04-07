@@ -33,10 +33,14 @@
 <h1>Gum List</h1>
 <div id = 'sort'>
 	Sort By:
+	<li><%= sort_link @search_gums, :votes_vote, "Votes", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_average, "Total Rating", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_1, "Gumtation", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_2, "Chewlasticity", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_3, "Flavoracity", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_4, "Bubbability", :default_order => :desc %></li>
+	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_5, "Gumalicious", :default_order => :desc %></li>
 	<li><%= sort_link @search_gums, :gum_rating_relationships_updated_at, "Last Rated", :default_order => :desc %></li>
-	<li><%= sort_link @search_gums, :flavor %></li>
-	<li><%= sort_link @search_gums, :gum_rating_relationships_bubbability, "Score", :default_order => :desc %></li>
-<!--	<li>< % = sort_link @search_gums, :votes_up, "Votes UP" %></li> -->
 </div>
 
 <% @gums_list.each do |g| %>
