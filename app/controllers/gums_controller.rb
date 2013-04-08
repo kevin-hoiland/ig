@@ -50,17 +50,19 @@ class GumsController < ApplicationController
     gum = Gum.find_by_permalink(params[:permalink]) || not_found
     if current_user.voted_for?(gum)
       flash[:alert] = "You had already voted this gum Bubble, can't vote the same way twice"
-      redirect_to(gum_url(gum.permalink))
+      redirect_to(new_rating_url(gum.permalink))
+      #redirect_to(gum_url(gum.permalink))
       #redirect_to(gum_url)
     elsif current_user.voted_against?(gum)
       current_user.vote_exclusively_for(gum)
       flash[:notice] = "Changed your vote from Bust to Bubble"
-      redirect_to(gum_url(gum.permalink))
+      redirect_to(new_rating_url(gum.permalink))
+      #redirect_to(gum_url(gum.permalink))
       #redirect_to(gum_url) 
     else
       flash[:notice] = "New Bubble Vote Counted!"
       current_user.vote_exclusively_for(gum)
-      redirect_to(gum_url(gum.permalink))
+      redirect_to(new_rating_path_url(gum.permalink))
     end
 
 #   begin
@@ -75,18 +77,21 @@ class GumsController < ApplicationController
     gum = Gum.find_by_permalink(params[:permalink]) || not_found
     if current_user.voted_against?(gum)
       flash[:alert] = "You had already voted this gum Bust, can't vote the same way twice"
-      redirect_to(gum_url(gum.permalink))
+      redirect_to(new_rating_path(gum.permalink))
+      #redirect_to(gum_url(gum.permalink))
       #redirect_to(gum_url)
     elsif current_user.voted_for?(gum)
       current_user.vote_exclusively_against(gum)
       flash[:notice] = "Changed your vote from Bubble to Bust"
-      redirect_to(gum_url(gum.permalink))
+      redirect_to(new_rating_path(gum.permalink))
+      #redirect_to(gum_url(gum.permalink))
       #redirect_to(gum_url)
     else
       flash[:notice] = "New Bust Vote Counted!"
       current_user.vote_exclusively_against(gum)
       #redirect_to(gum_url)
-      redirect_to(gum_url(gum.permalink))
+      redirect_to(new_rating_path(gum.permalink))
+      #redirect_to(gum_url(gum.permalink))
     end         
     #current_user.vote_exclusively_against(@gum = Gum.find(params[:id]))
     #flash[:notice] = "DOWN Vote Counted!"

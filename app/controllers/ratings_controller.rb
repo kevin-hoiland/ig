@@ -59,6 +59,8 @@ class RatingsController < ApplicationController
     @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists? ### probably don't need this long term, maybe was just for debuggin?
     if GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
       @rated = GumRatingRelationship.find(GumRatingRelationship.already_rated(@profile.id, @gum.id).first)
+      flash.keep(:notice)
+      flash.keep(:alert)
       redirect_to(edit_rating_url(@rated))
     end
     @new_rating = GumRatingRelationship.new
