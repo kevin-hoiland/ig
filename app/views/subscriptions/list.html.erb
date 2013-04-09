@@ -3,7 +3,7 @@
 <%= currently_at 'Subscriptions' %>
 
 <% content_for :sub_nav do %>
-	<% if signed_in? %>
+	<% if user_signed_in? %>
 		<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
 	<% else %>
 		<li><%= link_to "Create Subscription", new_billing_path, :class => 'link_button' %></li>

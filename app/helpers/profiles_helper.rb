@@ -8,7 +8,7 @@ module ProfilesHelper
   end
   
   def subscriber?
-    p = Profile.find_by_user_id(current_user.id) # ERROR HERE, IF NOT LOGGED IN!!!! NILL ;-)
+    p = Profile.find_by_user_id(current_user.id) # ERROR HERE, IF NOT LOGGED IN!!!! NILL ;-)  Please don't call unless previously verifying user_signed_in?
     return p.subscriptions_created > p.subscriptions_deleted
   end
   
