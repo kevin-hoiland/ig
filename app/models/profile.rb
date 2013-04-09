@@ -22,7 +22,7 @@ class Profile < ActiveRecord::Base
   ############  associations  ############
   
   belongs_to :user
-  has_many :gum_rating_relationships, :dependent => :destroy # looks like i also probably want ", :dependent => true"
+  has_many :gum_rating_relationships, :dependent => :destroy
   has_many :gums, :through => :gum_rating_relationships
   
   ############  scopes  ############

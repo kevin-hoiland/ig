@@ -65,7 +65,7 @@ class BillingsController < ApplicationController
 #                    :interval => { :unit => :months, :length => '1' }, :duration => { :start_date => get_start_date, :occurrences => 9999},
 #                    :customer => @customer, :shipping_address => @shipping_address, :billing_address => @billing_address}
        options = {:interval => { :unit => :months, :length => '1' }, :duration => { :start_date => get_start_date, :occurrences => 9999},
-                  :shipping_address => @shipping_address, :billing_address => @billing_address, :customer => @customer,
+                  :shipping_address => @shipping_address, :billing_address => @billing_address, :customer => @customer, :order => @order,
                   :ip => @ip}
 
         #response = gateway.authorize(800, creditcard, options) # this is the temporary one charge type for testing
@@ -239,15 +239,16 @@ private
     #@customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created-Profile.find_by_user_id(@billing.user_id).subscriptions_deleted+1).to_s
     
     #@customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s
-    @customer = {:id => @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email,
-                :description => 'Monthly recurring Subscription for $8 per month.'}      
-
+ 
     #@email = User.find(@billing.user_id).email
+
+    @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
+    @order = { :invoice_number => (Billing.last.id+1).to_s, :description => 'Monthly recurring Subscription for $8 per month.' }
+    @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
+         :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
     @billing_address = { :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name, :company => @billing.bill_company,
         :address1 => @billing.bill_street, :city => @billing.bill_city, :state => @billing.bill_state_province,
         :country => @billing.bill_country, :zip => @billing.bill_postal_code }
-    @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
-         :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
   end
 
   def get_start_date      

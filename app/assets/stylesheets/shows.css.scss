@@ -50,25 +50,7 @@
 	}
 }
 
-#average_ratings{
-	margin: 5px 0px 5px 0px;
-  padding: 0px;
-	font-size: 24px;  
-	list-style-type: none;
-		li {
-			width: 100px;
-			@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
-			//@include border-radius(10px);
-			border-radius: 10px;
-			float: left;
-			text-align: center;
-			padding: 5px;
-			margin: 0px 5px 5px 5px;
-			.header {
-				font-size: 12px;
-			}
-		}
-}
+
 
 
 /******************************************************************************/
@@ -93,6 +75,25 @@ div#gum_info {
 }
 h2 {
 	clear: both;
+}
+#average_ratings{
+	margin: 5px 0px 5px 0px;
+  padding: 0px;
+	font-size: 24px;  
+	list-style-type: none;
+		li#rank1, li#rank2, li#rank3, li#rank4, li#rank5 {
+			width: 100px;
+			@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
+			//@include border-radius(10px);
+			border-radius: 10px;
+			float: left;
+			text-align: center;
+			padding: 5px;
+			margin: 0px 5px 5px 5px;
+			.header {
+				font-size: 12px;
+			}
+		}
 }
 #vote_results_bubble {
 	float: right;

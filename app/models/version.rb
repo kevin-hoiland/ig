@@ -6,7 +6,7 @@ class Version < ActiveRecord::Base
   
   ############  validations  ############
   
-  validates :number, :presence => true, :length => { :maximum => 5 }, :uniqueness => true
+  validates :number, :presence => true, :length => { :maximum => 10 }, :uniqueness => true
   validates :notes, :length => { :within => 0..2000 }
   validates :released_at, :presence => true
 

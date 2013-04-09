@@ -26,23 +26,23 @@
 <h2>Average Gum Ratings</h2>
 
 <ul id="average_ratings">
-	<li>
-		<div class = "header">Gumtation</div>
+	<li id="rank1" title="Testing!">
+		<div class="header">Gumtation</div>
 		<%= @rating_averages[0].blank? ? "n/a" : @rating_averages[0].round(2) %>
 	</li>
-	<li>
+	<li id="rank2" title="ummm!">
 		<div class = "header">Chewlasticity</div>
 		<%= @rating_averages[1].blank? ? "n/a" : @rating_averages[1].round(2) %>
 	</li>
-	<li>
+	<li id="rank3" title="hello!">
 		<div class = "header">Flavoracity</div>
 		<%= @rating_averages[2].blank? ? "n/a" : @rating_averages[2].round(2) %>
 	</li>
-	<li>
+	<li id="rank4" title="abbey!">
 		<div class = "header">Bubbability</div>
 		<%= @rating_averages[3].blank? ? "n/a" : @rating_averages[3].round(2) %>
 	</li>
-	<li>
+	<li id="rank5" title="is awesome!">
 		<div class = "header">Gumalicious</div>
 		<%= @rating_averages[4].blank? ? "n/a" : @rating_averages[4].round(2) %>
 	</li>

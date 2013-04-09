@@ -10,7 +10,7 @@
 	<% end %>
 <% end %>
 
-<%= render(:partial => "shared/votes") %>
+<%= render(:partial => "shared/votes2") %>
 
 <h1 id="no_clear">Create New Rating: <%=legalize(@gum.title) %></h1>
 
@@ -25,11 +25,6 @@
 		<p><%= legalize(@gum.description) %></p>
 		<p><%= legalize(@gum.note)%></p>
 	</div>
-</div>
-
-<div id="gum_text">
-	<p><%= legalize(@gum.description) %></p>
-	<p><%= legalize(@gum.note)%></p>
 </div>
 
 <%= semantic_form_for @new_rating do |r| %>
