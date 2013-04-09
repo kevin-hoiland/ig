@@ -10,6 +10,7 @@ module RatingsHelper
   end
   
   def view_self
+    # Note, potential error here if not logged in, Profile will be NILL ;-)  Should always previously verify user_signed_in?
     Profile.find_by_user_id(current_user.id)
   end
   
