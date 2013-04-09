@@ -22,16 +22,11 @@ ul.list_container {
 .stat_box {
 	width: 100px;
 	@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
-	//@include border-radius(10px);
 	border-radius: 10px;
 	text-align: center;
 	padding: 5px;
-	//margin: auto;
 	margin: 0px 5px 5px 5px;
-	//vertical-align: middle;
-	//vertical-align: text-bottom;
 	.header {
-	//	vertical-align: text-top;
 		font-size: 12px;
 	}
 }
@@ -41,7 +36,6 @@ ul.list_container {
 	border-style: solid;
 	border-width: 1px;
 	border-color: darken($sidebar_background, 5%);
-	//@include border-radius(10px);
 	border-radius: 10px;
 	min-height: 16px;
 	padding: 5px;
@@ -102,11 +96,6 @@ ul.gum_list {
 			margin: 0px;
 			padding: 0px;
 		}
-//		&p {
-//			margin: 0;
-//			padding: 0;
-		//	color: $sidebar_header_background;
-//		}
 	}
 	.votes {
 		float: right;
@@ -118,10 +107,6 @@ ul.gum_list {
 			margin: 0px;
 			padding: 0px;
 		}
-//		&p {
-//			margin: 0px;
-//			padding: 0px;
-//		}
 		img {
 			float: left;
 			width: 38px;
@@ -214,41 +199,3 @@ ul.shipment_list {
   border-bottom-width: 1px;
 	border-bottom-style: solid;
 }
-
-/*
-ul.member_container {
-	clear: both;
-	width: 100%;
-	margin: 0px;
-  padding: 5px 5px 5px 5px;  
-  list-style-type: none;
-	min-height: 100px;
-	&:hover { background-color: #F8FCCF; }
-	border-bottom-color: darken($sidebar_background, 10%);
-  border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-*/
-
-/*
-ul.member_list_links {
-	width: 15%;
-	float: right;
-	font-size: 12px;
-	list-style-type: none;
-	padding: 0;
-	margin: 0px;
-	.rating_button{
-		@include button(simple, darken($button_color, 5%));
-		margin: 10px 0 10px 0;
-		padding: 2px 0px 2px 0px;
-		display: block;
-		text-align: center;
-		a, a:link, a:visited, a:hover, a:active {
-			color: white;
-	    text-decoration: none;
-			outline: 0;
-	  }
-	}
-}
-*/
