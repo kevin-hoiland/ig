@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+		<%= image_tag attachments['logo.png'].url -%>
+	    <h1 style="color:#006699; font-family: Verdana, Geneva, sans-serif;">
+			Your <span style="color:#FF3366">Intl Gum</span> Subscription was updated successfully.
+		</h1>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			<% if @billing.subscription_name.empty? %>
+				This Subscription didn't have a name, but the card number ends in *<%= @billing.last_four %>
+				</p>
+			<% else %>
+				Subscription Name: <%= @billing.subscription_name %>
+				</p>
+				<p>
+				Card: *<%= @billing.last_four %>
+				</p>
+			<% end %>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			Your billing and shipping details are always available at 
+			<a style="color:#339933" href="<%= @list_billings_url %>"><%= @list_billings_url %></a>
+		</p>
+  </body>
+</html>

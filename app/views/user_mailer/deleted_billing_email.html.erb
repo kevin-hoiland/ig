@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+		<%= image_tag attachments['logo.png'].url -%>
+	    <h1 style="color:#006699; font-family: Verdana, Geneva, sans-serif;">
+			Sorry to see you cancel your <span style="color:#FF3366">Intl Gum</span> Subscription!
+		</h1>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			<% if @billing.subscription_name.empty? %>
+				Your Subscription didn't have a name, but the card number ended in *<%= @billing.last_four %>
+				</p>
+			<% else %>
+				Subscription Name: <%= @billing.subscription_name %>
+				</p>
+				<p>
+				Card: *<%= @billing.last_four %>
+				</p>
+			<% end %>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			This subscription was successfully canceled and you will no longer be charged $8 per month.  You may always sign up again at 
+			<a style="color:#339933" href="<%= @list_billings_url %>"><%= @list_billings_url %></a>
+		</p>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			Have a great day and we hope to send you gum again in the future!
+		</p>
+  </body>
+</html>

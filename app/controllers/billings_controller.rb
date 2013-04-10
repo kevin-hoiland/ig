@@ -83,8 +83,13 @@ class BillingsController < ApplicationController
           @billing.save
           profile.subscriptions_created += 1
           profile.save
-          #
-          flash[:alert] = "Success: " + response.message.to_s
+          
+          #UserMailer.new_billing_email(@billing).deliver
+          UserMailer.new_billing_email(@billing).deliver
+          
+          # this was the temp dislayed return message from gateway
+          # flash[:alert] = "Success: " + response.message.to_s
+          
           flash[:notice] = "Gumgratulations, new Subscription Created! Your Active Subscription count is now: #{profile.subscriptions_created-profile.subscriptions_deleted}"
           redirect_to(list_billings_url)
         else
@@ -117,9 +122,9 @@ class BillingsController < ApplicationController
   def update
     @billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
     set_values(params[:billing]) #payment card info not updated
-    profile = Profile.find_by_user_id(current_user.id)
+#    profile = Profile.find_by_user_id(current_user.id)
     if @billing.save
-      profile.save
+#      profile.save
 =begin
       if profile.save
         flash[:notice] = "Your Subscription was updated successfully!"
@@ -134,8 +139,12 @@ class BillingsController < ApplicationController
                  :ip => @ip, :description => 'Updated monthly recurring Subscription for $8 per month.'}
       response = gateway.update_recurring(options)      
       if response.success?
-        flash[:alert] = "Success: " + response.message.to_s
-        flash[:notice] = "Woohoo, subscription updated!"  
+        
+        UserMailer.updated_billing_email(@billing).deliver
+        
+        # this was the temp dislayed return message from gateway
+        #flash[:alert] = "Success: " + response.message.to_s
+        flash[:notice] = "Gumgratulations, your subscription was updated successfully!"
         redirect_to(list_billings_url)
       else
         flash[:alert] = "Unable to Update Subscription: " + response.message.to_s
@@ -161,6 +170,8 @@ class BillingsController < ApplicationController
   
   def destroy
     #billing = Billing.find(params[:id])
+     
+#    billing = billing.find_by_user_id(current_user.id)
     billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
     profile = Profile.find_by_user_id(current_user.id)
     if billing.destroy
@@ -174,6 +185,7 @@ class BillingsController < ApplicationController
       gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY) # started working when i removed "", :test => true" LOL
       response = gateway.cancel_recurring(billing.gateway_subscriber_id)      
       if response.success?
+        UserMailer.deleted_billing_email(billing).deliver
         flash[:alert] = "Success: " + response.message.to_s
         flash[:notice] = "Sorry to see you cancel your subscription :-("  
         log = DeletedObject.new
@@ -243,7 +255,7 @@ private
     #@email = User.find(@billing.user_id).email
 
     @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
-    @order = { :invoice_number => (Billing.last.id+1).to_s, :description => 'Monthly recurring Subscription for $8 per month.' }
+    @order = { :invoice_number => '', :description => 'Monthly recurring Subscription for $8 per month.' }
     @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
          :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
     @billing_address = { :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name, :company => @billing.bill_company,

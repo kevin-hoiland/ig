@@ -2,22 +2,27 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  	<style type="text/css">
+    body { 
+		font-family: Verdana, Geneva, sans-serif;
+		background-color: #ffffff;
+		color: rgb(107, 105, 105);
+		margin: 0px;
+		padding: 0px;
+		background-image:url('/assets/filler_v12.jpg');
+		background-repeat:repeat-x;
+		background-position:right top;
+	}
+	</style>
   </head>
   <body>
-    <h1>Welcome to Intl Gum!</h1>
-    <p>
-      You have successfully signed up to intlgum.com,
-      your login account is: <%= @user.email %>.<br/>
-    </p>	
-    <p>
-      To login to the site, just follow this link: <%= @login_url %>.
-    </p>
-    <p>
-      You can view your public member info here: <%= @view_self_url %>.<br/>
-    </p>
-    <p>
-      You can edit your public member info here: <%= @edit_self_url %>.<br/>
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+	<a href="/"><img id="logo" alt="Intl Gum Logo" src="/assets/logo_small4.png" title="International Gum" /></a>
+			<img id="" alt="Intl Gum Logo" src= "<%= asset-url('logo_small4.png') %>" title="International Gum" />
+    <h1 style="color:#006699">Welcome to Intl Gum!</h1>
+    <p style="color:#444343">You have successfully signed up to intlgum.com, your login account is: <%= @user.email %>.</p>	
+    <p style="color:#444343">To login to the site, just follow this link: <%= @login_url %>.</p>
+    <p style="color:#444343">You can view your public member info here: <%= @view_self_url %>.</p>
+    <p style="color:#444343">You can edit your public member info here: <%= @edit_self_url %>.</p>
+    <p style="color:#444343">Thanks for joining and have a gumalicious day!</p>
   </body>
 </html>

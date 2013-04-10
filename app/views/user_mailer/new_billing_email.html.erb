@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+		<%= image_tag attachments['logo.png'].url -%>
+	    <h1 style="color:#006699; font-family: Verdana, Geneva, sans-serif;">
+			Gumgratulations on your new <span style="color:#FF3366">Intl Gum</span> Subscription!
+		</h1>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			You have successfully signed up to receive a variety of gum delivered directly to your door every month.
+		</p>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			<% if @billing.subscription_name.empty? %>
+				This Subscription didn't have a name, but the card number ends in *<%= @billing.last_four %>
+				</p>
+			<% else %>
+				Subscription Name: <%= @billing.subscription_name %>
+				</p>
+				<p>
+				Card: *<%= @billing.last_four %>
+				</p>
+			<% end %>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			Your card will be charged $8 on the 8th day of every month and you may always view, edit, or cancel at any time by visiting 
+			<a style="color:#339933" href="<%= @list_billings_url %>"><%= @list_billings_url %></a> 
+			or by emailing Intl Gum directly at <a style="color:#339933" href="mailto:support@intlgum.com?Subject=Please%20Cancel%20My%20Subscription">support@intlgum.com</a> 
+			or by calling Intl Gum toll free at 1855-GUM-4YOU.  Thank you and have a great day!
+		</p>
+  </body>
+</html>
