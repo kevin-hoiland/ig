@@ -93,8 +93,10 @@ put 'member_edit_self_private' => 'profiles#update_billing', :as => "billing"
   put 'edit_private_subscription/:id' => 'billings#update', :as => 'edit_billing'
   #delete 'remove_private_subscription/:id' => 'billings#destroy', :as => 'billing'
   #above worked fine without last line commented, trying below now...
-  get 'remove_private_subscription/:id' => 'billings#delete_confirmation', :as => 'delete_billing'
+#  get 'remove_private_subscription/:id' => 'billings#delete_confirmation', :as => 'delete_billing'
+  get 'remove_private_subscription/:subscription_number' => 'billings#delete_confirmation', :as => 'delete_billing'
 #  delete 'remove_private_subscription/:id' => 'billings#destroy', :as => 'delete_billing'
+#  delete 'remove_private_subscription/:subscription_number' => 'billings#destroy', :as => 'delete_billing'
   delete 'remove_private_subscription/:subscription_number' => 'billings#destroy', :as => 'delete_billing'
   
   get 'subscriptions' => 'subscriptions#index'

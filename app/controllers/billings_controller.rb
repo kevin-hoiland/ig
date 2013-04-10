@@ -135,8 +135,7 @@ class BillingsController < ApplicationController
 =end
       gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY) # started working when i removed "", :test => true" LOL
       options = {:subscription_id => @billing.gateway_subscriber_id,
-                 :shipping_address => @shipping_address, :billing_address => @billing_address, :customer => @customer,
-                 :ip => @ip, :description => 'Updated monthly recurring Subscription for $8 per month.'}
+                 :shipping_address => @shipping_address, :billing_address => @billing_address, :customer => @customer, :order => @order }
       response = gateway.update_recurring(options)      
       if response.success?
         
@@ -164,7 +163,7 @@ class BillingsController < ApplicationController
 
   def delete_confirmation
     #@billing = Billing.find(params[:id])
-    @billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
+    @billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:subscription_number])
     @content = DynamicText.content("billing_delete")
   end
   
@@ -172,35 +171,31 @@ class BillingsController < ApplicationController
     #billing = Billing.find(params[:id])
      
 #    billing = billing.find_by_user_id(current_user.id)
-    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
+#    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
+#    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:billing][:subscription_number])
+    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:subscription_number])
+#    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
+    #validate that the billing info being deleted belongs to the logged in user
     profile = Profile.find_by_user_id(current_user.id)
     if billing.destroy
       profile.subscriptions_deleted += 1      
-      if profile.save
-        flash[:notice] = "Your Subscription was deleted successfully!"
-      else
-        flash[:alert] = "Error, you Profile was not updated with deleted subscription count" # <----  WHAT THE HECK IS THIS SCENARIO???!!!????
-      end
-      ###  NEED TO DELETE RECURING BILLING HERE........... MUST DO LOL
+      profile.save
       gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY) # started working when i removed "", :test => true" LOL
       response = gateway.cancel_recurring(billing.gateway_subscriber_id)      
       if response.success?
         UserMailer.deleted_billing_email(billing).deliver
-        flash[:alert] = "Success: " + response.message.to_s
         flash[:notice] = "Sorry to see you cancel your subscription :-("  
         log = DeletedObject.new
         log.deleted_type = "Billing Subscription"
         log.reason = params[:billing][:reason]
         log.user_id = current_user.id
         log.user_email = current_user.email
-  #      log.billing_subscription_id = billing.billing_subscription_id  # ADD THIS IN WHEN RECURRING TURNED ON ;-)
         log.billing_gateway_subscriber_id = billing.gateway_subscriber_id
         log.profile_id = profile.id
         log.billing_subscription_id = billing.id
         log.billing_last_four = billing.last_four
         log.billing_bill_name = billing.bill_first_name+" "+billing.bill_last_name+" (company: "+billing.bill_company+")"
         log.billing_ship_name = billing.ship_first_name+" "+billing.ship_last_name+" (company: "+billing.ship_company+")"
-### COMPANY NAME NOT BEING LOGGED...
         log.deleted_object_creation_dt = billing.created_at
         log.save
         redirect_to(list_billings_url)
@@ -244,6 +239,11 @@ private
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
     end
     @ip = User.find(@billing.user_id).current_sign_in_ip
+    
+#    if Billing.exists?
+#      invoice = (@billing.id+1).to_s
+#    end
+    
     #@customer = {:id => @billing.user_id.to_i, :email => User.find(@billing.user_id).email}
     #@customer = {:id => b.user_id.to_s+":"+b.subscription_number.to_s, :email => User.find(@billing.user_id).email}      
     
@@ -253,9 +253,10 @@ private
     #@customer = @billing.user_id.to_s+":"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s
  
     #@email = User.find(@billing.user_id).email
+    #@billing.subscription_name.slice(0..19)
 
     @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
-    @order = { :invoice_number => '', :description => 'Monthly recurring Subscription for $8 per month.' }
+    @order = { :invoice_number => '', :description => @billing.subscription_name }
     @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
          :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
     @billing_address = { :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name, :company => @billing.bill_company,
