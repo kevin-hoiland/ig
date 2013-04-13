@@ -124,3 +124,30 @@ h2 {
 	font-size: 12px;
 	color: rgb(0, 114, 188);
 }
+/******************************************************************************/
+/******************************* SHOW PROFILE *********************************/
+/******************************************************************************/
+ul.profile_info {
+//	border: solid red;
+	list-style-type: none;
+	min-height: 40px;
+	margin: 0px;
+//	margin: 5px 0px 5px 0px;
+  padding: 0px;
+	font-size: 14px;
+	&:hover { background-color: $list_hover; }
+	border-bottom-color: darken($sidebar_background, 10%);
+  border-bottom-width: 1px;
+	border-bottom-style: solid;
+	li.label {
+//		border: solid green;
+		float: left;
+		width: 200px;
+		padding: 5px 0px 5px 0px;
+	}
+	li.result {
+		clear: none;
+				padding: 5px 0px 5px 0px;
+//		border: solid blue;
+	}
+}

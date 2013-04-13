@@ -14,10 +14,76 @@
 <% end %>
 
 <h1>Member Details</h1>
-<%= debug @profile %>
-----------------------------------------<br \>
-<p>Votes Up: <%= @profile.user.vote_count(:up) %></p>
-<p>Votes Down: <%= @profile.user.vote_count(:down) %></p>
+
+<div id="show_header">
+	<ul class="profile_info">
+		<li class="label">Alias</li>
+		<li class="result"><%= @profile.name %></li>
+	</ul>
+	<ul class="profile_info">
+		<li class="label">Location</li>
+		<li class="result"><%= @profile.location %></li>
+	</ul>
+	<ul class="profile_info">
+		<li class="label">Age</li>
+		<li class="result"><%= @profile.age %></li>
+	</ul>
+	<ul class="profile_info">
+		<li class="label">Sex</li>
+		<li class="result"><%= @profile.sex %></li>
+	</ul>
+	<ul class="profile_info">
+		<li class="label">Story</li>
+		<li class="result"><%= @profile.story %></li>
+	</ul>
+	<ul class="profile_info">
+		<li class="label">Member Created</li>
+		<li class="result"><%= @profile.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
+	</ul>
+	<ul class="profile_info">
+		<li class="label">Member Last Edited</li>
+		<li class="result">
+			<% unless @profile.created_at == @profile.updated_at %>
+				<%= @profile.updated_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long)  %>
+			<% end %>
+		</li>
+</div>
+
+<h2>Average Ratings</h2>
+
+<ul id="show_ratings_row">
+	<li id="rank1" title="Presentation, name, packaging, advertising, etc">
+		<div class="header">Gumtation</div>
+		<%= @rating_averages[0].blank? ? "n/a" : @rating_averages[0].round(2) %>
+	</li>
+	<li id="rank2" title="How long a piece lasts, both flavor and texture">
+		<div class = "header">Chewlasticity</div>
+		<%= @rating_averages[1].blank? ? "n/a" : @rating_averages[1].round(2) %>
+	</li>
+	<li id="rank3" title="Accuracy of the flavor">
+		<div class = "header">Flavoracity</div>
+		<%= @rating_averages[2].blank? ? "n/a" : @rating_averages[2].round(2) %>
+	</li>
+	<li id="rank4" title="Bubble blowing ability">
+		<div class = "header">Bubbability</div>
+		<%= @rating_averages[3].blank? ? "n/a" : @rating_averages[3].round(2) %>
+	</li>
+	<li id="rank5" title="Gum deliciousness">
+		<div class = "header">Gumalicious</div>
+		<%= @rating_averages[4].blank? ? "n/a" : @rating_averages[4].round(2) %>
+	</li>
+</ul>
+<div id = "vote_results_bust">
+	<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<%= @profile.user.vote_count(:down) %>
+</div>
+<div id = "vote_results_bubble">
+	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<%= @profile.user.vote_count(:up) %>
+</div>
+
+<p id="ratings_count"><%= @rating_count %> Total Ratings</p>
+
 
 
 

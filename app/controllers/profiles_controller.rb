@@ -14,6 +14,8 @@ class ProfilesController < ApplicationController
   
   def show
     @profile = Profile.find(params[:id])
+    @rating_averages = @profile.get_rating_averages
+    @rating_count = GumRatingRelationship.where(:profile_id => @profile.id).count
     #@login_info = User.find(@profile.user_id)
     #@user_votes_up_total = @login_info.vote_count(:up)
     #@user_votes_down_total = @login_info.vote_count(:down)

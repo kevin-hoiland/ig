@@ -34,4 +34,9 @@ class Profile < ActiveRecord::Base
   # scope :name, lambda {|name| where(["alias LIKE ?", "%#{name}%"])}
   # scope :search_email, lambda {|email| where(["email LIKE ?", "%#{email}%"])}
 
+  def get_rating_averages
+    set = GumRatingRelationship.where(:profile_id => self.id)
+    return([set.average(:rank_1), set.average(:rank_2), set.average(:rank_3), set.average(:rank_4), set.average(:rank_5) ])
+  end
+  
 end
