@@ -14,7 +14,9 @@ class RatingsController < ApplicationController
   end
   
   def show
+    @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     @rating = GumRatingRelationship.find(params[:id])
+    @profile = Profile.find(@rating.profile_id)
   end
   
   def per_gum

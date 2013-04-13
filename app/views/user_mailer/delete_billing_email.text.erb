@@ -1,0 +1,17 @@
+Sorry to see you cancel your Intl Gum Subscription!
+
+<% if @billing.subscription_name.empty? %>
+	Your Subscription didn't have a name, but the card number ended in *<%= @billing.last_four %>
+<% else %>
+	Subscription Name: <%= @billing.subscription_name %>
+
+	Card: *<%= @billing.last_four %>
+
+<% end %>
+This subscription was successfully canceled and you will no longer be charged $8 per month. 
+
+If you received this message in error, please contact Intl Gum support directly via email at support@intlgum.com or toll free 1855-GUM-4YOU.
+
+You may always create a new subscription at <%= @list_billings_url %>
+
+Have a gumalicious day and we hope to deliver you gum again in the future!

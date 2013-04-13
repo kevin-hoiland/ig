@@ -15,9 +15,9 @@
 <!-- prior way, before using carrierwave and fog 		UMMM	permalink_humanize(@gum.permalink)
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image') %>
 -->
-<div id="gum_info">
+<div id="show_header">
 	<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
-	<div id="gum_text">
+	<div id="show_text">
 		<p><%= legalize(@gum.description) %></p>
 		<p><%= legalize(@gum.note)%></p>
 	</div>
@@ -25,7 +25,7 @@
 
 <h2>Average Gum Ratings</h2>
 
-<ul id="average_ratings">
+<ul id="show_ratings_row">
 	<li id="rank1" title="Presentation, name, packaging, advertising, etc">
 		<div class="header">Gumtation</div>
 		<%= @rating_averages[0].blank? ? "n/a" : @rating_averages[0].round(2) %>

@@ -1,0 +1,14 @@
+Your Subscription was updated successfully.
+===============================================
+<% if @billing.subscription_name.empty? %>
+	This Subscription didn't have a name, but the card number ends in *<%= @billing.last_four %>
+<% else %>
+	Subscription Name: <%= @billing.subscription_name %>
+
+	Card: *<%= @billing.last_four %>
+<% end %>
+Your billing and shipping details are always available at <%= @list_billings_url %>">
+
+You may also contact Intl Gum support directly via email at support@intlgum.com or toll free 1855-GUM-4YOU.
+
+Thank you and have a gumalicious day!

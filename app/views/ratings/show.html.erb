@@ -7,9 +7,76 @@
 	<li><%= link_to("View Member Details", profile_path(@rating.profile_id), :class => 'link_button') %></li>
 	<% if user_signed_in? %>
 		<li><%= link_to("Rate This Gum", new_rating_path(get_permalink(@rating.gum_id)), :class => 'link_button') %></li>
+		<li><%= link_to("List Your Ratings", member_ratings_path(view_self), :class => 'link_button') %></li>
 	<% end %>
 <% end %>
 
+<h1>Rating Details for <%= legalize(get_gum(@rating.gum_id).title) %></h1>
 
-<h1>Rating Details</h1>
-<%= debug @rating %>
+<div id="show_header">
+	<%= image_tag(get_gum(@rating.gum_id).image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(get_gum(@rating.gum_id).permalink)}", :id => 'gum_image')%>
+	<div id="show_text">
+		<p>Member Alias: <%= @profile.name %></p>
+		<p>Rating Created: <%= @rating.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long)  %></p>
+		<p>Rating Last Edited: 
+			<% unless @rating.created_at == @rating.updated_at %>
+				<%= @rating.updated_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long)  %>
+			<% end %>
+		</p>
+	</div>
+</div>
+
+<h2>Gum Ratings</h2>
+
+<ul id="show_ratings_row">
+	<li id="rank1" title="Presentation, name, packaging, advertising, etc">
+		<div class="header">Gumtation</div>
+		<%= @rating.rank_1 %>
+	</li>
+	<li id="rank2" title="How long a piece lasts, both flavor and texture">
+		<div class = "header">Chewlasticity</div>
+		<%= @rating.rank_2 %>
+	</li>
+	<li id="rank3" title="Accuracy of the flavor">
+		<div class = "header">Flavoracity</div>
+		<%= @rating.rank_3 %>
+	</li>
+	<li id="rank4" title="Bubble blowing ability">
+		<div class = "header">Bubbability</div>
+		<%= @rating.rank_4 %>
+	</li>
+	<li id="rank5" title="Gum deliciousness">
+		<div class = "header">Gumalicious</div>
+		<%= @rating.rank_5 %>
+	</li>
+	<li id="total" title="Total of all ratings">
+		<div class = "header">Total</div>
+		<%= @rating.total %>
+	</li>
+	<li id="average" title="Average of all ratings">
+		<div class = "header">Average</div>
+		<%= @rating.average %>
+	</li>
+</ul>
+<div id = "vote_results_bust">
+	<% if get_rating_user(@profile.user_id).voted_against?(get_gum(@rating.gum_id)) %>
+		<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<% else %>
+		<%= image_tag("bust_grey3.png", :title => "Bust", :size => "48x48") %>
+	<% end %>	
+</div>
+<div id = "vote_results_bubble">
+	<% if get_rating_user(@rating.profile_id).voted_for?(get_gum(@rating.gum_id)) %>
+		<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<% else %>
+		<%= image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48") %>
+	<% end %>
+</div>
+
+<p id = "show_rating_comment"><%= @rating.comment %></p>
+
+<p id="ratings_count"></p>
+
+<% @content_legal.each do |c| %>
+	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+<% end %>

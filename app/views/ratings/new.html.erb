@@ -19,9 +19,9 @@
 < %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}",:id => 'gum_image') %>
 -->
 
-<div id="gum_info">	
+<div id="show_header">	
 	<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
-	<div id="gum_text">
+	<div id="show_text">
 		<p><%= legalize(@gum.description) %></p>
 		<p><%= legalize(@gum.note)%></p>
 	</div>

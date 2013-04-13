@@ -50,20 +50,17 @@
 	}
 }
 
-
-
-
 /******************************************************************************/
-/********************************** GUM SHOW **********************************/
+/******************************** SHOW SHARED *********************************/
 /******************************************************************************/
-div#gum_info {
+div#show_header {
 	margin: 0px;
 	padding: 0px;
 	#gum_image {
 		margin: 0px 20px 10px 0px;
 		float: left;
 	}
-	#gum_text {
+	#show_text {
 		margin-left: 420px;
 		margin: 0px 0px 0px 0px;
 		padding: 0px;
@@ -76,12 +73,12 @@ div#gum_info {
 h2 {
 	clear: both;
 }
-#average_ratings{
+#show_ratings_row {
 	margin: 5px 0px 5px 0px;
   padding: 0px;
 	font-size: 24px;  
 	list-style-type: none;
-		li#rank1, li#rank2, li#rank3, li#rank4, li#rank5 {
+		li#rank1, li#rank2, li#rank3, li#rank4, li#rank5, li#average, li#total {
 			width: 100px;
 			@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
 			//@include border-radius(10px);
@@ -110,6 +107,17 @@ h2 {
 	margin: 0;
   padding: 0;
 //	color: $nav_background;
+}
+#show_rating_comment {
+	clear: both;
+	text-align: left;
+	font-size: 12px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: darken($sidebar_background, 5%);
+	border-radius: 10px;
+	min-height: 16px;
+	padding: 5px;
 }
 #ratings_count { // bottom of page, shows total ratings for indivudal gum
 	clear: both;

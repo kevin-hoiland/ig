@@ -1,5 +1,18 @@
-<p>Welcome to Intl Gum <%= @resource.email %>!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+	    <h1 style="color:#006699; font-family: Verdana, Geneva, sans-serif;">
+			Welcome to <span style="color:#FF3366">Intl Gum</span><%= @resource.email %>!
+		</h1>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			You can confirm your account email through the link below:
+		</p>	
+		<p>
+			<%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), :class => 'content_link_button' %>
+		</p>
+  </body>
+</html>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), :class => 'content_link_button' %></p>

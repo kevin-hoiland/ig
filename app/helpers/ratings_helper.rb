@@ -9,6 +9,10 @@ module RatingsHelper
     return Gum.find(gum_id)
   end
   
+  def get_rating_user (user_id)
+    User.find(user_id)
+  end
+  
   def view_self
     # Note, potential error here if not logged in, Profile will be NILL ;-)  Should always previously verify user_signed_in?
     Profile.find_by_user_id(current_user.id)

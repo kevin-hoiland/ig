@@ -169,7 +169,6 @@ class BillingsController < ApplicationController
   
   def destroy
     #billing = Billing.find(params[:id])
-     
 #    billing = billing.find_by_user_id(current_user.id)
 #    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
 #    billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:billing][:subscription_number])

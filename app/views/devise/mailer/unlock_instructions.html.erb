@@ -1,7 +1,21 @@
-<p>Hello <%= @resource.email %>!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+	    <h1 style="color:#006699; font-family: Verdana, Geneva, sans-serif;">
+			Hello <%= @resource.email %>!
+		</h1>
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			Your Intl Gum account has been locked due to an excessive amount of unsuccessful sign in attempts.
+		</p>
+		<p>
+			Click the link below to unlock your account:
+		</p>
+		<p>
+			<%= link_to 'Unlock my account', unlock_url(@resource, :unlock_token => @resource.unlock_token), :class => 'content_link_button'%>
+		</p>
+  </body>
+</html>
 
-<p>Your Intl Gum account has been locked due to an excessive amount of unsuccessful sign in attempts.</p>
-
-<p>Click the link below to unlock your account:</p>
-
-<p><%= link_to 'Unlock my account', unlock_url(@resource, :unlock_token => @resource.unlock_token), :class => 'content_link_button'%></p>
