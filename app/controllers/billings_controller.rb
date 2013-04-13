@@ -232,8 +232,7 @@ private
     @billing.expiry_year = billing_info[:expiry_year]
     @billing.cvc = billing_info[:cvc]
     @billing.terms = billing_info[:terms]
-#    if @billing.pan > ""  # Only update the last_four DB value from pan attribute accessor if something exists for pan
-    unless billing_info[:pan].blank?
+    unless billing_info[:pan].blank? # Only update the last_four DB value from pan attribute accessor if something exists for pan
       @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
     end

@@ -20,7 +20,7 @@
 <%= semantic_form_for @billing, :url => delete_billing_path(@billing.subscription_number), :method => :delete do |f| %>
 
   	<%= f.inputs do %>
-		<%= f.input :reason, :label => "Reason", :placeholder => "Optional, but please let us know", :hint => "Why are you canceling this Subscription?", :as => "text", :size => 100, :input_html => { :size => "60x5", :autofocus => true} %>
+		<%= f.input :reason, :label => "Reason", :placeholder => "Optional, but please let us know", :hint => "Why are you canceling this Subscription?", :as => "text", :size => 100, :input_html => { :size => "60x5", :maxlength => 5000, :autofocus => true} %>
 	<% end %>
     <%= f.action :submit, :label => "Delete Subscription", :as => :button %>
 	<%= f.action :cancel, :label => "Cancel", :as => :link %>

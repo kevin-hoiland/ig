@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   ############  validations  ############
 
   validates :email, :length => { :maximum => 255 }
-
+  
   ############  associations  ############
     
   has_one :profile, :dependent => :destroy  ## might remove this, not sure...

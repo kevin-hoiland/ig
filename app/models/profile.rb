@@ -15,10 +15,12 @@ class Profile < ActiveRecord::Base
   
   validates :name, :length => { :within => 0..100 }
   validates_uniqueness_of :name, :allow_nil => true, :allow_blank => true
-#  validates :location, :length => { :maximum => 255 }
-#  validates_inclusion_of :sex, :in => ["", "Male", "Female", "Other"]
-#  validates :story, :length => { :maximum => 500 } # also enforced in View form
-  
+  validates :location, :length => { :maximum => 100 }
+  validates :age, :length => { :maximum => 100 }
+  # validates :sex, :length => { :maximum => 100 }
+  # validates_inclusion_of :sex, :in => ["", "Male", "Female", "Other"]
+  validates :story, :length => { :maximum => 1000 }
+
   ############  associations  ############
   
   belongs_to :user
@@ -34,6 +36,8 @@ class Profile < ActiveRecord::Base
   # scope :name, lambda {|name| where(["alias LIKE ?", "%#{name}%"])}
   # scope :search_email, lambda {|email| where(["email LIKE ?", "%#{email}%"])}
 
+  ############  methods  ############
+  
   def get_rating_averages
     set = GumRatingRelationship.where(:profile_id => self.id)
     return([set.average(:rank_1), set.average(:rank_2), set.average(:rank_3), set.average(:rank_4), set.average(:rank_5) ])

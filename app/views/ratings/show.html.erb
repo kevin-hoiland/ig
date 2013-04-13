@@ -11,7 +11,7 @@
 	<% end %>
 <% end %>
 
-<h1>Rating Details for Rating #<%= @rating.id %></h1>
+<h1>Rating Details</h1>
 
 <div id="show_header">
 	<%= image_tag(get_gum(@rating.gum_id).image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(get_gum(@rating.gum_id).permalink)}", :id => 'gum_image')%>

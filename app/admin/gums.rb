@@ -1,4 +1,7 @@
 ActiveAdmin.register Gum do
+
+  actions :index, :show, :new, :create, :update, :edit #everything but :delete (simply flag as not visible...)
+  
 #  collection_action :import_csv, :method => :post do
     # Do some CSV importing work here...
 #    redirect_to {:action => :index}, :notice => "CSV imported successfully!"
