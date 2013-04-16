@@ -1,5 +1,42 @@
 ActiveAdmin.register Gum do
 
+=begin
+  # for index page
+  def active_admin_collection
+    Gum.unscoped { super }
+  end
+  # for show, edit
+  def resource
+    Gum.unscoped { super }
+  end
+=end
+
+=begin
+  controller do
+    def active_admin_collection
+      Gum.unscoped
+    end
+  end
+=end
+
+=begin
+controller do
+  def scoped_collection
+    Gum.includes(:gum)
+  end
+end
+=end
+
+=begin
+scope_to do
+  Class.new do
+    def self.gums
+      Gum.unscoped
+    end
+  end
+end
+=end
+  
   actions :index, :show, :new, :create, :update, :edit #everything but :delete (simply flag as not visible...)
   
 #  collection_action :import_csv, :method => :post do
@@ -10,6 +47,7 @@ ActiveAdmin.register Gum do
   menu :parent => "Product Info"
   
   scope :empty_upc
+  scope :inactive
 #  config.per_page = 50
   
 #  filter :gums_id, :as => :select, :collection => proc { Gums.all }

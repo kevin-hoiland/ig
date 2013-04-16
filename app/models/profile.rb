@@ -39,7 +39,7 @@ class Profile < ActiveRecord::Base
   ############  methods  ############
   
   def get_rating_averages
-    set = GumRatingRelationship.where(:profile_id => self.id)
+    set = GumRatingRelationship.with_active_gum.where(:profile_id => self.id)
     return([set.average(:rank_1), set.average(:rank_2), set.average(:rank_3), set.average(:rank_4), set.average(:rank_5) ])
   end
   

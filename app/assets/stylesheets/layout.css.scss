@@ -152,6 +152,9 @@ section#content {
 			font-size: #{$size}px;
 		}
 	}
+	/****************************/
+	/******* contact info *******/
+	/****************************/
 	#phone_pre {
 		margin: 0;
 		font-size: 20px;
@@ -167,7 +170,7 @@ section#content {
 			font-size: 14px;
 			margin: 0 0 40px 183px;
 		}
-	#email {
+	.email {
 		display: inline;
 		//color: $button_color;
 		a, a:link, a:hover, a:active, a:visited {
@@ -175,8 +178,17 @@ section#content {
 			color: $button_color;
 		}
 	}
+	.social {
+		margin: 20px 0px 0px 20px;
+		.icon {
+//			float: right;
+//			border: solid green;
+			margin: 0px 20px 0px 0px;
+		}
+	}	
+	/****************************/
 	#sort {
-		float:right;
+		float: right;
 		margin: 0 0 10px 0;
 		a, a:link, a:hover, a:active, a:visited{
 			color: darken($button_color, 10%);

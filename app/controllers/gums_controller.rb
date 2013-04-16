@@ -13,7 +13,7 @@ class GumsController < ApplicationController
      #@search_gums = Gum.search(params[:search])
     #
     #RANSACK WAS HERE
-    @search_gums = Gum.ransack(params[:q])
+    @search_gums = Gum.active.ransack(params[:q])
     #     (from https://github.com/gregbell/active_admin/issues/1404)
     #@search_gums = Gum.search(params[:q])
     #
@@ -32,7 +32,7 @@ class GumsController < ApplicationController
   def show
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     #@gum = Gum.find(params[:id])
-    @gum = Gum.find_by_permalink(params[:id]) || not_found
+    @gum = Gum.active.find_by_permalink(params[:id]) || not_found
     @votes_up_total = @gum.votes_for
     @votes_down_total = @gum.votes_against
     @rating_averages = @gum.get_rating_averages
@@ -47,7 +47,7 @@ class GumsController < ApplicationController
   end
   
   def vote_up
-    gum = Gum.find_by_permalink(params[:permalink]) || not_found
+    gum = Gum.active.find_by_permalink(params[:permalink]) || not_found
     if current_user.voted_against?(gum)
       current_user.vote_exclusively_for(gum)
       flash[:notice] = "Changed your vote from Bust to Bubble"
@@ -60,7 +60,7 @@ class GumsController < ApplicationController
   end
   
   def vote_down
-    gum = Gum.find_by_permalink(params[:permalink]) || not_found
+    gum = Gum.active.find_by_permalink(params[:permalink]) || not_found
     if current_user.voted_for?(gum)
       current_user.vote_exclusively_against(gum)
       flash[:notice] = "Changed your vote from Bubble to Bust"

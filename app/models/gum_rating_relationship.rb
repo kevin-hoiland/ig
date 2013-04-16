@@ -14,5 +14,10 @@ class GumRatingRelationship < ActiveRecord::Base
   
   ############  scopes  ############
   scope :already_rated, lambda {|profile_id, gum_id| where(:profile_id => profile_id, :gum_id => gum_id)}
+
+  scope :with_active_gum, :include => :gum, :conditions => { 'gums.active' => true }
+#  scope :with_active_gum, joins(:gums) & Gum.active
+#  scope :active_gum, includes(:gum).where(:active => true)
+#  scope :active_gum, lambda {|status| where(["active = ?", "%#{status}%"])}
   
 end

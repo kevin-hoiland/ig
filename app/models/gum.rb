@@ -1,5 +1,7 @@
 class Gum < ActiveRecord::Base
 
+#  default_scope where(:active => true)
+  
   mount_uploader :image, ImageUploader
   
   ############  attributes  ############
@@ -28,10 +30,15 @@ class Gum < ActiveRecord::Base
   
   ############  scopes  ############
   scope :empty_upc, :conditions => { :upc => "0"}
+  scope :inactive, :conditions => { :active => false }
   scope :search_upc, lambda {|upc| where(["upc LIKE ?", "%#{upc}%"])}
   scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}
   # scope :sort_by_votes_up_asc, Gum.where(:brand => 'Trident').order('id ASC')
   # scope :sort_by_votes_up_desc, Gum.where(:brand => 'Trident').order('id DESC')
+  
+  scope :active, where(:active => true)
+#  scope :active, :conditions => { :active => true }
+
   
   ############  methods  ############
 

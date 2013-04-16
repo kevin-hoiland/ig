@@ -8,39 +8,39 @@ class RatingsController < ApplicationController
   end
   
   def list
-    @search_ratings = GumRatingRelationship.ransack(params[:q])
-    @ratings_list = @search_ratings.result(:distinct => true).order("updated_at DESC").page(params[:page])
+    @search_ratings = GumRatingRelationship.with_active_gum.ransack(params[:q])
+    @ratings_list = @search_ratings.result(:distinct => true).order("gum_rating_relationships.updated_at DESC").page(params[:page])
     # @ratings_list = GumRatingRelationship.order("updated_at DESC").page(params[:page]).per(5)
   end
   
   def show
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-    @rating = GumRatingRelationship.find(params[:id])
+    @rating = GumRatingRelationship.with_active_gum.find(params[:id])
     @profile = Profile.find(@rating.profile_id)
   end
   
   def per_gum
     #@gum = Gum.find(params[:gum_id])
-    @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found 
+    @gum = Gum.active.find_by_permalink(params[:gum_permalink]) || not_found 
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-    @search_ratings = GumRatingRelationship.ransack(params[:q])
-    @ratings = @search_ratings.result(:distinct => true).where(:gum_id => @gum.id).order("updated_at DESC").page(params[:page])    
+    @search_ratings = GumRatingRelationship.with_active_gum.ransack(params[:q])
+    @ratings = @search_ratings.result(:distinct => true).where(:gum_id => @gum.id).order("gum_rating_relationships.updated_at DESC").page(params[:page])    
     # @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
   end
   
   def per_member
     @profile = Profile.find(params[:id])
     @content_legal = DynamicText.content("gum_general").order("sequence ASC")
-    @search_ratings = GumRatingRelationship.ransack(params[:q])
-    @ratings = @search_ratings.result(:distinct => true).where(:profile_id => @profile.id).order("updated_at DESC").page(params[:page])
+    @search_ratings = GumRatingRelationship.with_active_gum.ransack(params[:q])
+    @ratings = @search_ratings.result(:distinct => true).where(:profile_id => @profile.id).order("gum_rating_relationships.updated_at DESC").page(params[:page])
     # @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_profile_id(@profile.id, :order => 'created_at DESC')).page(params[:page])
 
   end
   
   def edit
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-    @changed_rating = GumRatingRelationship.find(params[:id])
-    @gum = Gum.find(@changed_rating.gum_id)
+    @changed_rating = GumRatingRelationship.with_active_gum.find(params[:id])
+    @gum = Gum.active.find(@changed_rating.gum_id) || not_found 
     
     # trying to fix feb 22nd 2013
     # unless current_user.id == @changed_rating.profile_id  ########################### THIS IS NOT GUARENTEED, WTF, SHOULD BE USER_ID EVERYWHERE...
@@ -56,9 +56,9 @@ class RatingsController < ApplicationController
   def new
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     #@gum = Gum.find(params[:gum_id])
-    @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found
+    @gum = Gum.active.find_by_permalink(params[:gum_permalink]) || not_found
     @profile = Profile.find_by_user_id(current_user.id)
-    @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists? ### probably don't need this long term, maybe was just for debuggin?
+#    @help = GumRatingRelationship.already_rated(@profile.id, @gum.id).exists? ### probably don't need this long term, maybe was just for debuggin?
     if GumRatingRelationship.already_rated(@profile.id, @gum.id).exists?
       @rated = GumRatingRelationship.find(GumRatingRelationship.already_rated(@profile.id, @gum.id).first)
       flash.keep(:notice)
@@ -107,7 +107,7 @@ class RatingsController < ApplicationController
     else
       flash[:alert] = "New Rating Save failed :("
       @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
-      @gum = Gum.find_by_permalink(params[:gum_permalink]) || not_found
+      @gum = Gum.active.find_by_permalink(params[:gum_permalink]) || not_found
       @profile = Profile.find_by_user_id(current_user.id)
       render('new')
     end
@@ -148,7 +148,7 @@ class RatingsController < ApplicationController
       flash[:alert] = "Can't save your rating the way it is..."
       @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
       #@gum = Gum.find(params[:gum_rating_relationship][:gum_id])   #  LOL... WOW, 2+ HOURS WASTED...  DON'T FORGET:  RENDER DOESN'T EXECUTE METHOD FIRST, JUST DISPLAYS PAGE AGAIN, VARIABLES LOST...
-      @gum = Gum.find(@changed_rating.gum_id)
+      @gum = Gum.active.find(@changed_rating.gum_id) || not_found 
       # why not setting @profile here ?!?!
       render('edit')
     end

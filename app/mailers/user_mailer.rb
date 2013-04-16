@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   #default from: "notifications@intlgum.com"
   default from: "Intl Gum <notifications@intlgum.com>"
-  LOGO = 'logo_small4.png'
+  LOGO = 'logo_small.png'
   
   def welcome_email(user)
     attachments.inline['logo.png'] = File.read(Rails.root.join('app', 'assets', 'images', LOGO))

@@ -65,7 +65,7 @@
 			<ul class="member_list">
 				<li class = "score"><div class = "header">Votes UP</div><%= p.user.vote_count(:up) %></li>
 				<li class = "score"><div class = "header">Votes DOWN</div><%= p.user.vote_count(:down) %></li>
-				<li class = "score"><div class = "header">Gums Rated</div><%= p.gums.count %></li>
+				<li class = "score"><div class = "header">Gums Rated</div><%= p.gums.active.count %></li>
 				<li><%= p.name %></li>
 				<li class = "comment"><%= p.story %></li>
 			</ul>

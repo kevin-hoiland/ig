@@ -12,7 +12,6 @@
 	  <%= link_to "Sign Out", destroy_admin_user_session_path, :method => 'delete', :class => 'header_button' %>
 	<% end %>
   </nav>
-	<p id="trademark">TM</p><!-- &trade; -->
-  <%= link_to image_tag("logo_small4.png", :title => "International Gum"), root_path %>
+  <%= link_to image_tag("logo_small.png", :title => "International Gum"), root_path %>
   	<%= yield :main_nav %>
 </header>

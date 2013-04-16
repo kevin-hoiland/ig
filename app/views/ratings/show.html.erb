@@ -16,14 +16,24 @@
 <div id="show_header">
 	<%= image_tag(get_gum(@rating.gum_id).image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(get_gum(@rating.gum_id).permalink)}", :id => 'gum_image')%>
 	<div id="show_text">
-		<p>Gum Name: <%= legalize(get_gum(@rating.gum_id).title) %>
-		<p>Member Alias: <%= @profile.name %></p>
-		<p>Rating Created: <%= @rating.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long)  %></p>
-		<p>Rating Last Edited: 
+		<ul class="rating_info">
+			<li class="label">Gum Name:</li>
+			<li class="result"><%= legalize(get_gum(@rating.gum_id).title) %></li>
+		</ul>
+		<ul class="rating_info">
+			<li class="label">Member Alias:</li>
+			<li class="result"><%= @profile.name %></li>
+		</ul>
+		<ul class="rating_info">
+			<li class="label">Rating Created:</li>
+			<li class="result"><%= @rating.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
+		</ul>
+		<ul class="rating_info">
+			<li class="label">Rating Last Edited:</li>
 			<% unless @rating.created_at == @rating.updated_at %>
-				<%= @rating.updated_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long)  %>
+				<li class="result"><%= @rating.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
 			<% end %>
-		</p>
+		</ul>
 	</div>
 </div>
 
