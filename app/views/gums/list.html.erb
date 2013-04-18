@@ -8,24 +8,22 @@
 <% content_for :search do %>
   <h4>Search Gums</H4>
   <%= search_form_for @search_gums do |f| %>
-<!-- ransack: search_form_for @search_gums do |f| -->
-<!-- metasearch: form_for @search_gums do |f| -->
-<ul id = "gum">
-	<li><%= f.label :title_cont, "Name" %></li>
-    <li><%= f.text_field :title_cont, :maxlength => 100, :default => @search_gums.title %></li>
-    <li><%= f.label :brand_or_company_cont, "Company/Brand" %></li>
-    <li><%= f.text_field :brand_or_company_cont, :maxlength => 50, :default => @search_gums.brand_or_company %></li>
-    <li><%= f.label :flavor_cont, "Flavor" %></li>
-    <li><%= f.text_field :flavor_cont, :maxlength => 50, :default => @search_gums.flavor %></li>
-    <li><%= f.label :description_cont, "Description" %></li>
-    <li><%= f.text_field :description_cont, :maxlength => 50, :default => @search_gums.description %></li>
-    <li><%= f.label :country, "Country" %></li>
-    <li><%= f.select :country_eq, ["","United States","Canada","United Kingdom"], :default => @search_gums.country  %></li>
-    <li><%= f.label :upc_cont, "UPC" %></li>
-    <li><%= f.text_field :upc_cont, :maxlength => 50, :default => @search_gums.upc %></li>
-    <li><%= f.label :new_release_eq, "New Release" %></li>
-	<li><%= f.select :new_release_eq, ["",["Yes","true"]], :default => @search_gums.new_release %></li>
-</ul>
+	<ul id = "gum">
+		<li><%= f.label :title_cont, "Name" %></li>
+	    <li><%= f.text_field :title_cont, :maxlength => 100, :default => @search_gums.title %></li>
+	    <li><%= f.label :brand_or_company_cont, "Company/Brand" %></li>
+	    <li><%= f.text_field :brand_or_company_cont, :maxlength => 50, :default => @search_gums.brand_or_company %></li>
+	    <li><%= f.label :flavor_cont, "Flavor" %></li>
+	    <li><%= f.text_field :flavor_cont, :maxlength => 50, :default => @search_gums.flavor %></li>
+	    <li><%= f.label :description_cont, "Description" %></li>
+	    <li><%= f.text_field :description_cont, :maxlength => 50, :default => @search_gums.description %></li>
+	    <li><%= f.label :country, "Country" %></li>
+	    <li><%= f.select :country_eq, ["","United States","Canada","United Kingdom"], :default => @search_gums.country  %></li>
+	    <li><%= f.label :upc_cont, "UPC" %></li>
+	    <li><%= f.text_field :upc_cont, :maxlength => 50, :default => @search_gums.upc %></li>
+	    <li><%= f.label :new_release_eq, "New Release" %></li>
+		<li><%= f.select :new_release_eq, ["",["Yes","true"]], :default => @search_gums.new_release %></li>
+	</ul>
     <%= f.submit :class => 'search_button'%>
   <% end %>
 <% end %>
@@ -67,16 +65,9 @@
 				<p><%= g.votes_for %></p>
 			</li>
 		<li class="content">
-			<!--
-			< %= image_tag("gums/#{g.upc}.jpg", :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
-			-->
-			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>			
-			<!--
-			<p>< %= legalize(g.title) %></p>
-			-->
+			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
 			<p><%= legalize(g.brand) %></p>
-			<p><%= legalize(g.flavor) %></p>
-			
+			<p><%= legalize(g.flavor) %></p>		
 		</li>
 		<li class="clear_list">
 			<img><src="/assets/list_clear.gif"/></img>
@@ -87,6 +78,7 @@
 <% end %>
 <%= paginate @gums_list %>
 <p iD = "page_info"><%= (page_entries_info @gums_list, :entry_name => 'Gums').html_safe %></p>
+
 <% @content_legal.each do |c| %>
 	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
 <% end %>

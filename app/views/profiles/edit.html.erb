@@ -14,10 +14,6 @@
     <%= f.inputs do %>
 		<%= f.input :name, :label => "What alias do you want?", :placeholder => "Use anything! This is what everyone else will see as your name", :hint => "May change whenever, but must be different than everyone else", :input_html => { :autofocus => true, :maxlength => 100} %>
 		<%= f.input :location, :label =>"What's your location?", :placeholder => "Where are you from, or where do you live, generally speaking", :hint => "Don't use an actual full address, this is visible to everyone!", :input_html => { :maxlength => 100} %>
-		
-<!--
-		< %= f.input :age, :label =>"When were you born?", :start_year => Time.now.year-100, :end_year => Time.now.year, :discard_month => true, :discard_day => true %>
--->
 		<%= f.input :age, :label =>"What's your age?", :placeholder => "Old, young? Gum doesn't care!", :hint => "How old would you be if you didn't know how old you are?", :input_html => { :maxlength => 100} %>
 		<%= f.input :sex, :label =>"What's your gender?", :as => :select, :collection => ["Male", "Female", "Other"]%>
 		<%= f.input :story, :size => 100, :label => "Anything else to share?", :placeholder => "Whatever you want here", :hint => "Your Gum thoughts, comments, stories, whatever :-)", :input_html => { :class => '', :rows => 5, :cols => 50, :maxlength => 1000 } %>
@@ -25,5 +21,4 @@
     <%= f.action :submit, :label => "Update Your Public Info", :as => :button %>
 	<%= f.action :cancel, :label => "Cancel", :as => :link %>
 <% end %>
-<!-- NOTE "TBD" html classes used above dude... -->
 

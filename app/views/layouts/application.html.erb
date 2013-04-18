@@ -12,7 +12,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 		    $('#slideshow').cycle({
-				fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+				fx: 'fade', // transition type, ex: fade, scrollUp, shuffle, etc...
 				speed:    1000, // defines the number of milliseconds it will take to transition from one slide to the next
 			    timeout:  5000, // specifies how many milliseconds will elapse between the start of each transition
 				next:   '#slideshow', 
@@ -22,42 +22,40 @@
 	</script>
   </head>
   <body>
-<div id="wrapper">
-	<%= render 'layouts/header' %>
-	<!-- < % = image_tag("tagline.png", :alt=>"Intl Gum Tag Line Here", :id=>"tagline") % > -->
-	<!-- ><div id="tagline">Intl Gum Tag Line Here</div> -->
-    <% if notice %><p class="notification notice"><%= notice %></p><% end %>
-    <% if alert %><p class="notification alert"><%= alert %></p><% end %>
-	<div id="container">
-      <section id="content">
-        <%= yield %>
-      </section>
-      <!-- end content -->
-  	  <section id="sidebar">
-		<nav id="sub_nav">
-			<H3>Other Options</h3>
-			<ul>
-	    	<% unless user_signed_in? %>
-				<li><%= link_to "Create Account", new_user_registration_path, :class => 'link_button' %></li>
-				<li><%= link_to "Sign In", new_user_session_path, :class => 'link_button' %></li>
-			<% else %>
-				<li><%= link_to("View Your Account", profile_path(view_self), :class => 'link_button') %></li>
-			<% end %>
-			<%= yield :sub_nav %>
-			</ul>
-		</nav>
-		<!-- end sub_nav -->
-		<section id="search">
-			<%= yield :search %>
-		</section>
-	    <!-- end search -->  	
-	  </section>
-      <!-- end sidebar -->
+	<div id="wrapper">
+		<%= render 'layouts/header' %>
+	    <% if notice %><p class="notification notice"><%= notice %></p><% end %>
+	    <% if alert %><p class="notification alert"><%= alert %></p><% end %>
+		<div id="container">
+	      <section id="content">
+	        <%= yield %>
+	      </section>
+	      <!-- end content -->
+	  	  <section id="sidebar">
+			<nav id="sub_nav">
+				<H3>Other Options</h3>
+				<ul>
+		    	<% unless user_signed_in? %>
+					<li><%= link_to "Create Account", new_user_registration_path, :class => 'link_button' %></li>
+					<li><%= link_to "Sign In", new_user_session_path, :class => 'link_button' %></li>
+				<% else %>
+					<li><%= link_to("View Your Account", profile_path(view_self), :class => 'link_button') %></li>
+				<% end %>
+				<%= yield :sub_nav %>
+				</ul>
+			</nav>
+			<!-- end sub_nav -->
+			<section id="search">
+				<%= yield :search %>
+			</section>
+		    <!-- end search -->  	
+		  </section>
+	      <!-- end sidebar -->
+		</div>
+	  	<!-- end container -->
+	<div id="sticky_footer_push"></div>
 	</div>
-  	<!-- end container -->
-<div id="sticky_footer_push"></div>
-</div>
-<!-- end wrapper -->
-    <%= render 'layouts/footer' %>
+	<!-- end wrapper -->
+	<%= render 'layouts/footer' %>
   </body>
 </html>
