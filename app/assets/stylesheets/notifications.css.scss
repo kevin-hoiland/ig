@@ -49,14 +49,13 @@
   }
   /* END:assetpath */
 }
-/*#error_explanation {*/
+
 #error {
 	background-color: darken($sidebar_header_background, 10%);
 	border: green;
 	color: white;
 	padding: 10px;
 	margin-bottom: 15px;
-	//@include border-radius(5px);
 	border-radius: 5px;
 	h2 {
 		margin: 0;
@@ -72,7 +71,6 @@
 	border: green;
 	color: white;
 	padding: 10px;
-	//@include border-radius(5px);
 	border-radius: 5px;
 	h2 {
 		margin: 0;
