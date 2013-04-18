@@ -35,13 +35,17 @@ class Gum < ActiveRecord::Base
   
   ############  methods  ############
 
-  def total_average_rating (gum_id)
+  def total_average_rating_to_score (gum_id)
     set = GumRatingRelationship.where(:gum_id => gum_id)
     if set.empty?
-      return("0".to_i)
+      return("".to_s)
     else
-      return(set.average(:total))
+      return(((set.average(:total)).floor)*2).to_s+"%"
     end
+  end
+  
+  def to_score
+    (self.to_i*2).to_s+"%"
   end
   
   def get_rating_averages

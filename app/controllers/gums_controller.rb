@@ -11,6 +11,7 @@ class GumsController < ApplicationController
     @content_legal = DynamicText.content("gum_general").order("sequence ASC")
     @search_gums = Gum.active.ransack(params[:q])
     @gums_list = @search_gums.result.page(params[:page])
+    @country_list = Gum.active.select(:country).uniq
   end
   
   def show
