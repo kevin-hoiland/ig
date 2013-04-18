@@ -6,9 +6,7 @@ class Gum < ActiveRecord::Base
   
   ############  attributes  ############
   attr_accessible :permalink, :title, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image, as: :admin
-
-  #  attr_searchable :upc, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued
-  #  assoc_searchable :thumbs_up #:rating_total 
+  
   #from : http://erniemiller.org/2012/05/11/why-your-ruby-class-macros-might-suck-mine-did/
   def self.ransackable_attributes(auth_object = nil)
     super & ['upc', 'title', 'company', 'active', 'brand', 'flavor', 'country', 'description', 'new_release']
@@ -32,13 +30,8 @@ class Gum < ActiveRecord::Base
   scope :empty_upc, :conditions => { :upc => "0"}
   scope :inactive, :conditions => { :active => false }
   scope :search_upc, lambda {|upc| where(["upc LIKE ?", "%#{upc}%"])}
-  scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}
-  # scope :sort_by_votes_up_asc, Gum.where(:brand => 'Trident').order('id ASC')
-  # scope :sort_by_votes_up_desc, Gum.where(:brand => 'Trident').order('id DESC')
-  
+  scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}  
   scope :active, where(:active => true)
-#  scope :active, :conditions => { :active => true }
-
   
   ############  methods  ############
 
@@ -49,8 +42,6 @@ class Gum < ActiveRecord::Base
     else
       return(set.average(:total))
     end
-    #return(set.average.sum)
-    #return (set.average.sum / set.size.to_f)
   end
   
   def get_rating_averages

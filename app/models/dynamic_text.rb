@@ -10,7 +10,5 @@ class DynamicText < ActiveRecord::Base
   scope :news, :conditions => { :location => "news"}
   scope :faqs, :conditions => { :location => "faq"}
   scope :content, lambda {|page| where(["location LIKE ? AND visible = ?", "%#{page}%", "1"])}
-  #scope :sequence, lambda {|sequence| {:order => sequence.flatten.first} }
-  #scope :sequence, lambda {|sequence| {:order => "sequence #{sequence}"} }
   
 end
