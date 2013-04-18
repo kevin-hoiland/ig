@@ -1,15 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Emanuel', :city => cities.first)
-
-# Create a default admin user
+# Create default admin user
   AdminUser.create!([:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'], :without_protection => true)
 
-# Create default set of dynamic text
+# Create default dynamic text
 File.open("db/initial_text3.txt", "r") do |defaults|
   defaults.read.each_line do |text|
     location, sequence, size, visible, content = text.chomp.split("|")
@@ -18,9 +10,9 @@ File.open("db/initial_text3.txt", "r") do |defaults|
 end
 
 # Create default set of gums
-File.open("db/initial_gums4_mini.txt", "r") do |gums|
+File.open("db/initial_gums6_mini.txt", "r") do |gums|
   gums.read.each_line do |gum|
-    permalink, title, upc, active, company, brand, flavor, description, note, country, new_release, image = gum.chomp.split("|")
+    permalink, title, upc, active, discontinued, company, brand, flavor, description, note, country, new_release, image = gum.chomp.split("|")
     # Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release)
     # Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => (File.open(File.join(Rails.root, image))))
      #Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => image )
@@ -29,7 +21,7 @@ File.open("db/initial_gums4_mini.txt", "r") do |gums|
 # works but is super slow
 #     Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/'+image)))
 
-     Gum.create!([:permalink => permalink, :title => title, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/images/gums/'+image))], :without_protection => true)
+     Gum.create!([:permalink => permalink, :title => title, :upc => upc, :active => active, :discontinued => discontinued, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/images/gums/'+image))], :without_protection => true)
 
 #    g = Gum.create!(:permalink => permalink, :upc => upc, :active => active, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release)
 #        g.image.store!(File.open(File.join(Rails.root+"/lib/assets", image)))

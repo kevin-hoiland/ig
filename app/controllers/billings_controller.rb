@@ -1,5 +1,7 @@
 class BillingsController < ApplicationController
   
+  force_ssl
+    
   require 'active_merchant'
   ActiveMerchant::Billing::Base.mode = :development
   

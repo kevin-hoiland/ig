@@ -5,10 +5,13 @@
   </head>
   <body>
 	    <h1 style="color:#006699; font-family: Verdana, Geneva, sans-serif;">
-			Welcome to <span style="color:#FF3366">Intl Gum</span><%= @resource.email %>!
+			Welcome to <span style="color:#FF3366">Intl Gum</span>!
 		</h1>
 		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
-			You can confirm your account email through the link below:
+			You requested a new Intl Gum account with <%= @resource.email %>.
+		</p>		
+		<p style="color:#444343; font-family: Verdana, Geneva, sans-serif;">
+			You can confirm this account email through the link below:
 		</p>	
 		<p>
 			<%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), :class => 'content_link_button' %>
