@@ -18,8 +18,6 @@ ActiveAdmin.register GumShipmentRelationship, :as => "Shipped Gums" do
       link_to row.shipment.ship_date, admin_shipment_path(row.shipment_id)
     end
     column "Gum Pieces", :pieces
-#    column "Created", :created_at
-#    column "Updated", :updated_at
     default_actions
   end
   
@@ -29,7 +27,6 @@ ActiveAdmin.register GumShipmentRelationship, :as => "Shipped Gums" do
         f.input :gum, :as => :select, :collection => Gum.all.map {|g| [g.id.to_s+" : "+g.permalink]}
         f.input :shipment, :as => :select, :collection => Shipment.all.map {|s| [s.id.to_s+" : "+s.ship_date.to_s]}
       else
-#       f.input :gum, :as => :select, :collection => Gum.all.map {|g| [g.id.to_s+" : "+g.permalink]}, :selected => Gum.find(params[:id]).id.to_s+" : "+Gum.find(params[:id]).permalink
         f.input :gum, :as => :select, :collection => Gum.all.map {|g| [g.id.to_s+" : "+g.permalink]}, :selected => f.object.gum.id.to_s+" : "+f.object.gum.permalink
         f.input :shipment, :as => :select, :collection => Shipment.all.map {|s| [s.id.to_s+" : "+s.ship_date.to_s]}, :selected => f.object.shipment.id.to_s+" : "+f.object.shipment.ship_date.to_s
       end     

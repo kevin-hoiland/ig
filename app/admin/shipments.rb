@@ -100,37 +100,4 @@ ActiveAdmin.register Shipment do
     active_admin_comments
   end
   
-=begin  
-  form do |f|
-    f.inputs "Edit Shipment" do
-      f.input :date
-      f.input :product_cost
-    end
-    f.buttons
-  end
-=end
-
-    
-=begin
-  form do |f|
-        f.inputs "Details" do
-          f.input :id
-          f.input :product_cost
-          f.input :gums # don't forget this one!
-        end  
-  end
-=end
-  
-=begin
-  form do |f|
-    f.inputs
-
-    f.has_many :associations do |association|
-       association.inputs
-    end
-
-    f.buttons
-  end
-=end
-  
 end

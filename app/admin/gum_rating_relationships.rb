@@ -11,14 +11,4 @@ ActiveAdmin.register GumRatingRelationship, :as => "Ratings" do
     default_actions
   end
   
-#  form do |f|
-#    f.inputs "Rating Details" do
-#      f.input :comment
-#      f.input :stat_1
-#      f.input :stat_2
-#      f.input :stat_3
-#    end
-#    f.buttons
-#  end
-  
 end

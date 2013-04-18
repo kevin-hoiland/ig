@@ -1,41 +1,4 @@
 ActiveAdmin.register Gum do
-
-=begin
-  # for index page
-  def active_admin_collection
-    Gum.unscoped { super }
-  end
-  # for show, edit
-  def resource
-    Gum.unscoped { super }
-  end
-=end
-
-=begin
-  controller do
-    def active_admin_collection
-      Gum.unscoped
-    end
-  end
-=end
-
-=begin
-controller do
-  def scoped_collection
-    Gum.includes(:gum)
-  end
-end
-=end
-
-=begin
-scope_to do
-  Class.new do
-    def self.gums
-      Gum.unscoped
-    end
-  end
-end
-=end
   
   actions :index, :show, :new, :create, :update, :edit #everything but :delete (simply flag as not visible...)
   
@@ -43,6 +6,7 @@ end
     # Do some CSV importing work here...
 #    redirect_to {:action => :index}, :notice => "CSV imported successfully!"
 #  end
+
   menu :label => "Gums"
   menu :parent => "Product Info"
   

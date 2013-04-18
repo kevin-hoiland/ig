@@ -56,10 +56,6 @@ ActiveAdmin.register User do
       log.profile_age = profile.age
       log.deleted_object_creation_dt = user.created_at
       log.save
-
-#      @log = Datacenter.find(params[:id])
-#      @datacenter.destroy
-#      redirect_to edit_admin_retailer_path(@datacenter.infrastructure)
     end
   end
     

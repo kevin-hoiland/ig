@@ -9,7 +9,6 @@ ActiveAdmin.register Profile do
     column :user_id do |row|  
       link_to row.user_id, admin_user_path(row.user_id)
     end
-    #column "User ID", :user_id
     column "Name", :name
     column "Created", :created_at
     column "Subs Created", :subscriptions_created
