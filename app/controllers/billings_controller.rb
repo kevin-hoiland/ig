@@ -3,7 +3,8 @@ class BillingsController < ApplicationController
   force_ssl
     
   require 'active_merchant'
-  ActiveMerchant::Billing::Base.mode = :development  #  <--  UPDATE THIS FOR PRODUCTION
+#  ActiveMerchant::Billing::Base.mode = :development  #  <--  UPDATE THIS FOR PRODUCTION
+ ActiveMerchant::Billing::Base.mode = :production
   
   before_filter :authenticate_user!
 
