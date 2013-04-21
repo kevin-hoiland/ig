@@ -15,7 +15,8 @@ IntlGum2::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+   config.assets.compile = false  # attempting to fix engine yard deployment options
+  # config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -50,6 +51,7 @@ IntlGum2::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host => 'intlgum.com' }
 
   # Enable threaded mode
   # config.threadsafe!

@@ -1,5 +1,5 @@
 # Create default admin user
-  AdminUser.create!([:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'], :without_protection => true)
+  AdminUser.create!([:email => 'kevin.hoiland@intlgum.com', :password => '1ntlP@s54kevho', :password_confirmation => '1ntlP@s54kevho'], :without_protection => true)
 
 # Create default dynamic text
 File.open("db/initial_text3.txt", "r") do |defaults|
