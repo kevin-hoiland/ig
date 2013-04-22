@@ -49,4 +49,8 @@ ActiveAdmin.register Gum do
     default_actions
   end
 
+  controller do
+    force_ssl
+  end
+  
 end

@@ -99,5 +99,9 @@ ActiveAdmin.register Shipment do
     end
     active_admin_comments
   end
-  
+
+  controller do
+    force_ssl
+  end
+    
 end
