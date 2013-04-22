@@ -4,7 +4,7 @@
 =end
 
 # Create default dynamic text
-File.open("db/initial_text3", "r") do |defaults|
+File.open("db/initial_text3.txt", "r") do |defaults|
   defaults.read.each_line do |text|
     location, sequence, size, visible, content = text.chomp.split("|")
     DynamicText.create!([:location => location, :sequence => sequence, :size => size, :visible => visible, :content => content], :without_protection => true)
