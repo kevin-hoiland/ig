@@ -1,7 +1,7 @@
-#=begin
+=begin
 # Create default admin user
   AdminUser.create!([:email => 'kevin.hoiland@intlgum.com', :password => '1ntlP@s54kevho', :password_confirmation => '1ntlP@s54kevho'], :without_protection => true)
-#=end
+=end
 
 =begin
 # Create default dynamic text

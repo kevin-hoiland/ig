@@ -11,7 +11,7 @@
 <h1>Frequently Asked Questions</h1>
 
 <% @content.each do |c| %>
-	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+	<p class=<%= "size_#{c.size}" %>><%= c.content.html_safe %></p>
 <% end %>
 
 

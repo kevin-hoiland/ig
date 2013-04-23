@@ -4787,3 +4787,944 @@ Served asset /active_admin.js - 304 Not Modified (1ms)
 
 Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-22 08:11:27 -0700
 Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2013-04-22 21:45:39 -0700
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unfWE1elhjtezhT2aJFvq4Kdm91SMuX9P+1be4s0VXw="}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 160ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-04-22 21:45:40 -0700
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 6ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2013-04-22 21:45:40 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/devise/shared/_links.erb (0.1ms)
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (174.1ms)
+Completed 200 OK in 501ms (Views: 500.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-22 21:45:40 -0700
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-22 21:45:41 -0700
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Processing by WelcomesController#index as HTML
+  Rendered layouts/_main_nav.html.erb (12.8ms)
+  [1m[35mDynamicText Load (0.3ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%home_top%' AND visible = '1') ORDER BY sequence ASC
+  [1m[36mDynamicText Load (0.2ms)[0m  [1mSELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%home_slide%' AND visible = '1') ORDER BY sequence ASC[0m
+  [1m[35mDynamicText Load (0.3ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%home_bottom%' AND visible = '1') ORDER BY sequence ASC
+  Rendered welcomes/index.html.erb within layouts/application (48.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (13.1ms)
+Completed 200 OK in 298ms (Views: 287.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/filler_v12.jpg" for 127.0.0.1 at 2013-04-22 21:45:46 -0700
+Served asset /filler_v12.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide_concept.png" for 127.0.0.1 at 2013-04-22 21:45:47 -0700
+Served asset /slide_concept.png - 304 Not Modified (24ms)
+
+
+Started GET "/assets/intl_gum_logo_large.jpg" for 127.0.0.1 at 2013-04-22 21:45:47 -0700
+Served asset /intl_gum_logo_large.jpg - 304 Not Modified (34ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-22 21:45:47 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide_rate.png" for 127.0.0.1 at 2013-04-22 21:45:47 -0700
+Served asset /slide_rate.png - 304 Not Modified (21ms)
+
+
+Started GET "/gums" for 127.0.0.1 at 2013-04-22 21:45:48 -0700
+Processing by GumsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT DISTINCT country FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mGum Load (0.5ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 LIMIT 10 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 1 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 1 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 2
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 2 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 2 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 3[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 3 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 3 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 4
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 4 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 4 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 5[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 5 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 5 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 6
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 7[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 7 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 7 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 8
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 8 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 8 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 9[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 9 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 9 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 10
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 10 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 10 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mDynamicText Load (0.4ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_general%' AND visible = '1') ORDER BY sequence ASC
+  Rendered gums/list.html.erb within layouts/application (270.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 546ms (Views: 488.2ms | ActiveRecord: 47.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin/base.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/list_bust.png" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /list_bust.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/list_bubble.png" for 127.0.0.1 at 2013-04-22 21:45:49 -0700
+Served asset /list_bubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Processing by ProfilesController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT DISTINCT `profiles`.* FROM `profiles` ORDER BY updated_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT DISTINCT `profiles`.* FROM `profiles` 
+  Rendered profiles/list.html.erb within layouts/application (37.1ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 366ms (Views: 361.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin/base.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-22 21:46:19 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/gums" for 127.0.0.1 at 2013-04-22 21:46:37 -0700
+Processing by GumsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  [1m[36mGum Load (0.5ms)[0m  [1mSELECT DISTINCT country FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mGum Load (0.6ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 LIMIT 10 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 1 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 1 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 2
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 2 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 2 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 3 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 3 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 4
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 4 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 4 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 5 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 5 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 6
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 7[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 7 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 7 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 8
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 8 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 8 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 9[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 9 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 9 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 10
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 10 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 10 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_general%' AND visible = '1') ORDER BY sequence ASC
+  Rendered gums/list.html.erb within layouts/application (164.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 336ms (Views: 323.3ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin/base.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/list_bubble.png" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /list_bubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/list_bust.png" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /list_bust.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-22 21:46:38 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/gums?page=2" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Processing by GumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  [1m[36mGum Load (0.6ms)[0m  [1mSELECT DISTINCT country FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mGum Load (0.5ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 LIMIT 10 OFFSET 10
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 11[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 11 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 11 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 12
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 12 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 12 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 13[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 13 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 13 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 14
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 14 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 14 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 15[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 15 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 15 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 16
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 16 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 16 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 17[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 17 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 17 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 18 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 18 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mDynamicText Load (0.4ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_general%' AND visible = '1') ORDER BY sequence ASC
+  Rendered gums/list.html.erb within layouts/application (232.3ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 445ms (Views: 426.1ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Served asset /active_admin/lib/namespace.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:05 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/base.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/list_bubble.png" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /list_bubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/list_bust.png" for 127.0.0.1 at 2013-04-22 21:47:06 -0700
+Served asset /list_bust.png - 304 Not Modified (0ms)
+
+
+Started GET "/gums/up2u_sweet_mint_bubble_fresh" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Processing by GumsController#show as HTML
+  Parameters: {"id"=>"up2u_sweet_mint_bubble_fresh"}
+  [1m[36mGum Load (0.5ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND `gums`.`permalink` = 'up2u_sweet_mint_bubble_fresh' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 18 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 18 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35m (0.2ms)[0m  SELECT AVG(`gum_rating_relationships`.`rank_1`) AS avg_id FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG(`gum_rating_relationships`.`rank_2`) AS avg_id FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18[0m
+  [1m[35m (0.1ms)[0m  SELECT AVG(`gum_rating_relationships`.`rank_3`) AS avg_id FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG(`gum_rating_relationships`.`rank_4`) AS avg_id FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18[0m
+  [1m[35m (0.2ms)[0m  SELECT AVG(`gum_rating_relationships`.`rank_5`) AS avg_id FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` WHERE `gum_rating_relationships`.`gum_id` = 18[0m
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+  [1m[35mDynamicText Load (0.4ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_specific%' AND visible = '1') ORDER BY sequence ASC
+  Rendered gums/show.html.erb within layouts/application (15.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 228ms (Views: 216.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bubble3.png" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /bubble3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bust3.png" for 127.0.0.1 at 2013-04-22 21:47:45 -0700
+Served asset /bust3.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-23 07:01:25 -0700
+Processing by WelcomesController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+  [1m[36mDynamicText Load (0.4ms)[0m  [1mSELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%home_top%' AND visible = '1') ORDER BY sequence ASC[0m
+  [1m[35mDynamicText Load (0.3ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%home_slide%' AND visible = '1') ORDER BY sequence ASC
+  [1m[36mDynamicText Load (0.4ms)[0m  [1mSELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%home_bottom%' AND visible = '1') ORDER BY sequence ASC[0m
+  Rendered welcomes/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 179ms (Views: 164.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-23 07:01:25 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:25 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:25 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin/base.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide_rate.png" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /slide_rate.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/intl_gum_logo_large.jpg" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /intl_gum_logo_large.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide_concept.png" for 127.0.0.1 at 2013-04-23 07:01:26 -0700
+Served asset /slide_concept.png - 304 Not Modified (0ms)
+
+
+Started GET "/welcomes/news" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Processing by WelcomesController#news as HTML
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%news%' AND visible = '1') ORDER BY sequence DESC
+  Rendered welcomes/news.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 229ms (Views: 227.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-23 07:01:27 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/welcomes/news" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Processing by WelcomesController#news as HTML
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+  [1m[36mDynamicText Load (0.5ms)[0m  [1mSELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%news%' AND visible = '1') ORDER BY sequence DESC[0m
+  Rendered welcomes/news.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 248ms (Views: 236.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/filler_v12.jpg" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /filler_v12.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-04-23 07:30:14 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
