@@ -131,7 +131,7 @@ ul.profile_info {
 //	margin: 5px 0px 5px 0px;
   padding: 0px;
 	font-size: 14px;
-	&:hover { background-color: $list_hover; }
+//	&:hover { background-color: $list_hover; } // turned off hover here to match gums list pages
 //	border-bottom-color: darken($sidebar_background, 10%);
 //  border-bottom-width: 1px;
 //	border-bottom-style: solid;
@@ -157,7 +157,7 @@ ul.rating_info {
 		margin: 0px;
 	  padding: 0px;
 		font-size: 14px;
-		&:hover { background-color: $list_hover; }
+//		&:hover { background-color: $list_hover; } // turned this off to match gums list page (image issues)
 			li.label {
 //				border: solid green;
 				float: left;
