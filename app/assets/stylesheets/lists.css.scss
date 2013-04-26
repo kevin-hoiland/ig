@@ -5,7 +5,8 @@ ul.list_container {
 	margin: 0px;
   padding: 5px 5px 5px 5px;  
   list-style-type: none;
-	min-height: 100px;
+//	min-height: 100px;
+	min-height: 110px; // 5px top row padding + 12px top image padding + 100px image + 12px bottom image padding + 5px bottom row padding
 //	&:hover { background-color: $list_hover; }
 	border-bottom-color: darken($sidebar_background, 10%);
   border-bottom-width: 1px;
@@ -13,7 +14,7 @@ ul.list_container {
 }
 .row_settings {
 	width: 84%;
-	margin: 5px 0px 5px 0px;
+//	margin: 5px 0px 5px 0px;
   padding: 0px;
 	font-size: 14px;
   list-style-type: none;
@@ -78,7 +79,8 @@ ul.gum_list {
 		// current uploader thumb size is 100x75
 //		width: 100px;
 //	  height: 75px;
-	  margin: 12px 25px 12px 10px;
+//	  margin: 12px 25px 12px 10px; removed top and bottom image padding, all handled in row now
+		margin: 0px 25px 0px 10px;
 	}
 	li {
 		padding: 0px;
@@ -139,13 +141,17 @@ ul.gum_list {
 // ****************************** RATING LIST ******************************
 ul.rating_list {
 	@extend .row_settings;
+//<------------------------------- TO DO ***** need to control row height outside list_container... gums page is fixed, ratings and member will increase based on user free text input
+	ul.list_container {
+		min-height: 1px; // overwriting min height from gums and other pages because ratings text could be long, standard row height is not controlled
+	}
 	.ratings_gum_logo {
 		float: left;
 		// current uploader thumb size is 100x75
 //		width: 100px;
 //	  height: 75px;
 	 // margin: 12px 25px 12px 10px;
-	margin: 0px 25px 0px 10px;
+	margin: 0px 25px 12px 10px;
 	}
 	font-size: 24px;
 	.score {
