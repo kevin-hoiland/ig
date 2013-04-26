@@ -17,12 +17,16 @@
 	    <li><%= f.text_field :flavor_cont, :maxlength => 50, :default => @search_gums.flavor %></li>
 	    <li><%= f.label :description_cont, "Description" %></li>
 	    <li><%= f.text_field :description_cont, :maxlength => 50, :default => @search_gums.description %></li>
-	    <li><%= f.label :country, "Country" %></li>
-		<li><%= f.collection_select(:country_eq, @country_list, :country, :country, {:include_blank => true}) %><li>
-	    <li><%= f.label :upc_cont, "UPC" %></li>
-	    <li><%= f.text_field :upc_cont, :maxlength => 50, :default => @search_gums.upc %></li>
-	    <li><%= f.label :new_release_eq, "New Release" %></li>
-		<li><%= f.select :new_release_eq, ["",["Yes","true"]], :default => @search_gums.new_release %></li>
+		<!-- will add country search back in later, once more gums from other countries are in the system
+	    	<li>< %= f.label :country, "Country" %></li>
+			<li>< %= f.collection_select(:country_eq, @country_list, :country, :country, {:include_blank => true}) %><li>
+	    -->
+		<li><%= f.label :upc_cont, "UPC" %></li>
+		<li><%= f.text_field :upc_cont, :maxlength => 50, :default => @search_gums.upc %></li>
+	    <!-- will add new release search back in later, once there are some new releases defined
+			<li>< %= f.label :new_release_eq, "New Release" %></li>
+			<li>< %= f.select :new_release_eq, ["",["Yes","true"]], :default => @search_gums.new_release %></li>
+		-->
 	</ul>
     <%= f.submit :class => 'search_button'%>
   <% end %>
