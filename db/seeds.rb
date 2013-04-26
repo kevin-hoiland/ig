@@ -13,7 +13,7 @@ File.open("db/initial_text3.txt", "r") do |defaults|
 end
 =end
 
-#=begin
+=begin
 # Create default set of gums
 File.open("db/initial_gums7.txt", "r") do |gums|
   gums.read.each_line do |gum|
@@ -21,4 +21,4 @@ File.open("db/initial_gums7.txt", "r") do |gums|
     Gum.create!([:permalink => permalink, :title => title, :upc => upc, :active => active, :discontinued => discontinued, :company => company, :brand => brand, :flavor => flavor, :description => description, :note => note, :country => country, :new_release => new_release, :image => File.open(File.join(Rails.root, '/lib/assets/images/gums/'+image))], :without_protection => true)
   end
 end
-#=end
+=end
