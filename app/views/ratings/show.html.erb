@@ -31,7 +31,7 @@
 		<ul class="rating_info">
 			<li class="label">Rating Last Edited:</li>
 			<% unless @rating.created_at == @rating.updated_at %>
-				<li class="result"><%= @rating.created_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
+				<li class="result"><%= @rating.updated_at.in_time_zone("Pacific Time (US & Canada)").to_s(:long) %></li>
 			<% end %>
 		</ul>
 	</div>
