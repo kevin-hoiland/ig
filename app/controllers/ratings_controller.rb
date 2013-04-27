@@ -92,7 +92,7 @@ class RatingsController < ApplicationController
     @changed_rating.comment = params[:gum_rating_relationship][:comment]
     values = [@changed_rating.rank_1.to_i,@changed_rating.rank_2.to_i,@changed_rating.rank_3.to_i,@changed_rating.rank_4.to_i,@changed_rating.rank_5.to_i]    
     @changed_rating.total = values.sum
-    @changed_rating.average = (@changed_rating.total / values.size.to_i)
+    @changed_rating.average = @changed_rating.total / values.size.to_f.round(2)
     if @changed_rating.save
       flash[:notice] = "Rating Updated"
       redirect_to(gum_url(get_permalink(@changed_rating.gum_id)))
