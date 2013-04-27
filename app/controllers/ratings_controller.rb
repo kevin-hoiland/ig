@@ -34,7 +34,7 @@ class RatingsController < ApplicationController
     # @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_profile_id(@profile.id, :order => 'created_at DESC')).page(params[:page])
   end
   
-  def edit
+  def edit # NOTE:  expecting to always route through New first, to verify correct user etc
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     @changed_rating = GumRatingRelationship.with_active_gum.find(params[:id])
     @gum = Gum.active.find(@changed_rating.gum_id) || not_found 

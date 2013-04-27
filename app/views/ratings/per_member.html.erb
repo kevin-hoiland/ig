@@ -26,6 +26,9 @@
 		<ul class="list_links">
 			<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
 			<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+			<% if user_signed_in? and viewing_self?(@profile) %>
+				<li><%= link_to "Change Your Rating", new_rating_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+			<% end %>
 		</ul>
 	</li>
 	<li>
