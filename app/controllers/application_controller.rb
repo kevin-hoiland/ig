@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def set_seed
     session[:seed] ||= SecureRandom.random_number.to_s[2..20]#.to_i
-    session[:seed_expires_at] ||= 1.minutes.from_now
+    session[:seed_expires_at] ||= 1.hours.from_now
   end
 
   def reset_seed
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       flash.now[:notice] = "Randomized lists for both Gums and Members"
       session[:seed] = SecureRandom.random_number.to_s[2..20]
     end
-    session[:seed_expires_at] = 1.minutes.from_now
+    session[:seed_expires_at] = 1.hours.from_now
   end
 
 end
