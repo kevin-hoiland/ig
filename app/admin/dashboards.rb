@@ -39,7 +39,7 @@ ActiveAdmin::Dashboards.build do
       end  
       strong { link_to "View Subscriptions", admin_billings_path }  
   end
-  
+
   
 =begin
   section "Current Totals", :priority => 3 do 

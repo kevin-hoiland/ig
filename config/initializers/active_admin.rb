@@ -4,6 +4,8 @@ ActiveAdmin.setup do |config|
   # source -> https://mail.google.com/mail/u/0/?shva=1#inbox/13826044236d46da
   module ActiveAdmin
     class BaseController
+#      skip_before_filter :set_seed, :reset_seed
+#     force_ssl
       with_role :admin
     end
   end

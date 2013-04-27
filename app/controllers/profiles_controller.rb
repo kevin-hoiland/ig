@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
 
   def list
     @search_profiles = Profile.ransack(params[:q])
-    @profiles_list = @search_profiles.result(:distinct => true).order("updated_at DESC").page(params[:page])
+    @profiles_list = @search_profiles.result(:distinct => true).order('RAND('+session[:seed]+')').page(params[:page])
   end
   
   def show

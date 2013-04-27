@@ -35,6 +35,8 @@ ActiveAdmin.register AdminUser do
   end
   
   controller do
+#    skip_before_filter :set_seed
+#    skip_before_filter :reset_seed
     force_ssl
   end
   
