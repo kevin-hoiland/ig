@@ -6,7 +6,7 @@ ul.list_container {
   padding: 5px 5px 5px 5px;  
   list-style-type: none;
 //	min-height: 100px;
-	min-height: 110px; // 5px top row padding + 12px top image padding + 100px image + 12px bottom image padding + 5px bottom row padding
+	min-height: 100px;
 //	&:hover { background-color: $list_hover; }
 	border-bottom-color: darken($sidebar_background, 10%);
   border-bottom-width: 1px;
@@ -14,11 +14,11 @@ ul.list_container {
 }
 .row_settings {
 	width: 84%;
-//	margin: 5px 0px 5px 0px;
   padding: 0px;
+	margin: 0px;
 	font-size: 14px;
   list-style-type: none;
-	min-height: 75px;
+	min-height: 100px;
 }
 .stat_box {
 	width: 100px;
@@ -78,7 +78,7 @@ ul.gum_list {
 		float: left;
 		// current uploader thumb size is 100x75
 //		width: 100px;
-//	  height: 75px;
+//	  height: 100px;
 //	  margin: 12px 25px 12px 10px; removed top and bottom image padding, all handled in row now
 		margin: 0px 25px 0px 10px;
 	}
