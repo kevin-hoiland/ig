@@ -11,7 +11,11 @@
 <h1>In The News</h1>
 
 <% @content.each do |c| %>
-	<%= c.sequence % 2 == 1 ? ("<div class='news'>").html_safe : "" %>
-	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
-	<%= c.sequence % 2 == 1 ? ("</div>").html_safe : "" %>
+	<% if c.sequence % 2 == 1 %>
+		<div class="news">
+			<p class=<%= "size_#{c.size}" %>><%= link_to c.content, c.content %>
+		</div>
+	<% else %>
+		<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
+	<% end %>
 <% end %>

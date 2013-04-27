@@ -200,8 +200,13 @@ ul.shipment_list {
 		font-size: 14px;
 	}
 }
-// ********************* NEWS LIST (bottom border only) ********************
+// ********************* NEWS LIST ********************
 .news {
+	a, a:link, a:visited, a:hover, a:active {
+		color: darken($button_color, 10%);
+    text-decoration: none;
+		outline: 0;
+  }
 	border-bottom-color: darken($sidebar_background, 10%);
   border-bottom-width: 1px;
 	border-bottom-style: solid;
