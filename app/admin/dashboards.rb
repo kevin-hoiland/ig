@@ -6,7 +6,9 @@ ActiveAdmin::Dashboards.build do
           link_to user.email, admin_user_path(user)
         end
         column :profile do |user|  
-          link_to user.profile.id, admin_profile_path(user)
+          if user.profile
+            link_to user.profile.id, admin_profile_path(user)
+          end
         end
         column :created_at 
       end  
