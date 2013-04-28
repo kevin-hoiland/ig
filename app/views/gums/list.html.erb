@@ -60,22 +60,31 @@
 			<p>Rating</p>
 			<p><%= g.total_average_rating_to_score(g.id) %></p>
 		</li>
-			<li class="votes down">
-				<%= image_tag("list_bust.png", :title => "Bust") %>
-				<p><%= g.votes_against %></p>
-			</li>
-			<li class="votes up">
-				<%= image_tag("list_bubble.png", :title => "Bubble") %>
-				<p><%= g.votes_for %></p>
-			</li>
-		<li class="content">
-			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
-			<p><%= legalize(g.brand) %></p>
-			<p><%= legalize(g.flavor) %></p>		
+		<li class="votes down">
+			<%= image_tag("list_bust.png", :title => "Bust") %>
+			<p><%= g.votes_against %></p>
 		</li>
+		<li class="votes up">
+			<%= image_tag("list_bubble.png", :title => "Bubble") %>
+			<p><%= g.votes_for %></p>
+		</li>
+		<li class="gum_logo_container">
+			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
+		</li>
+		<li class="content">
+			<p><%= legalize(g.brand) %></p>
+			<p><%= legalize(g.flavor) %></p>
+		</li>	
 		<li class="clear_list">
 			<img><src="/assets/list_clear.gif"/></img>
 		</li>
+<!-- used to work ok
+		
+			< %= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
+	
+		
+
+-->		
 	</ul>
 </li>
 </ul><!-- end gum_container-->

@@ -74,13 +74,20 @@ ul.gum_list {
 		color: $font_color;
     text-decoration: none;
   }
+	//img.gum_logo {
 	img.gum_logo {
+		margin:auto; // Required
+	 	position:absolute; // Required
+	 	top:0;
+		bottom:0; // Aligns Vertically
+		left:0;
+		right:0;  // Aligns Horizontally
+	}
+	.gum_logo_container {
 		float: left;
-		// current uploader thumb size is 100x75
-//		width: 100px;
-//	  height: 100px;
-//	  margin: 12px 25px 12px 10px; removed top and bottom image padding, all handled in row now
-		margin: 0px 25px 0px 10px;
+		width: 100px;
+		height: 100px;
+		position:relative;
 	}
 	li {
 		padding: 0px;
@@ -130,6 +137,7 @@ ul.gum_list {
 		}
 	}// end .votes
 	.content {
+		margin-left: 150px;
 		p {
 			padding: 5px;
 			margin: 0px;
