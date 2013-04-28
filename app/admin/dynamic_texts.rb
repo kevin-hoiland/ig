@@ -2,6 +2,8 @@ ActiveAdmin.register DynamicText do
   menu :parent => "Application"
   scope :news
   scope :faqs
+  config.sort_order = "sequence_asc"
+  
   index do
     column :id
     column "Location", :location
