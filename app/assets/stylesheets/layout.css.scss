@@ -114,6 +114,15 @@ header#page_header {
 	    }// end li
 	  }// end ul
 	}// end nav#main_nav
+	#slogan {
+		color: $nav_background;
+//		border: solid red;
+		position: absolute;
+		font-style: italic;
+		font-size: 16px;
+		top: 110px;
+		left: 60px;
+	}
 }// header#page_header
 
 /******************************************************************************/
