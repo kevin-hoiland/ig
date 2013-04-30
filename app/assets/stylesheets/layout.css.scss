@@ -1,3 +1,8 @@
+/* Make HTML 5 elements display block-level for consistent styling */  
+header, nav, article, footer, address {   
+    display: block;   
+}
+
 /**************************/
 /* custom global settings */
 /**************************/
