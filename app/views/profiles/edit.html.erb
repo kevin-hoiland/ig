@@ -3,7 +3,8 @@
 <%= currently_at 'Members' %>
 
 <% content_for :sub_nav do %>
- 	<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+	<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+	<li><%= link_to("List All Your Ratings", member_ratings_path(@self_profile), :class => 'link_button') %></li>
 	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
 <% end %>
 
