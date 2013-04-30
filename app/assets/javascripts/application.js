@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.cycle.all.js
-//= require html5shiv.js
+//= require html5shiv-printshiv.js
 //= require_tree .
