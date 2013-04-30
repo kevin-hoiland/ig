@@ -104,8 +104,9 @@ header#page_header {
 	      background: $nav_background;
 			  border-top-left-radius: 5px;
 				border-top-right-radius: 5px;
-				display: inline-block;
-	      margin: 0 3px;
+//				display: inline-block; // doesn't work with IE prior to 9... errrr....
+				float: left; // using this instea dof inline-block, since IE sucks...
+	      margin: 0 6px;
 	      padding: 2px 10px;
 	      &.active {
 	        background: white;
