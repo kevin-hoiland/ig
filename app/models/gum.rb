@@ -34,7 +34,7 @@ class Gum < ActiveRecord::Base
   scope :search_upc, lambda {|upc| where(["upc LIKE ?", "%#{upc}%"])}
   scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}  
   scope :active, where(:active => true)
-  
+
   ############  methods  ############
 
   def total_average_rating_to_score (gum_id)
@@ -54,5 +54,5 @@ class Gum < ActiveRecord::Base
     set = GumRatingRelationship.where(:gum_id => self.id)
     return([set.average(:rank_1), set.average(:rank_2), set.average(:rank_3), set.average(:rank_4), set.average(:rank_5) ])
   end
-
+  
 end

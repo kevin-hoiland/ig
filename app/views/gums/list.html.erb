@@ -9,20 +9,20 @@
   <h4>Search Gums</H4>
   <%= search_form_for @search_gums do |f| %>
 	<ul id = "gum">
-		<li><%= f.label :title_cont, "Name" %></li>
-	    <li><%= f.text_field :title_cont, :maxlength => 100, :default => @search_gums.title %></li>
-	    <li><%= f.label :brand_or_company_cont, "Company/Brand" %></li>
-	    <li><%= f.text_field :brand_or_company_cont, :maxlength => 50, :default => @search_gums.brand_or_company %></li>
-	    <li><%= f.label :flavor_cont, "Flavor" %></li>
-	    <li><%= f.text_field :flavor_cont, :maxlength => 50, :default => @search_gums.flavor %></li>
-	    <li><%= f.label :description_cont, "Description" %></li>
-	    <li><%= f.text_field :description_cont, :maxlength => 50, :default => @search_gums.description %></li>
+		<li><%= f.label :title_s, "Name" %></li>
+	    <li><%= f.text_field :title_s, :maxlength => 100, :default => @search_gums.title %></li>
+	    <li><%= f.label :brand_or_company_s, "Company/Brand" %></li>
+	    <li><%= f.text_field :brand_or_company_s, :maxlength => 50, :default => @search_gums.brand_or_company %></li>	   
+		<li><%= f.label :flavor_s, "Flavor" %></li>
+	    <li><%= f.text_field :flavor_s, :maxlength => 50, :default => @search_gums.flavor %></li>
+	    <li><%= f.label :description_s, "Description" %></li>
+	    <li><%= f.text_field :description_s, :maxlength => 50, :default => @search_gums.description %></li>
 		<!-- will add country search back in later, once more gums from other countries are in the system
 	    	<li>< %= f.label :country, "Country" %></li>
 			<li>< %= f.collection_select(:country_eq, @country_list, :country, :country, {:include_blank => true}) %><li>
 	    -->
-		<li><%= f.label :upc_cont, "UPC" %></li>
-		<li><%= f.text_field :upc_cont, :maxlength => 50, :default => @search_gums.upc %></li>
+		<li><%= f.label :upc_s, "UPC" %></li>
+		<li><%= f.text_field :upc_s, :maxlength => 50, :default => @search_gums.upc %></li>
 	    <!-- will add new release search back in later, once there are some new releases defined
 			<li>< %= f.label :new_release_eq, "New Release" %></li>
 			<li>< %= f.select :new_release_eq, ["",["Yes","true"]], :default => @search_gums.new_release %></li>

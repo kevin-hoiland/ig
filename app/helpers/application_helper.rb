@@ -17,5 +17,5 @@ module ApplicationHelper
     re = Regexp.new(map.keys.map { |x| Regexp.escape(x) }.join('|'))
     text.gsub(re, map).html_safe
   end
-      
+    
 end
