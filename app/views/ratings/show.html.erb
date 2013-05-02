@@ -70,14 +70,14 @@
 	</li>
 </ul>
 <div id = "vote_results_bust">
-	<% if get_rating_user(@profile.user_id).voted_against?(get_gum(@rating.gum_id)) %>
+	<% if @profile.user.voted_against?(get_gum(@rating.gum_id)) %>
 		<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
 	<% else %>
 		<%= image_tag("bust_grey3.png", :title => "Bust", :size => "48x48") %>
 	<% end %>	
 </div>
 <div id = "vote_results_bubble">
-	<% if get_rating_user(@profile.user_id).voted_for?(get_gum(@rating.gum_id)) %>
+	<% if @profile.user.voted_for?(get_gum(@rating.gum_id)) %>
 		<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
 	<% else %>
 		<%= image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48") %>
