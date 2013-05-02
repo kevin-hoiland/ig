@@ -43,8 +43,8 @@
 		</li>
 		<li>
 			<ul class="member_list">
-				<li class = "score"><div class = "header">Votes Bubble</div><%= p.user.vote_count(:up) %></li>
 				<li class = "score"><div class = "header">Votes Bust</div><%= p.user.vote_count(:down) %></li>
+				<li class = "score"><div class = "header">Votes Bubble</div><%= p.user.vote_count(:up) %></li>
 				<li class = "score"><div class = "header">Gums Rated</div><%= p.gums.active.count %></li>
 				<li class = "alias"><%= p.name %></li>
 				<li class = "comment"><%= p.story %></li>
