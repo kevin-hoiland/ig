@@ -9,8 +9,8 @@ module RatingsHelper
     return Gum.find(gum_id)
   end
   
-  def get_rating_user (user_id)
-    User.find(user_id)
+  def get_rating_user (profile_user_id)
+    User.find(profile_user_id)
   end
   
   def view_self

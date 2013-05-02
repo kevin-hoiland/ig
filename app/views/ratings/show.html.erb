@@ -77,7 +77,7 @@
 	<% end %>	
 </div>
 <div id = "vote_results_bubble">
-	<% if get_rating_user(@rating.profile_id).voted_for?(get_gum(@rating.gum_id)) %>
+	<% if get_rating_user(@profile.user_id).voted_for?(get_gum(@rating.gum_id)) %>
 		<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
 	<% else %>
 		<%= image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48") %>
