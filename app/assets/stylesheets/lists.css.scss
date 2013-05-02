@@ -6,7 +6,7 @@ ul.list_container {
   padding: 5px 5px 5px 5px;  
   list-style-type: none;
 //	min-height: 100px;
-	min-height: 100px;
+//	min-height: 100px;
 //	&:hover { background-color: $list_hover; }
 	border-bottom-color: darken($sidebar_background, 10%);
   border-bottom-width: 1px;
@@ -34,12 +34,13 @@ ul.list_container {
 .comment_area {
 	text-align: left;
 	font-size: 12px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: darken($sidebar_background, 5%);
-	border-radius: 10px;
+//	border-style: solid;
+//	border-width: 1px;
+//	border-color: darken($sidebar_background, 5%);
+//	border-radius: 10px;
 	min-height: 16px;
 	padding: 5px;
+	font-style: italic;
 }
 ul.list_links {
 	width: 15%;
@@ -61,10 +62,16 @@ ul.list_links {
 	  }
 	}
 }
+li.clear_row {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
 
 // ******************************** GUM LIST ******************************** 
 ul.gum_list {
 	@extend .row_settings;
+	min-height: 100px;
 	//&:hover { background-color: $list_hover; }
 	//min-height: 74px;
 	a, a:link, a:visited, a:hover, a:active {
@@ -74,7 +81,12 @@ ul.gum_list {
 		color: $font_color;
     text-decoration: none;
   }
-	//img.gum_logo {
+	.gum_logo_container {
+		float: left;
+		width: 100px;
+		height: 100px;
+		position:relative;
+	}	
 	img.gum_logo {
 		margin:auto; // Required
 	 	position:absolute; // Required
@@ -83,19 +95,11 @@ ul.gum_list {
 		left:0;
 		right:0;  // Aligns Horizontally
 	}
-	.gum_logo_container {
-		float: left;
-		width: 100px;
-		height: 100px;
-		position:relative;
-	}
+
 	li {
 		padding: 0px;
 		margin: 0px;
-	}
-//	.clear_list {
-//		clear: both;
-//	}
+	}	
 	.rating {
 		float: right;
 		font-size: 24px;
@@ -149,42 +153,68 @@ ul.gum_list {
 // ****************************** RATING LIST ******************************
 ul.rating_list {
 	@extend .row_settings;
-//<------------------------------- TO DO ***** need to control row height outside list_container... gums page is fixed, ratings and member will increase based on user free text input
-	ul.list_container {
-		min-height: 1px; // overwriting min height from gums and other pages because ratings text could be long, standard row height is not controlled
-	}
-	.ratings_gum_logo {
-		float: left;
-		// current uploader thumb size is 100x75
-//		width: 100px;
-//	  height: 75px;
-	 // margin: 12px 25px 12px 10px;
-	margin: 0px 25px 12px 10px;
-	}
 	font-size: 24px;
-	.score {
-		@extend .stat_box;
-		//margin: auto;
-		//vertical-align: middle;
+	.gum_logo_container {
 		float: left;
-		height: 45px;
+		width: 100px;
+		height: 100px;
+		position:relative;
+//		margin-right: 50px;
 	}
- 	.comment {
-		@extend .comment_area;
-		clear: left;
+	img.gum_logo {
+		margin:auto; // Required
+	 	position:absolute; // Required
+	 	top:0;
+		bottom:0; // Aligns Vertically
+		left:0;
+		right:0;  // Aligns Horizontally
 	}
-}
+	ul.ratings_container {
+		list-style-type: none;
+	  margin: 0px 0px 0px 150px;
+		padding: 0px;
+		li.ratings_row {
+			width: 100%;
+			display: block;
+			padding: 0px;
+			margin: 0px;
+			ul.ratings_set {
+				list-style-type: none;
+				padding: 0px;
+				margin: 0px;				
+				li.score {
+					@extend .stat_box;
+					float: left;
+					height: 45px;
+				}//end li.score
+			}//end ul.ratings_set
+		}// end li.ratings_row
+	 	li.comment {
+			width: 100%;
+			@extend .comment_area;			
+			display: block;
+			float: left;
+		}// end li.comment
+	}// end ul.ratings_container
+}// end ul.ratings_list
 // ****************************** MEMBER LIST ******************************
 ul.member_list {
 	@extend .row_settings;
+	min-height: 70px;
 	.score {
 		@extend .stat_box;
 		height: 40px;
 		float: right;
 	}
+	.alias {
+		font-weight: bold;
+//		padding: 5px 0px 0px 0px;
+//		border: dotted red;
+	}
  	.comment {
 		@extend .comment_area;
-		clear: right;
+		padding: 0px;
+		clear: none;
 	}
 }
 // *************************** SHIPMENT LIST ***************************

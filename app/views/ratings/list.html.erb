@@ -20,22 +20,27 @@
 <%= render(:partial => "shared/ratings_sort") %>
 
 <% @ratings_list.each do |r| %>
-<ul class="list_container">	
-	<li>
-		<ul class="list_links">
-			<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
-			<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
-			<li><%= link_to "Member Details", profile_path(r.profile_id), :class => 'list_row_link' %></li>
-		</ul>
-	</li>
-	<li>
-		<ul class="rating_list">
-			<%= image_tag(get_gum(r.gum_id).image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(get_gum(r.gum_id).permalink)}", :class => 'ratings_gum_logo') %>
-			<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
-		</ul>
-	</li>
-</ul>
-		
+	<ul class="list_container">	
+		<li>
+			<ul class="list_links">
+				<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
+				<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+				<li><%= link_to "Member Details", profile_path(r.profile_id), :class => 'list_row_link' %></li>
+			</ul>
+		</li>
+		<li>
+			<ul class = "rating_list">
+				<li class="gum_logo_container">
+					<%= image_tag(get_gum(r.gum_id).image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(get_gum(r.gum_id).permalink)}", :class => 'gum_logo') %>	
+				</li>
+				<li>
+					<%= render(:partial => "shared/ratings_list", :locals => {:r => r}) %>
+				</li>
+			</ul><!-- end .rating_list -->
+		</li>
+		<li class="clear_row">
+		</li>
+	</ul><!-- end .list_container -->
 <% end %>	
 
 <%= paginate @ratings_list %>
