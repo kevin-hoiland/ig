@@ -73,11 +73,19 @@
 	</li>
 </ul>
 <div id = "vote_results_bust">
-	<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<% if @profile.user.vote_count(:down) > 0 %>
+		<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<% else %>
+		<%= image_tag("bust_grey3.png", :title => "Bust", :size => "48x48") %>
+	<% end %>
 	<%= @profile.user.vote_count(:down) %>
 </div>
 <div id = "vote_results_bubble">
-	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<% if @profile.user.vote_count(:up) > 0 %>
+		<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<% else %>
+		<%= image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48") %>
+	<% end %>	
 	<%= @profile.user.vote_count(:up) %>
 </div>
 
