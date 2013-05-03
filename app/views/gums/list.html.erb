@@ -61,11 +61,19 @@
 			<p><%= g.total_average_rating_to_score(g.id) %></p>
 		</li>
 		<li class="votes down">
-			<%= image_tag("list_bust.png", :title => "Bust") %>
+			<% if g.votes_against > 0 %>
+				<%= image_tag("list_bust.png", :title => "Bust") %>
+			<% else %>
+				<%= image_tag("bust_grey3.png", :title => "Bust") %>
+			<% end %>
 			<p><%= g.votes_against %></p>
 		</li>
 		<li class="votes up">
-			<%= image_tag("list_bubble.png", :title => "Bubble") %>
+			<% if g.votes_for > 0 %>
+				<%= image_tag("list_bubble.png", :title => "Bubble") %>
+			<% else %>
+				<%= image_tag("bubble_grey3.png", :title => "Bubble") %>
+			<% end %>
 			<p><%= g.votes_for %></p>
 		</li>
 		<li class="gum_logo_container">
