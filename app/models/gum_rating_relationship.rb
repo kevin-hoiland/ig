@@ -1,5 +1,5 @@
 class GumRatingRelationship < ActiveRecord::Base
-
+  
   ############  attributes  ############
   attr_accessible :profile_id, :gum_id, :comment, :rank_1, :rank_2, :rank_3, :rank_4, :rank_5, as: :admin
   
@@ -19,5 +19,5 @@ class GumRatingRelationship < ActiveRecord::Base
 #  scope :with_active_gum, joins(:gums) & Gum.active
 #  scope :active_gum, includes(:gum).where(:active => true)
 #  scope :active_gum, lambda {|status| where(["active = ?", "%#{status}%"])}
-  
+
 end
