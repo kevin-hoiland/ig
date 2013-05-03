@@ -48,13 +48,22 @@
 	</li>
 </ul>
 <div id = "vote_results_bust">
-	<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<% if @votes_down_total > 0 %>
+		<%= image_tag("bust3.png", :title => "Bust", :size => "48x48") %>
+	<% else %>
+		<%= image_tag("bust_grey3.png", :title => "Bust", :size => "48x48") %>
+	<% end %>
 	<%= @votes_down_total %>
 </div>
 <div id = "vote_results_bubble">
-	<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<% if @votes_up_total > 0 %>
+		<%= image_tag("bubble3.png", :title => "Bubble", :size => "48x48") %>
+	<% else %>
+		<%= image_tag("bubble_grey3.png", :title => "Bubble", :size => "48x48") %>
+	<% end %>	
 	<%= @votes_up_total %>
 </div>
+
 <p id="ratings_count"><%= @rating_count %> Total Ratings</p>
 
 <% @content_legal.each do |c| %>
