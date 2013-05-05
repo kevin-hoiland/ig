@@ -36,10 +36,11 @@ class Gum < ActiveRecord::Base
   scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}  
   scope :active, where(:active => true)
   
+#  scope_ransackable :omg
 #  scope :omg, lambda {|direction| joins(:votes).group(:voteable_id).order("sum(votes.vote) #{direction}") }
-#  scope :order_by_score, joins(:votes).group(:voteable_id).order("sum(votes.vote) ASC")
-#  scope :order_by_score_asc, joins(:votes).group(:voteable_id).order("sum(votes.vote) ASC")
-#  scope :order_by_score_desc, joins(:votes).group(:voteable_id).order("sum(votes.vote) DESC")
+# https://github.com/ernie/ransack/issues/61
+# http://stackoverflow.com/questions/3472669/ordering-objects-by-a-sum-of-has-many-association
+# https://github.com/gregbell/active_admin/pull/1994
   
   ############  methods  ############
 
@@ -60,38 +61,5 @@ class Gum < ActiveRecord::Base
     set = GumRatingRelationship.where(:gum_id => self.id)
     return([set.average(:rank_1), set.average(:rank_2), set.average(:rank_3), set.average(:rank_4), set.average(:rank_5) ])
   end
-  
-#ransacker :by_state, :formatter => proc {|current_state| City.where(:state => current_state).map{|city| city.area_code}.uniq}, :splat_param => true do |parent|
-#  parent.table[:area_code]
-#end
- 
-#ransacker :by_state, :formatter => proc {|current_state| City.where(:state => current_state).map{|city| city.area_code}.uniq}, :splat_param => true do |parent|
-#  parent.table[:area_code]
-#end
-
-#ransacker :testing do |parent|
-#  Arel::Nodes::InfixOperation.new('||', parent.table[:title], parent.table[:description])
-#end 
-  
-#  ransacker :testing do |parent|
-#       Arel::Nodes::InfixOperation.new('||',
-#       Arel::Nodes::InfixOperation.new('||', parent.table[joins(:votes).group(:voteable_id).order("sum(votes.vote) ASC")], ' '),
-#        parent.table[:description])
-
-#    Arel::Nodes::SqlLiteral.new((joins(:votes).group(:voteable_id).order("sum(votes.vote) ASC")).to_s)
-
-#    Arel::Nodes::SqlLiteral.new('parent.omg')
-
-#    Arel::Nodes::InfixOperation.new()
-
-#     Arel::Nodes::SqlLiteral.new("DATE_ADD(`events`.`start_date`, INTERVAL `events`.`length` DAY)")
-
-#      v.votes_for)
-
-#    Arel::Nodes::InfixOperation.new('||',
-#    Arel::Nodes::InfixOperation.new('||', parent.table[:bubble_total], ' '),
-#    parent.table[:description])
-#      Gum.tally
-#  end
   
 end

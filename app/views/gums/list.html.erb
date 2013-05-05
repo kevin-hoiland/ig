@@ -41,8 +41,11 @@
 	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_3, "Flavoracity", :default_order => :desc %></li>
 	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_4, "Bubbability", :default_order => :desc %></li>
 	<li><%= sort_link @search_gums, :gum_rating_relationships_rank_5, "Gumalicious", :default_order => :desc %></li>
-	<li><%= sort_link @search_gums, :votes_vote, "Votes", :default_order => :desc %></li>
 	<li><%= sort_link @search_gums, :gum_rating_relationships_average, "Rating", :default_order => :desc %></li>
+<!-- can't sort on bubble or bust yet
+	<li>< %= sort_link @search_gums, :votes_vote, "Votes", :default_order => :desc %></li>
+	<li>< %= sort_link @search_gums, :omg, "Testing", :default_order => :desc %></li>
+-->
 </div>
 
 <% @gums_list.each do |g| %>

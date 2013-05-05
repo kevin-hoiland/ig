@@ -10,6 +10,7 @@ class GumsController < ApplicationController
   def list
     @content_legal = DynamicText.content("gum_general").order("sequence ASC")
     @search_gums = Gum.active.ransack(params[:q])
+#   @search_gums = Gum.omg("desc").active.ransack(params[:q])
     @gums_list = @search_gums.result(:distinct => true).order('RAND('+session[:seed]+')').page(params[:page])
     @country_list = Gum.active.select(:country).uniq
   end
