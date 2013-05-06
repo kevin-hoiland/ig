@@ -3,10 +3,10 @@
 <%= currently_at 'Gums' %>
 
 <% content_for :sub_nav do %>
-	<li><%= link_to("View Gum Details", gum_path(@gum.permalink), :class => 'link_button') %></li>
 	<% if user_signed_in? %>
 		<li><%= link_to("Rate This Gum", new_rating_path(@gum.permalink), :class => 'link_button') %></li>
 	<% end %>
+	<li><%= link_to("View Gum Details", gum_path(@gum.permalink), :class => 'link_button') %></li>	
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>
 

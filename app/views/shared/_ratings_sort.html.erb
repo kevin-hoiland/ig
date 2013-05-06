@@ -1,6 +1,8 @@
 <div id = 'sort'>
 	Sort By:
-	<li><%= sort_link @search_ratings, :total, "Total Rating", :default_order => :desc %></li>
+	<!-- choosing to not sort on total yet
+	<li>< %= sort_link @search_ratings, :total, "Total Rating", :default_order => :desc %></li>
+	-->
 	<li><%= sort_link @search_ratings, :rank_1, "Gumtation", :default_order => :desc %></li>
 	<li><%= sort_link @search_ratings, :rank_2, "Chewlasticity", :default_order => :desc %></li>
 	<li><%= sort_link @search_ratings, :rank_3, "Flavoracity", :default_order => :desc %></li>

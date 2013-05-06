@@ -11,9 +11,9 @@
 	<p>Bubbability</p>
 	<li><%= f.label :rank_4_gteq, "Low " %><%= f.text_field :rank_4_gteq, :maxlength => 2, :default => @search_ratings.rank_4 %></li>
 	<li><%= f.label :rank_4_lteq, "High " %><%= f.text_field :rank_4_lteq, :maxlength => 2, :default => @search_ratings.rank_4 %></li>
-	<p>Gumaliciousness</p>
+	<p>Gumalicious</p>
 	<li><%= f.label :rank_5_gteq, "Low " %><%= f.text_field :rank_5_gteq, :maxlength => 2, :default => @search_ratings.rank_5 %></li>
 	<li><%= f.label :rank_5_lteq, "High " %><%= f.text_field :rank_5_lteq, :maxlength => 2, :default => @search_ratings.rank_5 %></li>
 	<p>Comment</p>
-	<li id="comment"><%= f.text_field :comment_cont, :maxlength => 50, :default => @search_ratings.comment %></li>
+	<li id="comment"><%= f.text_field :comment_s, :maxlength => 100, :default => @search_ratings.comment %></li>
 </ul>

@@ -6,7 +6,7 @@
 	<% if user_signed_in? %>
 		<li><%= link_to("Rate This Gum", new_rating_path(@gum.permalink), :class => 'link_button') %></li>
 	<% end %>
-	<li><%= link_to("List All Gum's Ratings", gum_ratings_path(@gum.permalink), :class => 'link_button') %></li>
+	<li><%= link_to("Ratings List", gum_ratings_path(@gum.permalink), :class => 'link_button') %></li>
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>
 
