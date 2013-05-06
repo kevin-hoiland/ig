@@ -55,7 +55,7 @@
 		<li><%= link_to "Gum Details", gum_path(g.permalink), :class => 'list_row_link' %></li>
 		<li><%= link_to("Rate Gum", new_rating_path(g.permalink), :class => 'list_row_link') %></li>
 		<li><%= link_to("Ratings List", gum_ratings_path(g.permalink), :class => 'list_row_link') %></li>
-	</ul>
+	</ul><!-- end list_links -->
 </li>
 <li>
 	<ul class="gum_list">
@@ -84,9 +84,9 @@
 		</li>
 		<li class="clear_row">
 		</li>
-	</ul>
+	</ul><!-- end gum_list -->
 </li>
-</ul><!-- end gum_container-->
+</ul><!-- end list_container -->
 <% end %>
 <%= paginate @gums_list %>
 <p iD = "page_info"><%= (page_entries_info @gums_list, :entry_name => 'Gums').html_safe %></p>
