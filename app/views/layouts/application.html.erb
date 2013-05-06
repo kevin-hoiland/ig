@@ -39,8 +39,8 @@
 				<H3>Other Options</h3>
 				<ul>
 		    	<% unless user_signed_in? %>
-					<li><%= link_to "Create Account", new_user_registration_path, :class => 'link_button' %></li>
 					<li><%= link_to "Sign In", new_user_session_path, :class => 'link_button' %></li>
+					<li><%= link_to "Create Account", new_user_registration_path, :class => 'link_button' %></li>
 				<% else %>
 					<li><%= link_to("Edit Your Account", edit_profile_path, :class => 'link_button') %></li>
 					<li><%= link_to("View Your Account", profile_path(view_self), :class => 'link_button') %></li>
