@@ -59,19 +59,6 @@
 </li>
 <li>
 	<ul class="gum_list">
-<!--  not including anything other than bubble/bust for now...
-		<li class = "rating">
-			< % if params[:q][:s].include?("rank_1") %>
-				Gumtation</br>< %= g.get_gum_list_rating(g.id, "rank_1") %>
-			< % elsif params[:q][:s].include?("rank_2") %>
-				Chewlasticity</br>< %= g.get_gum_list_rating(g.id, "rank_2") %>
-			< % end %>
-		</li>
-		<li class="rating">
-			<p>Rating</p>
-			<p>< %= g.total_average_rating_to_score(g.id) %></p>
-		</li>
--->
 		<li class="votes down">
 			<% if g.votes_against > 0 %>
 				<%= image_tag("list_bust.png", :title => "Bust") %>
