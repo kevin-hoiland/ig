@@ -13,7 +13,7 @@
 <% @content.each do |c| %>
 	<% if c.sequence % 2 == 1 %>
 		<div class="news">
-			<p class=<%= "size_#{c.size}" %>><%= link_to c.content, c.content %>
+			<p class=<%= "size_#{c.size}" %>><%= link_to c.content, c.content, :target => '_blank'%>
 		</div>
 	<% else %>
 		<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
