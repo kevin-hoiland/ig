@@ -61,7 +61,7 @@ div#show_header {
 		float: left;
 	}
 	#show_text {
-		margin-left: 420px;
+//		margin-left: 420px;
 		margin: 0px 0px 0px 0px;
 		padding: 0px;
 		p {
@@ -148,13 +148,13 @@ ul.profile_info {
 	}
 }
 /******************************************************************************/
-/******************************* SHOW PROFILE *********************************/
+/******************************* SHOW RATING *********************************/
 /******************************************************************************/
 ul.rating_info {
 //		border: solid red;
 		list-style-type: none;
 		min-height: 40px;
-		margin: 0px;
+		margin: 0px 0px 0px 420px;
 	  padding: 0px;
 		font-size: 14px;
 //		&:hover { background-color: $list_hover; } // turned this off to match gums list page (image issues)
