@@ -42,12 +42,12 @@ ActiveAdmin.register Gum do
 
   index do
     column :id
-    column :permalink
+#    column :permalink
     column :title
-    column "UPC", :upc
     column "Brand", :brand
     column "Flavor", :flavor
-    column "Created", :created_at
+    column "UPC", :upc
+    column "Country", :country
     default_actions
   end
 

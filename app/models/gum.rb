@@ -28,7 +28,7 @@ class Gum < ActiveRecord::Base
   acts_as_voteable
   
   ############  scopes  ############
-  scope :empty_upc, :conditions => { :upc => "0" }
+  scope :empty_upc, :conditions => [ 'upc = 0 OR upc = null' ]
   scope :no_image, :conditions => { :image => "intl_gum_coming_soon_bubble.png" }
   scope :no_description, :conditions => { :description => "" }
   scope :inactive, :conditions => { :active => false }
