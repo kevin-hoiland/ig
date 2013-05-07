@@ -33,7 +33,7 @@ ActiveAdmin.register Gum do
         f.input :description
         f.input :note
         f.input :country
-        f.input :image, :as => :string
+#        f.input :image, :as => :string
         f.input :image, :as => :file
       end
       f.buttons
