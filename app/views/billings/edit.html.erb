@@ -3,9 +3,8 @@
 <%= currently_at 'Members' %>
 
 <% content_for :sub_nav do %>
-	<li><%= link_to("Your Subscriptions", list_billings_path, :class => 'link_button') %></li>
 	<li><%= link_to("Past Shipments", subscriptions_path, :class => 'link_button') %></li>
-	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
+	<li><%= link_to("Your Subscriptions", list_billings_path, :class => 'link_button') %></li>
 <% end %>
 
 <% @content_top.each do |c| %>

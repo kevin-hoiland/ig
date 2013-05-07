@@ -32,7 +32,7 @@ ActiveAdmin.register Billing do
       log.profile_id = profile.id
       log.user_email = current_user.email
       log.billing_gateway_subscriber_id = billing.gateway_subscriber_id
-      log.billing_subscription_id = billing.id
+      log.billing_subscription_id = profile.subscriptions_created-profile.subscriptions_deleted
       log.billing_last_four = billing.last_four
       log.billing_bill_name = billing.bill_first_name+" "+billing.bill_last_name+" (company: "+billing.bill_company+")"
       log.billing_ship_name = billing.ship_first_name+" "+billing.ship_last_name+" (company: "+billing.ship_company+")"

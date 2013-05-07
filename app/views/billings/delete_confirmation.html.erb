@@ -12,8 +12,28 @@
 <% @content.each do |c| %>
 	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
 <% end %>
+</br>
+<p>Subscription Name: <%= @billing.subscription_name %></p>
+<p>Payment Card Last 4 Digits: <%= @billing.last_four %></p>
+<p>Payment Card Expiry Month: <%= @billing.expiry_month %></p>
+<p>Payment Card Expiry Year: <%= @billing.expiry_year %></p>
+<p>Shipping Info:</br>
+<%= @billing.ship_first_name %> <%= @billing.ship_last_name %></br>
+<%= @billing.ship_company %></br>
+<%= @billing.ship_street %></br>
+<%= @billing.ship_city %>, <%= @billing.ship_state_province %> <%= @billing.ship_postal_code %> <%= @billing.ship_country %></br>
+</p>
+<p>Billing Info:</br>
+<%= @billing.bill_first_name %> <%= @billing.bill_last_name %></br>
+<%= @billing.bill_company %></br>
+<%= @billing.bill_street %></br>
+<%= @billing.bill_city %>, <%= @billing.bill_state_province %> <%= @billing.bill_postal_code %> <%= @billing.bill_country %></br>
+</p>
 
-<%= debug @billing %>
+<p>Subscription Created: <%= @billing.created_at %></p>
+<p>Subscription Last Updated: <%= @billing.updated_at %></p>
+</br>
+</br>
 
 <%= semantic_form_for @billing, :url => delete_billing_path(@billing.subscription_number), :method => :delete do |f| %>
   	<%= f.inputs do %>

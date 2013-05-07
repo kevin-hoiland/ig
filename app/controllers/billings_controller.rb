@@ -129,7 +129,7 @@ class BillingsController < ApplicationController
         log.user_email = current_user.email
         log.billing_gateway_subscriber_id = billing.gateway_subscriber_id
         log.profile_id = profile.id
-        log.billing_subscription_id = billing.id
+        log.billing_subscription_id = profile.subscriptions_created-profile.subscriptions_deleted+1 # adding one because already deleted 1 just a sec ago lol
         log.billing_last_four = billing.last_four
         log.billing_bill_name = billing.bill_first_name+" "+billing.bill_last_name+" (company: "+billing.bill_company+")"
         log.billing_ship_name = billing.ship_first_name+" "+billing.ship_last_name+" (company: "+billing.ship_company+")"
@@ -166,16 +166,17 @@ private
     @billing.bill_first_name = billing_info[:bill_first_name]
     @billing.bill_last_name = billing_info[:bill_last_name]
     @billing.bill_company = billing_info[:bill_company]
-    @billing.expiry_month = billing_info[:expiry_month]
-    @billing.expiry_year = billing_info[:expiry_year]
     @billing.cvc = billing_info[:cvc]
     @billing.terms = billing_info[:terms]
     unless billing_info[:pan].blank? # Only update the last_four DB value from pan attribute accessor if something exists for pan
       @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
+      @billing.expiry_month = billing_info[:expiry_month]
+      @billing.expiry_year = billing_info[:expiry_year]
     end
     @ip = User.find(@billing.user_id).current_sign_in_ip
-    @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
+#    @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
+    @customer = {:id => "user id "+@billing.user_id.to_s, :email => User.find(@billing.user_id).email}      
     @order = { :invoice_number => '', :description => @billing.subscription_name }
     @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
          :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }
