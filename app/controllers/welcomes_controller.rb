@@ -26,6 +26,10 @@ class WelcomesController < ApplicationController
     @content = DynamicText.content("corporate").order("sequence ASC")
   end
   
+  def partners
+    @content = DynamicText.content("partners").order("sequence ASC")
+  end
+  
   def shipping_policy
     @content = DynamicText.content("shipping").order("sequence ASC")
   end

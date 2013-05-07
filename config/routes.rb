@@ -25,7 +25,8 @@ IntlGum2::Application.routes.draw do
   get "/welcomes/shipping_policy"
   get "/welcomes/returns_and_refunds"
   get "/welcomes/privacy_and_security"
-  
+  get "/welcomes/partners"
+    
   resources :gums, :only => [:index, :show]   
   post "gum/:permalink/vote_up" => "gums#vote_up", :as => "vote_gum_up"
   get "gum/:permalink/vote_up" => "gums#vote_up", :as => "vote_gum_up" # used for session expiration and attempting to up/down
