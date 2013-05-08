@@ -10,14 +10,9 @@
 	<% end %>
 <% end %>
 
-<%= render(:partial => "shared/votes2") %>
-
-<h1 id="no_clear">Create New Rating: <%=legalize(@gum.title) %></h1>
+<h1>Create New Rating: <%=legalize(@gum.title) %></h1>
 
 <%= render(:partial => 'shared/error_messages', :locals => {:object => @new_rating}) %>
-<!--
-< %= image_tag("gums/#{@gum.upc}.jpg", :alt=>"Image of #{permalink_humanize(@gum.permalink)}",:id => 'gum_image') %>
--->
 
 <div id="show_header">	
 	<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
@@ -26,6 +21,8 @@
 		<p><%= legalize(@gum.note)%></p>
 	</div>
 </div>
+
+<%= render(:partial => "shared/votes2") %>
 
 <%= semantic_form_for @new_rating do |r| %>
 	<%= r.inputs do %>
@@ -37,9 +34,6 @@
 	<% end %>
  <% end %>
 
-<!--
-stat_1, stat_2, stat_3, comment
--->
 <% @content_legal.each do |c| %>
 	<p class=<%= "size_#{c.size}" %>><%= c.content %></p>
 <% end %>

@@ -1,4 +1,4 @@
-<h2>Rate each characteristic for this gum with 0 as lowest and 10 as highest!</h2>
+<h2>Rate with 0 as lowest and 10 as highest</h2>
 <div id="rating_form">
 <%= r.input :rank_1, :label => "Gumtation",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
@@ -19,6 +19,6 @@
 <%= r.input :rank_5, :label => "Gumalicious",
 	:as => :select, :collection => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
 	:hint => "How enjoyable and delicious is this gum?" %>
-
-<%= r.input :comment, :label => false, :hint => "If desired, please also add comments about this gum above!", :input_html => { :class => '', :rows => 5, :cols => 100, :maxlength => 1000 } %>
+<h2>Comments</h2>
+<%= r.input :comment, :label => false, :hint => "If desired, please add your comments about this gum above!", :input_html => { :class => '', :rows => 5, :cols => 100, :maxlength => 1000 } %>
 </div>
