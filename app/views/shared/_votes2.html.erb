@@ -1,4 +1,4 @@
-<h2>Vote Bubble or Bust</h2>
+<h2 id="vote_text">Vote Bubble or Bust</h2>
 <div id="vote_container">
 	<% if current_user.voted_for?(@gum) %>
 		<div class = "vote_bust"><%= link_to image_tag("bust_grey3.png", :title => "Bust", :size => "48x48"), vote_gum_down_path(@gum.permalink), :method => :post %></div>
