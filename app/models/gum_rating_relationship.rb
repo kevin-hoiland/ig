@@ -5,7 +5,8 @@ class GumRatingRelationship < ActiveRecord::Base
   
   ############  validations  ############
   validates_uniqueness_of :profile_id, :scope => :gum_id, :message => "already rated this gum! Please edit your prior ranking, ok ;-)"
-  validates :rank_1, :rank_2, :rank_3, :rank_4, :rank_5, :inclusion => 0..10
+  validates :rank_1, :rank_2, :rank_3, :rank_4, :rank_5, :inclusion => { :in => 0..10, :message => "rating is missing, please rate all or none"},
+              :unless => "rank_1.nil? && rank_2.nil? && rank_3.nil? && rank_4.nil? && rank_5.nil?"
   validates :comment, :length => { :maximum => 1000 }
   
   ############  associations  ############
