@@ -38,8 +38,8 @@ ActiveAdmin.register Billing do
       log.billing_ship_name = billing.ship_first_name+" "+billing.ship_last_name+" (company: "+billing.ship_company+")"
       log.deleted_object_creation_dt = billing.created_at
       log.save
-      profile.subscriptions_deleted += 1      
-      profile.save
+#      profile.subscriptions_deleted += 1   # main billing controller does this, so don't do it twice ;-)
+#      profile.save
     end
   end
   

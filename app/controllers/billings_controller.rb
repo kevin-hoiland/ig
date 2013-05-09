@@ -86,7 +86,7 @@ class BillingsController < ApplicationController
     @billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
     set_values(params[:billing]) #payment card info not updated
     if @billing.save
-      gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY) # started working when i removed "", :test => true" LOL
+      gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(:login => LOGIN_ID, :password => TRANSACTION_KEY)
       options = {:subscription_id => @billing.gateway_subscriber_id,
                  :shipping_address => @shipping_address, :billing_address => @billing_address, :customer => @customer, :order => @order }
       response = gateway.update_recurring(options)      
@@ -129,7 +129,7 @@ class BillingsController < ApplicationController
         log.user_email = current_user.email
         log.billing_gateway_subscriber_id = billing.gateway_subscriber_id
         log.profile_id = profile.id
-        log.billing_subscription_id = profile.subscriptions_created-profile.subscriptions_deleted+1 # adding one because already deleted 1 just a sec ago lol
+        log.billing_subscription_id = profile.subscriptions_created-profile.subscriptions_deleted-1 # minus one because already added 1 to deleted just a sec ago lol
         log.billing_last_four = billing.last_four
         log.billing_bill_name = billing.bill_first_name+" "+billing.bill_last_name+" (company: "+billing.bill_company+")"
         log.billing_ship_name = billing.ship_first_name+" "+billing.ship_last_name+" (company: "+billing.ship_company+")"
@@ -176,7 +176,7 @@ private
     end
     @ip = User.find(@billing.user_id).current_sign_in_ip
 #    @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
-    @customer = {:id => "user id "+@billing.user_id.to_s, :email => User.find(@billing.user_id).email}      
+    @customer = {:id => @billing.user_id.to_s, :email => User.find(@billing.user_id).email}      
     @order = { :invoice_number => '', :description => @billing.subscription_name }
     @shipping_address = { :first_name => @billing.ship_first_name, :last_name => @billing.ship_last_name, :company => @billing.ship_company,
          :address1 => @billing.ship_street, :city => @billing.ship_city, :state => @billing.ship_state_province, :country => @billing.ship_country, :zip => @billing.ship_postal_code }

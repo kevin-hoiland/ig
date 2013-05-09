@@ -1,5 +1,7 @@
 ActiveAdmin.register User do
   
+  actions :index, :show, :destroy, :delete
+  
   before_filter :set_deleted_object_data, :only => [:destroy]
   
   menu :label => "Users"
