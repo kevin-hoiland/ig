@@ -234,6 +234,7 @@ ul.member_list {
 ul.shipment_list {
 	@extend .row_settings;
 	width: 100%;
+	min-height: 150px;
 	.shipment_header {
 		color: $nav_background;
 		font-size: 24px;
@@ -249,6 +250,22 @@ ul.shipment_list {
 	.count {
 		float: right;
 		font-size: 14px;
+	}
+	.sub_gum_logo_container {
+		float: left;
+		width: 100px;
+		height: 100px;
+		position: relative;
+		border: solid red;
+		margin: 0px 20px 20px 0px;
+	}
+	img.sub_gum_logo {
+		margin: auto; // Required
+	 	position: absolute; // Required
+	 	top: 0;
+		bottom: 0; // Aligns Vertically
+		left: 0;
+		right: 0;  // Aligns Horizontally
 	}
 }
 // ********************* NEWS LIST ********************

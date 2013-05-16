@@ -30,9 +30,11 @@
 					<%= s.month_formatted(s.ship_date) %>
 				</li>
 				<li class="shipment_gums">
-					<% s.get_monthly_gums(s.id).each do |g| %>
-					  <%= link_to image_tag(g.gum.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.gum.permalink)}"), gum_path(g.gum.permalink), :class => 'sub_gum_logos' %>
-					<% end %>
+						<% s.get_monthly_gums(s.id).each do |g| %>
+							<li class="sub_gum_logo_container">
+						  		<%= link_to image_tag(g.gum.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.gum.permalink)}", :class => 'sub_gum_logo'), gum_path(g.gum.permalink) %>
+							</li>
+						<% end %>
 				</li>
 			</ul><!-- end shipments_list-->
 		</li>
