@@ -33,6 +33,12 @@
 <% end %>
 
 <h1>Gum List</h1>
+<div id = 'sort'>
+	Sort By:
+	<li><%= sort_link @search_gums, :title, "Name", :default_order => :asc %></li>
+	<li><%= sort_link @search_gums, :brand, "Brand", :default_order => :asc %></li>
+	<li><%= sort_link @search_gums, :flavor, "Flavor", :default_order => :asc %></li>
+</div>
 <!--  removed for now by design, also complications with sorting off custom scopes (non db columns, averages and other calculations etc)
 <div id = 'sort'>
 	Sort By:
