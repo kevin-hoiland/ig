@@ -9,7 +9,7 @@ class RatingsController < ApplicationController
   
   def list
     @search_ratings = GumRatingRelationship.with_active_gum.ransack(params[:q])
-    @ratings_list = @search_ratings.result(:distinct => true).order("gum_rating_relationships.updated_at DESC").page(params[:page])
+    @ratings_list = @search_ratings.result(:distinct => true).order("gum_rating_relationships.updated_at DESC").page(params[:page]).per(25)
   end
   
   def show
