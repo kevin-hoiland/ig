@@ -40,7 +40,7 @@ class BillingsController < ApplicationController
     @billing.user_id = current_user.id
     set_values(params[:billing])
     # payment info not set in "set_values" because only used for new subscriptions
-    @payment_info = {:number => @billing.pan, :verification_value => @billing.cvc, :month => @billing.expiry_month.slice(0..1).to_i,
+    @payment_info = {:number => @billing.pan, :verification_value => @billing.cvc, :month => @billing.expiry_month,
         :year => @billing.expiry_year, :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name}#,:brand => 'visa'} #BRAND IS STILL STATIC...
     profile = Profile.find_by_user_id(current_user.id)
     @billing.subscription_number = profile.subscriptions_created + 1
@@ -172,7 +172,7 @@ private
     unless billing_info[:pan].blank? # Only update the last_four DB value from pan attribute accessor if something exists for pan
       @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
-      @billing.expiry_month = billing_info[:expiry_month]
+      @billing.expiry_month = billing_info[:expiry_month].slice(0..1).to_i
       @billing.expiry_year = billing_info[:expiry_year]
     end
     @ip = User.find(@billing.user_id).current_sign_in_ip
