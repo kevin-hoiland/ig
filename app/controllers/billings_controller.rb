@@ -30,7 +30,7 @@ class BillingsController < ApplicationController
   end
   
   def edit
-    @billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id])
+    @billing = Billing.find_by_user_id_and_subscription_number(current_user.id, params[:id]) || not_found
     @content_top = DynamicText.content("billing_top")
     @content_bottom = DynamicText.content("billing_bottom")
   end
