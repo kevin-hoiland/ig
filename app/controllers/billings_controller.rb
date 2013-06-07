@@ -1,6 +1,7 @@
 class BillingsController < ApplicationController
-  
-  force_ssl
+
+#  turning this on for all pages, adding at application layer  
+#  force_ssl
     
   require 'active_merchant'
 #  ActiveMerchant::Billing::Base.mode = :development  #  <--  UPDATE THIS FOR PRODUCTION
