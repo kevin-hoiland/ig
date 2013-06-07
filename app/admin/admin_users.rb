@@ -34,10 +34,4 @@ ActiveAdmin.register AdminUser do
     active_admin_comments
   end
   
-  controller do
-#    skip_before_filter :set_seed
-#    skip_before_filter :reset_seed
-    force_ssl
-  end
-  
 end

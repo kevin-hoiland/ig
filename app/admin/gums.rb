@@ -50,9 +50,5 @@ ActiveAdmin.register Gum do
     column "Country", :country
     default_actions
   end
-
-  controller do
-    force_ssl
-  end
   
 end

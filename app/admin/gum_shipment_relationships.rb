@@ -48,9 +48,5 @@ ActiveAdmin.register GumShipmentRelationship, :as => "Shipped Gums" do
     end
     active_admin_comments
   end
-  
-  controller do
-    force_ssl
-  end
-  
+    
 end

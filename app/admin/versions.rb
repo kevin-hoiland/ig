@@ -10,9 +10,5 @@ ActiveAdmin.register Version do
     column "Last Updated", :updated_at
     default_actions
   end
-  
-  controller do
-    force_ssl
-  end
-  
+    
 end

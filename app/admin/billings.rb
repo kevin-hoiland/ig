@@ -21,7 +21,6 @@ ActiveAdmin.register Billing do
   end
 
   controller do
-    force_ssl
     def cancel_with_gateway_and_save_deleted_info #almost done :-)
       billing = Billing.find(params[:id])      
       profile = Profile.find_by_user_id(billing.user_id)

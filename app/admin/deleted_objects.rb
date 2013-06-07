@@ -16,9 +16,5 @@ ActiveAdmin.register DeletedObject do
     column "Object Deleted", :created_at
     default_actions
   end
-    
-  controller do
-    force_ssl
-  end
   
 end

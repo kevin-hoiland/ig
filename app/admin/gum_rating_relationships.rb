@@ -10,9 +10,5 @@ ActiveAdmin.register GumRatingRelationship, :as => "Ratings" do
     column "Updated", :updated_at
     default_actions
   end
-
-  controller do
-    force_ssl
-  end
     
 end

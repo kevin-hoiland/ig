@@ -15,9 +15,5 @@ ActiveAdmin.register Profile do
     column "Subs Cancelled", :subscriptions_deleted
     default_actions
   end
-  
-  controller do
-    force_ssl
-  end
-  
+    
 end

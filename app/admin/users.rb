@@ -44,7 +44,6 @@ ActiveAdmin.register User do
 =end
   
   controller do
-    force_ssl
     def set_deleted_object_data
       user = User.find(params[:id])
       profile = Profile.find_by_user_id(user.id)
