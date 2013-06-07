@@ -40,7 +40,7 @@ class BillingsController < ApplicationController
     @billing.user_id = current_user.id
     set_values(params[:billing])
     # payment info not set in "set_values" because only used for new subscriptions
-    @payment_info = {:number => @billing.pan, :verification_value => @billing.cvc, :month => @billing.expiry_month,
+    @payment_info = {:number => @billing.pan, :verification_value => @billing.cvc, :month => (@billing.expiry_month.blank? ? "" : @billing.expiry_month.slice(0..1).to_i),
         :year => @billing.expiry_year, :first_name => @billing.bill_first_name, :last_name => @billing.bill_last_name}#,:brand => 'visa'} #BRAND IS STILL STATIC...
     profile = Profile.find_by_user_id(current_user.id)
     @billing.subscription_number = profile.subscriptions_created + 1
@@ -167,14 +167,22 @@ private
     @billing.bill_first_name = billing_info[:bill_first_name]
     @billing.bill_last_name = billing_info[:bill_last_name]
     @billing.bill_company = billing_info[:bill_company]
-    @billing.cvc = billing_info[:cvc]
-    @billing.terms = billing_info[:terms]
     unless billing_info[:pan].blank? # Only update the last_four DB value from pan attribute accessor if something exists for pan
       @billing.pan = billing_info[:pan].gsub(/[^0-9]/, "")
       @billing.last_four = @billing.pan.to_s.slice(-4..-1)
-      @billing.expiry_month = billing_info[:expiry_month].slice(0..1).to_i
+    end
+    #all these "unless" cases are because when editting an existing, these values aren't passed but do exist, also need to save when creating new if other attributes were invalid
+    unless billing_info[:expiry_month].blank?
+      @billing.expiry_month = billing_info[:expiry_month]
+    end
+    unless billing_info[:expiry_year].blank?
       @billing.expiry_year = billing_info[:expiry_year]
     end
+    unless billing_info[:cvc].blank?
+      @billing.cvc = billing_info[:cvc]
+    end
+    @billing.terms = billing_info[:terms]
+    
     @ip = User.find(@billing.user_id).current_sign_in_ip
 #    @customer = {:id => @billing.user_id.to_s+"-"+(Profile.find_by_user_id(@billing.user_id).subscriptions_created+1).to_s, :email => User.find(@billing.user_id).email}      
     @customer = {:id => @billing.user_id.to_s, :email => User.find(@billing.user_id).email}      
