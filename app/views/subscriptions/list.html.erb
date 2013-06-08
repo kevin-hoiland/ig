@@ -23,9 +23,11 @@
 		<ul class="list_container">
 		<li>
 			<ul class="shipment_list">
+				<!-- not displaying total count for now
 				<li class="count">
-					Total Gum Pieces: <%= s.get_monthly_pieces(s.id) %>
+					Total Gum Pieces: < %= s.get_monthly_pieces(s.id) %>
 				</li>
+				-->
 				<li class="shipment_header">
 					<%= s.month_formatted(s.ship_date) %>
 				</li>
