@@ -12753,3 +12753,749 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 11:48:10 -0700
 Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2013-06-08 11:49:04 -0700
+Processing by SubscriptionsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.5ms)
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%subscription%' AND visible = '1')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `shipments` LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mShipment Load (0.2ms)[0m  SELECT `shipments`.* FROM `shipments` ORDER BY ship_date DESC LIMIT 10 OFFSET 0
+  [1m[36mGumShipmentRelationship Load (0.2ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 14 LIMIT 1
+  [1m[36mGum Load (0.3ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 204 LIMIT 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 165 LIMIT 1
+  [1m[36mGumShipmentRelationship Load (0.3ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 2[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 12 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shipments` [0m
+  Rendered subscriptions/list.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 275ms (Views: 270.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:04 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 11:49:04 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:04 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:04 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:04 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 11:49:05 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/gums" for 127.0.0.1 at 2013-06-08 12:20:05 -0700
+Processing by GumsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (2.1ms)
+  [1m[35mGum Load (36.0ms)[0m  SELECT DISTINCT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 ORDER BY RAND(2583394998296251) LIMIT 25 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 77 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 77 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 77 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 77 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 224 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 224 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 224 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 224 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 235 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 235 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 235 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 235 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 43 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 43 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 43 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 43 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 170 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 170 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 170 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 170 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 257 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 257 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 257 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 257 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 6 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 254 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 254 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 254 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 254 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 96 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 96 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 96 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 96 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 54 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 54 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 54 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 54 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 186 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 186 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 186 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 186 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 214 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 214 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 214 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 214 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 123 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 123 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 123 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 123 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 114 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 114 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 114 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 114 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 139 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 139 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 139 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 139 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 189 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 189 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 189 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 189 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 100 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 100 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 100 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 100 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 250 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 250 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 250 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 250 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 263 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 263 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 263 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 263 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 101 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 101 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 101 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 101 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 47 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 47 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 47 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 47 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 190 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 190 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 190 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 190 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 165 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 165 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 165 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 165 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 206 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 206 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 206 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 206 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 84 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 84 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 84 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voteable_id` = 84 AND `votes`.`voteable_type` = 'Gum' AND `votes`.`vote` = 1
+  [1m[36mGum Load (2.2ms)[0m  [1mSELECT DISTINCT `gums`.* FROM `gums` WHERE `gums`.`active` = 1[0m
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_general%' AND visible = '1') ORDER BY sequence ASC
+  Rendered gums/list.html.erb within layouts/application (709.6ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 1135ms (Views: 999.7ms | ActiveRecord: 77.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:07 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/filler_v12.jpg" for 127.0.0.1 at 2013-06-08 12:20:08 -0700
+Served asset /filler_v12.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/list_bubble.png" for 127.0.0.1 at 2013-06-08 12:20:08 -0700
+Served asset /list_bubble.png - 304 Not Modified (21ms)
+
+
+Started GET "/assets/bubble_grey3.png" for 127.0.0.1 at 2013-06-08 12:20:08 -0700
+Served asset /bubble_grey3.png - 304 Not Modified (24ms)
+
+
+Started GET "/assets/bust_grey3.png" for 127.0.0.1 at 2013-06-08 12:20:08 -0700
+Served asset /bust_grey3.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 12:20:08 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/gums?utf8=%E2%9C%93&q%5Btitle_s%5D=&q%5Bbrand_or_company_s%5D=jila&q%5Bflavor_s%5D=&q%5Bdescription_s%5D=&q%5Bupc_s%5D=&commit=Search" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Processing by GumsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"title_s"=>"", "brand_or_company_s"=>"jila", "flavor_s"=>"", "description_s"=>"", "upc_s"=>""}, "commit"=>"Search"}
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  [1m[36mGum Load (2.3ms)[0m  [1mSELECT DISTINCT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND ((`gums`.`brand` LIKE '%jila%' OR `gums`.`company` LIKE '%jila%')) ORDER BY RAND(2583394998296251) LIMIT 25 OFFSET 0[0m
+  [1m[35mGum Load (1.0ms)[0m  SELECT DISTINCT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND ((`gums`.`brand` LIKE '%jila%' OR `gums`.`company` LIKE '%jila%'))
+  [1m[36mDynamicText Load (0.4ms)[0m  [1mSELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_general%' AND visible = '1') ORDER BY sequence ASC[0m
+  Rendered gums/list.html.erb within layouts/application (113.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 318ms (Views: 282.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 12:20:11 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2013-06-08 12:28:30 -0700
+Processing by SubscriptionsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%subscription%' AND visible = '1')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `shipments` LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mShipment Load (0.2ms)[0m  SELECT `shipments`.* FROM `shipments` ORDER BY ship_date DESC LIMIT 10 OFFSET 0
+  [1m[36mGumShipmentRelationship Load (0.4ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 14 LIMIT 1
+  [1m[36mGum Load (0.3ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 204 LIMIT 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 165 LIMIT 1
+  [1m[36mGumShipmentRelationship Load (0.3ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 2[0m
+  [1m[35mGum Load (0.4ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 12 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shipments` [0m
+  Rendered subscriptions/list.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 283ms (Views: 278.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 12:28:31 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Processing by SubscriptionsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.7ms)
+  [1m[35mDynamicText Load (0.6ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%subscription%' AND visible = '1')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `shipments` LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mShipment Load (0.2ms)[0m  SELECT `shipments`.* FROM `shipments` ORDER BY ship_date DESC LIMIT 10 OFFSET 0
+  [1m[36mGumShipmentRelationship Load (0.2ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 1[0m
+  [1m[35mGum Load (0.2ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 14 LIMIT 1
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 204 LIMIT 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 165 LIMIT 1
+  [1m[36mGumShipmentRelationship Load (0.3ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 2[0m
+  [1m[35mGum Load (0.2ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 12 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shipments` [0m
+  Rendered subscriptions/list.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 273ms (Views: 268.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 12:29:45 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2013-06-08 12:29:51 -0700
+Processing by SubscriptionsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.7ms)
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%subscription%' AND visible = '1')
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `shipments` LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mShipment Load (0.3ms)[0m  SELECT `shipments`.* FROM `shipments` ORDER BY ship_date DESC LIMIT 10 OFFSET 0
+  [1m[36mGumShipmentRelationship Load (0.4ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 1[0m
+  [1m[35mGum Load (0.2ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 14 LIMIT 1
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 204 LIMIT 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 165 LIMIT 1
+  [1m[36mGumShipmentRelationship Load (0.4ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 2[0m
+  [1m[35mGum Load (0.2ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 12 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shipments` [0m
+  Rendered subscriptions/list.html.erb within layouts/application (19.7ms)
+Compiled application.css  (1551ms)  (pid 26112)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1956ms (Views: 1951.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /application.css - 200 OK (29ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/filler_v12.jpg" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /filler_v12.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 12:29:53 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2013-06-08 12:30:50 -0700
+Processing by SubscriptionsController#index as HTML
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  [1m[35mDynamicText Load (0.6ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%subscription%' AND visible = '1')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `shipments` LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mShipment Load (0.2ms)[0m  SELECT `shipments`.* FROM `shipments` ORDER BY ship_date DESC LIMIT 10 OFFSET 0
+  [1m[36mGumShipmentRelationship Load (0.2ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 1[0m
+  [1m[35mGum Load (0.2ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 14 LIMIT 1
+  [1m[36mGum Load (0.3ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 204 LIMIT 1[0m
+  [1m[35mGum Load (0.3ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 165 LIMIT 1
+  [1m[36mGumShipmentRelationship Load (0.3ms)[0m  [1mSELECT `gum_shipment_relationships`.* FROM `gum_shipment_relationships` WHERE `gum_shipment_relationships`.`shipment_id` = 2[0m
+  [1m[35mGum Load (0.2ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 12 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shipments` [0m
+  Rendered subscriptions/list.html.erb within layouts/application (18.4ms)
+Compiled application.css  (872ms)  (pid 26112)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 1153ms (Views: 1148.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /application.css - 200 OK (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:51 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/filler_v12.jpg" for 127.0.0.1 at 2013-06-08 12:30:52 -0700
+Served asset /filler_v12.jpg - 304 Not Modified (0ms)
