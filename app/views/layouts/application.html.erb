@@ -49,7 +49,7 @@
 	      <!-- end content -->
 	  	  <section id="sidebar">
 			<nav id="sub_nav">
-				<H3>Other Options</h3>
+				<h3>Other Options</h3>
 				<ul>
 		    	<% unless user_signed_in? %>
 					<li><%= link_to "Sign In", new_user_session_path, :class => 'link_button' %></li>
@@ -65,7 +65,22 @@
 			<section id="search">
 				<%= yield :search %>
 			</section>
-		    <!-- end search -->  	
+		    <!-- end search -->
+			<h5>Advertisements</h5>	
+			<section id="wide_skyscraper">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-2047277972656490";
+				/* Sidebar Gum Ads */
+				google_ad_slot = "3593905767";
+				google_ad_width = 160;
+				google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</section>
+		    <!-- end wide_skyscraper -->
 		  </section>
 	      <!-- end sidebar -->
 		</div>

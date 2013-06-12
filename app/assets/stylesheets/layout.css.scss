@@ -360,6 +360,16 @@ section#sidebar {
 			}
 		}// end ul#rating
 	}// end #search
+	h5{
+		@extend .basic_header;
+		margin: 30px 0px 10px 0px;
+	}
+	#wide_skyscraper {
+		margin: 0px auto 10px auto;
+		//border: dotted green;
+		width: 160px;
+		height: 600px;
+	}
 }// end section#sidebar
 
 /******************************************************************************/
