@@ -10,6 +10,10 @@
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1><%= legalize(@gum.title) %></h1>
 
 <!-- prior way, before using carrierwave and fog 		UMMM	permalink_humanize(@gum.permalink)

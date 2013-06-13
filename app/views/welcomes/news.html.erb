@@ -8,6 +8,10 @@
 	<li><%= link_to("FAQs", welcomes_faq_path, :class => 'link_button') %></li>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1>In The News</h1>
 
 <% @content.each do |c| %>

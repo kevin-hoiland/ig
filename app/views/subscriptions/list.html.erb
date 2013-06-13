@@ -10,6 +10,10 @@
 	<% end %>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1>Monthly Subscription Contents</h1>
 
 <% @content.each do |c| %>

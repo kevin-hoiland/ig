@@ -9,6 +9,10 @@
 	<li><%= link_to("Past Shipments", subscriptions_path, :class => 'link_button') %></li>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1>About Intl Gum</h1>
 
 <% @content.each do |c| %>

@@ -12,6 +12,10 @@
 	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1>Member Details</h1>
 
 <div id="show_header">

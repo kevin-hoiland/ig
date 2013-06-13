@@ -8,6 +8,10 @@
 	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1>Edit Your Public Info and Details</h1>
 <%= render(:partial => 'shared/error_messages', :locals => {:object => @self_profile}) %>
 

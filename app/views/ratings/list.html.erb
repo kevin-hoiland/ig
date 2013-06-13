@@ -16,6 +16,10 @@
 	<% end %>
 <% end %>
 
+<% content_for :ads do %>
+	<%= render(:partial => "shared/ad_content") %>
+<% end %>
+
 <h1>All Gum Ratings</h1>
 <%= render(:partial => "shared/ratings_sort") %>
 
