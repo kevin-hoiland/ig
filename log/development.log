@@ -52271,3 +52271,526 @@ Served asset /bubble3.png - 304 Not Modified (0ms)
 
 Started GET "/assets/bust_grey3.png" for 127.0.0.1 at 2013-06-14 20:03:57 -0700
 Served asset /bust_grey3.png - 304 Not Modified (0ms)
+
+
+Started GET "/ratings/gum/adams_chiclets_peppermint" for 127.0.0.1 at 2013-06-14 20:42:10 -0700
+Processing by RatingsController#per_gum as HTML
+  Parameters: {"gum_permalink"=>"adams_chiclets_peppermint"}
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND `gums`.`permalink` = 'adams_chiclets_peppermint' LIMIT 1[0m
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  Rendered ratings/per_gum.html.erb within layouts/application (101.7ms)
+Completed 401 Unauthorized in 335ms
+
+
+Started GET "/ratings/gum/adams_chiclets_peppermint" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Processing by RatingsController#per_gum as HTML
+  Parameters: {"gum_permalink"=>"adams_chiclets_peppermint"}
+  [1m[36mGum Load (0.5ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND `gums`.`permalink` = 'adams_chiclets_peppermint' LIMIT 1[0m
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  Rendered shared/_ratings_search.html.erb (34.6ms)
+  Rendered shared/_ad_content.html.erb (0.0ms)
+  Rendered shared/_ratings_sort.html.erb (2.3ms)
+  [1m[35mSQL (0.6ms)[0m  SELECT `gum_rating_relationships`.`id` AS t0_r0, `gum_rating_relationships`.`profile_id` AS t0_r1, `gum_rating_relationships`.`gum_id` AS t0_r2, `gum_rating_relationships`.`rank_1` AS t0_r3, `gum_rating_relationships`.`rank_2` AS t0_r4, `gum_rating_relationships`.`rank_3` AS t0_r5, `gum_rating_relationships`.`rank_4` AS t0_r6, `gum_rating_relationships`.`rank_5` AS t0_r7, `gum_rating_relationships`.`comment` AS t0_r8, `gum_rating_relationships`.`average` AS t0_r9, `gum_rating_relationships`.`total` AS t0_r10, `gum_rating_relationships`.`created_at` AS t0_r11, `gum_rating_relationships`.`updated_at` AS t0_r12, `gums`.`id` AS t1_r0, `gums`.`permalink` AS t1_r1, `gums`.`title` AS t1_r2, `gums`.`upc` AS t1_r3, `gums`.`active` AS t1_r4, `gums`.`company` AS t1_r5, `gums`.`brand` AS t1_r6, `gums`.`flavor` AS t1_r7, `gums`.`description` AS t1_r8, `gums`.`note` AS t1_r9, `gums`.`country` AS t1_r10, `gums`.`new_release` AS t1_r11, `gums`.`discontinued` AS t1_r12, `gums`.`image` AS t1_r13, `gums`.`created_at` AS t1_r14, `gums`.`updated_at` AS t1_r15 FROM `gum_rating_relationships` LEFT OUTER JOIN `gums` ON `gums`.`id` = `gum_rating_relationships`.`gum_id` WHERE `gums`.`active` = 1 AND `gum_rating_relationships`.`gum_id` = 86 ORDER BY gum_rating_relationships.updated_at DESC LIMIT 10 OFFSET 0
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 1 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 0 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 1 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 1 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  Rendered shared/_ratings_list.html.erb (48.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 3 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 0 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 3 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 1 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  Rendered shared/_ratings_list.html.erb (7.4ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(DISTINCT `gum_rating_relationships`.`id`) FROM `gum_rating_relationships` LEFT OUTER JOIN `gums` ON `gums`.`id` = `gum_rating_relationships`.`gum_id` WHERE `gums`.`active` = 1 AND `gum_rating_relationships`.`gum_id` = 86[0m
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_specific%' AND visible = '1') ORDER BY sequence ASC
+  Rendered ratings/per_gum.html.erb within layouts/application (237.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 392ms (Views: 365.7ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bubble3.png" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /bubble3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bust_grey3.png" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /bust_grey3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/notification_x.png" for 127.0.0.1 at 2013-06-14 20:42:12 -0700
+Served asset /notification_x.png - 200 OK (15ms)
+
+
+Started GET "/ratings/gum/adams_chiclets_peppermint" for 127.0.0.1 at 2013-06-14 20:42:14 -0700
+Processing by RatingsController#per_gum as HTML
+  Parameters: {"gum_permalink"=>"adams_chiclets_peppermint"}
+  [1m[36mGum Load (0.5ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND `gums`.`permalink` = 'adams_chiclets_peppermint' LIMIT 1[0m
+  Rendered layouts/_main_nav.html.erb (1.7ms)
+  Rendered shared/_ratings_search.html.erb (29.6ms)
+  Rendered shared/_ad_content.html.erb (0.0ms)
+  Rendered shared/_ratings_sort.html.erb (2.1ms)
+  [1m[35mSQL (0.6ms)[0m  SELECT `gum_rating_relationships`.`id` AS t0_r0, `gum_rating_relationships`.`profile_id` AS t0_r1, `gum_rating_relationships`.`gum_id` AS t0_r2, `gum_rating_relationships`.`rank_1` AS t0_r3, `gum_rating_relationships`.`rank_2` AS t0_r4, `gum_rating_relationships`.`rank_3` AS t0_r5, `gum_rating_relationships`.`rank_4` AS t0_r6, `gum_rating_relationships`.`rank_5` AS t0_r7, `gum_rating_relationships`.`comment` AS t0_r8, `gum_rating_relationships`.`average` AS t0_r9, `gum_rating_relationships`.`total` AS t0_r10, `gum_rating_relationships`.`created_at` AS t0_r11, `gum_rating_relationships`.`updated_at` AS t0_r12, `gums`.`id` AS t1_r0, `gums`.`permalink` AS t1_r1, `gums`.`title` AS t1_r2, `gums`.`upc` AS t1_r3, `gums`.`active` AS t1_r4, `gums`.`company` AS t1_r5, `gums`.`brand` AS t1_r6, `gums`.`flavor` AS t1_r7, `gums`.`description` AS t1_r8, `gums`.`note` AS t1_r9, `gums`.`country` AS t1_r10, `gums`.`new_release` AS t1_r11, `gums`.`discontinued` AS t1_r12, `gums`.`image` AS t1_r13, `gums`.`created_at` AS t1_r14, `gums`.`updated_at` AS t1_r15 FROM `gum_rating_relationships` LEFT OUTER JOIN `gums` ON `gums`.`id` = `gum_rating_relationships`.`gum_id` WHERE `gums`.`active` = 1 AND `gum_rating_relationships`.`gum_id` = 86 ORDER BY gum_rating_relationships.updated_at DESC LIMIT 10 OFFSET 0
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 1 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 0 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 1 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 1 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  Rendered shared/_ratings_list.html.erb (8.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 3 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 0 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 3 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 1 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  Rendered shared/_ratings_list.html.erb (7.1ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(DISTINCT `gum_rating_relationships`.`id`) FROM `gum_rating_relationships` LEFT OUTER JOIN `gums` ON `gums`.`id` = `gum_rating_relationships`.`gum_id` WHERE `gums`.`active` = 1 AND `gum_rating_relationships`.`gum_id` = 86[0m
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_specific%' AND visible = '1') ORDER BY sequence ASC
+  Rendered ratings/per_gum.html.erb within layouts/application (66.0ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 262ms (Views: 254.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bubble3.png" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /bubble3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bust_grey3.png" for 127.0.0.1 at 2013-06-14 20:42:15 -0700
+Served asset /bust_grey3.png - 304 Not Modified (0ms)
+
+
+Started GET "/ratings/gum/adams_chiclets_peppermint" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Processing by RatingsController#per_gum as HTML
+  Parameters: {"gum_permalink"=>"adams_chiclets_peppermint"}
+  [1m[36mGum Load (0.6ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`active` = 1 AND `gums`.`permalink` = 'adams_chiclets_peppermint' LIMIT 1[0m
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  Rendered shared/_ratings_search.html.erb (88.5ms)
+  Rendered shared/_ad_content.html.erb (0.0ms)
+  Rendered shared/_ratings_sort.html.erb (3.1ms)
+  [1m[35mSQL (0.7ms)[0m  SELECT `gum_rating_relationships`.`id` AS t0_r0, `gum_rating_relationships`.`profile_id` AS t0_r1, `gum_rating_relationships`.`gum_id` AS t0_r2, `gum_rating_relationships`.`rank_1` AS t0_r3, `gum_rating_relationships`.`rank_2` AS t0_r4, `gum_rating_relationships`.`rank_3` AS t0_r5, `gum_rating_relationships`.`rank_4` AS t0_r6, `gum_rating_relationships`.`rank_5` AS t0_r7, `gum_rating_relationships`.`comment` AS t0_r8, `gum_rating_relationships`.`average` AS t0_r9, `gum_rating_relationships`.`total` AS t0_r10, `gum_rating_relationships`.`created_at` AS t0_r11, `gum_rating_relationships`.`updated_at` AS t0_r12, `gums`.`id` AS t1_r0, `gums`.`permalink` AS t1_r1, `gums`.`title` AS t1_r2, `gums`.`upc` AS t1_r3, `gums`.`active` AS t1_r4, `gums`.`company` AS t1_r5, `gums`.`brand` AS t1_r6, `gums`.`flavor` AS t1_r7, `gums`.`description` AS t1_r8, `gums`.`note` AS t1_r9, `gums`.`country` AS t1_r10, `gums`.`new_release` AS t1_r11, `gums`.`discontinued` AS t1_r12, `gums`.`image` AS t1_r13, `gums`.`created_at` AS t1_r14, `gums`.`updated_at` AS t1_r15 FROM `gum_rating_relationships` LEFT OUTER JOIN `gums` ON `gums`.`id` = `gum_rating_relationships`.`gum_id` WHERE `gums`.`active` = 1 AND `gum_rating_relationships`.`gum_id` = 86 ORDER BY gum_rating_relationships.updated_at DESC LIMIT 10 OFFSET 0
+  [1m[36mGum Load (0.4ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 1 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 0 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 1 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 1 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  Rendered shared/_ratings_list.html.erb (8.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1
+  [1m[36mProfile Load (0.5ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 3 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 0 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `gums`.* FROM `gums` WHERE `gums`.`id` = 86 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `votes` WHERE `votes`.`voter_id` = 3 AND `votes`.`voter_type` = 'User' AND `votes`.`vote` = 1 AND `votes`.`voteable_id` = 86 AND `votes`.`voteable_type` = 'Gum'
+  Rendered shared/_ratings_list.html.erb (7.3ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(DISTINCT `gum_rating_relationships`.`id`) FROM `gum_rating_relationships` LEFT OUTER JOIN `gums` ON `gums`.`id` = `gum_rating_relationships`.`gum_id` WHERE `gums`.`active` = 1 AND `gum_rating_relationships`.`gum_id` = 86[0m
+  [1m[35mDynamicText Load (0.5ms)[0m  SELECT `dynamic_texts`.* FROM `dynamic_texts` WHERE (location LIKE '%gum_specific%' AND visible = '1') ORDER BY sequence ASC
+  Rendered ratings/per_gum.html.erb within layouts/application (125.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 315ms (Views: 307.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv-printshiv.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /html5shiv-printshiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo_small.png" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /logo_small.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bubble3.png" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /bubble3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bust_grey3.png" for 127.0.0.1 at 2013-06-14 20:42:17 -0700
+Served asset /bust_grey3.png - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-06-14 20:45:44 -0700
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 94ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/devise/shared/_links.erb (0.9ms)
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (189.1ms)
+Completed 200 OK in 594ms (Views: 577.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin.css - 200 OK (18ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/pages/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-06-14 20:45:45 -0700
+Served asset /active_admin/print.css - 200 OK (4ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2013-06-14 20:45:55 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/RzdRjI7uJCbjXqoxDA9qDzp03LQm+HV1NZFqz2EVFU=", "admin_user"=>{"email"=>"kevin.hoiland@intlgum.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'kevin.hoiland@intlgum.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (18.2ms)[0m  [1mUPDATE `admin_users` SET `last_sign_in_at` = '2013-05-16 04:33:23', `current_sign_in_at` = '2013-06-15 03:45:55', `sign_in_count` = 24, `updated_at` = '2013-06-15 03:45:55' WHERE `admin_users`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 134ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-06-14 20:45:55 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` ORDER BY created_at desc LIMIT 5
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 7 LIMIT 1[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 5 LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 4 LIMIT 1[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 3 LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mGumRatingRelationship Load (0.5ms)[0m  SELECT `gum_rating_relationships`.* FROM `gum_rating_relationships` ORDER BY created_at desc LIMIT 5
+  [1m[36mBilling Load (0.4ms)[0m  [1mSELECT `billings`.* FROM `billings` ORDER BY created_at desc LIMIT 5[0m
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/dashboard/index.html.arb (247.5ms)
+Completed 200 OK in 259ms (Views: 240.2ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-06-14 20:45:55 -0700
+Served asset /active_admin.js - 200 OK (0ms)
+
+
+Started GET "/assets/active_admin/nested_menu_arrow.gif" for 127.0.0.1 at 2013-06-14 20:45:56 -0700
+Served asset /active_admin/nested_menu_arrow.gif - 200 OK (11ms)
+
+
+Started GET "/assets/active_admin/nested_menu_arrow_dark.gif" for 127.0.0.1 at 2013-06-14 20:45:56 -0700
+Served asset /active_admin/nested_menu_arrow_dark.gif - 200 OK (11ms)
+
+
+Started GET "/admin/gums" for 127.0.0.1 at 2013-06-14 20:45:58 -0700
+Processing by Admin::GumsController#index as HTML
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1
+  [1m[36m (18.7ms)[0m  [1mSELECT COUNT(*) FROM `gums` WHERE (upc = 0 OR upc = null)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `gums` WHERE `gums`.`active` = 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `gums` WHERE `gums`.`image` = 'intl_gum_coming_soon_bubble.png'[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `gums` WHERE `gums`.`description` = ''
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `gums` LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `gums` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `gums` LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mGum Load (0.8ms)[0m  SELECT `gums`.* FROM `gums` ORDER BY `gums`.`id` desc LIMIT 30 OFFSET 0
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (870.2ms)
+Completed 200 OK in 892ms (Views: 861.0ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/assets/active_admin/orderable.png" for 127.0.0.1 at 2013-06-14 20:45:59 -0700
+Served asset /active_admin/orderable.png - 200 OK (12ms)
+
+
+Started GET "/assets/active_admin/datepicker/datepicker-input-icon.png" for 127.0.0.1 at 2013-06-14 20:45:59 -0700
+Served asset /active_admin/datepicker/datepicker-input-icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/active_admin/datepicker/datepicker-nipple.png" for 127.0.0.1 at 2013-06-14 20:45:59 -0700
+Served asset /active_admin/datepicker/datepicker-nipple.png - 200 OK (8ms)
+
+
+Started GET "/admin/ratings" for 127.0.0.1 at 2013-06-14 20:46:01 -0700
+Processing by Admin::RatingsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `gum_rating_relationships` LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `gum_rating_relationships` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `gum_rating_relationships` LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mGumRatingRelationship Load (0.5ms)[0m  [1mSELECT `gum_rating_relationships`.* FROM `gum_rating_relationships` ORDER BY `gum_rating_relationships`.`id` desc LIMIT 30 OFFSET 0[0m
+  [1m[35mProfile Load (0.5ms)[0m  SELECT `profiles`.* FROM `profiles` 
+  [1m[36mGum Load (2.4ms)[0m  [1mSELECT `gums`.* FROM `gums` [0m
+  Rendered /Users/kevinhoiland/.rvm/gems/ruby-1.9.3-p362/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (546.6ms)
+Completed 200 OK in 555ms (Views: 545.0ms | ActiveRecord: 4.7ms)

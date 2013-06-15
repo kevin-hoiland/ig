@@ -4,6 +4,7 @@ ActiveAdmin.register GumRatingRelationship, :as => "Ratings" do
   
   index do
     column :id
+    column :gum_id
     column "Total", :total
     column "Average", :average
     column "Created", :created_at

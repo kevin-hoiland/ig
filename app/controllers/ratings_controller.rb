@@ -22,7 +22,7 @@ class RatingsController < ApplicationController
     @gum = Gum.active.find_by_permalink(params[:gum_permalink]) || not_found 
     @content_legal = DynamicText.content("gum_specific").order("sequence ASC")
     @search_ratings = GumRatingRelationship.with_active_gum.ransack(params[:q])
-    @ratings = @search_ratings.result.where(:gum_id => @gum.id).order("gum_rating_relationships.updated_at DESC").page(params[:page])    
+    @ratings = @search_ratings.result(:distinct => false).where(:gum_id => @gum.id).order("gum_rating_relationships.updated_at DESC").page(params[:page])    
     # @ratings = Kaminari.paginate_array(GumRatingRelationship.find_all_by_gum_id(@gum.id, :order => 'created_at DESC')).page(params[:page])
   end
   
