@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  force_ssl :except => :index
+  force_ssl :except => :index, :strict => true
   
   # used to randomize gums list and members lists
   before_filter :set_seed 
