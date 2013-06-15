@@ -13,7 +13,7 @@ module IntlGum2
   class Application < Rails::Application
     
     if Rails.env.production?
-      config.middleware.use Rack::SslEnforcer
+      config.middleware.use Rack::SslEnforcer, :only => [%r{^/admin/}, %r{^/users/}, %r{^/new_private_subscription/}, %r{^/edit_private_subscription/}, %r{^/remove_private_subscription/}]
     end
     
     # Settings in config/environments/* take precedence over those specified here.
