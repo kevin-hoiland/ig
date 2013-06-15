@@ -1,10 +1,10 @@
 class WelcomesController < ApplicationController
   
-  before_filter do
-    if request.ssl? && Rails.env.production?
-      redirect_to :protocol => 'http://', :status => :moved_permanently
-    end
-  end
+#  before_filter do
+#    if request.ssl? && Rails.env.production?
+#      redirect_to :protocol => 'http://', :status => :moved_permanently
+#    end
+#  end
   
   def index
     @content_top = DynamicText.content("home_top").order("sequence ASC")
