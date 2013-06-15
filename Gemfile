@@ -4,6 +4,8 @@ gem 'rails'
 
 gem 'mysql2'
 
+gem 'rack-ssl-enforcer'
+
 gem 'json'
 
 gem 'devise'
