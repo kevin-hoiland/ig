@@ -1,8 +1,8 @@
 IntlGum2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   
-  config.to_prepare { Devise::SessionsController.force_ssl }
-  config.to_prepare { Devise::RegistrationsController.force_ssl }
+#  config.to_prepare { Devise::SessionsController.force_ssl }
+#  config.to_prepare { Devise::RegistrationsController.force_ssl }
   
   # Code is not reloaded between requests
   config.cache_classes = true
