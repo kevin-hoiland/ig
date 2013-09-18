@@ -25,6 +25,7 @@
 -->
 <div id="show_header">
 	<%= image_tag(@gum.image_url(:large).to_s, :alt=>"Image of #{permalink_humanize(@gum.permalink)}", :id => 'gum_image')%>
+	<%= link_to "Buy Now", 'http://www.amazon.com/dp/'+@gum.asin+'/?tag=ingu0d-20', :id => 'show_buy' %>
 	<div id="show_text">
 		<p><%= legalize(@gum.description) %></p>
 		<p><%= legalize(@gum.note)%></p>
