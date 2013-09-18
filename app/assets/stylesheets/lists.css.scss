@@ -111,6 +111,19 @@ ul.gum_list {
 			text-align: right;
 		}
 	}
+	.buy {
+		@include button(simple, lighten($nav_background, 8%));
+		float: right;
+		margin: 25px 25px 10px 10px;
+		padding: 12px; //2px 0px 2px 0px;
+		display: block;
+		text-align: center;
+		a, a:link, a:visited, a:hover, a:active {
+			color: white;
+		  text-decoration: none;
+			outline: 0;
+		}
+	}
 	.votes {
 		float: right;
 		font-size: 18px;

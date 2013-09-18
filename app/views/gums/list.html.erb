@@ -69,22 +69,31 @@
 </li>
 <li>
 	<ul class="gum_list">
+		<% if g.asin? %>
+			<li class='buy'>
+				<%= link_to "Buy Now", 'http://www.amazon.com/dp/'+g.asin+'/?tag=ingu0d-20' %>
+			</li>
+		<% end %>
+
+
+<!-- temp removal of vote bubble results on list page
 		<li class="votes down">
-			<% if g.votes_against > 0 %>
-				<%= image_tag("list_bust.png", :title => "Bust") %>
-			<% else %>
-				<%= image_tag("bust_grey3.png", :title => "Bust") %>
-			<% end %>
-			<p><%= g.votes_against %></p>
+			< % if g.votes_against > 0 %>
+				< %= image_tag("list_bust.png", :title => "Bust") %>
+			< % else %>
+				< %= image_tag("bust_grey3.png", :title => "Bust") %>
+			< % end %>
+			<p>< %= g.votes_against %></p>
 		</li>
 		<li class="votes up">
-			<% if g.votes_for > 0 %>
-				<%= image_tag("list_bubble.png", :title => "Bubble") %>
-			<% else %>
-				<%= image_tag("bubble_grey3.png", :title => "Bubble") %>
-			<% end %>
-			<p><%= g.votes_for %></p>
+			< % if g.votes_for > 0 %>
+				< %= image_tag("list_bubble.png", :title => "Bubble") %>
+			< % else %>
+				< %= image_tag("bubble_grey3.png", :title => "Bubble") %>
+			< % end %>
+			<p>< %= g.votes_for %></p>
 		</li>
+-->
 		<li class="gum_logo_container">
 			<%= image_tag(g.image_url(:thumb).to_s, :alt=>"Image of #{permalink_humanize(g.permalink)}", :class => 'gum_logo') %>
 		</li>
