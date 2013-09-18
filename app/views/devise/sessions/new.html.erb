@@ -2,7 +2,7 @@
 <% description "Member's page for signing into Intl Gum." %>
 <%= currently_at 'Members' %>
 <h1>Member Sign In</h1>
-
+<p>Welcome back! Membership is free and always will be, sign in now to share your gum thoughts.</p>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
