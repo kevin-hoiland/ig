@@ -33,6 +33,7 @@ ActiveAdmin.register Gum do
         f.input :description
         f.input :note
         f.input :country
+        f.input :asin
 #        f.input :image, :as => :string
         f.input :image, :as => :file
       end
@@ -48,6 +49,7 @@ ActiveAdmin.register Gum do
     column "Flavor", :flavor
     column "UPC", :upc
     column "Country", :country
+    column "Amazon ID", :asin
     default_actions
   end
   

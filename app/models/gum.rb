@@ -5,7 +5,7 @@ class Gum < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
   ############  attributes  ############
-  attr_accessible :permalink, :title, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image, as: :admin
+  attr_accessible :permalink, :title, :upc, :active, :company, :brand, :flavor, :description, :note, :country, :new_release, :discontinued, :image, :asin, as: :admin
     
   #from : http://erniemiller.org/2012/05/11/why-your-ruby-class-macros-might-suck-mine-did/
   def self.ransackable_attributes(auth_object = nil)
