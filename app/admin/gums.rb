@@ -14,6 +14,7 @@ ActiveAdmin.register Gum do
   scope :inactive
   scope :no_image
   scope :no_description
+  scope :no_amazon_link
 #  config.per_page = 50
   
 #  filter :gums_id, :as => :select, :collection => proc { Gums.all }

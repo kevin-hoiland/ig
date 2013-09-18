@@ -3,9 +3,13 @@
 <%= currently_at 'Gums' %>
 
 <% content_for :sub_nav do %>
-	<% if user_signed_in? %>
+<!-- not requiring logged in status to view Rate button
+	< % if user_signed_in? %>
+-->
 		<li><%= link_to("Rate This Gum", new_rating_path(@gum.permalink), :class => 'link_button') %></li>
-	<% end %>
+<!-- not requiring logged in status to view Rate button
+	< % end %>
+-->
 	<li><%= link_to("View Gum Details", gum_path(@gum.permalink), :class => 'link_button') %></li>	
 	<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
 <% end %>

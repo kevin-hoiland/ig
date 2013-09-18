@@ -31,6 +31,7 @@ class Gum < ActiveRecord::Base
   scope :empty_upc, :conditions => [ 'upc = 0 OR upc = null' ]
   scope :no_image, :conditions => { :image => "intl_gum_coming_soon_bubble.png" }
   scope :no_description, :conditions => { :description => "" }
+  scope :no_amazon_link, :conditions => { :asin => "" }
   scope :inactive, :conditions => { :active => false }
   scope :search_upc, lambda {|upc| where(["upc LIKE ?", "%#{upc}%"])}
   scope :search_company, lambda {|company| where(["company LIKE ?", "%#{company}%"])}  
