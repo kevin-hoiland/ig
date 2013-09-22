@@ -68,6 +68,8 @@
 				<li><%= link_to("Ratings List", gum_ratings_path(g.permalink), :class => 'list_row_link') %></li>
 			</ul><!-- end list_links -->
 		</li>
+		<!-- will probably add later, need to figure out bubble/bust relationship tally, and solo display in ratings lists -->
+		<!-- <li class = "gum_ratings_count"><div class = "header">Total Ratings</div>< %= get_rating_count(g) %></li> -->
 		<li>
 			<% if g.asin? %>
 				<%= link_to "Buy Now", 'http://www.amazon.com/dp/'+g.asin+'/?tag=ingu0d-20', :class => 'buy' %>

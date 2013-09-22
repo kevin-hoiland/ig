@@ -5,6 +5,10 @@ module RatingsHelper
     return g.permalink    
   end
   
+  def get_rating_count (gum_id)
+    ratings_count = GumRatingRelationship.with_active_gum.find_all_by_gum_id(gum_id).count
+  end
+  
   def get_gum (gum_id)
     return Gum.find(gum_id)
   end

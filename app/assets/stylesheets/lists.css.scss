@@ -78,6 +78,19 @@ ul.list_links {
 	}
 }
 
+.gum_ratings_count {
+	width: 100px;
+	border-radius: 10px;
+	text-align: center;
+	padding: 5px;
+	margin: 0px 5px 5px 5px;
+	height: 40px;
+	float: right;
+	.header {
+		font-size: 12px;
+	}
+}
+
 li.clear_row {
 	clear: both;
 	margin: 0px;
@@ -127,7 +140,6 @@ ul.gum_list {
 			text-align: right;
 		}
 	}
-
 	.votes {
 		float: right;
 		font-size: 18px;
@@ -231,10 +243,19 @@ ul.rating_list {
 ul.member_list {
 	@extend .row_settings;
 	min-height: 70px;
-	.score {
-		@extend .stat_box;
+	.member_score {
+	//		@extend .stat_box;		
+		width: 100px;
+//		@include linear-gradient(lighten($sidebar_background, 5%), darken($sidebar_background, 5%));
+		border-radius: 10px;
+		text-align: center;
+		padding: 5px;
+		margin: 0px 5px 5px 5px;
 		height: 40px;
 		float: right;
+		.header {
+			font-size: 12px;
+		}
 	}
 	.alias {
 		font-weight: bold;
