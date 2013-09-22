@@ -3,13 +3,14 @@
 <%= currently_at 'Chew It Over' %>
 
 <% content_for :sub_nav do %>
-	<li><%= link_to "View Gum Details", gum_path(get_permalink(@rating.gum_id)), :class => 'link_button' %></li>
-	<li><%= link_to("View Member Details", profile_path(@rating.profile_id), :class => 'link_button') %></li>
-	<li><%= link_to("List All Gum's Ratings", gum_ratings_path(get_gum(@rating.gum_id).permalink), :class => 'link_button') %></li>
 	<% if user_signed_in? %>
-		<li><%= link_to("Rate This Gum", new_rating_path(get_permalink(@rating.gum_id)), :class => 'link_button') %></li>
 		<li><%= link_to("List Your Ratings", member_ratings_path(view_self), :class => 'link_button') %></li>
 	<% end %>
+	<li><%= link_to "Rating Details", rating_path(@rating), :class => 'link_category_button_on' %></li>
+	<li><%= link_to "Gum Details", gum_path(get_permalink(@rating.gum_id)), :class => 'link_category_button' %></li>
+	<li><%= link_to("Member Details", profile_path(@rating.profile_id), :class => 'link_category_button') %></li>
+	<li><%= link_to("Rate Gum", new_rating_path(get_permalink(@rating.gum_id)), :class => 'link_category_button') %></li>
+	<li><%= link_to("Ratings List", gum_ratings_path(get_gum(@rating.gum_id).permalink), :class => 'link_category_button') %></li>
 <% end %>
 
 <% content_for :ads do %>
