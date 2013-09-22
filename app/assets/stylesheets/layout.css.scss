@@ -35,6 +35,23 @@ div#wrapper {
 	.link_button {
 		@extend .basic_button;
 	}
+	.link_category_button {
+		@include button(simple, $category_button_color);
+		display: block;
+		text-align: center;
+		font-size: 12px;
+		margin: 10px 10% 10px 10%;
+		padding: 2px 5px 2px 5px;
+	}
+	.link_category_button_on {
+		@include button(simple, $button2_pressed_color);
+		color: $nav_background;
+		display: block;
+		text-align: center;
+		font-size: 12px;
+		margin: 10px 10% 10px 10%;
+		padding: 2px 5px 2px 5px;
+	}
 	.search_button {
 		@extend .basic_button;
 		width: 80%;
@@ -274,8 +291,8 @@ section#sidebar {
 		font-size: 14px;
 		background-color: $sidebar_header_background;
 		border-bottom: 5px solid darken($sidebar_background, 30%);
-		margin: 10px 0px;
-		padding: 5px 10px 0 10px;
+		margin: 15px 0px 10px 0px;
+		padding: 5px 10px 5px 10px;
 		color: white;
 	}
 	.basic_ul {
@@ -362,7 +379,7 @@ section#sidebar {
 	}// end #search
 	h5{
 		@extend .basic_header;
-		margin: 30px 0px 10px 0px;
+//		margin: 20px 0px 10px 0px;
 	}
 	#advertisements {
 		margin: 0px auto 10px auto;

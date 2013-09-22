@@ -4,9 +4,10 @@
 
 <% content_for :sub_nav do %>
 	<% if user_signed_in? %>
-		<li><%= link_to "View Gum Details", gum_path(@gum.permalink), :class => 'link_button' %></li>
-		<li><%= link_to("List All Ratings", gum_ratings_path(@gum.permalink), :class => 'link_button') %></li>
-		<li><%= link_to("List All Gums", gums_path, :class => 'link_button') %></li>
+<!--		<li>< %= link_to("Gums List", gums_path, :class => 'link_category_button') %></li> -->
+		<li><%= link_to "Gum Details", gum_path(@gum.permalink), :class => 'link_category_button' %></li>
+		<li><%= link_to("Rate Gum", new_rating_path(@gum.permalink), :class => 'link_category_button_on') %></li>
+		<li><%= link_to("Ratings List", gum_ratings_path(@gum.permalink), :class => 'link_category_button') %></li>
 	<% end %>
 <% end %>
 

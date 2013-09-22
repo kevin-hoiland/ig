@@ -3,10 +3,9 @@
 <%= currently_at 'Members' %>
 
 <% content_for :sub_nav do %>
-	<% unless user_signed_in? and viewing_self?(@profile) %>
-		<li><%= link_to("View Member's Details", profile_path(@profile), :class => 'link_button') %></li>
-	<% end %>
-	<li><%= link_to("List All Members", profiles_path, :class => 'link_button') %></li>
+		<li><%= link_to "Member Details", profile_path(@profile), :class => 'link_category_button' %></li>
+		<li><%= link_to("Ratings List", member_ratings_path(@profile), :class => 'link_category_button_on') %></li>
+<!--	<li>< %= link_to("List All Members", profiles_path, :class => 'link_button') %></li> -->
 <% end %>
 
 <% content_for :search do %>
@@ -28,10 +27,12 @@
 	<ul class="list_container">	
 		<li>
 			<ul class="list_links">
-				<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
 				<li><%= link_to "Gum Details", gum_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+				<li><%= link_to "Rating Details", rating_path(r), :class => 'list_row_link' %></li>
 				<% if user_signed_in? and viewing_self?(@profile) %>
 					<li><%= link_to "Change Your Rating", new_rating_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
+				<% else %>
+					<li><%= link_to "Rate Gum", new_rating_path(get_permalink(r.gum_id)), :class => 'list_row_link' %></li>
 				<% end %>
 			</ul>
 		</li>

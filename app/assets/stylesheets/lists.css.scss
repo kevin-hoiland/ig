@@ -50,7 +50,8 @@ ul.list_links {
 	padding: 0;
 	margin: 0px;
 	.list_row_link {
-		@include button(simple, darken($button_color, 5%));
+		@include button(simple, $category_button_color);
+//		@include button(simple, darken($button_color, 5%));
 		margin: 10px 0 10px 0;
 		padding: 2px 0px 2px 0px;
 		display: block;
