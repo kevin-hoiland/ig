@@ -5,7 +5,9 @@
 <% content_for :sub_nav do %>
   <% if user_signed_in? and viewing_self?(@profile) %>
 	<li><%= subscriber? ? link_to("View Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
-	<li><%= link_to "Your Details", profile_path(@profile), :class => 'link_category_button_on' %></li>  	
+<!--
+	<li>< %= link_to "View Your Account", profile_path(@profile), :class => 'link_category_button_on' %></li>  	
+-->
 	<li><%= link_to("List Your Ratings", member_ratings_path(@profile), :class => 'link_category_button') %></li>
   <% else %>
 	<li><%= link_to "Member Details", profile_path(@profile), :class => 'link_category_button_on' %></li>

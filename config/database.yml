@@ -12,9 +12,9 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: intl_gum2_development
+  database: intl_gum3_development
   pool: 5
-  username: intl_gum2
+  username: intl_gum3
   password: intlp@ssw0rd4DB
   socket: /tmp/mysql.sock
 

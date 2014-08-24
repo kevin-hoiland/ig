@@ -8,8 +8,8 @@ class CreateGums < ActiveRecord::Migration
       t.string "company", :default => ""
       t.string "brand", :default => ""
       t.string "flavor", :default => ""
-      t.text "description", :default => ""
-      t.text "note", :default => ""
+      t.text "description"
+      t.text "note"
       t.string "country", :default => ""
       t.boolean "new_release", :default => false, :null => false
       t.boolean "discontinued", :default => false, :null => false
