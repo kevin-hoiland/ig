@@ -4,9 +4,10 @@
 
 <% content_for :sub_nav do %>
 	<% if user_signed_in? %>
-		<li><%= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li>
+		<!-- subscriptions disabled in November 2014 -->
+		<!-- <li>< %= subscriber? ? link_to("Your Subscriptions", list_billings_path, :class => 'link_button') : link_to("Subscribe Now!", new_billing_path, :class => 'link_button') %></li> -->
 	<% else %>
-		<li><%= link_to "Create Subscription", new_billing_path, :class => 'link_button' %></li>
+		<!-- <li>< %= link_to "Create Subscription", new_billing_path, :class => 'link_button' %></li> -->
 	<% end %>
 <% end %>
 

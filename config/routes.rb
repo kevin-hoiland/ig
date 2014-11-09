@@ -45,13 +45,14 @@ IntlGum2::Application.routes.draw do
   get 'ratings/member/:id' => "ratings#per_member", :as => "member_ratings"
 
   get 'subscriptions' => 'subscriptions#index'  
-  get 'your_private_subscriptions' => 'billings#index', :as => 'list_billings'
-  get 'new_private_subscription' => 'billings#new', :as => 'new_billing'
-  post 'new_private_subscription' => 'billings#create', :as => 'new_billing'
-  get 'edit_private_subscription/:id' => 'billings#edit', :as => 'edit_billing'
-  put 'edit_private_subscription/:id' => 'billings#update', :as => 'edit_billing'
-  get 'remove_private_subscription/:subscription_number' => 'billings#delete_confirmation', :as => 'delete_billing'
-  delete 'remove_private_subscription/:subscription_number' => 'billings#destroy', :as => 'delete_billing'
+  # subscriptions disabled November 2014...
+  #get 'your_private_subscriptions' => 'billings#index', :as => 'list_billings'
+  #get 'new_private_subscription' => 'billings#new', :as => 'new_billing'
+  #post 'new_private_subscription' => 'billings#create', :as => 'new_billing'
+  #get 'edit_private_subscription/:id' => 'billings#edit', :as => 'edit_billing'
+  #put 'edit_private_subscription/:id' => 'billings#update', :as => 'edit_billing'
+  #get 'remove_private_subscription/:subscription_number' => 'billings#delete_confirmation', :as => 'delete_billing'
+  #delete 'remove_private_subscription/:subscription_number' => 'billings#destroy', :as => 'delete_billing'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
