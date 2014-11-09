@@ -305,6 +305,9 @@ ul.shipment_list {
 		right: 0;  // Aligns Horizontally
 	}
 }
+p#canceled {
+	color: $sidebar_header_background;
+}
 // ********************* NEWS LIST ********************
 .news {
 	a, a:link, a:visited, a:hover, a:active {

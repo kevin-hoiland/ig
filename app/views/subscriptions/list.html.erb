@@ -14,6 +14,10 @@
 	<%= render(:partial => "shared/ad_content") %>
 <% end %>
 
+<% @canceled_text.each do |c| %>
+	<p id=<%= "canceled" %>><%= c.content %></p>
+<% end %>
+
 <h1>Monthly Subscription Contents</h1>
 
 <% @content.each do |c| %>
