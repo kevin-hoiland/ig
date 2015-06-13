@@ -47,6 +47,11 @@ Intl Gum created a new system for scoring gum:
 
 - - -
 
+- - -
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumdetails.png)
+
+- - -
+
 ##Site Backend
 * Rails web stack with MySQL
 * Imagemagick (uploading photos and auto full/icon size creations)
