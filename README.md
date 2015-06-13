@@ -7,6 +7,7 @@ In November 2014, the company decided to shutdown and terminate the formal C cor
 
 - - -
 > ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/homepage.png)
+
 - - -
 
 ##User Experience
@@ -14,16 +15,19 @@ Intl Gum Membership was always free, which allowed usesrs to vote, rank, and com
 
 - - -
 > ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumlist.png)
+
 - - -
 
 Intl Gum Members also had the option of paying $8 for a monthly subscription, which delivered a variety of gums directly to their door every month via mail.
 
 - - -
 > ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/billing_p3.png)
+
 - - -
 
 - - -
 > ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/subscriptions.png)
+
 - - -
 
 Intl Gum created a new system for scoring gum:
@@ -35,10 +39,12 @@ Intl Gum created a new system for scoring gum:
 
 - - -
 > ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumrating.png)
+
 - - -
 
 - - -
 > ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/ratingslist.png)
+
 - - -
 
 ##Site Backend
