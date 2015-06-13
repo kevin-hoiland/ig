@@ -21,17 +21,13 @@ There were about 400 different gums cataloged for searching (for example via fla
 
 > pics of gum list and show pages, and ranking page perhaps, also monthly subscription pages
 
-##Admin System
-The site had a fully integrated administration system for viewing user data, managing monthly subscription products, updating site content, and adding newly released gums.
-
-> admin page pic here
-
-##Site Tech
+##Site Backend
 * Rails web stack with MySQL
 * Imagemagick (uploading photos and auto full/icon size creations)
 * User authorization and custom user accounts
 * SMTP
 * External integration with Amazon S3 for all gum images
 * External integration with Authorize.Net for payment processing and monthly recurring billing
+* Admin system for viewing user data, managing monthly subscription products, updating site content, and adding newly released gums.
 
-> pics for payment processing pages
+> pics for payment processing pages and admin system
