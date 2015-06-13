@@ -28,6 +28,8 @@ There were about 400 different gums cataloged for searching (for example via fla
 * SMTP
 * External integration with Amazon S3 for all gum images
 * External integration with Authorize.Net for payment processing and monthly recurring billing
-* Admin system for viewing user data, managing monthly subscription products, updating site content, and adding newly released gums.
+* External integration with Google AdSense, Adwords, and Analytics
+* External integration with Amazon affiliate program
+* Admin system for viewing user data, managing monthly subscription products, updating site content, and adding newly released gums
 
 > pics for payment processing pages and admin system
