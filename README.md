@@ -6,24 +6,24 @@ International Gum was a small start up company founded by Kevin Andrew Hoiland a
 In November 2014, the company decided to shutdown and terminate the formal C corporation status. After Board and Shareholder approval, the company started closing all accounts and filing necessary paperwork. The Intl Gum website remained live and maintained as a free community site without payment processing and other overhead until June 2015 (at which point the site was shutdown and this repo made public).
 
 - - -
-![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/homepage.png)
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/homepage.png)
 - - -
 
 ##User Experience
 Intl Gum Membership was always free, which allowed usesrs to vote, rank, and comment on gum, along with other special privileges.  There were about 400 different gums cataloged for searching (for example via flavor), ranking, commenting, or just viewing various gum realted data points.  Non members still had access to the site for viewing gum info.
 
 - - -
-![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumlist.png)
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumlist.png)
 - - -
 
 Intl Gum Members also had the option of paying $8 for a monthly subscription, which delivered a variety of gums directly to their door every month via mail.
 
 - - -
-![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/billing_p3.png)
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/billing_p3.png)
 - - -
 
 - - -
-![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/subscriptions.png)
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/subscriptions.png)
 - - -
 
 Intl Gum created a new system for scoring gum:
@@ -34,11 +34,11 @@ Intl Gum created a new system for scoring gum:
 * Gumalicious: How enjoyable and delicious is this gum?
 
 - - -
-![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumrating.png)
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/gumrating.png)
 - - -
 
 - - -
-![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/ratingslist.png)
+> ![Main Page](https://github.com/kevin-hoiland/ig/blob/master/doc/ratingslist.png)
 - - -
 
 ##Site Backend
