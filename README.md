@@ -61,3 +61,6 @@ Intl Gum created a new system for scoring gum:
 * External integration with Google AdSense, Adwords, and Analytics
 * External integration with Amazon affiliate program
 * Admin system for viewing user data, managing monthly subscription products, updating site content, and adding newly released gums
+
+##Contact Info
+If you have questions or requests about Intl Gum, please contact me via email at KevinAndrewHoiland@gmail.com
